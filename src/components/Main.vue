@@ -3,6 +3,13 @@
     <el-header></el-header>
     <el-main>
       <el-row>
+        <el-col :span="12" :offset="6">
+          <div class="grid-content bg-purple">
+            <Table></Table>
+          </div>
+        </el-col>
+      </el-row>
+      <el-row>
         <el-col :span="24">
           <div class="grid-content bg-purple-dark">
             <el-button @click="visible = true">Button</el-button>
@@ -137,10 +144,14 @@
 <script>
 import ElHeader from '../../node_modules/element-ui/packages/header/src/main'
 import ElFooter from '../../node_modules/element-ui/packages/footer/src/main'
+import Table from './General/Table.vue'
+
 export default {
   components: {
     ElFooter,
-    ElHeader},
+    ElHeader,
+    Table
+  },
   name: 'HelloWorld',
   methods: {
     handleChange (value) {
