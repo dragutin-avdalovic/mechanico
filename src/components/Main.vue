@@ -1,9 +1,9 @@
 <template>
   <el-container style="height: 100vh; border: 1px solid #eee">
     <el-header></el-header>
-    <el-main>"
-      <el-row>
-        <el-col >
+    <el-main>
+      <el-row type="flex" class="row-bg" justify="center">
+        <el-col :span="18">
           <div class="grid-content bg-purple">
             <Table :fields="fields" :columns="columns"></Table>
           </div>
@@ -110,9 +110,6 @@ a {
 .grid-content {
   border-radius: 4px;
   min-height: 120px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
 }
 .row-bg {
   padding: 10px 0;

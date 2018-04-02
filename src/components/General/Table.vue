@@ -2,7 +2,7 @@
   <el-table
     ref="multipleTable"
     :data="fields"
-    :default-sort = "{prop: '', order: 'descending'}"
+    :default-sort = "{prop: 'projectName', order: 'ascending'}"
     style="width: 100%"
     @selection-change="handleSelectionChange">
     <el-table-column
