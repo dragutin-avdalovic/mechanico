@@ -5,7 +5,10 @@
       <el-row type="flex" class="row-bg" justify="center">
         <el-col :span="18">
           <div class="grid-content bg-purple">
-            <Table :fields="fields" :columns="columns"></Table>
+            <Table :fields="fields" :columns="columns">
+              <span slot="tableContentBefore"><TableContentBefore></TableContentBefore></span>
+              <span slot="tableContentAfter"><TableContentAfter></TableContentAfter></span>
+            </Table>
           </div>
         </el-col>
       </el-row>
@@ -18,12 +21,16 @@
 import ElHeader from '../../node_modules/element-ui/packages/header/src/main'
 import ElFooter from '../../node_modules/element-ui/packages/footer/src/main'
 import Table from './General/Table.vue'
+import TableContentBefore from './General/TableContentBefore.vue'
+import TableContentAfter from './General/TableContentAfter.vue'
 
 export default {
   components: {
     ElFooter,
     ElHeader,
-    Table
+    Table,
+    TableContentBefore,
+    TableContentAfter
   },
   name: 'HelloWorld',
   methods: {
