@@ -3,138 +3,11 @@
     <el-header></el-header>
     <el-main>
       <el-row>
-        <el-col :span="12" :offset="6">
+        <el-col :span="24" :offset="0">
           <div class="grid-content bg-purple">
-            <Table></Table>
+            <Table :fields="fields"></Table>
           </div>
         </el-col>
-      </el-row>
-      <el-row>
-        <el-col :span="24">
-          <div class="grid-content bg-purple-dark">
-            <el-button @click="visible = true">Button</el-button>
-            <el-dialog :visible.sync="visible" title="Hello world">
-              <el-form ref="form" :model="form" label-width="120px">
-                <el-form-item label="Activity name">
-                  <el-input v-model="form.name"></el-input>
-                </el-form-item>
-                <el-form-item label="Activity zone">
-                  <el-select v-model="form.region" placeholder="please select your zone">
-                    <el-option label="Zone one" value="shanghai"></el-option>
-                    <el-option label="Zone two" value="beijing"></el-option>
-                  </el-select>
-                </el-form-item>
-                <el-form-item label="Activity time">
-                  <el-col :span="11">
-                    <el-date-picker type="date" placeholder="Pick a date" v-model="form.date1" style="width: 100%;"></el-date-picker>
-                  </el-col>
-                  <el-col class="line" :span="2">-</el-col>
-                  <el-col :span="11">
-                    <el-time-picker type="fixed-time" placeholder="Pick a time" v-model="form.date2" style="width: 100%;"></el-time-picker>
-                  </el-col>
-                </el-form-item>
-                <el-form-item label="Instant delivery">
-                  <el-switch v-model="form.delivery"></el-switch>
-                </el-form-item>
-                <el-form-item label="Activity type">
-                  <el-checkbox-group v-model="form.type">
-                    <el-checkbox label="Online activities" name="type"></el-checkbox>
-                    <el-checkbox label="Promotion activities" name="type"></el-checkbox>
-                    <el-checkbox label="Offline activities" name="type"></el-checkbox>
-                    <el-checkbox label="Simple brand exposure" name="type"></el-checkbox>
-                  </el-checkbox-group>
-                </el-form-item>
-                <el-form-item label="Resources">
-                  <el-radio-group v-model="form.resource">
-                    <el-radio label="Sponsor"></el-radio>
-                    <el-radio label="Venue"></el-radio>
-                  </el-radio-group>
-                </el-form-item>
-                <el-form-item label="Activity form">
-                  <el-input type="textarea" v-model="form.desc"></el-input>
-                </el-form-item>
-                <el-form-item>
-                  <el-button type="primary" @click="onSubmit">Create</el-button>
-                  <el-button>Cancel</el-button>
-                </el-form-item>
-              </el-form>
-            </el-dialog>
-          </div></el-col>
-      </el-row>
-      <el-row>
-        <el-col :span="12">
-          <div class="grid-content bg-purple">
-            <el-button type="danger" icon="el-icon-delete" circle></el-button>
-          </div>
-        </el-col>
-        <el-col :span="12"><div class="grid-content bg-purple-light">
-          <el-radio-group v-model="radio3">
-            <el-radio-button label="New York"></el-radio-button>
-            <el-radio-button label="Washington"></el-radio-button>
-            <el-radio-button label="Los Angeles"></el-radio-button>
-            <el-radio-button label="Chicago"></el-radio-button>
-          </el-radio-group>
-        </div>
-        </el-col>
-      </el-row>
-      <el-row>
-        <el-col :span="8">
-          <div class="grid-content bg-purple">
-            <el-input
-              placeholder="Please input"
-              v-model="input10"
-              clearable>
-            </el-input>
-          </div>
-        </el-col>
-        <el-col :span="8">
-          <div class="grid-content bg-purple-light">
-            <el-input-number v-model="num1" @change="handleChange" :min="1" :max="10"></el-input-number>
-          </div>
-        </el-col>
-        <el-col :span="8">
-            <el-col :span="24">
-              <div class="grid-content bg-purple">
-                <el-switch
-                  v-model="value33"
-                  active-text="Pay by month"
-                  inactive-text="Pay by year">
-                </el-switch>
-              </div>
-            </el-col>
-            <el-col :span="24">
-              <div class="grid-content bg-purple">
-                <el-switch
-                  style="display: block"
-                  v-model="value44"
-                  active-color="#13ce66"
-                  inactive-color="#ff4949"
-                  active-text="Pay by month"
-                  inactive-text="Pay by year">
-                </el-switch>
-              </div>
-            </el-col>
-        </el-col>
-      </el-row>
-      <el-row>
-        <el-col :span="12">
-          <div class="grid-content bg-purple bg-purple-light">
-            <div class="block">
-              <span class="demonstration">Format Tooltip</span>
-              <el-slider v-model="value4" :format-tooltip="formatTooltip"></el-slider>
-            </div>
-          </div>
-        </el-col>
-        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-        <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
-      </el-row>
-      <el-row>
-        <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-        <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
-        <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-        <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
-        <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-        <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
       </el-row>
     </el-main>
     <el-footer></el-footer>
@@ -166,6 +39,48 @@ export default {
   },
   data () {
     return {
+      fields: [{
+        label: 'Project name',
+        name: 'ProjectName',
+        text: 'Project 1'
+      }, {
+        label: 'Designer',
+        name: 'Designer',
+        text: 'Mihail'
+      }, {
+        label: 'Consultant',
+        name: 'Consultant',
+        text: 'Mark'
+      }, {
+        label: 'Project size',
+        name: 'ProjectSize',
+        text: '300 kB'
+      }, {
+        label: 'Year',
+        name: 'Year',
+        text: '2020'
+      },
+      {
+        label: 'Project name',
+        name: 'ProjectName',
+        text: 'Project 2'
+      }, {
+        label: 'Designer',
+        name: 'Designer',
+        text: 'Aleksandar'
+      }, {
+        label: 'Consultant',
+        name: 'Consultant',
+        text: 'Vlad'
+      }, {
+        label: 'Project size',
+        name: 'ProjectSize',
+        text: '30 kB'
+      }, {
+        label: 'Year',
+        name: 'Year',
+        text: '2018'
+      }],
       visible: false,
       radio3: 'New York',
       input10: '',
