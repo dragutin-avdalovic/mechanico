@@ -1,11 +1,11 @@
 <template>
   <el-container style="height: 100vh; border: 1px solid #eee">
     <el-header></el-header>
-    <el-main>
+    <el-main>"
       <el-row>
-        <el-col :span="24" :offset="0">
+        <el-col >
           <div class="grid-content bg-purple">
-            <Table :fields="fields"></Table>
+            <Table :fields="fields" :columns="columns"></Table>
           </div>
         </el-col>
       </el-row>
@@ -39,69 +39,24 @@ export default {
   },
   data () {
     return {
+      columns: [{prop: 'projectName', label: 'Project Name'}, {prop: 'designer', label: 'Designer'},
+        {prop: 'consultant', label: 'Consultant'}, {prop: 'projectSize', label: 'Project Size'},
+        {prop: 'equipment', label: 'Equipment'}, {prop: 'year', label: 'Year'}],
       fields: [{
-        label: 'Project name',
-        name: 'ProjectName',
-        text: 'Project 1'
+        projectName: 'Project 1',
+        designer: 'Tom Tomas',
+        consultant: 'Karl Marx',
+        projectSize: '12330',
+        equipment: '12330',
+        year: 2018
       }, {
-        label: 'Designer',
-        name: 'Designer',
-        text: 'Mihail'
-      }, {
-        label: 'Consultant',
-        name: 'Consultant',
-        text: 'Mark'
-      }, {
-        label: 'Project size',
-        name: 'ProjectSize',
-        text: '300 kB'
-      }, {
-        label: 'Year',
-        name: 'Year',
-        text: '2020'
-      },
-      {
-        label: 'Project name',
-        name: 'ProjectName',
-        text: 'Project 2'
-      }, {
-        label: 'Designer',
-        name: 'Designer',
-        text: 'Aleksandar'
-      }, {
-        label: 'Consultant',
-        name: 'Consultant',
-        text: 'Vlad'
-      }, {
-        label: 'Project size',
-        name: 'ProjectSize',
-        text: '30 kB'
-      }, {
-        label: 'Year',
-        name: 'Year',
-        text: '2018'
-      }],
-      visible: false,
-      radio3: 'New York',
-      input10: '',
-      num1: 1,
-      value33: true,
-      value44: true,
-      value1: 0,
-      value2: 50,
-      value3: 36,
-      value4: 48,
-      value5: 42,
-      form: {
-        name: '',
-        region: '',
-        date1: '',
-        date2: '',
-        delivery: false,
-        type: [],
-        resource: '',
-        desc: ''
-      }
+        projectName: 'Project 2',
+        designer: 'Hail Tomas',
+        consultant: 'DEEN',
+        projectSize: '30',
+        equipment: '212330',
+        year: 2016
+      }]
     }
   }
 }

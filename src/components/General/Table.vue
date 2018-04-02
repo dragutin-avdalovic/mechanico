@@ -2,22 +2,20 @@
   <el-table
     ref="multipleTable"
     :data="fields"
-    :default-sort = "{prop: 'projectname', order: 'descending'}"
+    :default-sort = "{prop: '', order: 'descending'}"
     style="width: 100%"
     @selection-change="handleSelectionChange">
     <el-table-column
       type="selection"
       width="55">
     </el-table-column>
-    <el-table-column sortable v-for="(field, index) in fields" v-bind:key="index" v-bind:label='field.label'  v-bind:prop="field.prop" width="140">
-      <template slot-scope="scope">
-        <span >{{field.text}}</span>
-      </template>
+    <el-table-column sortable v-for="(column, key) in columns"
+     v-bind:label="column.label" v-bind:prop="column.prop" v-bind:key='key' width="140">
     </el-table-column>
     <el-table-column
-      label="Operations" width="180">
+      label="" width="180">
       <template slot-scope="scope">
-        <el-button type="primary" icon="el-icon-edit"  @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
+        <el-button type="info" icon="el-icon-edit"  @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
       </template>
     </el-table-column>
   </el-table>
@@ -27,31 +25,10 @@
 export default {
   data () {
     return {
-      tableData: [{
-        prop: 'projectname',
-        date: '2016-05-03',
-        name: 'Tom',
-        address: 'No. 189, Grove St, Los Angeles'
-      }, {
-        prop: 'designer',
-        date: '2016-05-02',
-        name: 'Tom',
-        address: 'No. 189, Grove St, Los Angeles'
-      }, {
-        prop: 'consultant',
-        date: '2016-05-04',
-        name: 'Tom',
-        address: 'No. 189, Grove St, Los Angeles'
-      }, {
-        prop: 'projectsize',
-        date: '2016-05-01',
-        name: 'Tom',
-        address: 'No. 189, Grove St, Los Angeles'
-      }],
       multipleSelection: []
     }
   },
-  props: ['fields'],
+  props: ['fields', 'columns'],
   methods: {
     handleEdit (index, row) {
       console.log(index, row)
