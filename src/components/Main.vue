@@ -11,6 +11,11 @@
           <h1>status-irma</h1>
         </el-col>
       </el-row>
+      <el-row type="flex" class="row-bg" justify="flex-start">
+        <el-col :span="8"><div class="grid-content bg-purple-1"><h1>REQUEST A MANUFACTURER</h1></div></el-col>
+        <el-col :span="8"><div class="grid-content bg-purple-2"><h1>INBOX</h1></div></el-col>
+        <el-col :span="8"><div class="grid-content bg-purple-3"><h1>Message Title</h1></div></el-col>
+      </el-row>
     </el-main>
   </el-container>
 </template>
@@ -89,6 +94,15 @@ a {
 }
 .bg-purple {
   background: #fefefe;
+}
+.bg-purple-1 {
+  background: #5afe97;
+}
+.bg-purple-2 {
+  background: #8cfe4d;
+}
+.bg-purple-3 {
+  background: #9b92fe;
 }
 .grid-content {
   min-height: 120px;
