@@ -9,7 +9,7 @@
     <el-table-column sortable v-for="(column, key) in columns"
      v-bind:label="column.label" v-bind:prop="column.prop" v-bind:key='key' width="140">
     </el-table-column>
-      <el-table-column width="100">
+    <el-table-column>
       <template slot-scope="scope">
         <el-button
           type="info" icon="el-icon-edit"
