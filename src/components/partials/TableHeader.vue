@@ -1,7 +1,7 @@
 <template>
   <el-row type="flex" class="row-bg" justify="center">
     <el-col :span="6">
-      <div class="grid-content">
+      <div class="el-col-left">
             <el-button type="info" icon="el-icon-delete"></el-button>
             <el-button type="primary" icon="el-icon-plus">New project</el-button>
       </div>
@@ -43,5 +43,12 @@ export default {
 }
 .row-bg {
   padding: 1em 0;
+}
+.el-col-left
+{
+  float: left;
+  padding-left: 0px;
+  min-height: 2.5em;
+  min-width: 15em;
 }
 </style>

@@ -2,10 +2,13 @@
   <el-container style="height: 100vh; border: 0px solid #eee">
     <el-main>
       <el-row type="flex" class="row-bg" justify="flex-start">
-        <el-col :span="24">
+        <el-col :span="18">
           <div class="grid-content bg-purple">
             <MyProjectsPage></MyProjectsPage>
           </div>
+        </el-col>
+        <el-col :span="6">
+          <h1>status-irma</h1>
         </el-col>
       </el-row>
     </el-main>
