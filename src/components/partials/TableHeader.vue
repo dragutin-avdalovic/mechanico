@@ -1,9 +1,9 @@
 <template>
-  <el-row :gutter="20" type="flex" class="row-bg" justify="center">
+  <el-row type="flex" class="row-bg" justify="center">
     <el-col :span="6">
       <div class="grid-content">
-        <el-button type="info" icon="el-icon-delete"></el-button>
-        <el-button type="primary" icon="el-icon-plus">New project</el-button>
+            <el-button type="info" icon="el-icon-delete"></el-button>
+            <el-button type="primary" icon="el-icon-plus">New project</el-button>
       </div>
     </el-col>
     <el-col :span="18">
@@ -32,13 +32,14 @@ export default {
 .grid-content
 {
   min-height: 2.5em;
+  min-width: 15em;
 }
 .search-input
 {
   min-width:15em;
   max-width: 20em;
   float: right;
-  margin-right: 10px
+  margin-right: 15px
 }
 .row-bg {
   padding: 1em 0;

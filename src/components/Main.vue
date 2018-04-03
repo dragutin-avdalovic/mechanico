@@ -1,33 +1,24 @@
 <template>
-  <el-container style="height: 100vh; border: 1px solid #eee">
-    <el-header></el-header>
+  <el-container style="height: 100vh; border: 0px solid #eee">
     <el-main>
-      <el-row type="flex" class="row-bg" justify="center">
-        <el-col :span="18">
+      <el-row type="flex" class="row-bg" justify="flex-start">
+        <el-col :span="24">
           <div class="grid-content bg-purple">
-            <TableHeader></TableHeader>
-            <Table :fields="fields" :columns="columns" :selectable="true">
-            </Table>
+            <MyProjectsPage></MyProjectsPage>
           </div>
         </el-col>
       </el-row>
     </el-main>
-    <el-footer></el-footer>
   </el-container>
 </template>
 
 <script>
-import ElHeader from '../../node_modules/element-ui/packages/header/src/main'
 import ElFooter from '../../node_modules/element-ui/packages/footer/src/main'
-import Table from './General/Table.vue'
-import TableHeader from './General/TableHeader.vue'
-
+import MyProjectsPage from './partials/MyProjectsPage.vue'
 export default {
   components: {
     ElFooter,
-    ElHeader,
-    Table,
-    TableHeader
+    MyProjectsPage
   },
   name: 'HelloWorld',
   methods: {
@@ -100,7 +91,6 @@ a {
   min-height: 120px;
 }
 .row-bg {
-  padding: 10px 0;
   background-color: #f9fafc;
 }
 </style>
