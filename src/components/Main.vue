@@ -5,6 +5,7 @@
       <el-row type="flex" class="row-bg" justify="center">
         <el-col :span="18">
           <div class="grid-content bg-purple">
+            <TableHeader></TableHeader>
             <Table :fields="fields" :columns="columns" :selectable="true">
             </Table>
           </div>
@@ -19,12 +20,14 @@
 import ElHeader from '../../node_modules/element-ui/packages/header/src/main'
 import ElFooter from '../../node_modules/element-ui/packages/footer/src/main'
 import Table from './General/Table.vue'
+import TableHeader from './General/TableHeader.vue'
 
 export default {
   components: {
     ElFooter,
     ElHeader,
-    Table
+    Table,
+    TableHeader
   },
   name: 'HelloWorld',
   methods: {
@@ -90,26 +93,10 @@ a {
   color: #333;
   line-height: 60px;
 }
-.el-row {
-  margin-bottom: 20px;
-&:last-child {
-   margin-bottom: 0;
- }
-}
-.el-col {
-  border-radius: 1px;
-}
-.bg-purple-dark {
-  background: #99a9bf;
-}
 .bg-purple {
-  background: #d3dce6;
-}
-.bg-purple-light {
-  background: #e5e9f2;
+  background: #fefefe;
 }
 .grid-content {
-  border-radius: 4px;
   min-height: 120px;
 }
 .row-bg {
