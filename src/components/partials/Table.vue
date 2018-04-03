@@ -12,8 +12,8 @@
     <el-table-column>
       <template slot-scope="scope">
         <el-button
-          type="info" icon="el-icon-edit"
-          @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
+          type="info" icon="icon-pencil"
+          @click="handleEdit(scope.$index, scope.row)"> Edit</el-button>
       </template>
     </el-table-column>
   </el-table>

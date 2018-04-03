@@ -1,7 +1,7 @@
 <template>
   <div>
       <el-row class="header" type="flex" justify="center">
-          <el-col :span="2" class="my-projects-icon"><i class="el-icon-goods"></i></el-col>
+          <el-col :span="2" class="my-projects-icon"><i class="icon-project"></i></el-col>
           <el-col :span="22"><p class="projects-label">MY PROJECTS</p></el-col>
       </el-row>
       <TableHeader></TableHeader>
@@ -41,6 +41,7 @@ export default {
 }
 </script>
 <style>
+@import '../../assets/font/fontello/css/fontello.css';
 .header {
   background-color: #0D72B9;
   color: white;
@@ -50,7 +51,7 @@ export default {
   margin-top: auto;
   margin-bottom: auto;
 }
-.el-icon-goods {
+.icon-project {
   color: white;
   font-size: 2em;
 }

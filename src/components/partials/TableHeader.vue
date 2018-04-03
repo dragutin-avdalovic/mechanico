@@ -2,14 +2,14 @@
   <el-row type="flex" class="row-bg" justify="center">
     <el-col :span="6">
       <div class="el-col-left">
-            <el-button type="info" icon="el-icon-delete"></el-button>
-            <el-button type="primary" icon="el-icon-plus">New project</el-button>
+            <el-button type="info" icon="icon-trash-empty"></el-button>
+            <el-button type="primary" icon="icon-plus-1">New project</el-button>
       </div>
     </el-col>
     <el-col :span="18">
       <div class="grid-content">
         <el-input class="search-input" placeholder="Search projects" v-model="input_search" clearable>
-        <el-button slot="append" type="primary" icon="el-icon-search"></el-button>
+        <el-button slot="append" type="primary" icon="icon-search"></el-button>
         </el-input>
       </div>
     </el-col>
