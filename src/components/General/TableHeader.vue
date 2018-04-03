@@ -1,0 +1,46 @@
+<template>
+  <el-row :gutter="20" type="flex" class="row-bg" justify="center">
+    <el-col :span="6">
+      <div class="grid-content">
+        <el-button type="info" icon="el-icon-delete"></el-button>
+        <el-button type="primary" icon="el-icon-plus">New project</el-button>
+      </div>
+    </el-col>
+    <el-col :span="18">
+      <div class="grid-content">
+        <el-input class="search-input" placeholder="Search projects" v-model="input_search" clearable>
+        <el-button slot="append" type="primary" icon="el-icon-search"></el-button>
+        </el-input>
+      </div>
+    </el-col>
+  </el-row>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      input_search: ''
+    }
+  },
+  props: ['fields', 'columns', 'selectable'],
+  methods: {
+  }
+}
+</script>
+<style>
+.grid-content
+{
+  min-height: 2.5em;
+}
+.search-input
+{
+  min-width:15em;
+  max-width: 20em;
+  float: right;
+  margin-right: 10px
+}
+.row-bg {
+  padding: 1em 0;
+}
+</style>
