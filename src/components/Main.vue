@@ -81,6 +81,10 @@ li {
 a {
   color: #42b983;
 }
+.el-main
+{
+  padding: 0;
+}
 .el-header {
   background-color: #98d109;
   color: #333;
@@ -109,5 +113,6 @@ a {
 }
 .row-bg {
   background-color: #f9fafc;
+  padding: 0;
 }
 </style>
