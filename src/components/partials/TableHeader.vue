@@ -1,5 +1,5 @@
 <template>
-  <el-row type="flex" class="row-bg" justify="center">
+  <el-row type="flex" class="row-header" justify="center">
     <el-col :span="6">
       <div class="el-col-left">
             <el-button type="info" icon="icon-trash-empty"></el-button>
@@ -29,11 +29,6 @@ export default {
 }
 </script>
 <style>
-.grid-content
-{
-  min-height: 2.5em;
-  min-width: 15em;
-}
 .search-input
 {
   min-width:15em;
@@ -41,14 +36,14 @@ export default {
   float: right;
   margin-right: 15px
 }
-.row-bg {
-  padding: 1em 0;
-}
 .el-col-left
 {
   float: left;
   padding-left: 0px;
-  min-height: 2.5em;
+  min-height: 1em;
   min-width: 15em;
+}
+.row-header {
+  padding: 0.5em;
 }
 </style>
