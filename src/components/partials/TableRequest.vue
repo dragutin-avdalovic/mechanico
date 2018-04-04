@@ -15,19 +15,18 @@
     <el-table-column
       prop="product"
       label="Product"
-      width="120" sortable>
+      width="140" sortable>
     </el-table-column>
     <el-table-column
       prop="status"
       label="Status"
       width=""
-      sortable
       :filters="[{ text: 'Approved', value: 'Approved' }, { text: 'Denied', value: 'Denied' },{ text: 'Requested', value: 'Requested' }]"
       :filter-method="filterTag"
-      filter-placement="bottom-end">
+      filter-placement="bottom-start">
       <template slot-scope="scope">
         <el-tag
-          :type="scope.row.status === 'Approved' ? 'success' : 'primary'"
+          :type="scope.row.type"
           close-transition >{{scope.row.status}}</el-tag>
       </template>
     </el-table-column>
@@ -76,8 +75,5 @@ export default {
 }
 </script>
 <style>
-  .multipleTable
-  {
-    overflow-y: auto;
-  }
+
 </style>

@@ -13,12 +13,20 @@
       </el-row>
       <el-row type="flex" class="row-bg-bottom" justify="flex-start">
         <el-col :span="8">
-          <div class="grid-content-bottom bg-purple-1">
+          <div class="grid-content-bottom">
           <ProductRequest></ProductRequest>
           </div>
         </el-col>
-        <el-col :span="8"><div class="grid-content-bottom bg-purple-2"><h1>INBOX</h1></div></el-col>
-        <el-col :span="8"><div class="grid-content-bottom bg-purple-3"><h1>Activity</h1></div></el-col>
+        <el-col :span="8">
+          <div class="grid-content-bottom">
+            <Inbox></Inbox>
+          </div>
+        </el-col>
+        <el-col :span="8">
+          <div class="grid-content-bottom">
+            <Inbox></Inbox>
+          </div>
+        </el-col>
       </el-row>
     </el-main>
   </el-container>
@@ -28,11 +36,13 @@
 import ElFooter from '../../node_modules/element-ui/packages/footer/src/main'
 import MyProjectsPage from './partials/MyProjectsPage.vue'
 import ProductRequest from './partials/ProductRequest.vue'
+import Inbox from './partials/Inbox.vue'
 export default {
   components: {
     ElFooter,
     MyProjectsPage,
-    ProductRequest
+    ProductRequest,
+    Inbox
   },
   name: 'HelloWorld',
   methods: {
@@ -73,23 +83,26 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 .row-bg {
-  padding: 0.5em;
-  background-color: #E9E9E9;
+  margin: 0.5em;
+  background-color: #cccccc;
 }
 .row-bg-bottom {
-  padding: 0.5em;
-  background-color: #E9E9E9;
+  background-color: #cccccc;
   min-height: calc(100vh - 415px);
 }
 .grid-content
 {
   min-height: 2.5em;
   min-width: 15em;
+  background-color: #E9E9E9;
 }
 .grid-content-bottom
 {
-  min-width: 33vw;
+  min-width: 30vw;
   height: 100%;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  background-color: #E9E9E9;
 }
 .el-main
 {
