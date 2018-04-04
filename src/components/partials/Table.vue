@@ -5,7 +5,7 @@
     :data="fields"
     :default-sort = "{prop: 'projectName', order: 'ascending'}"
     style="width: 100%"
-    height="300"
+    height="310"
     @selection-change="handleSelectionChange">
     <el-table-column v-if="selectable" type="selection" width="55"></el-table-column>
     <el-table-column sortable v-for="(column, key) in columns"
@@ -19,7 +19,6 @@
       </template>
     </el-table-column>
   </el-table>
-
 </template>
 
 <script>
