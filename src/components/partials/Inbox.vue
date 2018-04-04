@@ -1,20 +1,21 @@
 <template>
   <div>
     <el-row class="header" type="flex" justify="center">
-      <el-col :span="4" class="my-projects-icon"><i class="icon-project"></i></el-col>
-      <el-col :span="20"><span class="projects-label">PRODUCT REQUEST</span></el-col>
+      <el-col :span="4" class="my-projects-icon"><i class="icon-mail"></i></el-col>
+      <el-col :span="20"><span class="projects-label">INBOX</span></el-col>
     </el-row>
     <el-row type="flex" class="row-header" justify="center">
-      <el-col :span="24">
-        <div class="grid-content">
-          <el-input class="search-input" size="mini" placeholder="Search manufacturers" v-model="input_search" clearable>
+      <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
+          <el-button type="info" size="mini" icon="icon-trash-empty"></el-button>
+          <el-button type="primary" size="mini">Compose Mail</el-button>
+      </el-col>
+      <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
+          <el-input  size="mini" placeholder="Search projects" v-model="input_search" clearable>
             <el-button slot="append" type="primary" icon="icon-search"></el-button>
           </el-input>
-        </div>
       </el-col>
     </el-row>
     <el-row>
-      <TableRequest :fields="fields" :selectable="false" :editable="false"></TableRequest>
     </el-row>
   </div>
 </template>
@@ -60,5 +61,5 @@ export default {
 }
 </script>
 <style>
-@import '../../assets/font/fontello/css/fontello.css';
+  @import '../../assets/font/fontello/css/fontello.css';
 </style>

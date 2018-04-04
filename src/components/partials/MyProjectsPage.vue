@@ -71,8 +71,6 @@ export default {
 {
   margin-top: auto;
   margin-bottom: auto;
-}
-.icon-project {
   color: white;
   font-size: 1.5em;
 }
