@@ -18,7 +18,7 @@
           </div>
         </el-col>
         <el-col :span="8"><div class="grid-content-bottom bg-purple-2"><h1>INBOX</h1></div></el-col>
-        <el-col :span="8"><div class="grid-content-bottom bg-purple-3"><h1>Message Title</h1></div></el-col>
+        <el-col :span="8"><div class="grid-content-bottom bg-purple-3"><h1>Activity</h1></div></el-col>
       </el-row>
     </el-main>
   </el-container>
@@ -79,7 +79,7 @@ export default {
 .row-bg-bottom {
   padding: 0.5em;
   background-color: #E9E9E9;
-  min-height: calc(100vh - 405px);
+  min-height: calc(100vh - 415px);
 }
 .grid-content
 {
@@ -89,6 +89,7 @@ export default {
 .grid-content-bottom
 {
   min-width: 33vw;
+  height: 100%;
 }
 .el-main
 {

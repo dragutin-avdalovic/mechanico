@@ -79,7 +79,7 @@ export default {
 .projects-label
 {
   float: left;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1em;
   padding-top: 0.5em ;
   padding-bottom: 0.5em ;
