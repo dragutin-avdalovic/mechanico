@@ -39,7 +39,7 @@ export default {
 .el-col-left
 {
   float: left;
-  padding-left: 0px;
+  margin-left: 0px;
   min-height: 1em;
   min-width: 15em;
 }
