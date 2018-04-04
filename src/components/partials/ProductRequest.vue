@@ -56,9 +56,4 @@ export default {
 </script>
 <style>
 @import '../../assets/font/fontello/css/fontello.css';
-.search-input
-{
-  float: right;
-  margin-right: 15px
-}
 </style>
