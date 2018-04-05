@@ -10,22 +10,27 @@
           <el-button type="primary" size="mini">Compose Mail</el-button>
       </el-col>
       <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
-          <el-input  size="mini" placeholder="Search projects" v-model="input_search" clearable>
+          <el-input  size="mini" placeholder="Search messages" v-model="input_search" clearable>
             <el-button slot="append" type="primary" icon="icon-search"></el-button>
           </el-input>
       </el-col>
     </el-row>
     <el-row>
+      <Message></Message>
+      <Message></Message>
+      <Message></Message>
     </el-row>
   </div>
 </template>
 <script>
 import TableRequest from './TableRequest.vue'
 import TableHeader from './TableHeader.vue'
+import Message from './Message.vue'
 export default {
   components: {
     TableRequest,
-    TableHeader
+    TableHeader,
+    Message
   },
   data () {
     return {
