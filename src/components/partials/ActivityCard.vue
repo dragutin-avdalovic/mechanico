@@ -1,16 +1,16 @@
 <template>
   <div>
     <el-row type="flex" class="row-bg-activity" justify="center">
-      <el-col :xs="10" :sm="10" :md="10" :lg="10" :xl="10" size="medium" class="center">
-        <el-tag type="success">Requested licence</el-tag>
-        <span class="time">11:10 am</span>
+      <el-col :xs="8" :sm="8" :md="8" :lg="8" :xl="8" size="medium" class="center-activity">
+        <ActivityNotification :notification='notification' :className="className"></ActivityNotification>
+        <span class="time-activity">{{time}}</span>
       </el-col>
-      <el-col :xs="10" :sm="10" :md="10" :lg="10" :xl="10" class="center-left">
-        <span class="from">{{sender}}</span>
-        <span class="last-message">{{lastMessage}}</span>
+      <el-col :xs="14" :sm="14" :md="14" :lg="14" :xl="14" class="center-left-activity">
+        <span class="from-activity">{{sender}}</span>
+        <span class="message-activity">{{activityMessage}}</span>
       </el-col>
-      <el-col :xs="4" :sm="4" :md="4" :lg="4" :xl="4" class="center-left">
-          <span class="last-message">
+      <el-col :xs="4" :sm="4" :md="4" :lg="4" :xl="4" class="center-left-activity">
+          <span class="date-activity">
             {{date}}
           </span>
       </el-col>
@@ -20,52 +20,65 @@
   </div>
 </template>
 <script>
+import ActivityNotification from './ActivityNotification.vue'
 export default {
-  props: ['sender', 'lastMessage', 'date', 'checked'],
+  components: {
+    ActivityNotification
+  },
+  props: ['sender', 'activityMessage', 'date', 'time', 'notification', 'className'],
   data () {
     return {
     }
   }
 }
 </script>
-<style>
+<style lang="scss">
   @import '../../assets/font/fontello/css/fontello.css';
-  .center
+  @import '../../assets/styles/varibles';
+  .center-activity
   {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-right: 1px solid $grey-my-projects-darker;
   }
-  .center-left
+  .center-left-activity
   {
     display: flex;
     flex-direction: column;
   }
   .row-bg-activity
   {
-    padding-top: 1em;
-    padding-bottom: 1em;
-    border: 1px solid #cccccc;
+    min-height: 5em;
+    border: 1px solid $grey-my-projects-darker;
   }
-  .from
+  .from-activity
   {
     font-size: 0.9em;
     font-weight: 700;
     align-self: flex-start;
+    padding-left: 1em;
+    padding-top: 1em;
   }
-  .last-message
+  .message-activity
   {
     font-size: 0.8em;
     font-weight: 500;
     align-self: flex-start;
-    text-align: left;
   }
-  .time
+  .time-activity
   {
     padding-top: 0.1em;
     font-size: 0.8em;
     font-weight: 500;
-    color: #cccccc;
+    color: $grey-my-projects-darker;
+  }
+  .date-activity
+  {
+    font-size: 0.8em;
+    font-weight: 500;
+    align-self: flex-start;
+    padding-top: 1em;
   }
 </style>
