@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <span>
     <el-row class="header" type="flex" justify="center">
       <el-col :span="4" class="my-projects-icon"><i class="icon-activity"></i></el-col>
       <el-col :span="20"><span class="projects-label">ACTIVITY</span></el-col>
@@ -7,8 +7,12 @@
     <el-row class="message-container">
       <ActivityCard sender='Mark Moe' lastMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018'></ActivityCard>
       <ActivityCard sender='Mark Joe' lastMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018'></ActivityCard>
+      <ActivityCard sender='Mark Joe' lastMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018'></ActivityCard>
+      <ActivityCard sender='Mark Joe' lastMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018'></ActivityCard>
+      <ActivityCard sender='Mark Joe' lastMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018'></ActivityCard>
+      <ActivityCard sender='Mark Joe' lastMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018'></ActivityCard>
     </el-row>
-  </div>
+  </span>
 </template>
 <script>
 import ActivityCard from './ActivityCard.vue'

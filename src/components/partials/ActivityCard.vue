@@ -1,11 +1,11 @@
 <template>
   <div>
     <el-row type="flex" class="row-bg-activity" justify="center">
-      <el-col :xs="10" :sm="10" :md="10" :lg="10" :xl="10" size="medium" class="center">
-        <el-tag type="success">Requested licence</el-tag>
+      <el-col :xs="8" :sm="8" :md="8" :lg="8" :xl="8" size="medium" class="center">
+        <ActivityNotification notification="Requested Licence" color="#8879BF"></ActivityNotification>
         <span class="time">11:10 am</span>
       </el-col>
-      <el-col :xs="10" :sm="10" :md="10" :lg="10" :xl="10" class="center-left">
+      <el-col :xs="14" :sm="14" :md="14" :lg="14" :xl="14" class="center-left">
         <span class="from">{{sender}}</span>
         <span class="last-message">{{lastMessage}}</span>
       </el-col>
@@ -20,7 +20,11 @@
   </div>
 </template>
 <script>
+import ActivityNotification from './ActivityNotification.vue'
 export default {
+  components: {
+    ActivityNotification
+  },
   props: ['sender', 'lastMessage', 'date', 'checked'],
   data () {
     return {
@@ -64,7 +68,7 @@ export default {
   .time
   {
     padding-top: 0.1em;
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-weight: 500;
     color: #cccccc;
   }
