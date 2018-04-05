@@ -10,12 +10,12 @@
         <div class="green-circle"></div>
       </el-col>
       <el-col :xs="13" :sm="13" :md="13" :lg="13" :xl="13" class="center-left">
-        <span class="from">John Doe</span>
-        <span class="last-message">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+        <span class="from">{{sender}}</span>
+        <span class="last-message">{{lastMessage}}</span>
       </el-col>
         <el-col :xs="6" :sm="6" :md="6" :lg="6" :xl="6" class="center-left">
           <span class="last-message">
-            Sep. 2018
+            {{date}}
           </span>
         </el-col>
       </el-row>
@@ -25,11 +25,9 @@
 </template>
 <script>
 export default {
-  components: {
-  },
+  props: ['sender', 'lastMessage', 'date', 'checked'],
   data () {
     return {
-      checked: false
     }
   }
 }
@@ -39,7 +37,7 @@ export default {
 .green-circle
 {
   border-radius: 50%;
-  background-color: green;
+  background-color: #66CD6C;
   width: 0.7em;
   height: 0.7em;
 }
