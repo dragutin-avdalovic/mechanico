@@ -9,6 +9,8 @@
       <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New Project" className="tirquise-activity"></ActivityCard>
       <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New Product" className="blue-activity"></ActivityCard>
       <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New User" className="purple-activity"></ActivityCard>
+      <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New User" className="purple-activity"></ActivityCard>
+      <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New User" className="purple-activity"></ActivityCard>
     </el-row>
   </span>
 </template>
@@ -30,6 +32,5 @@ export default {
   .message-container
   {
     overflow: auto;
-    max-height: 310px;
   }
 </style>

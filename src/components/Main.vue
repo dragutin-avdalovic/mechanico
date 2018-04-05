@@ -1,5 +1,5 @@
 <template>
-  <el-container style="height: 100vh; border: 0px solid #eee">
+  <el-container style="height: 100vh;">
     <el-main>
       <el-row type="flex" class="row-bg" justify="flex-start">
         <el-col :span="18">
@@ -83,20 +83,21 @@ export default {
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style lang="scss">
+@import '../assets/styles/varibles';
 .row-bg {
   margin: 0.5em;
-  background-color: #cccccc;
+  background-color: $grey-my-projects-darker;
 }
 .row-bg-bottom {
-  background-color: #cccccc;
+  background-color: $grey-my-projects-darker;
   min-height: calc(100vh - 415px);
 }
 .grid-content
 {
   min-height: 2.5em;
   min-width: 15em;
-  background-color: #E9E9E9;
+  background-color: $grey-my-projects-lighter;
 }
 .grid-content-bottom
 {
@@ -104,11 +105,11 @@ export default {
   height: 100%;
   margin-right: 0.5em;
   margin-left: 0.5em;
-  background-color: #E9E9E9;
+  background-color:$grey-my-projects-lighter;
 }
 .el-main
 {
-  background-color: #cccccc;
+  background-color: $grey-my-projects-darker;
   padding: 0;
 }
 </style>

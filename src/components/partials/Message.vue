@@ -32,12 +32,13 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="scss">
   @import '../../assets/font/fontello/css/fontello.css';
+  @import '../../assets/styles/varibles';
 .green-circle
 {
   border-radius: 50%;
-  background-color: #66CD6C;
+  background-color: $green-my-projects;
   width: 0.7em;
   height: 0.7em;
 }
@@ -57,7 +58,7 @@ export default {
 {
   padding-top: 1em;
   padding-bottom: 1em;
-  background-color: #fff;
+  background-color: $white;
 }
 .from
 {

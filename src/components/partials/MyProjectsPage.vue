@@ -61,17 +61,18 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="scss">
 @import '../../assets/font/fontello/css/fontello.css';
+@import '../../assets/styles/varibles';
 .header {
-  background-color: #0D72B9;
-  color: white;
+  background-color: $blue-my-projects;
+  color: $white;
 }
 .my-projects-icon
 {
   margin-top: auto;
   margin-bottom: auto;
-  color: white;
+  color: $white;
   font-size: 1.5em;
 }
 .projects-label
@@ -89,16 +90,16 @@ export default {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: $grey-my-projects-lighter;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #0D72B9;
+  background: $blue-my-projects;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #005580;
+  background: $blue-my-projects;
 }
 </style>
