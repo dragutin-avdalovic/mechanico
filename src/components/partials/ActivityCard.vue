@@ -42,11 +42,13 @@ export default {
     align-items: center;
     flex-direction: column;
     border-right: 1px solid $grey-my-projects-darker;
+    background-color: $white;
   }
   .center-left-activity
   {
     display: flex;
     flex-direction: column;
+    background-color: $white;
   }
   .row-bg-activity
   {

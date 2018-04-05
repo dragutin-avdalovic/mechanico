@@ -33,6 +33,6 @@ export default {
   {
     font-size: 0.7em;
     font-weight: 500;
-    color:#ffffff;
+    color:$grey-my-projects-lighter;
   }
 </style>
