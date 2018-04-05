@@ -55,8 +55,9 @@ export default {
 }
 .row-bg-message
 {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: #fff;
 }
 .from
 {

@@ -5,15 +5,16 @@
       <el-col :span="20"><span class="projects-label">ACTIVITY</span></el-col>
     </el-row>
     <el-row class="message-container">
-      <Message sender='Mark' lastMessage='Hey there' date='Sep 2018'></Message>
+      <ActivityCard sender='Mark Moe' lastMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018'></ActivityCard>
+      <ActivityCard sender='Mark Joe' lastMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018'></ActivityCard>
     </el-row>
   </div>
 </template>
 <script>
-import Message from './Message.vue'
+import ActivityCard from './ActivityCard.vue'
 export default {
   components: {
-    Message
+    ActivityCard
   },
   data () {
     return {
