@@ -5,12 +5,10 @@
       <el-col :span="20"><span class="projects-label">ACTIVITY</span></el-col>
     </el-row>
     <el-row class="message-container">
-      <ActivityCard sender='Mark Moe' lastMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018'></ActivityCard>
-      <ActivityCard sender='Mark Joe' lastMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018'></ActivityCard>
-      <ActivityCard sender='Mark Joe' lastMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018'></ActivityCard>
-      <ActivityCard sender='Mark Joe' lastMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018'></ActivityCard>
-      <ActivityCard sender='Mark Joe' lastMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018'></ActivityCard>
-      <ActivityCard sender='Mark Joe' lastMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018'></ActivityCard>
+      <ActivityCard sender='Mark Moe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="Requested License" className="orange-activity"></ActivityCard>
+      <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New Project" className="tirquise-activity"></ActivityCard>
+      <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New Product" className="blue-activity"></ActivityCard>
+      <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New User" className="purple-activity"></ActivityCard>
     </el-row>
   </span>
 </template>
