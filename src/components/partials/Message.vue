@@ -24,42 +24,11 @@
   </div>
 </template>
 <script>
-import TableRequest from './TableRequest.vue'
-import TableHeader from './TableHeader.vue'
 export default {
   components: {
-    TableRequest,
-    TableHeader
   },
   data () {
     return {
-      fields: [{
-        manufacturer: 'Project 1',
-        product: 'Fan Coil',
-        status: 'Approved',
-        type: 'success'
-      }, {
-        manufacturer: 'Project 2',
-        product: 'Fan Coil',
-        status: 'Requested',
-        type: ''
-      }, {
-        manufacturer: 'Project 3',
-        product: 'Fan Coil',
-        status: 'Denied',
-        type: 'danger'
-      }, {
-        manufacturer: 'Project 3',
-        product: 'Fan Coil',
-        status: 'Denied',
-        type: 'danger'
-      }, {
-        manufacturer: 'Project 3',
-        product: 'Fan Coil',
-        status: 'Denied',
-        type: 'danger'
-      }],
-      input_search: '',
       checked: false
     }
   }
