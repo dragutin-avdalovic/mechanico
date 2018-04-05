@@ -2,6 +2,10 @@
   <el-table
     ref="multipleTable"
     class="multipleTable"
+    v-loading="loading2"
+    element-loading-text="Loading..."
+    element-loading-spinner="el-icon-loading"
+    element-loading-background="rgba(0, 0, 0, 0.8)"
     :data="fields"
     :default-sort = "{prop: 'projectName', order: 'ascending'}"
     style="width: 100%"
@@ -27,7 +31,8 @@ export default {
   },
   data () {
     return {
-      multipleSelection: []
+      multipleSelection: [],
+      loading2: false
     }
   },
   props: ['fields', 'columns', 'selectable', 'editable'],

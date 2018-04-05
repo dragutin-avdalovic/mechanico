@@ -24,7 +24,7 @@
         </el-col>
         <el-col :span="8">
           <div class="grid-content-bottom">
-            <Inbox></Inbox>
+            <Activity></Activity>
           </div>
         </el-col>
       </el-row>
@@ -37,12 +37,14 @@ import ElFooter from '../../node_modules/element-ui/packages/footer/src/main'
 import MyProjectsPage from './partials/MyProjectsPage.vue'
 import ProductRequest from './partials/ProductRequest.vue'
 import Inbox from './partials/Inbox.vue'
+import Activity from './partials/Activity.vue'
 export default {
   components: {
     ElFooter,
     MyProjectsPage,
     ProductRequest,
-    Inbox
+    Inbox,
+    Activity
   },
   name: 'HelloWorld',
   methods: {

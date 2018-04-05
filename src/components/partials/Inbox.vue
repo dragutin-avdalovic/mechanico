@@ -15,10 +15,12 @@
           </el-input>
       </el-col>
     </el-row>
-    <el-row>
-      <Message></Message>
-      <Message></Message>
-      <Message></Message>
+    <el-row class="message-container">
+      <Message sender='Mark' lastMessage='Hey there' date='Sep 2018'></Message>
+      <Message sender='Vildan' lastMessage='može se to uraditi' date='March 2018'></Message>
+      <Message sender='Anja' lastMessage='Volim te' date='Sep 2018'></Message>
+      <Message sender='Vesna' lastMessage='Koliko vam vremena treba' date='July 2018'></Message>
+      <Message sender='Lejla' lastMessage='Dragoo' date='Sep 2018'></Message>
     </el-row>
   </div>
 </template>
@@ -34,32 +36,6 @@ export default {
   },
   data () {
     return {
-      fields: [{
-        manufacturer: 'Project 1',
-        product: 'Fan Coil',
-        status: 'Approved',
-        type: 'success'
-      }, {
-        manufacturer: 'Project 2',
-        product: 'Fan Coil',
-        status: 'Requested',
-        type: ''
-      }, {
-        manufacturer: 'Project 3',
-        product: 'Fan Coil',
-        status: 'Denied',
-        type: 'danger'
-      }, {
-        manufacturer: 'Project 3',
-        product: 'Fan Coil',
-        status: 'Denied',
-        type: 'danger'
-      }, {
-        manufacturer: 'Project 3',
-        product: 'Fan Coil',
-        status: 'Denied',
-        type: 'danger'
-      }],
       input_search: ''
     }
   }
@@ -67,4 +43,9 @@ export default {
 </script>
 <style>
   @import '../../assets/font/fontello/css/fontello.css';
+.message-container
+{
+  overflow: auto;
+  max-height: 310px;
+}
 </style>
