@@ -10,11 +10,11 @@
         <div class="green-circle"></div>
       </el-col>
       <el-col :xs="13" :sm="13" :md="13" :lg="13" :xl="13" class="center-left">
-        <span>John Doe</span>
-        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+        <span class="from">John Doe</span>
+        <span class="last-message">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
       </el-col>
         <el-col :xs="6" :sm="6" :md="6" :lg="6" :xl="6" class="center-left">
-          <span>
+          <span class="last-message">
             Sep. 2018
           </span>
         </el-col>
@@ -24,42 +24,11 @@
   </div>
 </template>
 <script>
-import TableRequest from './TableRequest.vue'
-import TableHeader from './TableHeader.vue'
 export default {
   components: {
-    TableRequest,
-    TableHeader
   },
   data () {
     return {
-      fields: [{
-        manufacturer: 'Project 1',
-        product: 'Fan Coil',
-        status: 'Approved',
-        type: 'success'
-      }, {
-        manufacturer: 'Project 2',
-        product: 'Fan Coil',
-        status: 'Requested',
-        type: ''
-      }, {
-        manufacturer: 'Project 3',
-        product: 'Fan Coil',
-        status: 'Denied',
-        type: 'danger'
-      }, {
-        manufacturer: 'Project 3',
-        product: 'Fan Coil',
-        status: 'Denied',
-        type: 'danger'
-      }, {
-        manufacturer: 'Project 3',
-        product: 'Fan Coil',
-        status: 'Denied',
-        type: 'danger'
-      }],
-      input_search: '',
       checked: false
     }
   }
@@ -84,12 +53,24 @@ export default {
 .center-left
 {
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
 }
 .row-bg-message
 {
-  padding-top: 1em;
-  padding-bottom: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.from
+{
+  font-size: 0.9em;
+  font-weight: 700;
+  align-self: flex-start;
+}
+.last-message
+{
+  font-size: 0.8em;
+  font-weight: 500;
+  align-self: flex-start;
+  text-align: left;
 }
 </style>
