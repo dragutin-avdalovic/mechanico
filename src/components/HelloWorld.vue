@@ -137,6 +137,7 @@
 <script>
 import ElHeader from '../../node_modules/element-ui/packages/header/src/main'
 import ElFooter from '../../node_modules/element-ui/packages/footer/src/main'
+
 export default {
   components: {
     ElFooter,
