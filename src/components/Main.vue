@@ -8,13 +8,15 @@
           </div>
         </el-col>
         <el-col :span="6">
-          <h1>status-irma</h1>
+          <div class="grid-content">
+            <Status></Status>
+          </div>
         </el-col>
       </el-row>
       <el-row type="flex" class="row-bg-bottom" justify="flex-start">
         <el-col :span="8">
           <div class="grid-content-bottom">
-          <ProductRequest></ProductRequest>
+            <ProductRequest></ProductRequest>
           </div>
         </el-col>
         <el-col :span="8">
@@ -38,13 +40,16 @@ import MyProjectsPage from './partials/MyProjectsPage.vue'
 import ProductRequest from './partials/ProductRequest.vue'
 import Inbox from './partials/Inbox.vue'
 import Activity from './partials/Activity.vue'
+import Status from './partials/Status.vue'
+
 export default {
   components: {
     ElFooter,
     MyProjectsPage,
     ProductRequest,
     Inbox,
-    Activity
+    Activity,
+    Status
   },
   name: 'HelloWorld',
   methods: {
