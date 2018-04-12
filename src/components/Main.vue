@@ -103,6 +103,8 @@ export default {
   min-height: 2.5em;
   min-width: 15em;
   background-color: $grey-my-projects-lighter;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
 }
 .grid-content-bottom
 {
