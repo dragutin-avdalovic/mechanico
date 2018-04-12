@@ -33,7 +33,7 @@
 				</el-col>
 				<el-col :xs="24" :sm="24" :md="9" :lg="9" :xl="9">				
 					<el-form-item class="Item2" label="Year">
-						<el-input v-model="form.name"></el-input>
+						<el-input v-model="form.year"></el-input>
 					</el-form-item>
 				</el-col>
 			</el-row>
@@ -86,6 +86,5 @@ el-form-item {
 	display: flex;
 	justify-content: center;
 	}
-
 
 </style>
