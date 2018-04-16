@@ -28,19 +28,19 @@
     <el-row>
       <el-col :span="8">
         <div>
-          <el-progress class="circle" type="circle" :percentage="0"></el-progress>
+          <el-progress :width=90 class="circle" type="circle" :percentage="0"></el-progress>
           <span class="info">New Project</span>
         </div>
       </el-col>
       <el-col :span="8">
         <div>
-          <el-progress class="circle" type="circle" :percentage="25"></el-progress>
+          <el-progress :width=90 class="circle" type="circle" :percentage="25"></el-progress>
           <span class="info">Total Project</span>
         </div>
       </el-col>
       <el-col :span="8">
         <div>
-          <el-progress class="circle" type="circle" :percentage="80" color="#8e71c7"></el-progress>
+          <el-progress :width=90 class="circle" type="circle" :percentage="80" color="#8e71c7"></el-progress>
           <span class="info">Approved Licenses</span>
         </div>
       </el-col>
@@ -67,9 +67,10 @@ export default {
     height: 100px;
   }
   .status-bg{
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
     background-color: $white;
+    min-height: 22em;
   }
   .divider{
     border: 1px solid $grey-my-projects-darker;

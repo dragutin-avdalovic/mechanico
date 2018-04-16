@@ -17,10 +17,10 @@
     </el-row>
     <el-row class="message-container">
       <Message sender='Mark' lastMessage='Hey there' date='Sep 2018'></Message>
-      <Message sender='Vildan' lastMessage='može se to uraditi' date='March 2018'></Message>
-      <Message sender='Anja' lastMessage='Volim te' date='Sep 2018'></Message>
-      <Message sender='Vesna' lastMessage='Koliko vam vremena treba' date='July 2018'></Message>
-      <Message sender='Lejla' lastMessage='Dragoo' date='Sep 2018'></Message>
+      <Message sender='Dan' lastMessage='Hey there' date='March 2018'></Message>
+      <Message sender='Phill' lastMessage='Hey there' date='Sep 2018'></Message>
+      <Message sender='Vesna' lastMessage='Hey there' date='July 2018'></Message>
+      <Message sender='Lejla' lastMessage='Hey there' date='Sep 2018'></Message>
     </el-row>
   </div>
 </template>
