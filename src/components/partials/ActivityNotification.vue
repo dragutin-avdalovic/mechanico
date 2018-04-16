@@ -35,4 +35,10 @@ export default {
     font-weight: 500;
     color:$grey-my-projects-lighter;
   }
+  /*.header-low{*/
+    /*display: flex;*/
+    /*justify-items: center;*/
+    /*align-items: center;*/
+    /*text-align: left;*/
+  /*}*/
 </style>

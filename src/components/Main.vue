@@ -21,7 +21,7 @@
         </el-col>
         <el-col :span="8">
           <div class="grid-content-bottom">
-            <Inbox></Inbox>
+            <MessageTitle></MessageTitle>
           </div>
         </el-col>
         <el-col :span="8">
@@ -41,6 +41,7 @@ import ProductRequest from './partials/ProductRequest.vue'
 import Inbox from './partials/Inbox.vue'
 import Activity from './partials/Activity.vue'
 import Status from './partials/Status.vue'
+import MessageTitle from './partials/MessageTitle.vue'
 
 export default {
   components: {
@@ -49,7 +50,8 @@ export default {
     ProductRequest,
     Inbox,
     Activity,
-    Status
+    Status,
+    MessageTitle
   },
   name: 'HelloWorld',
   methods: {
