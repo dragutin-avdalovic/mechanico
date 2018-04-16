@@ -2,24 +2,24 @@
   <el-container style="height: 100vh;">
     <el-main>
       <el-row type="flex" class="row-bg" justify="flex-start">
-        <el-col :span="18">
+        <el-col :span="16">
           <div class="grid-content">
             <MyProjectsPage></MyProjectsPage>
           </div>
         </el-col>
-        <el-col :span="6">
+        <el-col :span="8">
           <div class="grid-content">
             <Status></Status>
           </div>
         </el-col>
       </el-row>
       <el-row type="flex" class="row-bg-bottom" justify="flex-start">
-        <el-col :span="8">
+        <el-col :span="9">
           <div class="grid-content-bottom">
             <ProductRequest></ProductRequest>
           </div>
         </el-col>
-        <el-col :span="8">
+        <el-col :span="7">
           <div class="grid-content-bottom">
             <Inbox></Inbox>
           </div>
@@ -93,28 +93,33 @@ export default {
 <style lang="scss">
 @import '../assets/styles/varibles';
 .row-bg {
-  margin: 0.5em;
   background-color: $grey-my-projects-darker;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 .row-bg-bottom {
   background-color: $grey-my-projects-darker;
   min-height: calc(100vh - 415px);
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
 }
 .grid-content
 {
   min-height: 2.5em;
   min-width: 15em;
   background-color: $grey-my-projects-lighter;
-  margin-right: 0.5em;
   margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 .grid-content-bottom
 {
-  min-width: 30vw;
   height: 100%;
-  margin-right: 0.5em;
-  margin-left: 0.5em;
   background-color:$grey-my-projects-lighter;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 .el-main
 {

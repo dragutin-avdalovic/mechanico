@@ -28,20 +28,20 @@
     <el-row>
       <el-col :span="8">
         <div>
-          <el-progress :width=90 class="circle" type="circle" :percentage="0"></el-progress>
-          <span class="info">New Project</span>
+          <el-progress :width=100 class="circle" type="circle" :percentage="0"></el-progress>
+          <div class="info">New Project</div>
         </div>
       </el-col>
       <el-col :span="8">
         <div>
-          <el-progress :width=90 class="circle" type="circle" :percentage="25"></el-progress>
-          <span class="info">Total Project</span>
+          <el-progress :width=100 class="circle" type="circle" :percentage="25"></el-progress>
+          <div class="info">Total Project</div>
         </div>
       </el-col>
       <el-col :span="8">
         <div>
-          <el-progress :width=90 class="circle" type="circle" :percentage="80" color="#8e71c7"></el-progress>
-          <span class="info">Approved Licenses</span>
+          <el-progress :width=100 class="circle" type="circle" :percentage="80" color="#8e71c7"></el-progress>
+          <div class="info">Approved Licenses</div>
         </div>
       </el-col>
     </el-row>
