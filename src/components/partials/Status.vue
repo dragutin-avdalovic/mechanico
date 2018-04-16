@@ -58,7 +58,7 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped="">
   @import '../../assets/font/fontello/css/fontello.css';
   @import '../../assets/styles/varibles';
   .profile-img{
@@ -96,4 +96,5 @@ export default {
     float: right;
     margin-right: 1em;
   }
+
 </style>
