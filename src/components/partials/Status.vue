@@ -91,6 +91,7 @@ export default {
     margin-bottom: 1em;
   }
   .edit{
+    cursor: pointer;
     display: flex;
     float: right;
     margin-right: 1em;
