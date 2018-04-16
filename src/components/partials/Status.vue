@@ -83,10 +83,10 @@ export default {
     text-align: left;
   }
   .contact-info{
-
+    font-size: 1.1em;
   }
   .info{
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
   .circle{
     margin-bottom: 1em;
@@ -96,6 +96,7 @@ export default {
     display: flex;
     float: right;
     margin-right: 1em;
+    font-size: 1.4em;
   }
 
 </style>
