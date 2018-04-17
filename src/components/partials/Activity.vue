@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <div class="activity-container">
     <el-row class="header" type="flex" justify="center">
       <el-col :span="4" class="my-projects-icon"><i class="icon-activity"></i></el-col>
       <el-col :span="20"><span class="projects-label">ACTIVITY</span></el-col>
@@ -11,8 +11,10 @@
       <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New User" className="purple-activity"></ActivityCard>
       <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New User" className="purple-activity"></ActivityCard>
       <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New User" className="purple-activity"></ActivityCard>
+      <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New User" className="purple-activity"></ActivityCard>
+      <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New User" className="purple-activity"></ActivityCard>
     </el-row>
-  </span>
+  </div>
 </template>
 <script>
 import ActivityCard from './ActivityCard.vue'
@@ -31,6 +33,7 @@ export default {
   @import '../../assets/font/fontello/css/fontello.css';
   .message-container
   {
+    max-height: 50vh;
     overflow: auto;
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="product-container">
     <el-row class="header" type="flex" justify="center">
       <el-col :span="4" class="my-projects-icon"><i class="icon-project"></i></el-col>
       <el-col :span="20"><span class="projects-label">PRODUCT REQUEST</span></el-col>
@@ -38,6 +38,12 @@ export default {
         product: 'Fan Coil',
         status: 'Requested',
         type: ''
+      },
+      {
+        manufacturer: 'Project 2',
+        product: 'Fan Coil',
+        status: 'Requested',
+        type: ''
       }, {
         manufacturer: 'Project 3',
         product: 'Fan Coil',
@@ -49,6 +55,24 @@ export default {
         status: 'Denied',
         type: 'danger'
       }, {
+        manufacturer: 'Project 3',
+        product: 'Fan Coil',
+        status: 'Denied',
+        type: 'danger'
+      },
+      {
+        manufacturer: 'Project 3',
+        product: 'Fan Coil',
+        status: 'Denied',
+        type: 'danger'
+      },
+      {
+        manufacturer: 'Project 3',
+        product: 'Fan Coil',
+        status: 'Denied',
+        type: 'danger'
+      },
+      {
         manufacturer: 'Project 3',
         product: 'Fan Coil',
         status: 'Denied',
