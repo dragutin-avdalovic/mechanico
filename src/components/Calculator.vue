@@ -40,9 +40,6 @@ export default {
 .el-upload-dragger{
   background-color: #606060;
   margin-top:25px;
-  width:100% !important; 
+  width:100% !important;
 }
-
-
-
 </style>
