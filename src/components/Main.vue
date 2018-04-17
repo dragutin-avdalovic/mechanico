@@ -97,18 +97,18 @@ export default {
   margin-top: 0.5em;
   margin-left: 0.5em;
   margin-right: 0.5em;
+
 }
 .row-bg-bottom {
   background-color: $grey-my-projects-darker;
-  min-height: calc(100vh - 415px);
   margin-top: 0.5em;
   margin-left: 0.5em;
   margin-right: 0.5em;
   margin-bottom: 0.5em;
+
 }
 .grid-content
 {
-  min-height: 2.5em;
   min-width: 15em;
   background-color: $grey-my-projects-lighter;
   margin-left: 0.5em;
@@ -116,7 +116,6 @@ export default {
 }
 .grid-content-bottom
 {
-  height: 100%;
   background-color:$grey-my-projects-lighter;
   margin-left: 0.5em;
   margin-right: 0.5em;

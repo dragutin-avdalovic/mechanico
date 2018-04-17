@@ -12,6 +12,7 @@
       <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New User" className="purple-activity"></ActivityCard>
       <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New User" className="purple-activity"></ActivityCard>
       <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New User" className="purple-activity"></ActivityCard>
+      <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' date='Sep 2018' time="11:00 am" notification="New User" className="purple-activity"></ActivityCard>
     </el-row>
   </div>
 </template>
@@ -32,11 +33,7 @@ export default {
   @import '../../assets/font/fontello/css/fontello.css';
   .message-container
   {
+    max-height: 50vh;
     overflow: auto;
-    margin-bottom: 0;
-    min-height: 20em;
-  }
-  .activity-container
-  {
   }
 </style>
