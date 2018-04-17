@@ -41,6 +41,7 @@ import ProductRequest from './partials/ProductRequest.vue'
 import Inbox from './partials/Inbox.vue'
 import Activity from './partials/Activity.vue'
 import Status from './partials/Status.vue'
+import MessageTitle from './partials/MessageTitle.vue'
 
 export default {
   components: {
@@ -49,7 +50,8 @@ export default {
     ProductRequest,
     Inbox,
     Activity,
-    Status
+    Status,
+    MessageTitle
   },
   name: 'HelloWorld',
   methods: {
@@ -103,6 +105,8 @@ export default {
   min-height: 2.5em;
   min-width: 15em;
   background-color: $grey-my-projects-lighter;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
 }
 .grid-content-bottom
 {
