@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@/components/Main'
-import ProjectForm from '@/components/partials/ProjectForm'
+import Calculator from '@/components/Calculator'
 
 Vue.use(Router)
 
@@ -13,9 +13,9 @@ export default new Router({
       component: Main
     },
     {
-      path: '/project-form',
-      name: 'ProjectForm',
-      component: ProjectForm
+      path: '/calculator',
+      name: 'Calculator',
+      component: Calculator
     }
   ]
 })

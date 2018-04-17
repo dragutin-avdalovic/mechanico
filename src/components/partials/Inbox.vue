@@ -28,6 +28,7 @@
     </el-row>
   </div>
 </template>
+
 <script>
 import TableRequest from './TableRequest.vue'
 import TableHeader from './TableHeader.vue'
