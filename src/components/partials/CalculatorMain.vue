@@ -1,20 +1,33 @@
 <template>
-	<div class="image">
-		<img src="@/assets/images/calculator.png" alt="snipped picture">
- 	</div>
+	<div class="tab">
+	  <el-tabs v-model="activeName" @tab-click="handleClick">
+	    <el-tab-pane label="FanCoil" name="first">FanCoil</el-tab-pane>
+	    <el-tab-pane label="Chiller" name="second">Chiller</el-tab-pane>
+	    <el-tab-pane label="DryColler" name="third">DryColler</el-tab-pane>
+	    <el-tab-pane label="Condenser" name="fourth">Condenser</el-tab-pane>
+	    <el-tab-pane label="AHU" name="fifth">AHU</el-tab-pane>
+	  </el-tabs>
+	</div>
 </template>
 
 <script>
-export default {
-}
+  export default {
+    data() {
+      return {
+        activeName: 'first'
+      };
+    },
+    methods: {
+      handleClick(tab, event) {
+        console.log(tab, event);
+      }
+    }
+  };
 </script>
 
 <style scoped>
-
-.image{
-	display: flex;
-	justify-content: center;
-	margin-top: 280px;
+.tab{
+	padding-top: 20px;
+	background-color: #424242;
 }
-
 </style>
