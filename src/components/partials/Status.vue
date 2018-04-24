@@ -9,13 +9,13 @@
     <el-row>
       <el-col :span="12">
         <div>
-          <img class="profile-img" src="../../assets/images/img_avatar2.png" alt="Avatar">
+          <img class="profile-img" src="../../../static/images/img_avatar2.png" alt="Avatar">
         </div>
       </el-col>
       <el-col :span="12" class="">
         <div class="status">
-        <span class=""><h3 style="margin: 0;">John Doe</h3></span>
-        <span class="info">Company Name</span>
+          <span class=""><h3 style="margin: 0;">John Doe</h3></span>
+          <span class="info">Company Name</span>
         </div>
         <div class="status contact-info">
           <span class="info"><i class="icon-location"></i>London, UK</span>
@@ -50,48 +50,55 @@
 
 <script>
 export default {
-  components: {
-  },
+  components: {},
   data () {
-    return {
-    }
+    return {}
   }
 }
 </script>
-<style lang="scss" scoped="">
+
+<style lang="scss" scoped>
   @import '../../assets/font/fontello/css/fontello.css';
   @import '../../assets/styles/varibles';
-  .profile-img{
+
+  .profile-img {
     border-radius: 50%;
     width: 100px;
     height: 100px;
   }
-  .status-bg{
+
+  .status-bg {
     padding-top: 1.5em;
     padding-bottom: 1.5em;
     background-color: $white;
     min-height: 22em;
   }
-  .divider{
+
+  .divider {
     border: 1px solid $grey-my-projects-darker;
     margin: 2em;
   }
-  .status{
+
+  .status {
     margin-top: 1em;
     display: flex;
     flex-direction: column;
     text-align: left;
   }
-  .contact-info{
+
+  .contact-info {
     font-size: 1.1em;
   }
-  .info{
+
+  .info {
     font-size: 0.9em;
   }
-  .circle{
+
+  .circle {
     margin-bottom: 1em;
   }
-  .edit{
+
+  .edit {
     cursor: pointer;
     display: flex;
     float: right;

@@ -61,7 +61,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .Modal {
     width: 100%;
   }
@@ -92,5 +92,4 @@ export default {
     display: flex;
     justify-content: center;
   }
-
 </style>

@@ -20,29 +20,28 @@
 <script>
 import CalculatorSidebar from '@/components/partials/CalculatorSidebar'
 import CalculatorMain from '@/components/partials/CalculatorMain'
+
 export default {
   components: {
     CalculatorSidebar,
     CalculatorMain
   }
 }
-
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
-<style lang="scss">
-.el-upload {
-  width:100% !important;
-}
-.grid-content{
-  height:800px;
-}
-.el-upload-dragger{
-  background-color: #606060;
-  margin-top:25px;
-  width:100% !important; 
-}
+<style lang="scss" scoped>
+  .el-upload {
+    width: 100% !important;
+  }
 
+  .grid-content {
+    height: 800px;
+  }
 
-
+  .el-upload-dragger {
+    background-color: #606060;
+    margin-top: 25px;
+    width: 100% !important;
+  }
 </style>

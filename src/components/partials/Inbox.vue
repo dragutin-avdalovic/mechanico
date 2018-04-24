@@ -6,13 +6,13 @@
     </el-row>
     <el-row type="flex" class="row-header">
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-          <el-button type="info" size="mini" icon="icon-trash-empty"></el-button>
-          <el-button type="primary" size="mini">Compose Mail</el-button>
+        <el-button type="info" size="mini" icon="icon-trash-empty"></el-button>
+        <el-button type="primary" size="mini">Compose Mail</el-button>
       </el-col>
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-          <el-input  size="mini" placeholder="Search messages" v-model="input_search" clearable>
-            <el-button slot="append" type="primary" icon="icon-search"></el-button>
-          </el-input>
+        <el-input size="mini" placeholder="Search messages" v-model="input_search" clearable>
+          <el-button slot="append" type="primary" icon="icon-search"></el-button>
+        </el-input>
       </el-col>
     </el-row>
     <el-row class="inbox-container">
@@ -33,6 +33,7 @@
 import TableRequest from './TableRequest.vue'
 import TableHeader from './TableHeader.vue'
 import Message from './Message.vue'
+
 export default {
   components: {
     TableRequest,
@@ -46,10 +47,11 @@ export default {
   }
 }
 </script>
-<style>
+
+<style lang="scss" scoped>
   @import '../../assets/font/fontello/css/fontello.css';
-  .inbox-container
-  {
+
+  .inbox-container {
     max-height: 44vh;
     overflow: auto;
   }
