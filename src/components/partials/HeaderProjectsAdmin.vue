@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="header-div">
     <el-tabs type="border-card">
       <el-tab-pane>
         <div slot="label" class="header">
@@ -38,17 +38,16 @@ export default {
 <style lang="scss" scoped>
   @import '../../assets/font/fontello/css/fontello.css';
   @import '../../assets/styles/varibles';
-  @import '../../assets/styles/leafs';
-  .header {
-    display: flex;
-    flex-direction: row;
-    .my-projects-icon {
-      font-size: 1.5em;
-      padding-right: 1em;
+    .header {
+      display: flex;
+      flex-direction: row;
+      .my-projects-icon {
+        font-size: 1.5em;
+        padding-right: 1em;
+      }
+      .projects-label {
+        font-weight: 500;
+        font-size: 1em;
+      }
     }
-    .projects-label {
-      font-weight: 500;
-      font-size: 1em;
-    }
-  }
 </style>
