@@ -7,9 +7,8 @@
     <el-row type="flex" class="row-header" justify="center">
       <el-col :span="24">
         <div class="grid-content">
-          <el-input class="search-input" size="mini" placeholder="Search manufacturers" v-model="input_search"
-                    clearable>
-            <el-button slot="append" type="primary" icon="icon-search"></el-button>
+          <el-input class="search-input" size="mini" placeholder="Search manufacturers" v-model="input_search" clearable>
+            <el-button size="mini" slot="append" icon="el-icon-search"></el-button>
           </el-input>
         </div>
       </el-col>
@@ -91,4 +90,38 @@ export default {
 
 <style lang="scss" scoped>
   @import '../../assets/font/fontello/css/fontello.css';
+  @import '../../assets/styles/varibles';
+  .header {
+    background-color: $blue-my-projects;
+    color: $white;
+    .my-projects-icon {
+      margin-top: auto;
+      margin-bottom: auto;
+      padding-left: 0.5em;
+      font-size: 1.5em;
+    }
+    .projects-label {
+      float: left;
+      font-weight: 500;
+      font-size: 1em;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+    }
+  }
+  .row-header
+  {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    .search-input {
+      min-width: 5em;
+      max-width: 20em;
+      float: right;
+      margin-right: 15px;
+      .el-button
+      {
+        background-color: $blue-my-projects;
+        color: white  ;
+      }
+    }
+  }
 </style>

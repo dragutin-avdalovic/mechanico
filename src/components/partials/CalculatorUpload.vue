@@ -14,13 +14,24 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      fileList: []
+    }
+  },
+  methods: {
+    handlePreview () {
+    },
+    handleRemove () {
+    }
+  }
+}
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
   .el-upload__text {
-    color: white;
+    color: white !important;
   }
-
 </style>
