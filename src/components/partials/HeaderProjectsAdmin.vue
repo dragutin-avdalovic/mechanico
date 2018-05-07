@@ -14,18 +14,20 @@
           <div class="my-projects-icon"><i class="el-icon-picture"></i></div>
           <div class="projects-label">USERS MANAGEMENT</div>
         </div>
-        lala
+        <UsersTable></UsersTable>
       </el-tab-pane>
     </el-tabs>
   </div>
 </template>
 <script>
 import Table from './Table.vue'
+import UsersTable from './UsersTable.vue'
 import TableHeader from './TableHeader.vue'
 export default {
   components: {
     Table,
-    TableHeader
+    TableHeader,
+    UsersTable
   },
   props: ['fields', 'columns', 'selectable', 'editable'],
   data () {
