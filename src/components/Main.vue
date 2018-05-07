@@ -90,39 +90,41 @@ export default {
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss">
-@import '../assets/styles/varibles';
-.row-bg {
-  background-color: $grey-my-projects-darker;
-  margin-top: 0.5em;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+<style lang="scss" scoped>
+  @import '../assets/styles/varibles';
 
-}
-.row-bg-bottom {
-  background-color: $grey-my-projects-darker;
-  margin-top: 0.5em;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  margin-bottom: 0.5em;
+  .row-bg {
+    background-color: $grey-my-projects-darker;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 
-}
-.grid-content
-{
-  min-width: 15em;
-  background-color: $grey-my-projects-lighter;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-}
-.grid-content-bottom
-{
-  background-color:$grey-my-projects-lighter;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-}
-.el-main
-{
-  background-color: $grey-my-projects-darker;
-  padding: 0;
-}
+  }
+
+  .row-bg-bottom {
+    background-color: $grey-my-projects-darker;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+
+  }
+
+  .grid-content {
+    min-width: 15em;
+    background-color: $grey-my-projects-lighter;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+
+  .grid-content-bottom {
+    background-color: $grey-my-projects-lighter;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+
+  .el-main {
+    background-color: $grey-my-projects-darker;
+    padding: 0;
+  }
 </style>

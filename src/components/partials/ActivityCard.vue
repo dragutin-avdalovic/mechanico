@@ -19,24 +19,26 @@
     </el-row>
   </div>
 </template>
+
 <script>
 import ActivityNotification from './ActivityNotification.vue'
+
 export default {
   components: {
     ActivityNotification
   },
   props: ['sender', 'activityMessage', 'date', 'time', 'notification', 'className'],
   data () {
-    return {
-    }
+    return {}
   }
 }
 </script>
-<style lang="scss">
+
+<style lang="scss" scoped>
   @import '../../assets/font/fontello/css/fontello.css';
   @import '../../assets/styles/varibles';
-  .center-activity
-  {
+
+  .center-activity {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,40 +46,40 @@ export default {
     border-right: 1px solid $grey-my-projects-darker;
     background-color: $white;
   }
-  .center-left-activity
-  {
+
+  .center-left-activity {
     display: flex;
     flex-direction: column;
     background-color: $white;
   }
-  .row-bg-activity
-  {
+
+  .row-bg-activity {
     min-height: 5em;
     border: 1px solid $grey-my-projects-darker;
   }
-  .from-activity
-  {
+
+  .from-activity {
     font-size: 0.9em;
     font-weight: 700;
     align-self: flex-start;
     padding-left: 1em;
     padding-top: 1em;
   }
-  .message-activity
-  {
+
+  .message-activity {
     font-size: 0.8em;
     font-weight: 500;
     align-self: flex-start;
   }
-  .time-activity
-  {
+
+  .time-activity {
     padding-top: 0.1em;
     font-size: 0.8em;
     font-weight: 500;
     color: $grey-my-projects-darker;
   }
-  .date-activity
-  {
+
+  .date-activity {
     font-size: 0.8em;
     font-weight: 500;
     align-self: flex-start;

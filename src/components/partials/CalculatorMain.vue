@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  data () {
+data () {
     return {
       activeName: 'first'
     }
@@ -21,11 +21,10 @@ export default {
     handleClick (tab, event) {
       console.log(tab, event)
     }
-  }
-}
+  }}
 </script>
 
-<style scoped>
+<style lang="scss"scoped>
 .tab{
 padding-top: 20px;
 background-color:#424242;

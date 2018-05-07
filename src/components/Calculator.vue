@@ -20,17 +20,17 @@
 <script>
 import CalculatorSidebar from '@/components/partials/CalculatorSidebar'
 import CalculatorMain from '@/components/partials/CalculatorMain'
+
 export default {
   components: {
     CalculatorSidebar,
     CalculatorMain
   }
 }
-
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
-<style lang="scss">
+<style lang="scss"scoped>
 .el-upload {
   width:100% !important;
 }
@@ -42,6 +42,8 @@ export default {
   margin-top:25px;
   width:100% !important;
 }
+
+
 .el-tabs__item{
   width: 53%;
   height:70px;
