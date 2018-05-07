@@ -1,24 +1,24 @@
 <template>
   <div>
-    <el-row class="header" type="flex" justify="center">
-      <el-col :span="2" class="my-projects-icon"><i class="icon-project"></i></el-col>
-      <el-col :span="22"><span class="projects-label">MY PROJECTS</span></el-col>
-    </el-row>
-    <TableHeader></TableHeader>
-    <Table :fields="fields" :columns="columns" :selectable="true" :editable="true"></Table>
+    <Header :fields="fields" :columns="columns" :selectable="true" :editable="true"></Header>
   </div>
 </template>
 <script>
 import Table from './Table.vue'
 import TableHeader from './TableHeader.vue'
+import Header from './Header.vue'
 
 export default {
   components: {
     Table,
-    TableHeader
+    TableHeader,
+    Header
   },
   data () {
     return {
+      items: [
+        {name: 'projectName', label: 'Project Name'}, {name: 'designer', label: 'Designer'}
+      ],
       columns: [
         {prop: 'projectName', label: 'Project Name'}, {prop: 'designer', label: 'Designer'},
         {prop: 'consultant', label: 'Consultant'}, {prop: 'projectSize', label: 'Project Size'},
