@@ -74,23 +74,21 @@ export default {
   .header {
     background-color: $blue-my-projects;
     color: $white;
-  }
 
-  .my-projects-icon {
-    margin-top: auto;
-    margin-bottom: auto;
-    color: $white;
-    font-size: 1.5em;
-  }
+    .my-projects-icon {
+      margin-top: auto;
+      margin-bottom: auto;
+      font-size: 1.5em;
+    }
 
-  .projects-label {
-    float: left;
-    font-weight: 500;
-    font-size: 1em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    .projects-label {
+      float: left;
+      font-weight: 500;
+      font-size: 1em;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+    }
   }
-
   /* width */
   ::-webkit-scrollbar {
     width: 10px;
