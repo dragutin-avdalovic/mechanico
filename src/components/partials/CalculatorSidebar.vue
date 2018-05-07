@@ -19,7 +19,7 @@
     <div class="content">
       <el-row :gutter="5">
         <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-          
+
 
           <CalculatorUpload></CalculatorUpload>
         </el-col>
