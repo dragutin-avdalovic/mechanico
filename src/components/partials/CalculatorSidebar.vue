@@ -13,7 +13,11 @@
     <div class="content">
       <el-row :gutter="5">
         <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+
+          <CalculatorChoose></CalculatorChoose>
+
           <CalculatorUpload></CalculatorUpload>
+
         </el-col>
       </el-row>
     <el-row justify="center" >
@@ -39,7 +43,7 @@ export default {
   }}
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 .sidebar{
   background-color:#424242;
