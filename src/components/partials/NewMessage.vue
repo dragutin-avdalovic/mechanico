@@ -17,15 +17,23 @@
       </el-row>
     </div>
     <div class="divider"></div>
-    <el-row>
-      <el-col :span="24">
-        <p>Subject</p>
-      </el-col>
-    </el-row>
-    <div class="message">message</div>
+    <div class="subject">
+      <el-row>
+        <el-col :span="24">
+          <input type="text" name="name" placeholder="Subject..">
+        </el-col>
+      </el-row>
+    </div>
+      <el-row>
+        <el-col :span="24">
+          <div class="message">
+      <textarea name="message" id="" cols="10" rows="10"></textarea>
+          </div>
+        </el-col>
+      </el-row>
     <div class="buttons">
-      <button>Send Message</button>
-      <button>Upload Files</button>
+      <el-button class="send">Send Message</el-button>
+      <el-button class="upload"><i class="el-icon-upload2"></i>Upload Files</el-button>
     </div>
   </div>
 </template>
@@ -48,30 +56,78 @@ export default {
 <style lang="scss" scoped>
   @import '../../assets/font/fontello/css/fontello.css';
   @import '../../assets/styles/varibles';
-
-  .message-container{
-    background-color: $white;
-  }
   .header {
     background-color: $blue-my-projects;
     color: $white;
+    .my-projects-icon {
+      margin-top: auto;
+      margin-bottom: auto;
+      padding-left: 2.5em;
+      font-size: 1em;
+    }
+    .projects-label {
+      float: left;
+      font-weight: 500;
+      font-size: 1em;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      padding-left: 2.5em;
+    }
+  }
+  .message-container{
+    background-color: $white;
   }
   .info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     min-height: 3em;
+    margin: 0.3em 0.3em 0 1.5em;
   }
-  p{
-    font-size: 0.8em;
-    margin: 0.4em 0.4em 0.4em 1em;
+  .subject{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 2em;
+    margin: 0em 0.3em 0 1.5em;
+  }
+  input{
+    width: 100%;
+    border: none;
+    resize: none;
+    outline: none;
   }
   .divider{
-    border: 1px solid $grey-my-projects-darker;
+    border: 0.5px solid $grey-my-projects-darker;
   }
   .message{
+    padding: 1.5em;
+    min-height: 10em;
     background-color: $grey-my-projects-lighter;
   }
+  textarea{
+    width: 100%;
+    background-color: $grey-my-projects-lighter;
+    border: none;
+    resize: none;
+    outline: none;
+  }
   .buttons{
+    min-height: 4em;
     display: flex;
     justify-content: center;
     align-items: center;
+    .send{
+      border: none;
+      outline: none;
+      background-color: $blue-my-projects;
+      color: #ffffff;
+    }
+    .upload{
+      color: $dark-my-projects;
+      border: none;
+      outline: none;
+      background-color: $grey-my-projects-lighter;
+    }
   }
 </style>
