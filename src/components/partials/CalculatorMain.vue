@@ -12,7 +12,6 @@
 </div>
 </div>
 
-
 </template>
 
 <script>
@@ -37,9 +36,8 @@ export default {
     background-color: #424242;
   }
   .img{
-  	border:2px solid red;
-  	margin-right:400px;
-  	margin-top:240px;
-  	
+    border:2px solid red;
+    margin-right:400px;
+    margin-top:240px;
   }
 </style>
