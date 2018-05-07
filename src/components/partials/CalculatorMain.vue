@@ -7,7 +7,12 @@
     <el-tab-pane label="Condenser" name="fourth">Condenser</el-tab-pane>
     <el-tab-pane label="AHU" name="fifth">AHU</el-tab-pane>
   </el-tabs>
+<div class="img">
+  <img src="static/images/calculator.png">
 </div>
+</div>
+
+
 </template>
 
 <script>
@@ -26,23 +31,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .el-tabs__item{
-    width: 53%;
-    height:70px;
-    background-color:#606060;
-    color:#bcbcbc;
-    margin-right:5px;
-    padding-top:15px;
-  }
-  .el-tabs__item:hover{
-    background-color:#414141;
-    box-shadow: 5px 10px 18px #888888;
-  }
-  .el-tabs__active-bar{
-    width:53% !important;
-  }
+
   .tab{
     padding-top: 20px;
     background-color: #424242;
+  }
+  .img{
+  	border:2px solid red;
+  	margin-right:400px;
+  	margin-top:240px;
+  	
   }
 </style>

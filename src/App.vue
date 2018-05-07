@@ -10,11 +10,13 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-}
-body {
-  margin: 0;
+<style lang="scss">
+  @import "/assets/styles/leafs";
+
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  }
+  body {
+    margin: 0;
 }
 </style>

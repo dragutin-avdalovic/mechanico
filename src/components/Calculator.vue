@@ -33,10 +33,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style lang="scss" scoped>
-.el-upload {
-  width:100% !important;
-}
 .grid-content{
-  height:800px;
+  height:100px;
 }
 </style>

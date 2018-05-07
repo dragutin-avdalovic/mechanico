@@ -31,17 +31,7 @@ export default {
 
 <style lang="scss" scoped>
 
-  .el-upload {
-    width: 10%;
-  }
-
   .el-upload__text {
-    color: red !important;
-  }
-
-  .el-upload-dragger {
-    background-color: red !important;
-    margin-top: 25px !important;
-    width: 100% !important;
+    color: white !important;
   }
 </style>
