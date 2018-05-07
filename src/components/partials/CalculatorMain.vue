@@ -21,13 +21,12 @@ export default {
     handleClick (tab, event) {
       console.log(tab, event)
     }
-  }
-}
+  }}
 </script>
 
 <style lang="scss" scoped>
 .tab{
-  padding-top: 20px;
-  background-color: #424242;
+padding-top: 20px;
+background-color:#424242;
 }
 </style>
