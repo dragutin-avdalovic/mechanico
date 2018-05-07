@@ -6,19 +6,19 @@
     </el-row>
     <el-row type="flex" justify="center" class="row-header sender">
       <el-col :span="4">
-        <div class="profile-picture"><img src="../../../static/images/img_avatar2.png" alt=""></div>
+        <img src="../../../static/images/img_avatar2.png" alt="">
       </el-col>
       <el-col :span="12">
         <div class="center-info">
-          <span class="from">John Doe</span>
-          <span class="from">John.Doe@email.com</span>
+          <span class="name">John Doe</span>
+          <span class="mail">John.Doe@email.com</span>
         </div>
       </el-col>
-      <el-col :span="6">
-        <span class="date">12.04.2018</span>
+      <el-col :span="4">
+        <span class="time">12.04.2018</span>
       </el-col>
-      <el-col :span="2">
-        <div class="center-info">
+      <el-col :span="4">
+        <div class="icons">
           <span><i class="el-icon-caret-bottom" style="cursor: pointer"></i></span>
           <span><i class="el-icon-caret-bottom" style="cursor: pointer"></i></span>
         </div>
@@ -37,7 +37,10 @@
       </el-col>
       <el-col :span="24">
         <div class="message-container">
-          <button>Reply</button>
+          <div class="replay">
+            <span>Click here to<button>Reply</button>, <button>Reply to all</button>, or <button>Forward</button>
+          </span>
+          </div>
         </div>
       </el-col>
     </el-row>
@@ -72,21 +75,25 @@ export default {
   }
 
   .message-container {
+    display: flex;
+    justify-content: center;
     overflow: auto;
-    max-height: 310px;
+    max-height: 40vh;
   }
 
   .divider {
     border: 1px solid $grey-my-projects-darker;
   }
 
-  .date {
-    font-size: 0.9em;
+  .time {
+    font-size: 0.8em;
+    font-weight: 500;
+    color: $dark-my-projects;
   }
 
   img {
-    width: 50px;
     height: 50px;
+    padding: 0.5em;
   }
 
   .message {
@@ -95,19 +102,48 @@ export default {
   }
 
   .message-container {
+    padding: 2em;
     background-color: $white;
     min-height: 100px;
-  }
-
-  .from {
-    font-size: 0.9em;
-    font-weight: 700;
+    font-size: 0.8em;
+    font-weight: 500;
     align-self: flex-start;
+  }
+  .replay{
+    width: 100%;
+    background-color: $grey-my-projects-lighter;
+    font-style: italic;
+    font-size: 0.9em;
+    padding: 2em;
   }
 
   .center-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    .name {
+      font-size: 0.9em;
+      font-weight: 700;
+      align-self: flex-start;
+    }
+    .mail {
+      font-size: 0.8em;
+      font-weight: 500;
+      align-self: flex-start;
+    }
+  }
+  button{
+    color: $blue-requests;
+    font-size: 1em;
+    background: none;
+    border: none;
+    outline: inherit;
+    font-style: italic;
+  }
+  .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
   }
 </style>
