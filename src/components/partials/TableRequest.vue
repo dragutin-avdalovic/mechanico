@@ -8,7 +8,6 @@
     element-loading-background="rgba(0, 0, 0, 0.8)"
     :data="fields"
     style="width: 100%"
-    height="310"
     @selection-change="handleSelectionChange">
     <el-table-column v-if="selectable" type="selection" width="55"></el-table-column>
     <el-table-column
@@ -31,7 +30,8 @@
       <template slot-scope="scope">
         <el-tag
           :type="scope.row.type"
-          close-transition >{{scope.row.status}}</el-tag>
+          close-transition>{{scope.row.status}}
+        </el-tag>
       </template>
     </el-table-column>
   </el-table>
@@ -40,8 +40,7 @@
 
 <script>
 export default {
-  components: {
-  },
+  components: {},
   data () {
     return {
       multipleSelection: [],
@@ -79,6 +78,9 @@ export default {
   }
 }
 </script>
-<style>
-
+<style lang="scss" scoped>
+  .el-table {
+    max-height: 44vh;
+    overflow: auto;
+  }
 </style>

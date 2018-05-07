@@ -1,20 +1,14 @@
 <template>
-  <div class="sidebar">
-    <div class="button">
-      <el-row :gutter="5">
-        <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-          <button class="upperButton1">
-            <div class="circle">1</div>
-            UPLOAD
-          </button>
-        </el-col>
-        <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-          <button class="upperButton2">
-            <div class="circle1">2</div>
-            CALCULATE
-          </button>
-        </el-col>
-      </el-row>
+<div class="sidebar">
+  <div class="button">
+    <el-row :gutter="5">
+      <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+        <button class="upperButton1"><div class="circle">1</div>UPLOAD</button>
+      </el-col>
+      <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+        <button class="upperButton2"><div class="circle1">2</div>CALCULATE</button>
+      </el-col>
+    </el-row>
     </div>
     <div class="content">
       <el-row :gutter="5">
@@ -22,8 +16,7 @@
           <CalculatorUpload></CalculatorUpload>
         </el-col>
       </el-row>
-
-      <el-row justify="center">
+    <el-row justify="center" >
         <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
           <el-button class="btn">Upload Excel File</el-button>
         </el-col>
@@ -31,7 +24,6 @@
           <el-button class="btn">Create table</el-button>
         </el-col>
       </el-row>
-
     </div>
   </div>
 </template>
@@ -44,76 +36,67 @@ export default {
   components: {
     CalculatorUpload,
     CalculatorChoose
-  }
-}
+  }}
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
-  .sidebar {
-    background-color: #424242;
-    padding-bottom: 10px;
-    height: 900px;
+.sidebar{
+  background-color:#424242;
+  padding-bottom: 10px;
+  height: 900px;
   }
 
-  .circle {
-    display: inline-block;
-    border-radius: 50%;
-    padding: 5px;
-
-    margin-right: 10px;
-    width: 23px;
-    height: 20px;
-    background-color: #125889;
-  }
-
-  .circle1 {
-    display: inline-block;
-    border-radius: 50%;
-    padding: 5px;
-    margin-right: 10px;
-    width: 23px;
-    height: 20px;
-    background-color: #4c4c4c;
-  }
-
-  .button {
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .upperButton1 {
-    background-color: #0d71b8;
-    color: white;
-    width: 100%;
-    height: 60px;
-    border-color: transparent;
-    cursor: pointer;
-    padding-right: 60px;
-    margin-top: 5px;
-  }
-
-  .upperButton1:hover {
-    background-color: #0052cc;
-  }
-
-  .upperButton2 {
-    background-color: #606060;
-    color: #bcbcbc;
-    width: 100%;
-    height: 60px;
-    border-color: transparent;
-    cursor: pointer;
-    padding-right: 40px;
-    margin-top: 5px;
-  }
-
-  .upperButton2:hover {
-    background-color: #595959;
-  }
-
-  .content {
+.circle{
+  display: inline-block;
+  border-radius: 50%;
+  padding: 5px;
+  margin-right: 10px;
+  width:23px;
+  height:20px;
+  background-color: #125889;
+}
+.circle1{
+  display: inline-block;
+  border-radius: 50%;
+  padding: 5px;
+  margin-right: 10px;
+  width:23px;
+  height:20px;
+  background-color: #4c4c4c;
+}
+.button{
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.upperButton1{
+  background-color: #0d71b8;
+  color: white;
+  width: 100%;
+  height: 60px;
+  border-color: transparent;
+  cursor: pointer;
+  padding-right: 60px;
+  margin-top: 5px;
+}
+.upperButton1:hover {
+  background-color: #0052cc;
+}
+.upperButton2{
+  background-color: #606060;
+  color: #bcbcbc;
+  width: 100%;
+  height: 60px;
+  border-color: transparent;
+  cursor: pointer;
+  padding-right: 40px;
+  margin-top: 5px;
+}
+.upperButton2:hover {
+  background-color: #595959;
+}
+.content{
     margin-right: 10px;
     margin-left: 10px;
     margin-top: 5px;
@@ -121,14 +104,13 @@ export default {
     background-color: #606060;
     padding-left: 10px;
     padding-right: 10px;
-  }
+}
 
-  .el-button {
+.el-button{
     width: 100%;
     margin-top: 5px;
-  }
-
-  .btn {
+}
+.btn {
     background-color: #29aae2;
     border-color: #29aae2;
     border-radius: 0px;
@@ -136,6 +118,5 @@ export default {
     width: 92%;
     margin-top: 20px;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  }
-
+}
 </style>

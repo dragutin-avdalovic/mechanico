@@ -3,20 +3,21 @@
     <span class="notification-text">{{notification}}</span>
   </div>
 </template>
+
 <script>
 export default {
   props: ['notification', 'className'],
   data () {
-    return {
-    }
+    return {}
   }
 }
 </script>
-<style lang="scss">
+
+<style lang="scss" scoped>
   @import '../../assets/font/fontello/css/fontello.css';
   @import '../../assets/styles/varibles';
-  .notification
-  {
+
+  .notification {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,16 +30,17 @@ export default {
     max-height: 2em;
     max-width: 70%;
   }
-  .notification-text
-  {
+
+  .notification-text {
     font-size: 0.7em;
     font-weight: 500;
-    color:$grey-my-projects-lighter;
+    color: $grey-my-projects-lighter;
   }
+
   /*.header-low{*/
-    /*display: flex;*/
-    /*justify-items: center;*/
-    /*align-items: center;*/
-    /*text-align: left;*/
+  /*display: flex;*/
+  /*justify-items: center;*/
+  /*align-items: center;*/
+  /*text-align: left;*/
   /*}*/
 </style>

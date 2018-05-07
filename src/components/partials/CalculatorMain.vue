@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .tab{
   padding-top: 20px;
   background-color: #424242;
