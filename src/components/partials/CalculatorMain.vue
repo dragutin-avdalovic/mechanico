@@ -12,7 +12,7 @@
 
 <script>
 export default {
-data () {
+  data () {
     return {
       activeName: 'first'
     }
@@ -24,7 +24,7 @@ data () {
   }}
 </script>
 
-<style lang="scss"scoped>
+<style lang="scss" scoped>
 .tab{
 padding-top: 20px;
 background-color:#424242;

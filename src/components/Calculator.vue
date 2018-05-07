@@ -30,7 +30,7 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
-<style lang="scss"scoped>
+<style lang="scss" scoped>
 .el-upload {
   width:100% !important;
 }
@@ -42,8 +42,6 @@ export default {
   margin-top:25px;
   width:100% !important;
 }
-
-
 .el-tabs__item{
   width: 53%;
   height:70px;
