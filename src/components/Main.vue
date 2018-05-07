@@ -21,7 +21,7 @@
         </el-col>
         <el-col :span="7">
           <div class="grid-content-bottom">
-            <Inbox></Inbox>
+            <MessageTitle></MessageTitle>
           </div>
         </el-col>
         <el-col :span="8">

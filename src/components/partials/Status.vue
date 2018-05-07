@@ -4,11 +4,8 @@
       <el-col>
         <div class="edit"><i class="el-icon-edit"></i></div>
       </el-col>
-    </el-row>
-    <span class="edit-icon"><i class="icon-edit"></i></span>
-    <el-row>
       <el-col :span="12">
-        <div>
+        <div class="center">
           <img class="profile-img" src="../../../static/images/img_avatar2.png" alt="Avatar">
         </div>
       </el-col>
@@ -27,19 +24,19 @@
     <div class="divider"></div>
     <el-row>
       <el-col :span="8">
-        <div>
+        <div class="center">
           <el-progress :width=100 class="circle" type="circle" :percentage="0"></el-progress>
           <div class="info">New Project</div>
         </div>
       </el-col>
       <el-col :span="8">
-        <div>
+        <div class="center">
           <el-progress :width=100 class="circle" type="circle" :percentage="25"></el-progress>
           <div class="info">Total Project</div>
         </div>
       </el-col>
       <el-col :span="8">
-        <div>
+        <div class="center">
           <el-progress :width=100 class="circle" type="circle" :percentage="80" color="#8e71c7"></el-progress>
           <div class="info">Approved Licenses</div>
         </div>
@@ -75,8 +72,8 @@ export default {
   }
 
   .divider {
-    border: 1px solid $grey-my-projects-darker;
-    margin: 2em;
+    border: 0.5px solid $grey-my-projects-darker;
+    margin: 1em 3em 1em 3em;
   }
 
   .status {
@@ -87,11 +84,12 @@ export default {
   }
 
   .contact-info {
-    font-size: 1.1em;
+    /*font-size: 1.1em;*/
   }
 
   .info {
-    font-size: 0.9em;
+    padding-bottom: 0.5em;
+    font-size: 0.8em;
   }
 
   .circle {
@@ -105,5 +103,13 @@ export default {
     margin-right: 1em;
     font-size: 1.4em;
   }
-
+  i{
+    margin-right: 1em;
+  }
+  .center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
