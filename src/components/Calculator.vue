@@ -42,4 +42,19 @@ export default {
   margin-top:25px;
   width:100% !important;
 }
+.el-tabs__item{
+  width: 53%;
+  height:70px;
+  background-color:#606060;
+  color:#bcbcbc;;
+  margin-right:5px;
+  padding-top:15px;
+}
+.el-tabs__item:hover{
+ background-color:#414141;
+ box-shadow: 5px 10px 18px #888888;
+}
+.el-tabs__active-bar{
+width:53% !important;
+}
 </style>
