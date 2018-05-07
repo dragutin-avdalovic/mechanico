@@ -15,6 +15,9 @@ export default {
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
+body {
+  margin: 0;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -33,8 +36,5 @@ export default {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: $blue-my-projects;
-}
-body {
-  margin: 0;
 }
 </style>

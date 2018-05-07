@@ -78,6 +78,7 @@ export default {
     .my-projects-icon {
       margin-top: auto;
       margin-bottom: auto;
+      padding-left: 0.5em;
       font-size: 1.5em;
     }
 

@@ -58,6 +58,7 @@ export default {
     .my-projects-icon {
       margin-top: auto;
       margin-bottom: auto;
+      padding-left: 0.5em;
       font-size: 1.5em;
     }
 
@@ -82,7 +83,7 @@ export default {
       color: white;
       font-size: 0.8em;
       background-color: $blue-my-projects;
-      font-weight: 700;
+      font-weight: 500;
     }
     .search-input {
       min-width: 5em;
