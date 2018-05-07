@@ -13,64 +13,65 @@
         <span class="from">{{sender}}</span>
         <span class="last-message">{{lastMessage}}</span>
       </el-col>
-        <el-col :xs="6" :sm="6" :md="6" :lg="6" :xl="6" class="center-left">
+      <el-col :xs="6" :sm="6" :md="6" :lg="6" :xl="6" class="center-left">
           <span class="last-message">
             {{date}}
           </span>
-        </el-col>
-      </el-row>
+      </el-col>
+    </el-row>
     <el-row>
     </el-row>
   </div>
 </template>
+
 <script>
 export default {
   props: ['sender', 'lastMessage', 'date', 'checked'],
   data () {
-    return {
-    }
+    return {}
   }
 }
 </script>
-<style lang="scss">
+
+<style lang="scss" scoped>
   @import '../../assets/font/fontello/css/fontello.css';
   @import '../../assets/styles/varibles';
-.green-circle
-{
-  border-radius: 50%;
-  background-color: $green-my-projects;
-  width: 0.7em;
-  height: 0.7em;
-}
-.center
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.center-left
-{
-  display: flex;
-  flex-direction: column;
-}
-.row-bg-message
-{
-  padding-top: 1em;
-  padding-bottom: 1em;
-  background-color: $white;
-}
-.from
-{
-  font-size: 0.9em;
-  font-weight: 700;
-  align-self: flex-start;
-}
-.last-message
-{
-  font-size: 0.8em;
-  font-weight: 500;
-  align-self: flex-start;
-  text-align: left;
-}
+
+  .green-circle {
+    border-radius: 50%;
+    background-color: $green-my-projects;
+    width: 0.7em;
+    height: 0.7em;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .center-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row-bg-message {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: $white;
+  }
+
+  .from {
+    font-size: 0.9em;
+    font-weight: 700;
+    align-self: flex-start;
+  }
+
+  .last-message {
+    font-size: 0.8em;
+    font-weight: 500;
+    align-self: flex-start;
+    text-align: left;
+  }
 </style>

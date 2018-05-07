@@ -4,7 +4,6 @@
     <div class="content">
       <AppForm></AppForm>
     </div>
-
   </div>
 </template>
 
@@ -23,7 +22,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .content {
     display: flex;
     justify-content: center;
