@@ -14,7 +14,7 @@
           <div class="my-projects-icon"><i class="el-icon-picture"></i></div>
           <div class="projects-label">USERS MANAGEMENT</div>
         </div>
-        <UsersTable></UsersTable>
+        <UsersTable :fields="fields" :columns="columns" :selectable="true" :editable="true"></UsersTable>
       </el-tab-pane>
     </el-tabs>
   </div>
