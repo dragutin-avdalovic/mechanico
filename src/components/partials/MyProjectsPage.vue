@@ -89,23 +89,4 @@ export default {
       padding-bottom: 0.5em;
     }
   }
-  /* width */
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: $grey-my-projects-lighter;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: $blue-my-projects;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: $blue-my-projects;
-  }
 </style>
