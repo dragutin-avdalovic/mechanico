@@ -120,7 +120,7 @@ export default {
     padding-bottom: 0.5em;
     display: flex;
     justify-content: center;
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight: 500;
     color: $dark-my-projects;
   }
@@ -148,7 +148,7 @@ export default {
     height: 50%;
     background-color: $grey-my-projects-lighter;
     font-style: italic;
-    font-size: 0.9em;
+    font-size: 0.8em;
     padding: 1em 2em 1em 2em;
   }
 

@@ -97,6 +97,7 @@ export default {
     margin: 0em 0.3em 0 1.5em;
   }
   input{
+    font-size: 0.8em;
     width: 100%;
     border: none;
     resize: none;
@@ -123,12 +124,14 @@ export default {
     justify-content: center;
     align-items: center;
     .send{
+      font-size: 0.8em;
       border: none;
       outline: none;
       background-color: $blue-my-projects;
       color: #ffffff;
     }
     .upload{
+      font-size: 0.8em;
       color: $dark-my-projects;
       border: none;
       outline: none;
