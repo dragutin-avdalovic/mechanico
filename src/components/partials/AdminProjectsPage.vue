@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeaderProjectsAdmin :fields="fields" :columns="columns" :selectable="true" :editable="true"></HeaderProjectsAdmin>
+    <HeaderProjectsAdmin :fields="fields" :columns="columns" :selectable="true" :editable="true" :fieldsUsers="fieldsUsers" :columnsUsers="columnsUsers" :selectableUsers="true" :editableUsers="true"></HeaderProjectsAdmin>
   </div>
 </template>
 <script>
@@ -61,7 +61,23 @@ export default {
           equipment: '12330',
           year: 2018
         }
-      ]
+      ],
+      columnsUsers: [{prop: 'userName', label: 'User Name'}, {prop: 'email', label: 'Email'},
+        {prop: 'name', label: 'Name'}, {prop: 'groups', label: 'Groups'},
+        {prop: 'roles', label: 'Roles'}],
+      fieldsUsers: [{
+        userName: 'User Name',
+        email: 'John.Doesgmail.com',
+        name: 'Full Name',
+        groups: 'Group1',
+        roles: 'Sys. Admin'
+      }, {
+        userName: 'User Name',
+        email: 'John.Doesgmail.com',
+        name: 'Full Name',
+        groups: 'Group1',
+        roles: 'Sys. Admin'
+      }]
     }
   }
 }
