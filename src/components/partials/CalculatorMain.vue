@@ -8,7 +8,7 @@
     <el-tab-pane label="AHU" name="fifth">AHU</el-tab-pane>
   </el-tabs>
 <div class="img">
-  <img src="static/images/calculator.png">
+  <img src="/static/images/calculator.png">
 </div>
 </div>
 
@@ -30,14 +30,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  @import '../../assets/styles/leafs.scss';
   .tab{
     padding-top: 20px;
     background-color: #424242;
   }
   .img{
-    border:2px solid red;
-    margin-right:400px;
+    margin-left:400px;
     margin-top:240px;
+    width:310px;
   }
 </style>

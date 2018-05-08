@@ -18,6 +18,8 @@
 
           <CalculatorUpload></CalculatorUpload>
 
+          <CalculatorCompleted></CalculatorCompleted>
+
         </el-col>
       </el-row>
     <el-row justify="center" >
@@ -35,11 +37,13 @@
 <script>
 import CalculatorUpload from '@/components/partials/CalculatorUpload'
 import CalculatorChoose from '@/components/partials/CalculatorChoose'
+import CalculatorCompleted from '@/components/partials/CalculatorCompleted'
 
 export default {
   components: {
     CalculatorUpload,
-    CalculatorChoose
+    CalculatorChoose,
+    CalculatorCompleted
   }}
 </script>
 
@@ -48,7 +52,7 @@ export default {
 .sidebar{
   background-color:#424242;
   padding-bottom: 10px;
-  height: 900px;
+  height: 1000px;
   }
 
 .circle{
