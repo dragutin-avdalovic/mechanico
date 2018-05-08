@@ -4,7 +4,7 @@
       <el-row type="flex" class="row-bg" justify="flex-start">
         <el-col :span="16">
           <div class="grid-content">
-            <MyProjectsPage></MyProjectsPage>
+            <AdminProjectsPage></AdminProjectsPage>
           </div>
         </el-col>
         <el-col :span="8">
@@ -36,24 +36,22 @@
 
 <script>
 import ElFooter from '../../node_modules/element-ui/packages/footer/src/main'
-import MyProjectsPage from './partials/MyProjectsPage.vue'
+import AdminProjectsPage from './partials/AdminProjectsPage.vue'
 import ProductRequest from './partials/ProductRequest.vue'
 import Inbox from './partials/Inbox.vue'
 import Activity from './partials/Activity.vue'
 import Status from './partials/Status.vue'
 import MessageTitle from './partials/MessageTitle.vue'
-import NewMessage from './partials/NewMessage.vue'
 
 export default {
   components: {
     ElFooter,
-    MyProjectsPage,
+    AdminProjectsPage,
     ProductRequest,
     Inbox,
     Activity,
     Status,
-    MessageTitle,
-    NewMessage
+    MessageTitle
   },
   name: 'HelloWorld',
   methods: {
