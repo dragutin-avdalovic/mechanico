@@ -21,12 +21,12 @@
         </el-col>
         <el-col :span="7">
           <div class="grid-content-bottom">
-            <Inbox></Inbox>
+            <MessageTitle></MessageTitle>
           </div>
         </el-col>
         <el-col :span="8">
           <div class="grid-content-bottom">
-            <MessageTitle></MessageTitle>
+            <Activity></Activity>
           </div>
         </el-col>
       </el-row>

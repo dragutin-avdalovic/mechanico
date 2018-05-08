@@ -5,19 +5,19 @@
       <el-col :span="4" class="my-projects-icon close">X</el-col>
     </el-row>
     <el-row type="flex" justify="center" class="row-header sender">
-      <el-col :span="4">
+      <el-col :span="6">
         <img src="../../../static/images/img_avatar2.png" alt="">
       </el-col>
-      <el-col :span="12">
+      <el-col :span="14">
         <div class="center-info">
           <span class="name">John Doe</span>
           <span class="mail">John.Doe@email.com</span>
         </div>
       </el-col>
-      <el-col :span="4">
-        <span class="time">12.04.2018</span>
-      </el-col>
-      <el-col :span="4">
+      <el-col :span="8">
+        <div class="time">
+        <span>12.04.2018</span>
+        </div>
         <div class="icons">
           <span><i class="icon-reply" style="cursor: pointer"></i></span>
           <span><i class="icon-down-dir" style="cursor: pointer"></i></span>
@@ -27,11 +27,14 @@
       </el-col>
     </el-row>
     <div class="divider"></div>
+    <div>
     <el-row class="row-header" justify="center">
       <el-col :span="24">
-        <div class="message-container"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <div class="message-container">
+          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Duis aute irure dolor in reprehender minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
         </div>
       </el-col>
@@ -44,6 +47,7 @@
         </div>
       </el-col>
     </el-row>
+    </div>
   </div>
 </template>
 
@@ -85,21 +89,27 @@ export default {
     }
     .close{
       cursor: pointer;
-      padding-left: 2em;
+      padding-left: 1em;
     }
   }
   .sender {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $white;
-  }
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: $white;
+   }
 
   .message-container {
     display: flex;
     justify-content: center;
     overflow: auto;
-    max-height: 40vh;
+    max-height: 50vh;
+  }
+  .message {
+    display: flex;
+    flex-direction: column;
+    max-height: 50vh;
+    overflow: auto;
   }
 
   .divider {
@@ -107,6 +117,9 @@ export default {
   }
 
   .time {
+    padding-bottom: 0.5em;
+    display: flex;
+    justify-content: center;
     font-size: 0.8em;
     font-weight: 500;
     color: $dark-my-projects;
@@ -123,19 +136,20 @@ export default {
   }
 
   .message-container {
-    padding: 2em;
+    padding: 1.5em;
     background-color: $white;
-    min-height: 100px;
+    min-height: 50px;
     font-size: 0.8em;
     font-weight: 500;
     align-self: flex-start;
   }
   .replay{
     width: 100%;
+    height: 50%;
     background-color: $grey-my-projects-lighter;
     font-style: italic;
     font-size: 0.9em;
-    padding: 2em;
+    padding: 1em 2em 1em 2em;
   }
 
   .center-info {
