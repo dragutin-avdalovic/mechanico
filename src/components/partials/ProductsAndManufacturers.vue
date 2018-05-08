@@ -1,13 +1,7 @@
 <template>
   <div class="product-container">
     <el-row type="flex" class="row-header" justify="center">
-      <el-col :span="24">
-        <div class="grid-content">
-          <el-input class="search-input" size="mini" placeholder="Search manufacturers" v-model="input_search" clearable>
-            <el-button size="mini" slot="append" icon="el-icon-search"></el-button>
-          </el-input>
-        </div>
-      </el-col>
+      <TableHeaderManufacturers></TableHeaderManufacturers>
     </el-row>
     <el-row>
       <TableProductsAndManufacturers :fields="fields" :selectable="true" :editable="true"></TableProductsAndManufacturers>
@@ -17,12 +11,12 @@
 
 <script>
 import TableProductsAndManufacturers from './TableProductsAndManufacturers.vue'
-import TableHeader from './TableHeader.vue'
+import TableHeaderManufacturers from './TableHeaderManufacturers.vue'
 
 export default {
   components: {
     TableProductsAndManufacturers,
-    TableHeader
+    TableHeaderManufacturers
   },
   data () {
     return {
