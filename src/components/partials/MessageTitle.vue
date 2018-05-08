@@ -1,8 +1,8 @@
 <template>
   <div>
     <el-row class="header" type="flex" justify="center">
-      <el-col :span="4" class="my-projects-icon"><i class="icon-mail"></i></el-col>
       <el-col :span="20"><span class="projects-label">Message Title</span></el-col>
+      <el-col :span="4" class="my-projects-icon close">X</el-col>
     </el-row>
     <el-row type="flex" justify="center" class="row-header sender">
       <el-col :span="4">
@@ -19,8 +19,8 @@
       </el-col>
       <el-col :span="4">
         <div class="icons">
-          <span><i class="el-icon-caret-bottom" style="cursor: pointer"></i></span>
-          <span><i class="el-icon-caret-bottom" style="cursor: pointer"></i></span>
+          <span><i class="icon-reply" style="cursor: pointer"></i></span>
+          <span><i class="icon-down-dir" style="cursor: pointer"></i></span>
         </div>
         <!--<el-button type="info" size="mini" icon="icon-trash-empty"></el-button>-->
         <!--<el-button type="primary" size="mini">Compose Mail</el-button>-->
@@ -72,8 +72,8 @@ export default {
     .my-projects-icon {
       margin-top: auto;
       margin-bottom: auto;
-      padding-left: 0.5em;
-      font-size: 1.5em;
+      padding-left: 1em;
+      font-size: 1em;
     }
     .projects-label {
       float: left;
@@ -81,6 +81,11 @@ export default {
       font-size: 1em;
       padding-top: 0.5em;
       padding-bottom: 0.5em;
+      padding-left: 1em;
+    }
+    .close{
+      cursor: pointer;
+      padding-left: 2em;
     }
   }
   .sender {
@@ -155,8 +160,10 @@ export default {
     border: none;
     outline: inherit;
     font-style: italic;
+    cursor: pointer;
   }
   .icons{
+    color: $grey-my-projects-darker;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -26,7 +26,7 @@
         </el-col>
         <el-col :span="8">
           <div class="grid-content-bottom">
-            <Activity></Activity>
+            <MessageTitle></MessageTitle>
           </div>
         </el-col>
       </el-row>

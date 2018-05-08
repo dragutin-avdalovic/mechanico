@@ -1,8 +1,9 @@
 <template>
   <div class="message-container">
     <el-row class="header" type="flex" justify="center">
+      <!--<el-col :span="4" class="my-projects-icon"><i class="icon-mail"></i></el-col>-->
       <el-col :span="20"><span class="projects-label">New Message</span></el-col>
-      <el-col :span="4" class="my-projects-icon">X</el-col>
+      <el-col :span="4" class="my-projects-icon close">X</el-col>
     </el-row>
     <div class="info">
       <el-row>
@@ -62,7 +63,7 @@ export default {
     .my-projects-icon {
       margin-top: auto;
       margin-bottom: auto;
-      padding-left: 2.5em;
+      padding-left: 1em;
       font-size: 1em;
     }
     .projects-label {
@@ -71,7 +72,11 @@ export default {
       font-size: 1em;
       padding-top: 0.5em;
       padding-bottom: 0.5em;
-      padding-left: 2.5em;
+      padding-left: 1em;
+    }
+    .close{
+      cursor: pointer;
+      padding-left: 2em;
     }
   }
   .message-container{
