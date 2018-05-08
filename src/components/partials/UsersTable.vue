@@ -19,21 +19,27 @@
       label="Status"
       width="130">
       <template slot-scope="scope">
-        <i class="el-icon-time"></i>
-        <span style="margin-left: 10px">waiting</span>
+        <i v-bind:class="scope.row.statusIcon"></i>
+        <span style="margin-left: 5px">{{scope.row.status}}</span>
       </template>
     </el-table-column>
     <el-table-column label="Primary">
       <template slot-scope="scope">
-        <div>
-          <icon class="icon-ok"></icon>
+        <div v-if="scope.row.primary">
+          <icon class="el-icon-check"></icon>
+        </div>
+        <div v-else>
+          <icon class="el-icon-close"></icon>
         </div>
       </template>
     </el-table-column>
     <el-table-column label="Verified">
       <template slot-scope="scope">
-        <div>
-          <icon class="icon-ok"></icon>
+        <div v-if="scope.row.verified">
+          <icon class="el-icon-check"></icon>
+        </div>
+        <div v-else>
+          <icon class="el-icon-close"></icon>
         </div>
       </template>
     </el-table-column>
@@ -84,7 +90,14 @@ export default {
   .multipleTable {
     overflow-y: auto;
   }
-  .icon-ok{
+  .el-icon-close{
     color:red;
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+  .el-icon-check{
+    color:green;
+    font-size: 1.5em;
+    font-weight: 600;
   }
 </style>

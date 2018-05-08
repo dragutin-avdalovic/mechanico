@@ -70,13 +70,41 @@ export default {
         email: 'John.Doesgmail.com',
         name: 'Full Name',
         groups: 'Group1',
-        roles: 'Sys. Admin'
+        roles: 'Sys. Admin',
+        status: 'Recent',
+        statusIcon: 'el-icon-time',
+        primary: true,
+        verified: true
       }, {
         userName: 'User Name',
         email: 'John.Doesgmail.com',
         name: 'Full Name',
         groups: 'Group1',
-        roles: 'Sys. Admin'
+        roles: 'Sys. Admin',
+        status: 'Repeat',
+        statusIcon: 'el-icon-refresh',
+        primary: false,
+        verified: true
+      }, {
+        userName: 'User Name',
+        email: 'John.Doesgmail.com',
+        name: 'Full Name',
+        groups: 'Group1',
+        roles: 'Sys. Admin',
+        status: 'Inactive',
+        statusIcon: 'el-icon-remove-outline',
+        primary: false,
+        verified: true
+      }, {
+        userName: 'User Name',
+        email: 'John.Doesgmail.com',
+        name: 'Full Name',
+        groups: 'Group1',
+        roles: 'Sys. Admin',
+        status: 'Prospect',
+        statusIcon: 'el-icon-info',
+        primary: false,
+        verified: false
       }]
     }
   }
