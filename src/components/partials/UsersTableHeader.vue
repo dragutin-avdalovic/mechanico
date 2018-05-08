@@ -75,7 +75,7 @@ export default {
     }
     .groups
     {
-      background-color: #cccccc;
+      background-color: #909399;
       color: white;
       margin-right: 0.5em;
       i{
@@ -85,7 +85,7 @@ export default {
     }
     .trash
     {
-      background-color: #cccccc;
+      background-color: #909399;
       color: white;
       margin-right: 0.5em;
       i{
