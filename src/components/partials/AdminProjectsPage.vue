@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeaderProjectsAdmin :fields="fields" :columns="columns" :selectable="true" :editable="true"></HeaderProjectsAdmin>
+    <HeaderProjectsAdmin :fields="fields" :columns="columns" :selectable="true" :editable="true" :fieldsUsers="fieldsUsers" :columnsUsers="columnsUsers" :selectableUsers="true" :editableUsers="true"></HeaderProjectsAdmin>
   </div>
 </template>
 <script>
@@ -61,7 +61,51 @@ export default {
           equipment: '12330',
           year: 2018
         }
-      ]
+      ],
+      columnsUsers: [{prop: 'userName', label: 'User Name'}, {prop: 'email', label: 'Email'},
+        {prop: 'name', label: 'Name'}, {prop: 'groups', label: 'Groups'},
+        {prop: 'roles', label: 'Roles'}],
+      fieldsUsers: [{
+        userName: 'User Name',
+        email: 'John.Doesgmail.com',
+        name: 'Full Name',
+        groups: 'Group1',
+        roles: 'Sys. Admin',
+        status: 'Recent',
+        statusIcon: 'el-icon-time',
+        primary: true,
+        verified: true
+      }, {
+        userName: 'User Name',
+        email: 'John.Doesgmail.com',
+        name: 'Full Name',
+        groups: 'Group1',
+        roles: 'Sys. Admin',
+        status: 'Repeat',
+        statusIcon: 'el-icon-refresh',
+        primary: false,
+        verified: true
+      }, {
+        userName: 'User Name',
+        email: 'John.Doesgmail.com',
+        name: 'Full Name',
+        groups: 'Group1',
+        roles: 'Sys. Admin',
+        status: 'Inactive',
+        statusIcon: 'el-icon-remove-outline',
+        primary: false,
+        verified: true
+      }, {
+        userName: 'User Name',
+        email: 'John.Doesgmail.com',
+        name: 'Full Name',
+        groups: 'Group1',
+        roles: 'Sys. Admin',
+        status: 'Prospect',
+        statusIcon: 'el-icon-info',
+        primary: false,
+        verified: false
+      }]
     }
   }
 }
