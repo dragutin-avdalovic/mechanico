@@ -1,113 +1,69 @@
 <template>
   <div>
-    <HeaderRequestAdmin :fields="fields" :columns="columns" :selectable="true" :editable="true"></HeaderRequestAdmin>
+    <HeaderRequestAdmin :fields="fields"></HeaderRequestAdmin>
   </div>
 </template>
 <script>
-import Table from './Table.vue'
-import TableHeader from './TableHeader.vue'
-import UsersTableHeader from './UsersTableHeader.vue'
-import HeaderRequestAdmin from './HeaderProjectsAdmin.vue'
+import HeaderRequestAdmin from './HeaderRequestAdmin.vue'
 
 export default {
   components: {
-    Table,
-    TableHeader,
-    HeaderRequestAdmin,
-    UsersTableHeader
+    HeaderRequestAdmin
   },
   data () {
     return {
-      items: [
-        {name: 'projectName', label: 'Project Name'}, {name: 'designer', label: 'Designer'}
-      ],
-      columns: [
-        {prop: 'projectName', label: 'Project Name'}, {prop: 'designer', label: 'Designer'},
-        {prop: 'consultant', label: 'Consultant'}, {prop: 'projectSize', label: 'Project Size'},
-        {prop: 'equipment', label: 'Equipment'}, {prop: 'year', label: 'Year'}
-      ],
       fields: [
         {
-          projectName: 'Project 1',
-          designer: 'Tom Tomas',
-          consultant: 'Karl Marx',
-          projectSize: '12330',
-          equipment: '12330',
-          year: 2018
+          manufacturer: 'Project 1',
+          product: 'Fan Coil',
+          status: 'Approved',
+          type: 'success'
         }, {
-          projectName: 'Project 2',
-          designer: 'Hail Tomas',
-          consultant: 'DEEN',
-          projectSize: '30',
-          equipment: '212330',
-          year: 2016
+          manufacturer: 'Project 2',
+          product: 'Fan Coil',
+          status: 'Requested',
+          type: ''
+        },
+        {
+          manufacturer: 'Project 2',
+          product: 'Fan Coil',
+          status: 'Requested',
+          type: ''
         }, {
-          projectName: 'Project 1',
-          designer: 'Tom Tomas',
-          consultant: 'Karl Marx',
-          projectSize: '12330',
-          equipment: '12330',
-          year: 2018
+          manufacturer: 'Project 3',
+          product: 'Fan Coil',
+          status: 'Denied',
+          type: 'danger'
         }, {
-          projectName: 'Project 1',
-          designer: 'Tom Tomas',
-          consultant: 'Karl Marx',
-          projectSize: '12330',
-          equipment: '12330',
-          year: 2018
+          manufacturer: 'Project 3',
+          product: 'Fan Coil',
+          status: 'Denied',
+          type: 'danger'
         }, {
-          projectName: 'Project 1',
-          designer: 'Tom Tomas',
-          consultant: 'Karl Marx',
-          projectSize: '12330',
-          equipment: '12330',
-          year: 2018
+          manufacturer: 'Project 3',
+          product: 'Fan Coil',
+          status: 'Denied',
+          type: 'danger'
+        },
+        {
+          manufacturer: 'Project 3',
+          product: 'Fan Coil',
+          status: 'Denied',
+          type: 'danger'
+        },
+        {
+          manufacturer: 'Project 3',
+          product: 'Fan Coil',
+          status: 'Denied',
+          type: 'danger'
+        },
+        {
+          manufacturer: 'Project 3',
+          product: 'Fan Coil',
+          status: 'Denied',
+          type: 'danger'
         }
-      ],
-      columnsUsers: [{prop: 'userName', label: 'User Name'}, {prop: 'email', label: 'Email'},
-        {prop: 'name', label: 'Name'}, {prop: 'groups', label: 'Groups'},
-        {prop: 'roles', label: 'Roles'}],
-      fieldsUsers: [{
-        userName: 'User Name',
-        email: 'John.Doesgmail.com',
-        name: 'Full Name',
-        groups: 'Group1',
-        roles: 'Sys. Admin',
-        status: 'Recent',
-        statusIcon: 'el-icon-time',
-        primary: true,
-        verified: true
-      }, {
-        userName: 'User Name',
-        email: 'John.Doesgmail.com',
-        name: 'Full Name',
-        groups: 'Group1',
-        roles: 'Sys. Admin',
-        status: 'Repeat',
-        statusIcon: 'el-icon-refresh',
-        primary: false,
-        verified: true
-      }, {
-        userName: 'User Name',
-        email: 'John.Doesgmail.com',
-        name: 'Full Name',
-        groups: 'Group1',
-        roles: 'Sys. Admin',
-        status: 'Inactive',
-        statusIcon: 'el-icon-remove-outline',
-        primary: false,
-        verified: true
-      }, {
-        userName: 'User Name',
-        email: 'John.Doesgmail.com',
-        name: 'Full Name',
-        groups: 'Group1',
-        roles: 'Sys. Admin',
-        status: 'Prospect',
-        statusIcon: 'el-icon-info',
-        primary: false,
-        verified: false
-      }]
+      ]
     }
   }
 }
