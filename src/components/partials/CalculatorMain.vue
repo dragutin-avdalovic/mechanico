@@ -36,8 +36,8 @@ export default {
     background-color: #424242;
   }
   .img{
-  	margin-left:400px;
-  	margin-top:240px;
-  	width:310px;
+    margin-left:400px;
+    margin-top:240px;
+    width:310px;
   }
 </style>
