@@ -6,6 +6,7 @@
           <div class="my-projects-icon"><i class="el-icon-goods"></i></div>
           <div class="projects-label">PRODUCTS AND MANUFACTURERS</div>
         </div>
+        <ProductsAndManufacturers></ProductsAndManufacturers>
       </el-tab-pane>
       <el-tab-pane>
         <div slot="label" class="header">
@@ -24,9 +25,11 @@
 </template>
 <script>
 import TableRequest from './TableRequest.vue'
+import ProductsAndManufacturers from './ProductsAndManufacturers.vue'
 export default {
   components: {
-    TableRequest
+    TableRequest,
+    ProductsAndManufacturers
   },
   props: ['fields'],
   data () {
