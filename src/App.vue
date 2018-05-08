@@ -11,7 +11,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'assets/styles/varibles.scss';
+  @import 'assets/styles/varibles.scss';
+  @import 'assets/styles/leafs.scss';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
