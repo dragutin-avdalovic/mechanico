@@ -121,7 +121,7 @@ export default {
 </script>
 
 <style scoped>
-
+  @import '../../assets/styles/leafs.scss';
   .choose {
     height: 400px;
     margin-left: -5px;
