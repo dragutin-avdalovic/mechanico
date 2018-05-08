@@ -37,9 +37,8 @@ export default {
     background-color: #424242;
   }
   .img{
-  	border:2px solid red;
-  	margin-right:400px;
+  	margin-left:400px;
   	margin-top:240px;
-  	
+  	width:310px;
   }
 </style>
