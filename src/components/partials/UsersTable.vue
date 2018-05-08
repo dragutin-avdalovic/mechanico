@@ -27,34 +27,34 @@
 </template>
 
 <script>
-  export default {
-    components: {},
-    data () {
-      return {
-        multipleSelection: [],
-        loading2: false
-      }
+export default {
+  components: {},
+  data () {
+    return {
+      multipleSelection: [],
+      loading2: false
+    }
+  },
+  props: ['fields', 'columns', 'selectable', 'editable'],
+  methods: {
+    handleEdit (index, row) {
+      console.log(index, row)
     },
-    props: ['fields', 'columns', 'selectable', 'editable'],
-    methods: {
-      handleEdit (index, row) {
-        console.log(index, row)
-      },
-      handleSelectionChange (val) {
-        this.multipleSelection = val
-        console.log(this.multipleSelection)
-      },
-      toggleSelection (rows) {
-        if (rows) {
-          rows.forEach(row => {
-            this.$refs.multipleTable.toggleRowSelection(row)
-          })
-        } else {
-          this.$refs.multipleTable.clearSelection()
-        }
+    handleSelectionChange (val) {
+      this.multipleSelection = val
+      console.log(this.multipleSelection)
+    },
+    toggleSelection (rows) {
+      if (rows) {
+        rows.forEach(row => {
+          this.$refs.multipleTable.toggleRowSelection(row)
+        })
+      } else {
+        this.$refs.multipleTable.clearSelection()
       }
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>
