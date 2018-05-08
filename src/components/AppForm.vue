@@ -1,4 +1,5 @@
 <template>
+  <el-dialog :visible.sync="dialogVisible">
   <div class="Modal">
     <el-form ref="form" :model="form">
       <el-row :gutter="70">
@@ -39,7 +40,7 @@
       </el-row>
       <el-row type="flex" justify="center" :gutter="10">
         <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
-          <el-button class="Cancel" type="primary">Cancel</el-button>
+          <el-button @click="dialogVisible = false" class="Cancel" type="primary">Cancel</el-button>
         </el-col>
         <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
           <el-button type="primary">Save</el-button>
@@ -47,6 +48,7 @@
       </el-row>
     </el-form>
   </div>
+  </el-dialog>
 </template>
 
 <script type="text/javascript">
