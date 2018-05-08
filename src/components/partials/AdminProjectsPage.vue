@@ -1,21 +1,18 @@
 <template>
-  <span>
-  <el-row class="header" type="flex" justify="center">
-    <el-col :span="2" class="my-projects-icon"><i class="icon-mail"></i></el-col>
-    <el-col :span="22"><span class="projects-label">MY PROJECTS</span></el-col>
-  </el-row>
-  <TableHeader></TableHeader>
-  <Table :fields="fields" :columns="columns" :selectable="true" :editable="true"></Table>
-  </span>
+  <div>
+    <HeaderProjectsAdmin :fields="fields" :columns="columns" :selectable="true" :editable="true" :fieldsUsers="fieldsUsers" :columnsUsers="columnsUsers" :selectableUsers="true" :editableUsers="true"></HeaderProjectsAdmin>
+  </div>
 </template>
 <script>
 import Table from './Table.vue'
 import TableHeader from './TableHeader.vue'
+import HeaderProjectsAdmin from './HeaderProjectsAdmin.vue'
 
 export default {
   components: {
     Table,
-    TableHeader
+    TableHeader,
+    HeaderProjectsAdmin
   },
   data () {
     return {
@@ -64,7 +61,51 @@ export default {
           equipment: '12330',
           year: 2018
         }
-      ]
+      ],
+      columnsUsers: [{prop: 'userName', label: 'User Name'}, {prop: 'email', label: 'Email'},
+        {prop: 'name', label: 'Name'}, {prop: 'groups', label: 'Groups'},
+        {prop: 'roles', label: 'Roles'}],
+      fieldsUsers: [{
+        userName: 'User Name',
+        email: 'John.Doesgmail.com',
+        name: 'Full Name',
+        groups: 'Group1',
+        roles: 'Sys. Admin',
+        status: 'Recent',
+        statusIcon: 'el-icon-time',
+        primary: true,
+        verified: true
+      }, {
+        userName: 'User Name',
+        email: 'John.Doesgmail.com',
+        name: 'Full Name',
+        groups: 'Group1',
+        roles: 'Sys. Admin',
+        status: 'Repeat',
+        statusIcon: 'el-icon-refresh',
+        primary: false,
+        verified: true
+      }, {
+        userName: 'User Name',
+        email: 'John.Doesgmail.com',
+        name: 'Full Name',
+        groups: 'Group1',
+        roles: 'Sys. Admin',
+        status: 'Inactive',
+        statusIcon: 'el-icon-remove-outline',
+        primary: false,
+        verified: true
+      }, {
+        userName: 'User Name',
+        email: 'John.Doesgmail.com',
+        name: 'Full Name',
+        groups: 'Group1',
+        roles: 'Sys. Admin',
+        status: 'Prospect',
+        statusIcon: 'el-icon-info',
+        primary: false,
+        verified: false
+      }]
     }
   }
 }
@@ -77,12 +118,14 @@ export default {
   .header {
     background-color: $blue-my-projects;
     color: $white;
+
     .my-projects-icon {
       margin-top: auto;
       margin-bottom: auto;
       padding-left: 0.5em;
       font-size: 1.5em;
     }
+
     .projects-label {
       float: left;
       font-weight: 500;

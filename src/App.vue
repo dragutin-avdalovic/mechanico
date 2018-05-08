@@ -11,12 +11,30 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "/assets/styles/leafs";
+@import 'assets/styles/varibles.scss';
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+}
+body {
+  margin: 0;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  }
-  body {
-    margin: 0;
+/* Track */
+::-webkit-scrollbar-track {
+  background: $grey-my-projects-lighter;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $blue-my-projects;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $blue-my-projects;
 }
 </style>

@@ -4,7 +4,7 @@
       <el-row type="flex" class="row-bg" justify="flex-start">
         <el-col :span="16">
           <div class="grid-content">
-            <MyProjectsPage></MyProjectsPage>
+            <AdminProjectsPage></AdminProjectsPage>
           </div>
         </el-col>
         <el-col :span="8">
@@ -21,7 +21,7 @@
         </el-col>
         <el-col :span="7">
           <div class="grid-content-bottom">
-            <NewMessage></NewMessage>
+            <Inbox></Inbox>
           </div>
         </el-col>
         <el-col :span="8">
@@ -36,24 +36,22 @@
 
 <script>
 import ElFooter from '../../node_modules/element-ui/packages/footer/src/main'
-import MyProjectsPage from './partials/MyProjectsPage.vue'
+import AdminProjectsPage from './partials/AdminProjectsPage.vue'
 import ProductRequest from './partials/ProductRequest.vue'
 import Inbox from './partials/Inbox.vue'
 import Activity from './partials/Activity.vue'
 import Status from './partials/Status.vue'
 import MessageTitle from './partials/MessageTitle.vue'
-import NewMessage from './partials/NewMessage.vue'
 
 export default {
   components: {
     ElFooter,
-    MyProjectsPage,
+    AdminProjectsPage,
     ProductRequest,
     Inbox,
     Activity,
     Status,
-    MessageTitle,
-    NewMessage
+    MessageTitle
   },
   name: 'HelloWorld',
   methods: {
@@ -69,24 +67,6 @@ export default {
   },
   data () {
     return {
-      columns: [{prop: 'projectName', label: 'Project Name'}, {prop: 'designer', label: 'Designer'},
-        {prop: 'consultant', label: 'Consultant'}, {prop: 'projectSize', label: 'Project Size'},
-        {prop: 'equipment', label: 'Equipment'}, {prop: 'year', label: 'Year'}],
-      fields: [{
-        projectName: 'Project 1',
-        designer: 'Tom Tomas',
-        consultant: 'Karl Marx',
-        projectSize: '12330',
-        equipment: '12330',
-        year: 2018
-      }, {
-        projectName: 'Project 2',
-        designer: 'Hail Tomas',
-        consultant: 'DEEN',
-        projectSize: '30',
-        equipment: '212330',
-        year: 2016
-      }]
     }
   }
 }

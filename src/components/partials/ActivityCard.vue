@@ -67,6 +67,7 @@ export default {
   }
 
   .message-activity {
+    padding-left: 1em;
     font-size: 0.8em;
     font-weight: 500;
     align-self: flex-start;
