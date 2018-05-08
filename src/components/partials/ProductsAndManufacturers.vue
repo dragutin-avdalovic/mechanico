@@ -10,72 +10,42 @@
       </el-col>
     </el-row>
     <el-row>
-      <TableRequest :fields="fields" :selectable="false" :editable="false"></TableRequest>
+      <TableProductsAndManufacturers :fields="fields" :selectable="true" :editable="true"></TableProductsAndManufacturers>
     </el-row>
   </div>
 </template>
 
 <script>
-import TableRequest from './TableRequest.vue'
+import TableProductsAndManufacturers from './TableProductsAndManufacturers.vue'
 import TableHeader from './TableHeader.vue'
 
 export default {
   components: {
-    TableRequest,
+    TableProductsAndManufacturers,
     TableHeader
   },
   data () {
     return {
       fields: [
         {
-          manufacturer: 'Project 1',
-          product: 'Fan Coil',
-          status: 'Approved',
-          type: 'success'
-        }, {
-          manufacturer: 'Project 2',
-          product: 'Fan Coil',
-          status: 'Requested',
-          type: ''
+          productName: 'Artesi - AHU',
+          manufacturer: 'Artesi',
+          productType: 'AHU'
         },
         {
-          manufacturer: 'Project 2',
-          product: 'Fan Coil',
-          status: 'Requested',
-          type: ''
-        }, {
-          manufacturer: 'Project 3',
-          product: 'Fan Coil',
-          status: 'Denied',
-          type: 'danger'
-        }, {
-          manufacturer: 'Project 3',
-          product: 'Fan Coil',
-          status: 'Denied',
-          type: 'danger'
-        }, {
-          manufacturer: 'Project 3',
-          product: 'Fan Coil',
-          status: 'Denied',
-          type: 'danger'
+          productName: 'Artesi - Condenser',
+          manufacturer: 'Artesi',
+          productType: 'Condenser'
         },
         {
-          manufacturer: 'Project 3',
-          product: 'Fan Coil',
-          status: 'Denied',
-          type: 'danger'
+          productName: 'Artesi - Condenser',
+          manufacturer: 'Artesi',
+          productType: 'Condenser'
         },
         {
-          manufacturer: 'Project 3',
-          product: 'Fan Coil',
-          status: 'Denied',
-          type: 'danger'
-        },
-        {
-          manufacturer: 'Project 3',
-          product: 'Fan Coil',
-          status: 'Denied',
-          type: 'danger'
+          productName: 'Artesi - Condenser',
+          manufacturer: 'Artesi',
+          productType: 'Condenser'
         }
       ],
       input_search: ''

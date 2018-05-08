@@ -43,10 +43,10 @@
         </div>
       </template>
     </el-table-column>
-    <el-table-column v-if="editable">
+    <el-table-column v-if="editable"  width="140">
       <template slot-scope="scope">
         <el-button
-          type="info" icon="icon-pencil"
+          type="info" icon="el-icon-edit"
           @click="handleEdit(scope.$index, scope.row)"> Edit
         </el-button>
       </template>
