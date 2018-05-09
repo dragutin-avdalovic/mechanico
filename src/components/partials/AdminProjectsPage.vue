@@ -6,13 +6,15 @@
 <script>
 import Table from './Table.vue'
 import TableHeader from './TableHeader.vue'
+import UsersTableHeader from './UsersTableHeader.vue'
 import HeaderProjectsAdmin from './HeaderProjectsAdmin.vue'
 
 export default {
   components: {
     Table,
     TableHeader,
-    HeaderProjectsAdmin
+    HeaderProjectsAdmin,
+    UsersTableHeader
   },
   data () {
     return {

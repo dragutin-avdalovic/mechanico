@@ -26,27 +26,27 @@
     <el-table-column label="Primary">
       <template slot-scope="scope">
         <div v-if="scope.row.primary">
-          <icon class="el-icon-check"></icon>
+          <i class="el-icon-check"></i>
         </div>
         <div v-else>
-          <icon class="el-icon-close"></icon>
+          <i class="el-icon-close"></i>
         </div>
       </template>
     </el-table-column>
     <el-table-column label="Verified">
       <template slot-scope="scope">
         <div v-if="scope.row.verified">
-          <icon class="el-icon-check"></icon>
+          <i class="el-icon-check"></i>
         </div>
         <div v-else>
-          <icon class="el-icon-close"></icon>
+          <i class="el-icon-close"></i>
         </div>
       </template>
     </el-table-column>
-    <el-table-column v-if="editable">
+    <el-table-column v-if="editable"  width="140">
       <template slot-scope="scope">
         <el-button
-          type="info" icon="icon-pencil"
+          type="info" icon="el-icon-edit"
           @click="handleEdit(scope.$index, scope.row)"> Edit
         </el-button>
       </template>

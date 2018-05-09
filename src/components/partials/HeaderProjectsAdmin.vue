@@ -14,6 +14,7 @@
           <div class="my-projects-icon"><i class="el-icon-picture"></i></div>
           <div class="projects-label">USERS MANAGEMENT</div>
         </div>
+        <UsersTableHeader></UsersTableHeader>
         <UsersTable :fields="fieldsUsers" :columns="columnsUsers" :selectable="selectableUsers" :editable="editableUsers"></UsersTable>
       </el-tab-pane>
     </el-tabs>
@@ -22,12 +23,14 @@
 <script>
 import Table from './Table.vue'
 import UsersTable from './UsersTable.vue'
+import UsersTableHeader from './UsersTableHeader.vue'
 import TableHeader from './TableHeader.vue'
 export default {
   components: {
     Table,
     TableHeader,
-    UsersTable
+    UsersTable,
+    UsersTableHeader
   },
   props: ['fields', 'columns', 'selectable', 'editable', 'fieldsUsers', 'columnsUsers', 'selectableUsers', 'editableUsers'],
   data () {
