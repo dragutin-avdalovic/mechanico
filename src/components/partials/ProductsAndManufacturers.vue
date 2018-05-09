@@ -80,7 +80,7 @@ export default {
       .el-button
       {
         background-color: $blue-my-projects;
-        color: white  ;
+        color: white;
       }
     }
   }

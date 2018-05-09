@@ -72,4 +72,8 @@ export default {
     }
   }
 }
+.el-tabs
+{
+  height: calc(100vh - 372px);
+}
 </style>

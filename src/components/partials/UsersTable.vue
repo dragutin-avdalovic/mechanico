@@ -9,7 +9,7 @@
     :data="fields"
     :default-sort="{prop: 'userName', order: 'ascending'}"
     style="width: 100%"
-    height="310"
+    height="245"
     @selection-change="handleSelectionChange">
     <el-table-column v-if="selectable" type="selection" width="55"></el-table-column>
     <el-table-column sortable v-for="(column, key) in columns"

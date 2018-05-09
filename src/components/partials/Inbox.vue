@@ -21,6 +21,8 @@
       <Message sender='Phill' lastMessage='Hey there' date='Sep 2018'></Message>
       <Message sender='Phill' lastMessage='Hey there' date='Sep 2018'></Message>
       <Message sender='Phill' lastMessage='Hey there' date='Sep 2018'></Message>
+      <Message sender='Phill' lastMessage='Hey there' date='Sep 2018'></Message>
+      <Message sender='Phill' lastMessage='Hey there' date='Sep 2018'></Message>
       <Message sender='Vesna' lastMessage='Hey there' date='July 2018'></Message>
       <Message sender='Vesna' lastMessage='Hey there' date='July 2018'></Message>
       <Message sender='Vesna' lastMessage='Hey there' date='July 2018'></Message>
@@ -96,8 +98,8 @@ export default {
       }
     }
   }
-  .inbox-container {
-    max-height: 44vh;
+  .inbox-composition {
+    height: calc(100vh - 372px);
     overflow: auto;
   }
 </style>

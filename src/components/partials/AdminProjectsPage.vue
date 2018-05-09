@@ -118,6 +118,6 @@ export default {
   @import '../../assets/styles/varibles';
   .projects-admin
   {
-    min-height: 24em;
+    height: 22em;
   }
 </style>
