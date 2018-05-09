@@ -1,14 +1,14 @@
 <template>
   <div class="header-div">
     <el-tabs type="border-card">
-      <el-tab-pane>
+      <el-tab-pane class="tab-products">
         <div slot="label" class="header">
           <div class="my-projects-icon"><i class="el-icon-goods"></i></div>
           <div class="projects-label">PRODUCTS AND MANUFACTURERS</div>
         </div>
         <ProductsAndManufacturers></ProductsAndManufacturers>
       </el-tab-pane>
-      <el-tab-pane>
+      <el-tab-pane class="tab-products">
         <div slot="label" class="header">
           <div class="my-projects-icon"><i class="el-icon-sold-out"></i></div>
           <div class="projects-label">PRODUCT REQUEST</div>
