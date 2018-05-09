@@ -70,7 +70,7 @@ export default {
   }
   .row-header
   {
-    padding-top: 0.5em;
+    background-color: #E9E9E9;
     padding-bottom: 0.5em;
     .search-input {
       min-width: 5em;

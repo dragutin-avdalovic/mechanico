@@ -32,60 +32,63 @@ export default {
 <style lang="scss" scoped>
   @import '../../assets/font/fontello/css/fontello.css';
   @import '../../assets/styles/varibles';
-  .search-input {
-    min-width: 5em;
-    max-width: 20em;
-    float: right;
-    margin-top: 1em;
-    .el-button
-    {
-      background-color: #0D72B9;
-      color: white;
-      font-weight: 900;
-      font-size: 1em;
+.manufacturers-header
+  {
+    padding: 0.5em;
+    .search-input {
+      min-width: 5em;
+      max-width: 20em;
+      float: right;
+      margin-top: 1em;
+      .el-button
+      {
+        background-color: #0D72B9;
+        color: white;
+        font-weight: 900;
+        font-size: 1em;
+      }
     }
-  }
-
-  .el-col-left {
-    min-height: 1em;
-    min-width: 5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .new-user
-    {
-      background-color: #0D72B9;
-      color: white;
-      margin-right: 0.1em;
-      i{
+    .el-col-left {
+      min-height: 1em;
+      min-width: 5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .new-user
+      {
+        background-color: #0D72B9;
+        color: white;
+        margin-right: 0.1em;
+        i{
+          font-size: 1em;
+          font-weight: 700;
+        }
+      }
+      .groups
+      {
+        background-color: #909399;
+        color: white;
+        margin-right: 0.5em;
+        i{
+          font-size: 1em;
+          font-weight: 700;
+        }
+      }
+      .trash
+      {
+        background-color: #909399;
+        color: white;
+        margin-right: 0.5em;
+        i{
+          font-size: 1em;
+          font-weight: 700;
+        }
+      }
+      span
+      {
         font-size: 1em;
         font-weight: 700;
       }
-    }
-    .groups
-    {
-      background-color: #909399;
-      color: white;
-      margin-right: 0.5em;
-      i{
-        font-size: 1em;
-        font-weight: 700;
-      }
-    }
-    .trash
-    {
-      background-color: #909399;
-      color: white;
-      margin-right: 0.5em;
-      i{
-        font-size: 1em;
-        font-weight: 700;
-      }
-    }
-    span
-    {
-      font-size: 1em;
-      font-weight: 700;
     }
   }
 </style>

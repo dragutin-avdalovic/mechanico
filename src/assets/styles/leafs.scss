@@ -53,6 +53,13 @@
   .el-tabs__item:hover {
     background-color: #0D72B9;
   }
+  .el-tabs
+  {
+    background-color:  #E9E9E9;
+  }
+  .el-tabs--border-card>.el-tabs__content
+  {
+    padding: 0.5em 0px;
+  }
 }
-
 

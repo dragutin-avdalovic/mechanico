@@ -70,6 +70,6 @@ export default {
     }
   }
   .row-header {
-    padding: 0.5em;
+    padding: 1em 0.5em;
   }
 </style>
