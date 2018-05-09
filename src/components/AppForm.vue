@@ -1,5 +1,5 @@
-<template>
-  <el-dialog :visible.sync="dialogVisible">
+<template id="appForm">
+  <el-dialog v-model="showDialog">
   <div class="Modal">
     <el-form ref="form" :model="form">
       <el-row :gutter="70">
@@ -40,7 +40,7 @@
       </el-row>
       <el-row type="flex" justify="center" :gutter="10">
         <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
-          <el-button @click="dialogVisible = false" class="Cancel" type="primary">Cancel</el-button>
+          <el-button @close="closeDialog('AppForm')" class="Cancel" type="primary">Cancel</el-button>
         </el-col>
         <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
           <el-button type="primary">Save</el-button>
@@ -53,10 +53,16 @@
 
 <script type="text/javascript">
 export default {
+  name: 'AppForm',
   data () {
     return {
       form: {
         name: ''
+      },
+      methods: {
+        openDialog (dialogId) {
+          this.show(dialogId)
+        }
       }
     }
   }

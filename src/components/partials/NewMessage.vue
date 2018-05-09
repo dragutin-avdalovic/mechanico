@@ -2,18 +2,20 @@
   <div class="message-container">
     <el-row class="header" type="flex" justify="center">
       <!--<el-col :span="4" class="my-projects-icon"><i class="icon-mail"></i></el-col>-->
-      <el-col :span="20"><span class="projects-label">New Message</span></el-col>
-      <el-col :span="4" class="my-projects-icon close">X</el-col>
+      <el-col :xs="20" :sm="20" :md="20" :lg="20" :xl="20">
+        <span class="projects-label">New Message</span>
+      </el-col>
+      <el-col :xs="4" :sm="4" :md="4" :lg="4" :xl="4" class="my-projects-icon close" v-on:click="closeMessage">X</el-col>
     </el-row>
     <div class="info">
       <el-row>
-        <el-col :span="24">
-          <input type="text" name="name" placeholder="To..">
+        <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+          <input type="text" placeholder="To.." v-model="inputTo">
         </el-col>
       </el-row>
       <el-row>
-        <el-col :span="24">
-          <input type="text" name="text" placeholder="From..">
+        <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+          <input type="text" placeholder="From.." v-model="inputFrom">
         </el-col>
       </el-row>
     </div>
@@ -21,14 +23,14 @@
     <div class="subject">
       <el-row>
         <el-col :span="24">
-          <input type="text" name="name" placeholder="Subject..">
+          <input type="text" placeholder="Subject.." v-model="inputSubject">
         </el-col>
       </el-row>
     </div>
       <el-row>
         <el-col :span="24">
           <div class="message">
-      <textarea name="message" id="" cols="10" rows="10"></textarea>
+      <el-input name="message" id="" cols="10" rows="10" class="textarea" v-model="textarea"></el-input>
           </div>
         </el-col>
       </el-row>
@@ -50,7 +52,12 @@ export default {
     Message
   },
   data () {
-    return {}
+    return {
+      inputFrom: '',
+      inputTo: '',
+      inputSubject: '',
+      textarea: ''
+    }
   }
 }
 </script>
@@ -111,7 +118,7 @@ export default {
     min-height: 10em;
     background-color: $grey-my-projects-lighter;
   }
-  textarea{
+  .textarea{
     width: 100%;
     background-color: $grey-my-projects-lighter;
     border: none;
