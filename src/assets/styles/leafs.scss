@@ -44,7 +44,8 @@
     border: 0;
     }
   .el-tabs__item.is-top.is-active {
-    padding-top: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     height: 4em;
     background-color: #0D72B9;
     color: white;
