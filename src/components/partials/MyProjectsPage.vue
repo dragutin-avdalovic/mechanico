@@ -19,6 +19,8 @@ export default {
   },
   data () {
     return {
+      methods: {
+      },
       items: [
         {name: 'projectName', label: 'Project Name'}, {name: 'designer', label: 'Designer'}
       ],
