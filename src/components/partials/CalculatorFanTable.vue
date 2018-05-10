@@ -5,23 +5,23 @@
     <th rowspan="2">No</th>
     <th rowspan="2">Level</th>
     <th rowspan="2">Room</th>
-    <th rowspan="2">Chiller</th>
-    <th rowspan="2">Unit</th>
-    <th colspan="3" style="">Heating</th>
-    <th colspan="3" style="">Cooling</th>
-    <th rowspan="2" style="">FanCoil Type</th>
-    <th rowspan="2" style="">External Static Pressure (Pa)</th>
-    <th rowspan="2">Noise Level (dB)</th>
-    <th rowspan="2">Fans</th>
+    <th rowspan="2" width="10%">Chiller</th>
+    <th rowspan="2" width="10%">Unit</th>
+    <th colspan="3" width="20%">Heating</th>
+    <th colspan="3" width="20%">Cooling</th>
+    <th rowspan="2" width="10%">FanCoil Type</th>
+    <th rowspan="2"  width="10%">External Static Pressure (Pa)</th>
+    <th rowspan="2"  width="10%">Noise Level (dB)</th>
+    <th rowspan="2" width="20%">Fans</th>
     <th v-if="editableFanCoils" rowspan="2"></th>
   </tr>
   <tr>
-    <th>Required Capacity (kW)</th>
-    <th>Internal Air (℃)</th>
-    <th>Relative Humidity (%)</th>
-    <th>Required Capacity (kW)</th>
-    <th>Internal Air (℃)</th>
-    <th>Relative Humidity (%)</th>
+    <th width="">Required Capacity (kW)</th>
+    <th width="">Internal Air (℃)</th>
+    <th width="">Relative Humidity (%)</th>
+    <th width="">Required Capacity (kW)</th>
+    <th width="">Internal Air (℃)</th>
+    <th width="">Relative Humidity (%)</th>
   </tr>
   </thead>
   <tbody  v-for="(FanCoil, index) in FanCoilsData" v-bind:key="index">
@@ -268,18 +268,22 @@ export default {
   @import '../../assets/styles/leafs.scss';
   .table-fan
   {
-    overflow: auto;
-    border: 0;
+    overflow-x: auto;
+    border-spacing: 1px;
+    width: 200%;
     thead
     {
       background-color:#29aae2;
       color:white;
       overflow: auto;
+      border-color: #29aae2;
     }
     tbody {
       background-color:white;
       color:black;
       text-align: center;
+      border-top: 0px ;
+      border-bottom: 0px;
     }
   }
 </style>
