@@ -73,7 +73,7 @@
       <td>{{FanCoil.qtRicField}}</td>
       <td>{{FanCoil.tainField}}</td>
       <td>{{FanCoil.urinField}}</td>
-      <td rowspan="2">{{FanCoil.typeField}}</td>
+      <td rowspan="2">{{makeTypeFieldText(FanCoil.typeField)}}</td>
       <td rowspan="2">{{FanCoil.statPresField}}</td>
       <td rowspan="2">{{FanCoil.noiseLevel}}</td>
       <td rowspan="2">{{FanCoil.fansField}}</td>
@@ -85,6 +85,7 @@
 export default {
   data () {
     return {
+      typeFieldText: '',
       editableFanCoils: false,
       FanCoilsData: [
         {
@@ -259,6 +260,15 @@ export default {
   methods: {
     handleClick (tab, event) {
       console.log(tab, event)
+    },
+    makeTypeFieldText (typeField) {
+      for (var fieldType in this.typeFieldOptions) {
+        if (fieldType.value === typeField) {
+          typeField = fieldType.text
+          console.log(typeField)
+          return typeField
+        }
+      }
     }
   }
 }
@@ -291,7 +301,7 @@ export default {
       tr {
         padding: 0.2em;
         td {
-          padding:0.4em;
+          padding:0.8em;
           border-right: 1px solid #29aae2;
         }
       }
