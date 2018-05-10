@@ -13,7 +13,7 @@
     <th rowspan="2" style="">External Static Pressure (Pa)</th>
     <th rowspan="2">Noise Level (dB)</th>
     <th rowspan="2">Fans</th>
-    <th data-bind="visible: editableFanCoils" rowspan="2" style="display: none;"></th>
+    <th v-if="editableFanCoils" rowspan="2"></th>
   </tr>
   <tr>
     <th>Required Capacity (kW)</th>
@@ -49,6 +49,7 @@
                                                    optionsValue: 'value',
                                                    optionsText: 'text',
                                                    optionsCaption: 'Choose...'"></el-select></td>
+    <td><el-button data-bind="click: $root.removeFanCoil" class="btn btn-link">Remove</el-button></td>
   </tr>
   <tr v-else>
       <td rowspan="2">{{index+1}}</td>
