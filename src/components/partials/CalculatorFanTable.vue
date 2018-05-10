@@ -3,8 +3,8 @@
   <thead>
   <tr>
     <th rowspan="2">No</th>
-    <th rowspan="2">Level</th>
-    <th rowspan="2">Room</th>
+    <th rowspan="2" width="10%">Level</th>
+    <th rowspan="2" width="10%">Room</th>
     <th rowspan="2" width="10%">Chiller</th>
     <th rowspan="2" width="10%">Unit</th>
     <th colspan="3" width="20%">Heating</th>
@@ -12,16 +12,16 @@
     <th rowspan="2" width="10%">FanCoil Type</th>
     <th rowspan="2"  width="10%">External Static Pressure (Pa)</th>
     <th rowspan="2"  width="10%">Noise Level (dB)</th>
-    <th rowspan="2" width="20%">Fans</th>
+    <th rowspan="2" width="10%">Fans</th>
     <th v-if="editableFanCoils" rowspan="2"></th>
   </tr>
   <tr>
-    <th width="">Required Capacity (kW)</th>
-    <th width="">Internal Air (℃)</th>
-    <th width="">Relative Humidity (%)</th>
-    <th width="">Required Capacity (kW)</th>
-    <th width="">Internal Air (℃)</th>
-    <th width="">Relative Humidity (%)</th>
+    <th class="sub-head">Required Capacity (kW)</th>
+    <th class="sub-head">Internal Air (℃)</th>
+    <th class="sub-head">Relative Humidity (%)</th>
+    <th class="sub-head">Required Capacity (kW)</th>
+    <th class="sub-head">Internal Air (℃)</th>
+    <th class="sub-head">Relative Humidity (%)</th>
   </tr>
   </thead>
   <tbody  v-for="(FanCoil, index) in FanCoilsData" v-bind:key="index">
@@ -85,7 +85,7 @@
 export default {
   data () {
     return {
-      editableFanCoils: true,
+      editableFanCoils: false,
       FanCoilsData: [
         {
           'floorField': '1',
@@ -269,21 +269,32 @@ export default {
   .table-fan
   {
     overflow-x: auto;
-    border-spacing: 1px;
+    border-spacing: 0px;
     width: 200%;
     thead
     {
       background-color:#29aae2;
       color:white;
       overflow: auto;
-      border-color: #29aae2;
+      th{
+       padding:0.2em;
+      }
+      .sub-head
+      {
+        color: #cccccc;
+      }
     }
     tbody {
       background-color:white;
       color:black;
       text-align: center;
-      border-top: 0px ;
-      border-bottom: 0px;
+      tr {
+        padding: 0.2em;
+        td {
+          padding:0.4em;
+          border-right: 1px solid #29aae2;
+        }
+      }
     }
   }
 </style>
