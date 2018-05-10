@@ -1,7 +1,9 @@
 <template>
 <div class="tab">
   <el-tabs v-model="activeName" @tab-click="handleClick">
-    <el-tab-pane label="FanCoil" name="first"><CalculatorTable></CalculatorTable></el-tab-pane>
+    <el-tab-pane label="FanCoil" name="first">
+      <CalculatorFanTable></CalculatorFanTable>
+    </el-tab-pane>
     <el-tab-pane label="Chiller" name="second">Chiller</el-tab-pane>
     <el-tab-pane label="DryColler" name="third">DryColler</el-tab-pane>
     <el-tab-pane label="Condenser" name="fourth">Condenser</el-tab-pane>
@@ -15,7 +17,7 @@
 </template>
 
 <script>
-import CalculatorTable from '@/components/partials/CalculatorTable'
+import CalculatorFanTable from './CalculatorFanTable.vue'
 export default {
 	   components: {
    		 CalculatorTable
@@ -24,6 +26,10 @@ export default {
     return {
       activeName: 'first'
     }
+  },
+  components:
+  {
+    CalculatorFanTable
   },
   methods: {
     handleClick (tab, event) {
@@ -45,5 +51,9 @@ export default {
     margin-left:400px;
     margin-top:240px;
     width:310px;
+  }
+  .el-tab-pane
+  {
+    overflow: auto;
   }
 </style>
