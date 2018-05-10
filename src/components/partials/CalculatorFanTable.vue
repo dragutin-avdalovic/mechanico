@@ -26,7 +26,29 @@
   </thead>
   <tbody  v-for="(FanCoil, index) in FanCoilsData" v-bind:key="index">
   <tr v-if="editableFanCoils">
-    lala
+    <td>{{index+1}}</td>
+    <td><el-input :value="FanCoil.floorField" type="text" ></el-input></td>
+    <td><el-input :value="FanCoil.roomField" type="text" ></el-input></td>
+    <td><el-input :value="FanCoil.chIdField" type="text" ></el-input></td>
+    <td><el-input :value="FanCoil.fcIdField" type="text" ></el-input></td>
+    <td><el-input :value="FanCoil.qtRicHField" type="number" ></el-input></td>
+    <td><el-input :value="FanCoil.tainHField" type="number" ></el-input></td>
+    <td><el-input :value="FanCoil.urinHField" type="number" ></el-input></td>
+    <td><el-input :value="FanCoil.qtRicField" type="number" ></el-input></td>
+    <td><el-input :value="FanCoil.tainField" type="number" ></el-input></td>
+    <td><el-input :value="FanCoil.urinField" type="number" ></el-input></td>
+    <td><el-select data-bind="options: typeFieldOptions,
+                                                   value: typeField,
+                                                   optionsValue: 'value',
+                                                   optionsText: 'text',
+                                                   optionsCaption: 'Choose...'"></el-select></td>
+    <td><el-input  :value="FanCoil.statPresField" type="number"></el-input></td>
+    <td><el-input  :value="FanCoil.noiseLevel" type="number"></el-input></td>
+    <td><el-select data-bind="options: fansFieldOptions,
+                                                   value: fansField,
+                                                   optionsValue: 'value',
+                                                   optionsText: 'text',
+                                                   optionsCaption: 'Choose...'"></el-select></td>
   </tr>
   <tr v-else>
       <td rowspan="2">{{index+1}}</td>
@@ -52,7 +74,7 @@
 export default {
   data () {
     return {
-      editableFanCoils: false,
+      editableFanCoils: true,
       FanCoilsData: [
         {
           'floorField': '1',
