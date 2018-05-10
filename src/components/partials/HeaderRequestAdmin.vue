@@ -1,14 +1,14 @@
 <template>
   <div class="header-div">
     <el-tabs type="border-card">
-      <el-tab-pane>
+      <el-tab-pane class="tab-products">
         <div slot="label" class="header">
           <div class="my-projects-icon"><i class="el-icon-goods"></i></div>
           <div class="projects-label">PRODUCTS AND MANUFACTURERS</div>
         </div>
         <ProductsAndManufacturers></ProductsAndManufacturers>
       </el-tab-pane>
-      <el-tab-pane>
+      <el-tab-pane class="tab-products">
         <div slot="label" class="header">
           <div class="my-projects-icon"><i class="el-icon-sold-out"></i></div>
           <div class="projects-label">PRODUCT REQUEST</div>
@@ -43,8 +43,7 @@ export default {
 <style lang="scss" scoped>
   @import '../../assets/font/fontello/css/fontello.css';
   @import '../../assets/styles/varibles';
-  .header-div
-  {
+  .header-div {
     .header {
       display: flex;
       flex-direction: row;
@@ -57,19 +56,28 @@ export default {
         font-size: 1em;
       }
     }
-  .row-header
-  {
-    .search-input {
-      min-width: 5em;
-      max-width: 20em;
-      float: right;
-      margin-right: 15px;
-      .el-button
+    .row-header
+    {
+      .search-input
       {
-        background-color: $blue-my-projects;
-        color: white  ;
+        float: right;
+        padding: 0.5em;
+        max-width: 20em;
+        .el-button
+        {
+          background-color: $blue-my-projects;
+          color: white;
+        }
       }
     }
   }
+.el-tabs
+{
+  height: calc(100vh - 372px);
+  background-color:  $grey-my-projects-lighter;
+}
+.el-tabs--border-card>.el-tabs__content
+{
+  padding: 0px !important;
 }
 </style>

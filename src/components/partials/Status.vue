@@ -68,7 +68,7 @@ export default {
   .status-bg {
     padding: 1em;
     background-color: $white;
-    min-height: 22em;
+    height: 22.5em;
   }
 
   .divider {

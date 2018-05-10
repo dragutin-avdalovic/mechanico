@@ -8,6 +8,9 @@
       <ActivityCard sender='Mark Moe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                     date='Sep 2018' time="11:00 am" notification="Requested License"
                     className="orange-activity"></ActivityCard>
+      <ActivityCard sender='Mark Moe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                    date='Sep 2018' time="11:00 am" notification="Requested License"
+                    className="orange-activity"></ActivityCard>
       <ActivityCard sender='Mark Joe' activityMessage='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                     date='Sep 2018' time="11:00 am" notification="New Project"
                     className="tirquise-activity"></ActivityCard>
@@ -65,8 +68,8 @@ export default {
       padding-bottom: 0.5em;
     }
   }
-  .message-container {
-    max-height: 50vh;
+  .activity-container {
+    height: calc(100vh - 372px);
     overflow: auto;
   }
 </style>

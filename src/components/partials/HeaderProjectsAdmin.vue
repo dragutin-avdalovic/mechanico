@@ -9,7 +9,7 @@
         <TableHeader></TableHeader>
         <Table :fields="fields" :columns="columns" :selectable="true" :editable="true"></Table>
       </el-tab-pane>
-      <el-tab-pane class="tab">
+      <el-tab-pane>
         <div slot="label" class="header">
           <div class="my-projects-icon"><i class="el-icon-picture"></i></div>
           <div class="projects-label">USERS MANAGEMENT</div>
@@ -46,6 +46,7 @@ export default {
     .header {
       display: flex;
       flex-direction: row;
+      justify-self: flex-end;
       .my-projects-icon {
         font-size: 1.5em;
         padding-right: 1em;
@@ -55,4 +56,5 @@ export default {
         font-size: 1em;
       }
     }
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="projects-admin">
     <HeaderProjectsAdmin :fields="fields" :columns="columns" :selectable="true" :editable="true" :fieldsUsers="fieldsUsers" :columnsUsers="columnsUsers" :selectableUsers="true" :editableUsers="true"></HeaderProjectsAdmin>
   </div>
 </template>
@@ -116,24 +116,8 @@ export default {
 <style lang="scss" scoped>
   @import '../../assets/font/fontello/css/fontello.css';
   @import '../../assets/styles/varibles';
-
-  .header {
-    background-color: $blue-my-projects;
-    color: $white;
-
-    .my-projects-icon {
-      margin-top: auto;
-      margin-bottom: auto;
-      padding-left: 0.5em;
-      font-size: 1.5em;
-    }
-
-    .projects-label {
-      float: left;
-      font-weight: 500;
-      font-size: 1em;
-      padding-top: 0.5em;
-      padding-bottom: 0.5em;
-    }
+  .projects-admin
+  {
+    min-height: 22.4em;
   }
 </style>
