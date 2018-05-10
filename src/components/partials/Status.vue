@@ -6,18 +6,18 @@
       </el-col>
     </el-row>
     <el-row>
-      <el-col :span="10" class="center">
+      <el-col :xs="10" :sm="10" :md="10" :lg="10" :xl="10" class="center">
         <img class="profile-img" src="../../../static/images/img_avatar2.png" alt="Avatar">
       </el-col>
-      <el-col :span="14">
+      <el-col :xs="14" :sm="14" :md="14" :lg="14" :xl="14">
         <div class="status">
-          <span class=""><h4 style="margin: 0;">John Doe</h4></span>
-          <span class="info">Company Name</span>
+          <span class=""><h4 style="margin: 0;">{{user}}</h4></span>
+          <span class="info">{{company}}</span>
         </div>
         <div class="status contact-info">
-          <span class="info"><i class="icon icon-location"></i>London, UK</span>
-          <span class="info"><i class="icon icon-mail"></i>John.Doe@mail.com</span>
-          <span class="info"><i class="icon icon-phone"></i>+38700000000</span>
+          <span class="info"><i class="icon icon-location"></i>{{city}}</span>
+          <span class="info"><i class="icon icon-mail"></i>{{mail}}</span>
+          <span class="info"><i class="icon icon-phone"></i>{{phone}}</span>
         </div>
       </el-col>
     </el-row>
@@ -48,6 +48,7 @@
 <script>
 export default {
   components: {},
+  props: ['user', 'company', 'city', 'mail', 'phone'],
   data () {
     return {}
   }
@@ -80,10 +81,7 @@ export default {
     display: flex;
     flex-direction: column;
     text-align: left;
-  }
-
-  .contact-info {
-    /*font-size: 1.1em;*/
+    align-self: flex-start;
   }
   .info {
     padding-bottom: 0.5em;

@@ -1,29 +1,29 @@
 <template>
   <div>
     <el-row class="header" type="flex" justify="center">
-      <el-col :span="20"><span class="projects-label">Message Title</span></el-col>
-      <el-col :span="4" class="my-projects-icon close">X</el-col>
+      <el-col :xs="20" :sm="20" :md="20" :lg="20" :xl="20">
+        <span class="projects-label">Message Title</span>
+      </el-col>
+      <el-col :xs="4" :sm="4" :md="4" :lg="4" :xl="4" class="my-projects-icon close">X</el-col>
     </el-row>
     <el-row type="flex" justify="center" class="row-header sender">
-      <el-col :span="6">
+      <el-col :xs="6" :sm="6" :md="6" :lg="6" :xl="6">
         <img src="../../../static/images/img_avatar2.png" alt="">
       </el-col>
-      <el-col :span="14">
+      <el-col :xs="14" :sm="14" :md="14" :lg="14" :xl="14">
         <div class="center-info">
-          <span class="name">John Doe</span>
-          <span class="mail">John.Doe@email.com</span>
+          <span class="name">{{name}}</span>
+          <span class="mail">{{mail}}</span>
         </div>
       </el-col>
-      <el-col :span="8">
+      <el-col :xs="8" :sm="8" :md="8" :lg="8" :xl="8">
         <div class="time">
-        <span>12.04.2018</span>
+        <span>{{dateReceived}}</span>
         </div>
         <div class="icons">
           <span><i class="icon-reply" style="cursor: pointer"></i></span>
           <span><i class="icon-down-dir" style="cursor: pointer"></i></span>
         </div>
-        <!--<el-button type="info" size="mini" icon="icon-trash-empty"></el-button>-->
-        <!--<el-button type="primary" size="mini">Compose Mail</el-button>-->
       </el-col>
     </el-row>
     <div class="divider"></div>
@@ -31,17 +31,14 @@
     <el-row class="row-header" justify="center">
       <el-col :span="24">
         <div class="message-container">
-          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehender minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+          <span>{{message}}</span>
         </div>
       </el-col>
-      <el-col :span="24">
+      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
         <div class="message-container">
           <div class="replay">
-            <span>Click here to<button>Reply</button>, <button>Reply to all</button>, or <button>Forward</button>
+            <span>Click here to
+              <el-button type="text">Reply</el-button>, <el-button type="text">Reply to all</el-button>, or <el-button type="text">Forward</el-button>
           </span>
           </div>
         </div>
@@ -62,8 +59,10 @@ export default {
     TableHeader,
     Message
   },
+  props: ['name', 'mail', 'dateReceived', 'message'],
   data () {
-    return {}
+    return {
+    }
   }
 }
 </script>
