@@ -37,18 +37,28 @@
     <td><el-input :value="FanCoil.qtRicField" type="number" ></el-input></td>
     <td><el-input :value="FanCoil.tainField" type="number" ></el-input></td>
     <td><el-input :value="FanCoil.urinField" type="number" ></el-input></td>
-    <td><el-select data-bind="options: typeFieldOptions,
-                                                   value: typeField,
-                                                   optionsValue: 'value',
-                                                   optionsText: 'text',
-                                                   optionsCaption: 'Choose...'"></el-select></td>
+    <td>
+      <el-select v-model="FanCoil.typeField" placeholder="Choose...">
+        <el-option
+          v-for="type in typeFieldOptions"
+          :key="type.value"
+          :label="type.text"
+          :value="type.value">
+        </el-option>
+      </el-select>
+    </td>
     <td><el-input  :value="FanCoil.statPresField" type="number"></el-input></td>
     <td><el-input  :value="FanCoil.noiseLevel" type="number"></el-input></td>
-    <td><el-select data-bind="options: fansFieldOptions,
-                                                   value: fansField,
-                                                   optionsValue: 'value',
-                                                   optionsText: 'text',
-                                                   optionsCaption: 'Choose...'"></el-select></td>
+    <td>
+      <el-select v-model="FanCoil.fansField" placeholder="Choose...">
+        <el-option
+          v-for="fan in fansFieldOptions"
+          :key="fan.value"
+          :label="fan.text"
+          :value="fan.value">
+        </el-option>
+      </el-select>
+    </td>
     <td><el-button data-bind="click: $root.removeFanCoil" class="btn btn-link">Remove</el-button></td>
   </tr>
   <tr v-else>
@@ -63,7 +73,7 @@
       <td>{{FanCoil.qtRicField}}</td>
       <td>{{FanCoil.tainField}}</td>
       <td>{{FanCoil.urinField}}</td>
-      <td rowspan="2">{{FanCoil.typeFieldLabel}}</td>
+      <td rowspan="2">{{FanCoil.typeField}}</td>
       <td rowspan="2">{{FanCoil.statPresField}}</td>
       <td rowspan="2">{{FanCoil.noiseLevel}}</td>
       <td rowspan="2">{{FanCoil.fansField}}</td>
@@ -233,6 +243,16 @@ export default {
           'chillTwCoutHField': '5',
           'PropertyChanged': null
         }
+      ],
+      fansFieldOptions: [
+        { value: 'AC', text: 'AC' },
+        { value: 'EC', text: 'EC' }
+      ],
+      typeFieldOptions: [
+        { value: 0, text: 'Floor' },
+        { value: 1, text: 'Ducted' },
+        { value: 2, text: 'Cassette' },
+        { value: 3, text: 'Wall' }
       ]
     }
   },
