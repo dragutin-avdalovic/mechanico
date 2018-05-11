@@ -6,20 +6,27 @@
   </el-row>
   <TableHeader></TableHeader>
   <Table :fields="fields" :columns="columns" :selectable="true" :editable="true"></Table>
+    <AppForm :show = "dialogVisible = true"></AppForm>
   </span>
 </template>
 <script>
 import Table from './Table.vue'
 import TableHeader from './TableHeader.vue'
+import AppForm from './AppForm.vue'
 
 export default {
   components: {
     Table,
-    TableHeader
+    TableHeader,
+    AppForm
   },
   data () {
     return {
       methods: {
+        dialogVisible () {
+          this.dialogVisible = false
+          this.$emit('dialogVisible = true')
+        }
       },
       items: [
         {name: 'projectName', label: 'Project Name'}, {name: 'designer', label: 'Designer'}
