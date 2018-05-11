@@ -25,20 +25,23 @@
     <el-row>
       <el-col :span="8">
         <div class="center">
+          <div class="info">Total Products</div>
           <el-progress :width=100 class="circle" type="circle" :percentage="0"></el-progress>
-          <div class="info">New Project</div>
+         <RadioButton :items="itemsRadioOne"></RadioButton>
         </div>
       </el-col>
       <el-col :span="8">
         <div class="center">
+          <div class="info">Total Users</div>
           <el-progress :width=100 class="circle" type="circle" :percentage="25"></el-progress>
-          <div class="info">Total Project</div>
+          <RadioButton :items="itemsRadioTwo"></RadioButton>
         </div>
       </el-col>
       <el-col :span="8">
         <div class="center">
+          <div class="info">Licence Requests</div>
           <el-progress :width=100 class="circle" type="circle" :percentage="80" color="#8e71c7"></el-progress>
-          <div class="info">Approved Licenses</div>
+          <RadioButton :items="itemsRadioThree"></RadioButton>
         </div>
       </el-col>
     </el-row>
@@ -46,11 +49,27 @@
 </template>
 
 <script>
+import RadioButton from './RadioButton.vue'
 export default {
-  components: {},
+  components: {
+    RadioButton
+  },
   props: ['user', 'company', 'city', 'mail', 'phone'],
   data () {
-    return {}
+    return {
+      itemsRadioOne: [
+        { id: '1', text: 'Products Used', color: 'blue' },
+        { id: '2', text: 'Products Unused', color: 'blue' }
+      ],
+      itemsRadioTwo: [
+        { id: '3', text: 'Manufacturers', color: 'green' },
+        { id: '4', text: 'Consultants', color: 'green' }
+      ],
+      itemsRadioThree: [
+        { id: '5', text: 'Cancelled Requests', color: 'red' },
+        { id: '6', text: 'Shared Requests', color: 'red' }
+      ]
+    }
   }
 }
 </script>
@@ -108,5 +127,8 @@ export default {
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
+  .circle{
+    padding-top: 0.5em;
   }
 </style>
