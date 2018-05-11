@@ -19,9 +19,6 @@
 <script>
 import CalculatorFanTable from './CalculatorFanTable.vue'
 export default {
-	   components: {
-   		 CalculatorTable
-  },
   data () {
     return {
       activeName: 'first'
