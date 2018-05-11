@@ -46,13 +46,13 @@
 </template>
 
 <script>
-  export default {
-    components: {},
-    props: ['user', 'company', 'city', 'mail', 'phone'],
-    data () {
-      return {}
-    }
+export default {
+  components: {},
+  props: ['user', 'company', 'city', 'mail', 'phone'],
+  data () {
+    return {}
   }
+}
 </script>
 
 <style lang="scss" scoped>
