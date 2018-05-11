@@ -4,9 +4,7 @@
       <el-row class="row-bg" justify="flex-start">
         <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
           <div class="grid-content1">
-
             <CalculatorSidebar></CalculatorSidebar>
-
           </div>
         </el-col>
         <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">

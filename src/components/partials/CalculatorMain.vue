@@ -61,7 +61,9 @@ export default {
   @import '../../assets/styles/leafs.scss';
   @import '../../assets/styles/varibles.scss';
   .filter {
-    width: 100%;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
     background-color: #424242;
     ul {
       list-style: none;

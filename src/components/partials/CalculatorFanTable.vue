@@ -1,8 +1,8 @@
 <template>
-<table class="table-fan">
+<table class="table-fan"  cellspacing="0" cellpadding="0" >
   <thead>
   <tr>
-    <th rowspan="2">No</th>
+    <th class="no" rowspan="2">No</th>
     <th rowspan="2" width="10%">Level</th>
     <th rowspan="2" width="10%">Room</th>
     <th rowspan="2" width="10%">Chiller</th>
@@ -26,7 +26,7 @@
   </thead>
   <tbody  v-for="(FanCoil, index) in FanCoilsData" v-bind:key="index">
   <tr v-if="editableFanCoils">
-    <td>{{index+1}}</td>
+    <td class="no">{{index+1}}</td>
     <td><el-input :value="FanCoil.floorField" type="text" ></el-input></td>
     <td><el-input :value="FanCoil.roomField" type="text" ></el-input></td>
     <td><el-input :value="FanCoil.chIdField" type="text" ></el-input></td>
@@ -62,7 +62,7 @@
     <td><el-button data-bind="click: $root.removeFanCoil" class="btn btn-link">Remove</el-button></td>
   </tr>
   <tr v-else>
-      <td rowspan="2">{{index+1}}</td>
+      <td class="no" rowspan="2">{{index+1}}</td>
       <td rowspan="2">Floor 0{{FanCoil.floorField}}</td>
       <td rowspan="2">Room 0{{FanCoil.roomField}}</td>
       <td rowspan="2">{{FanCoil.chIdField}}</td>
@@ -276,28 +276,7 @@ export default {
 
 <style lang="scss" scoped>
   @import '../../assets/styles/leafs.scss';
-  .table>thead>tr>th {
-    vertical-align: bottom;
-    background: #29aae2;
-    text-align: left;
-  }
 
-  .table.text-center>thead>tr>th, .table.text-center>tbody>tr>th, .table.text-center>tfoot>tr>th, .table.text-center>thead>tr>td, .table.text-center>tbody>tr>td, .table.text-center>tfoot>tr>td {
-    text-align: center;
-    white-space: nowrap;
-    padding:10px;
-    color:white;
-  }
-  .tab-content{
-    width:100%;
-    overflow:auto;
-  }
-  .No{
-    background-color:#424242 !important;
-  }
-  .row{
-    margin-top:20px;
-  }
   .btn {
     background: #29aae2 !important;
     border-color: transparent;
@@ -305,32 +284,36 @@ export default {
     padding: 10px 40px 10px 40px;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
   }
-  .table-fan
-  {
+  .no {
+    background-color: #424242;
+    border-right: none;
+    color: white;
+  }
+  .table-fan {
+    padding-top: 1px;
     overflow-x: auto;
-    border-spacing: 0px;
     width: 200%;
-    thead
-    {
-      background-color:#29aae2;
-      color:white;
+    height: 30vh;
+    thead {
+      padding-bottom: 0.5em;
+      background: #29aae2;
+      color: white;
       overflow: auto;
-      th{
-       padding:0.2em;
+      th {
+        padding: 0.2em;
       }
-      .sub-head
-      {
+      .sub-head {
         color: #cccccc;
       }
     }
     tbody {
-      background-color:white;
-      color:black;
+      background-color: white;
+      color: black;
       text-align: center;
       tr {
-        padding: 0.2em;
+        padding: 0.4em 0;
         td {
-          padding:0.8em;
+          padding: 0.8em;
           border-right: 1px solid #29aae2;
         }
       }
