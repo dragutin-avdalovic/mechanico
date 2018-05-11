@@ -3,7 +3,7 @@
     <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
       <div class="el-col-left">
         <el-button type="info"><i class="icon-trash-empty"></i></el-button>
-        <el-button v-on:click="openDialog('AppForm')" class="new-project"><i class="icon-plus-1"></i><span>New project</span></el-button>
+        <el-button @click="$dialogVisible = true" class="new-project"><i class="icon-plus-1"></i><span>New project</span></el-button>
       </div>
     </el-col>
     <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
@@ -26,9 +26,6 @@ export default {
   },
   props: ['fields', 'columns', 'selectable'],
   methods: {
-    openDialog (dialogId) {
-      this.show(dialogId)
-    }
   }
 }
 </script>
