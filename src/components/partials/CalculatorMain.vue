@@ -44,6 +44,10 @@ export default {
   methods: {
     handleClick (tab, event) {
       console.log(tab, event)
+    },
+    selectFilter (id) {
+      this.$emit('onFilterSelected', id)
+      this.selectedFilter = id
     }
   }
 }
