@@ -3,17 +3,17 @@
 <table class="table-fan"  cellspacing="0" cellpadding="0" >
   <thead>
   <tr>
-    <th class="no" rowspan="2">No</th>
-    <th rowspan="2">Level</th>
-    <th rowspan="2" width="10%">Room</th>
-    <th rowspan="2" width="10%">Chiller</th>
-    <th rowspan="2" width="10%">Unit</th>
-    <th colspan="3" width="20%">Heating</th>
-    <th colspan="3" width="20%">Cooling</th>
-    <th rowspan="2" width="10%">FanCoil Type</th>
-    <th rowspan="2" width="10%">External Static Pressure (Pa)</th>
-    <th rowspan="2" width="10%">Noise Level (dB)</th>
-    <th rowspan="2" width="10%">Fans</th>
+    <th class="no" width="3%" rowspan="2">No</th>
+    <th rowspan="2" width="8%">Level</th>
+    <th rowspan="2" width="8%">Room</th>
+    <th rowspan="2" width="8%">Chiller</th>
+    <th rowspan="2" width="8%">Unit</th>
+    <th colspan="3" width="15%">Heating</th>
+    <th colspan="3" width="15%">Cooling</th>
+    <th rowspan="2" width="8%">FanCoil Type</th>
+    <th rowspan="2" width="8%">External Static Pressure (Pa)</th>
+    <th rowspan="2" width="8%">Noise Level (dB)</th>
+    <th rowspan="2" width="8%">Fans</th>
     <th v-if="editableFanCoils" rowspan="2"></th>
   </tr>
   <tr>
@@ -26,18 +26,18 @@
   </tr>
   </thead>
   <tbody  v-for="(FanCoil, index) in FanCoilsData" v-bind:key="index">
-  <tr v-if="editableFanCoils">
+  <tr v-if="editableFanCoils" class="input-row">
     <td class="no">{{index+1}}</td>
-    <td><el-input :value="FanCoil.floorField" type="text" ></el-input></td>
-    <td><el-input :value="FanCoil.roomField" type="text" ></el-input></td>
-    <td><el-input :value="FanCoil.chIdField" type="text" ></el-input></td>
-    <td><el-input :value="FanCoil.fcIdField" type="text" ></el-input></td>
-    <td><el-input :value="FanCoil.qtRicHField" type="number" ></el-input></td>
-    <td><el-input :value="FanCoil.tainHField" type="number" ></el-input></td>
-    <td><el-input :value="FanCoil.urinHField" type="number" ></el-input></td>
-    <td><el-input :value="FanCoil.qtRicField" type="number" ></el-input></td>
-    <td><el-input :value="FanCoil.tainField" type="number" ></el-input></td>
-    <td><el-input :value="FanCoil.urinField" type="number" ></el-input></td>
+    <td class="input"><el-input :value="FanCoil.floorField" type="text" ></el-input></td>
+    <td class="input"><el-input :value="FanCoil.roomField" type="text" ></el-input></td>
+    <td class="input"><el-input :value="FanCoil.chIdField" type="text" ></el-input></td>
+    <td class="input"><el-input :value="FanCoil.fcIdField" type="text" ></el-input></td>
+    <td class="input"><el-input :value="FanCoil.qtRicHField" type="number" ></el-input></td>
+    <td class="input"><el-input :value="FanCoil.tainHField" type="number" ></el-input></td>
+    <td class="input"><el-input :value="FanCoil.urinHField" type="number" ></el-input></td>
+    <td class="input"><el-input :value="FanCoil.qtRicField" type="number" ></el-input></td>
+    <td class="input"><el-input :value="FanCoil.tainField" type="number" ></el-input></td>
+    <td class="input"><el-input :value="FanCoil.urinField" type="number" ></el-input></td>
     <td>
       <el-select v-model="FanCoil.typeField" placeholder="Choose...">
         <el-option
@@ -253,14 +253,14 @@ export default {
         }
       ],
       fansFieldOptions: [
-        { value: 'AC', text: 'AC' },
-        { value: 'EC', text: 'EC' }
+        { value: 'ac', text: 'AC' },
+        { value: 'ec', text: 'EC' }
       ],
       typeFieldOptions: [
-        { value: 0, text: 'Floor' },
-        { value: 1, text: 'Ducted' },
-        { value: 2, text: 'Cassette' },
-        { value: 3, text: 'Wall' }
+        { value: 'a', text: 'Floor1' },
+        { value: 'b', text: 'Ducted1' },
+        { value: 'c', text: 'Cassette' },
+        { value: 'd', text: 'Wall' }
       ]
     }
   },
@@ -323,9 +323,8 @@ export default {
       color: black;
       text-align: center;
       tr {
-        padding: 0.4em 0;
         td {
-          padding: 0.8em;
+          padding: 0.4em;
         }
       }
     }
@@ -343,7 +342,6 @@ export default {
     justify-content: flex-start;
     .button {
       background-color: #29aae2;
-      border-color: #29aae2;
       border-radius: 0px;
       color: white;
       margin: 1em 1em;
@@ -356,6 +354,5 @@ export default {
       align-items: center;
       justify-content: center;
     }
-
   }
 </style>
