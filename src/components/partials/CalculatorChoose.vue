@@ -20,6 +20,8 @@
           </el-dropdown>
         </div>
       </div>
+    </div>
+    <div class="wd">
       <div class="wordDropdown">
         <div class="word">
           <p class="second">Chiller</p>
@@ -60,6 +62,8 @@
           </el-dropdown>
         </div>
       </div>
+     </div>
+    <div class="wd">
       <div class="wordDropdown">
         <div class="word">
           <p class="fourth">Condenser</p>
@@ -80,11 +84,12 @@
         </div>
       </div>
     </div>
-    <div class="wordDropdown1">
-      <div class="word1">
+  <div class="wd">
+    <div class="wordDropdown">
+      <div class="word">
         <p class="fifth">AHU</p>
       </div>
-      <div class="dropdown1">
+      <div class="dropdown">
         <el-dropdown>
           <el-button type="primary">
             Choose <i class="el-icon-arrow-down el-icon--right"></i>
@@ -99,6 +104,7 @@
         </el-dropdown>
       </div>
     </div>
+  </div>
     <el-row justify="center">
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
         <el-button class="button">Calculate</el-button>
@@ -121,74 +127,60 @@ export default {
 </script>
 
 <style scoped>
-  @import '../../assets/styles/leafs.scss';
   .choose {
-    height: 400px;
+    height: 600px;
     margin-left: -5px;
+    display: flex;
+    flex-direction: column;
   }
-
   .word {
     font-size: 14px;
     border-bottom: 2px solid #2ca5d9;
     display: inline-block;
     padding-top: 10px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
   }
-
-  .word1 {
-    font-size: 14px;
-    border-bottom: 2px solid #2ca5d9;
-    padding-top: 10px;
-  }
-
   .first {
     margin-bottom: 5px;
     color: #bcbcbc;
     padding-right: 80px;
   }
-
   .second {
     margin-bottom: 5px;
     color: #bcbcbc;
     padding-right: 85px;
   }
-
   .third {
     margin-bottom: 5px;
     color: #bcbcbc;
     padding-right: 66px;
   }
-
   .fourth {
     margin-bottom: 5px;
     color: #bcbcbc;
     padding-right: 55px;
   }
-
   .fifth {
     margin-bottom: 5px;
     color: #bcbcbc;
     padding-right: 100px;
   }
-
   .dropdown {
     margin-top: 10px;
   }
-
-  .dropdown1 {
-    margin-top: 10px;
-  }
-
   .el-button--primary {
     color: #bcbcbc;
     background-color: #666;
     border: 1px solid #666;
     border-radius: 0px;
+    font-size: 16px;
   }
-
   .el-dropdown {
     vertical-align: top;
-  }
-
+    width:100%;
+ }
   .el-dropdown + .el-dropdown {
     margin-left: 15px;
   }
@@ -196,29 +188,23 @@ export default {
   .el-icon-arrow-down {
     font-size: 14px;
   }
-
   .el-icon-arrow-down {
     margin-left: 60px;
     color: white;
     font-weight: bold;
   }
-
   .wordDropdown {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     margin-left: 5px;
+    text-align: center;
   }
-
-  .wordDropdown1 {
-    width: 48%;
-    margin-left: 5px;
-  }
-
   .wd {
     display: flex;
+    flex-direction: column;
+    margin-top: 10px;
   }
-
   .button {
     background-color: #29aae2;
     border-color: #29aae2;
@@ -227,6 +213,6 @@ export default {
     width: 92%;
     margin-top: 20px;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    margin-left: 10px;
   }
-
 </style>

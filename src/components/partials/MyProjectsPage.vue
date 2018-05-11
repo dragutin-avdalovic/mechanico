@@ -6,7 +6,7 @@
   </el-row>
   <TableHeader></TableHeader>
   <Table :fields="fields" :columns="columns" :selectable="true" :editable="true"></Table>
-    <AppForm :show = "dialogVisible = true"></AppForm>
+  <!--<AppForm></AppForm>-->
   </span>
 </template>
 <script>
@@ -22,12 +22,7 @@ export default {
   },
   data () {
     return {
-      methods: {
-        dialogVisible () {
-          this.dialogVisible = false
-          this.$emit('dialogVisible = true')
-        }
-      },
+      dialogVisible: false,
       items: [
         {name: 'projectName', label: 'Project Name'}, {name: 'designer', label: 'Designer'}
       ],
@@ -74,6 +69,10 @@ export default {
           year: 2018
         }
       ]
+    }
+  },
+  methods: {
+    makeDialogVisible () {
     }
   }
 }

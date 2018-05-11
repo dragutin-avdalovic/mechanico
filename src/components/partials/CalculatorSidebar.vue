@@ -13,21 +13,9 @@
     <div class="content">
       <el-row :gutter="5">
         <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-
-          <CalculatorChoose></CalculatorChoose>
-
+          <!--<CalculatorChoose></CalculatorChoose>-->
           <CalculatorUpload></CalculatorUpload>
-
-          <CalculatorCompleted></CalculatorCompleted>
-
-        </el-col>
-      </el-row>
-    <el-row justify="center" >
-        <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
-          <el-button class="btn">Upload Excel File</el-button>
-        </el-col>
-        <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
-          <el-button class="btn">Create table</el-button>
+          <!--<CalculatorCompleted></CalculatorCompleted>-->
         </el-col>
       </el-row>
     </div>
@@ -52,9 +40,8 @@ export default {
 .sidebar{
   background-color:#424242;
   padding-bottom: 10px;
-  height: 1000px;
+  height: 120vh;
   }
-
 .circle{
   display: inline-block;
   border-radius: 50%;
@@ -113,7 +100,6 @@ export default {
     padding-left: 10px;
     padding-right: 10px;
 }
-
 .el-button{
     width: 100%;
     margin-top: 5px;
