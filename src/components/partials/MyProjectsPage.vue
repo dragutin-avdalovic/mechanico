@@ -6,7 +6,7 @@
   </el-row>
   <TableHeader></TableHeader>
   <Table :fields="fields" :columns="columns" :selectable="true" :editable="true"></Table>
-  <!--<AppForm></AppForm>-->
+    <!--<AppForm :show = "dialogVisible = false"></AppForm>-->
   </span>
 </template>
 <script>
