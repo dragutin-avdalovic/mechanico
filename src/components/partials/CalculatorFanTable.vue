@@ -276,7 +276,6 @@ export default {
 
 <style lang="scss" scoped>
   @import '../../assets/styles/leafs.scss';
-
   .btn {
     background: #29aae2 !important;
     border-color: transparent;
@@ -290,7 +289,7 @@ export default {
     color: white;
   }
   .table-fan {
-    padding-top: 1px;
+    border: solid 1px #29aae2;
     overflow-x: auto;
     width: 200%;
     height: 30vh;
@@ -314,9 +313,14 @@ export default {
         padding: 0.4em 0;
         td {
           padding: 0.8em;
-          border-right: 1px solid #29aae2;
         }
       }
     }
+  }
+  table, td {
+    border: solid 1px #29aae2;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
   }
 </style>
