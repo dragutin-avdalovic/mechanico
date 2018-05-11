@@ -22,14 +22,7 @@
 
         </el-col>
       </el-row>
-    <el-row justify="center" >
-        <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
-          <el-button class="btn">Upload Excel File</el-button>
-        </el-col>
-        <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
-          <el-button class="btn">Create table</el-button>
-        </el-col>
-      </el-row>
+
     </div>
   </div>
 </template>
@@ -54,7 +47,6 @@ export default {
   padding-bottom: 10px;
   height: 120vh;
   }
-
 .circle{
   display: inline-block;
   border-radius: 50%;
@@ -113,7 +105,6 @@ export default {
     padding-left: 10px;
     padding-right: 10px;
 }
-
 .el-button{
     width: 100%;
     margin-top: 5px;
