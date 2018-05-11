@@ -38,8 +38,8 @@ export default {
   .tab{
     padding-top: 20px;
     background-color: #424242;
-    margin:0px;
-   
+    
+
   }
   .img{
   	margin-left:400px;
