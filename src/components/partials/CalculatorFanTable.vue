@@ -11,8 +11,8 @@
     <th colspan="3" width="20%">Heating</th>
     <th colspan="3" width="20%">Cooling</th>
     <th rowspan="2" width="10%">FanCoil Type</th>
-    <th rowspan="2"  width="10%">External Static Pressure (Pa)</th>
-    <th rowspan="2"  width="10%">Noise Level (dB)</th>
+    <th rowspan="2" width="10%">External Static Pressure (Pa)</th>
+    <th rowspan="2" width="10%">Noise Level (dB)</th>
     <th rowspan="2" width="10%">Fans</th>
     <th v-if="editableFanCoils" rowspan="2"></th>
   </tr>
