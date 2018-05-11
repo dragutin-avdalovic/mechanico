@@ -55,15 +55,6 @@ export default {
   .filter {
     width: 100%;
     background-color: #424242;
-<<<<<<< HEAD
-    
-
-  }
-  .img{
-  	margin-left:400px;
-  	margin-top:240px;
-  	width:310px;
-=======
     ul {
       list-style: none;
       width: 100%;
@@ -103,6 +94,5 @@ export default {
         }
       }
     }
->>>>>>> remotes/origin/develop
   }
 </style>
