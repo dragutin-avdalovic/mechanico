@@ -9,7 +9,7 @@
         </el-col>
         <el-col :span="8">
           <div class="grid-content">
-            <Admin></Admin>
+            <Status :city="'Sarajevo'" :mail="'mick@gmail.com'" :phone="'+342223333'" :user="'Mick Jagger'" :company="'Ramones'"></Status>
           </div>
         </el-col>
       </el-row>
