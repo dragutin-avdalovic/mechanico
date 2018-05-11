@@ -276,6 +276,35 @@ export default {
 
 <style lang="scss" scoped>
   @import '../../assets/styles/leafs.scss';
+  .table>thead>tr>th {
+    vertical-align: bottom;
+    background: #29aae2;
+    text-align: left;
+  }
+
+  .table.text-center>thead>tr>th, .table.text-center>tbody>tr>th, .table.text-center>tfoot>tr>th, .table.text-center>thead>tr>td, .table.text-center>tbody>tr>td, .table.text-center>tfoot>tr>td {
+    text-align: center;
+    white-space: nowrap;
+    padding:10px;
+    color:white;
+  }
+  .tab-content{
+    width:100%;
+    overflow:auto;
+  }
+  .No{
+    background-color:#424242 !important;
+  }
+  .row{
+    margin-top:20px;
+  }
+  .btn {
+    background: #29aae2 !important;
+    border-color: transparent;
+    color: white;
+    padding: 10px 40px 10px 40px;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  }
   .table-fan
   {
     overflow-x: auto;

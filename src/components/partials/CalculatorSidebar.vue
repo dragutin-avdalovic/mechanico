@@ -16,7 +16,7 @@
 
           <CalculatorChoose></CalculatorChoose>
 
-          <CalculatorUpload></CalculatorUpload>
+            <!--<CalculatorUpload></CalculatorUpload>-->
 
           <!--<CalculatorCompleted></CalculatorCompleted>-->
 
