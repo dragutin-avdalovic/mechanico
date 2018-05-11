@@ -11,11 +11,11 @@
             <th rowspan="2">Chiller</th>
             <th rowspan="2">Unit</th>
             <th data-bind="visible: showMoreFanCoilsInput" colspan="3">Heating</th>
-            <th data-bind="visible: showMoreFanCoilsInput" colspan="3">Cooling</th>                            
-            <th data-bind="visible: showMoreFanCoilsInput" rowspan="2">FanCoil Type</th>                                                                                                                                                  
-            <th data-bind="visible: showMoreFanCoilsInput" rowspan="2">External Static Pressure (Pa)</th>  
-            <th rowspan="2">Noise Level (dB)</th>  
-            <th rowspan="2">Fans</th>  
+            <th data-bind="visible: showMoreFanCoilsInput" colspan="3">Cooling</th>
+            <th data-bind="visible: showMoreFanCoilsInput" rowspan="2">FanCoil Type</th>
+            <th data-bind="visible: showMoreFanCoilsInput" rowspan="2">External Static Pressure (Pa)</th>
+            <th rowspan="2">Noise Level (dB)</th>
+            <th rowspan="2">Fans</th>
             <th data-bind="visible: editableFanCoils" rowspan="2"></th>
           </tr>
           <tr>
@@ -27,32 +27,30 @@
             <th data-bind="visible: showMoreFanCoilsInput">Relative Humidity (%)</th>
           </tr>
         </thead>
-      </table>                                
+      </table>
     </div>
   </div>
       <div class="row">
-       
         <div class="col-md-6 text-right">
           <!-- ko if: editableChillers -->
-          <button type="button" class="btn" data-bind="click: addChiller"><i class="fa fa-plus"></i> Add Entry</button>                
-          <button type="button" class="btn" data-bind="click: saveChillers">Done</button>            
-                                    
+          <button type="button" class="btn" data-bind="click: addChiller"><i class="fa fa-plus"></i> Add Entry</button>
+          <button type="button" class="btn" data-bind="click: saveChillers">Done</button>
         </div>
     </div>
 </div>
   </template>
 
-  <script>
+<script>
 
-  export default {
+export default {
 
-    data () {
-      return {
-        fileList: []
-      }
+  data () {
+    return {
+      fileList: []
     }
   }
-  </script>
+}
+</script>
 
   <style lang="scss" scoped>
 
@@ -60,8 +58,8 @@
   vertical-align: bottom;
   background: #29aae2;
   text-align: left;
-} 
-                        
+}
+
 .table.text-center>thead>tr>th, .table.text-center>tbody>tr>th, .table.text-center>tfoot>tr>th, .table.text-center>thead>tr>td, .table.text-center>tbody>tr>td, .table.text-center>tfoot>tr>td {
   text-align: center;
   white-space: nowrap;
@@ -70,7 +68,7 @@
 }
 .tab-content{
   width:100%;
-  overflow:auto; 
+  overflow:auto;
 }
 .No{
   background-color:#424242 !important;
@@ -78,16 +76,11 @@
 .row{
   margin-top:20px;
 }
-.btn{
-  background:#29aae2 !important;
+.btn {
+  background: #29aae2 !important;
   border-color: transparent;
-  color:white;
-  padding:10px 40px 10px 40px;
-  font-family:'Avenir', Helvetica, Arial, sans-serif;
+  color: white;
+  padding: 10px 40px 10px 40px;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
-        
-       
-        
-
-
   </style>
