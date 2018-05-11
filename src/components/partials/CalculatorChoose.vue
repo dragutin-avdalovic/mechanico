@@ -214,8 +214,5 @@ export default {
     margin-top: 20px;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     margin-left: 10px;
-
   }
-
-
 </style>
