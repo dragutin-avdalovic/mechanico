@@ -52,7 +52,7 @@ export default {
 .sidebar{
   background-color:#424242;
   padding-bottom: 10px;
-  height: 1000px;
+  height: 120vh;
   }
 
 .circle{
