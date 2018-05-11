@@ -18,7 +18,7 @@
 
           <CalculatorUpload></CalculatorUpload>
 
-          <CalculatorCompleted></CalculatorCompleted>
+          <!--<CalculatorCompleted></CalculatorCompleted>-->
 
         </el-col>
       </el-row>
