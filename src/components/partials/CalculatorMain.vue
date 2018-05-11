@@ -29,6 +29,9 @@
 <script>
 import CalculatorFanTable from './CalculatorFanTable.vue'
 export default {
+  components: {
+    CalculatorFanTable
+  },
   data () {
     return {
       filters: [
@@ -40,10 +43,6 @@ export default {
       ],
       selectedFilter: 1
     }
-  },
-  components:
-  {
-    CalculatorFanTable
   },
   methods: {
     handleClick (tab, event) {

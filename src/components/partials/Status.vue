@@ -84,7 +84,7 @@ export default {
     align-self: flex-start;
   }
   .info {
-    padding-bottom: 0.5em;
+    padding-bottom: 1em;
     font-size: 0.8em;
   }
   .circle {
@@ -108,5 +108,8 @@ export default {
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
+  .circle{
+    padding-top: 0.5em;
   }
 </style>
