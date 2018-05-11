@@ -31,8 +31,8 @@ export default {
         { id: 1, name: 'FanCoil' },
         { id: 2, name: 'Chiller' },
         { id: 3, name: 'DryColler' },
-        { id: 10, name: 'Condenser' },
-        { id: 10, name: 'AHU' }
+        { id: 4, name: 'Condenser' },
+        { id: 5, name: 'AHU' }
       ],
       selectedFilter: 1
     }
@@ -81,16 +81,16 @@ export default {
           margin-right: 0.3em;
 
           &:hover {
-            border-bottom: solid 3px $blue-my-projects;
+            border-bottom: solid 3px #29aae2;
             background-color: #424242;
           }
         }
         .active {
-          border-bottom: solid 3px $blue-my-projects;
+          border-bottom: solid 3px #29aae2;
           background-color: #424242;
-          -webkit-box-shadow: 2px -2px 2px 0px rgba(0,0,0,0.75);
-          -moz-box-shadow: 2px -2px 2px 0px rgba(0,0,0,0.75);
-          box-shadow: 2px -2px 2px 0px rgba(0,0,0,0.75);
+          -webkit-box-shadow: 1px -1px 2px 0px rgba(0,0,0,0.75);
+          -moz-box-shadow: 1px -1px 2px 0px rgba(0,0,0,0.75);
+          box-shadow: 1px -1px 2px 0px rgba(0,0,0,0.75);
         }
       }
     }
