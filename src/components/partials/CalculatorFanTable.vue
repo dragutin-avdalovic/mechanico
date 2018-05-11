@@ -1,4 +1,5 @@
 <template>
+<div>
 <table class="table-fan"  cellspacing="0" cellpadding="0" >
   <thead>
   <tr>
@@ -80,6 +81,12 @@
   </tr>
   </tbody>
 </table>
+<div class="btn-edit">
+  <el-button v-if="!editableFanCoils" class="button" v-on:click="editTable">Edit table</el-button>
+  <el-button v-if="editableFanCoils" class="button">Add entry</el-button>
+  <el-button v-if="editableFanCoils" class="button" v-on:click="editTable">Done</el-button>
+</div>
+</div>
 </template>
 <script>
 export default {
@@ -269,6 +276,13 @@ export default {
           return typeField
         }
       }
+    },
+    editTable () {
+      if(this.editableFanCoils) {
+        this.editableFanCoils = false
+      } else {
+        this.editableFanCoils = true
+      }
     }
   }
 }
@@ -321,5 +335,23 @@ export default {
     border-top: none;
     border-bottom: none;
     border-left: none;
+  }
+  .btn-edit
+  {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    .button {
+      background-color: #29aae2;
+      border-color: #29aae2;
+      border-radius: 0px;
+      color: white;
+      margin: 1em 1em;
+      font-family: 'Avenir', Helvetica, Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
   }
 </style>
