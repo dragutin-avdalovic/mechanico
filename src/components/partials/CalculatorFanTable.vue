@@ -257,10 +257,10 @@ export default {
         { value: 'ec', text: 'EC' }
       ],
       typeFieldOptions: [
-        { value: 'a', text: 'Floor1' },
-        { value: 'b', text: 'Ducted1' },
-        { value: 'c', text: 'Cassette' },
-        { value: 'd', text: 'Wall' }
+        { value: 'Floor', text: 'Floor' },
+        { value: 'Ducted', text: 'Ducted' },
+        { value: 'Cassette', text: 'Cassette' },
+        { value: 'Wall', text: 'Wall' }
       ]
     }
   },
