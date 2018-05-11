@@ -1,7 +1,7 @@
 <template>
   <el-row class="choose">
     <el-col class="wd">
-      <el-col  :xs="24" :sm="24" :md="24" :lg="12" :xl="12" class="wordDropdown">
+      <el-col  class="wordDropdown">
         <div class="word">
           <p class="first">FanCoil</p>
         </div>
@@ -20,7 +20,7 @@
           </el-dropdown>
         </div>
       </el-col>
-      <el-col  :xs="24" :sm="24" :md="24" :lg="12" :xl="12"  class="wordDropdown">
+      <el-col class="wordDropdown">
         <div class="word">
           <p class="second">Chiller</p>
         </div>
@@ -41,7 +41,7 @@
       </el-col>
     </el-col>
     <el-col class="wd">
-      <el-col  :xs="24" :sm="24" :md="24" :lg="12" :xl="12" class="wordDropdown">
+      <el-col  class="wordDropdown">
         <div class="word">
           <p class="third">DryCooler</p>
         </div>
@@ -60,7 +60,7 @@
           </el-dropdown>
         </div>
       </el-col>
-      <el-col  :xs="24" :sm="24" :md="24" :lg="12" :xl="12"  class="wordDropdown">
+      <el-col class="wordDropdown">
         <div class="word">
           <p class="fourth">Condenser</p>
         </div>
@@ -80,7 +80,7 @@
         </div>
       </el-col>
     </el-col>
-    <el-col  :xs="24" :sm="24" :md="24" :lg="12" :xl="12" class="wordDropdown1">
+    <el-col  class="wordDropdown1">
       <div class="word1">
         <p class="fifth">AHU</p>
       </div>
