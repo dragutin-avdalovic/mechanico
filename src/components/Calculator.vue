@@ -34,4 +34,7 @@ export default {
 .grid-content{
   height:100px;
 }
+.el-main {
+  padding: 0;
+}
 </style>
