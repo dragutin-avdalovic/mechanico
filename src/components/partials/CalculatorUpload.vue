@@ -10,7 +10,7 @@
       <i class="el-icon-upload"></i>
       <div class="el-upload__text">Drop file here or <em>click to upload</em></div>
     </el-upload>
-    <el-row justify="center">
+    <el-row>
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
         <el-button class="button">Upload Excel File</el-button>
       </el-col>
@@ -47,12 +47,12 @@ export default {
     border-color: #29aae2;
     border-radius: 0px;
     color: white;
-    width: 92%;
-    margin-top: 20px;
+    margin: 1em 2%;
+    width: 96%;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    margin-left: 10px;
-    margin-bottom: 27px;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 </style>

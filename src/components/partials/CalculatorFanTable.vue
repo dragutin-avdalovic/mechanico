@@ -292,7 +292,6 @@ export default {
     border: solid 1px #29aae2;
     overflow-x: auto;
     width: 200%;
-    height: 30vh;
     thead {
       padding-bottom: 0.5em;
       background: #29aae2;

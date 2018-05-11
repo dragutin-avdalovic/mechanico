@@ -40,7 +40,7 @@ export default {
 .sidebar{
   background-color:#424242;
   padding-bottom: 10px;
-  height: 120vh;
+  height: 100vh;
   }
 .circle{
   display: inline-block;

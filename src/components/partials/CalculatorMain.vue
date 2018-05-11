@@ -17,10 +17,12 @@
     </div>
     <el-row class="file-name-item">
       <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" class="fileName">File.xml</el-col>
-      <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12"><icon class="el-icon-document"></icon></el-col>
+      <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12"><i class="el-icon-document"></i></el-col>
     </el-row>
     <el-row  class="content">
-      <!--<img class="mechanico-man" src="/static/images/calculator.png">-->
+      <!--<div>-->
+        <!--<img class="mechanico-man" src="/static/images/calculator.png">-->
+      <!--</div>-->
       <CalculatorFanTable></CalculatorFanTable>
     </el-row>
   </div>
@@ -113,7 +115,7 @@ export default {
         font-weight: 800;
         color: white;
       }
-      icon {
+      i {
         padding: 0.5em 3em;
         font-size: 1.5em;
         font-weight: 500;
