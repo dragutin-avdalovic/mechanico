@@ -5,24 +5,23 @@
         <i class="el-icon-check"/>
         <p class="text">Upload Completed</p>
       </div>
-    
+
     <div class="file">
       <p>File Name.xml</p>
     </div>
     </div>
-    
 
   </div>
 </template>
 
 <script>
 export default {
- 
+
 }
 </script>
 
 <style lang="scss" scoped>
-
+@import '../../assets/styles/leafs.scss';
 .completed{
     display: flex;
     justify-content: center;
@@ -40,8 +39,6 @@ export default {
   font-size:9px;
   color:#bcbcbc;
   text-align:center;
-
-  
 }
 .text{
   margin-top:0px;

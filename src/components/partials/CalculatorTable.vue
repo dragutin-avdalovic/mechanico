@@ -60,7 +60,6 @@
   vertical-align: bottom;
   background: #29aae2;
   text-align: left;
-  border: none;
 } 
                         
 .table.text-center>thead>tr>th, .table.text-center>tbody>tr>th, .table.text-center>tfoot>tr>th, .table.text-center>thead>tr>td, .table.text-center>tbody>tr>td, .table.text-center>tfoot>tr>td {
@@ -68,12 +67,10 @@
   white-space: nowrap;
   padding:10px;
   color:white;
-  border:none;
 }
 .tab-content{
   width:100%;
-  overflow:auto;
-  border:none;  
+  overflow:auto; 
 }
 .No{
   background-color:#424242 !important;

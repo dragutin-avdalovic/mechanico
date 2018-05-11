@@ -16,7 +16,7 @@
       <el-row type="flex" class="row-bg-bottom" justify="flex-start">
         <el-col :span="9">
           <div class="grid-content-bottom">
-            <ProductRequest></ProductRequest>
+            <AdminRequestPage></AdminRequestPage>
           </div>
         </el-col>
         <el-col :span="7">
@@ -37,6 +37,7 @@
 <script>
 import ElFooter from '../../node_modules/element-ui/packages/footer/src/main'
 import AdminProjectsPage from './partials/AdminProjectsPage.vue'
+import AdminRequestPage from './partials/AdminRequestPage.vue'
 import ProductRequest from './partials/ProductRequest.vue'
 import Inbox from './partials/Inbox.vue'
 import Activity from './partials/Activity.vue'
@@ -51,7 +52,8 @@ export default {
     Inbox,
     Activity,
     Status,
-    MessageTitle
+    MessageTitle,
+    AdminRequestPage
   },
   name: 'HelloWorld',
   methods: {

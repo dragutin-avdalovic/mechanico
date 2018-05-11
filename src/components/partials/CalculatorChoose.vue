@@ -1,7 +1,7 @@
 <template>
-  <div class="choose">
-    <div class="wd">
-      <div class="wordDropdown">
+  <el-row class="choose">
+    <el-col class="wd">
+      <el-col  :xs="24" :sm="24" :md="24" :lg="12" :xl="12" class="wordDropdown">
         <div class="word">
           <p class="first">FanCoil</p>
         </div>
@@ -19,8 +19,8 @@
             </el-dropdown-menu>
           </el-dropdown>
         </div>
-      </div>
-      <div class="wordDropdown">
+      </el-col>
+      <el-col  :xs="24" :sm="24" :md="24" :lg="12" :xl="12"  class="wordDropdown">
         <div class="word">
           <p class="second">Chiller</p>
         </div>
@@ -38,10 +38,10 @@
             </el-dropdown-menu>
           </el-dropdown>
         </div>
-      </div>
-    </div>
-    <div class="wd">
-      <div class="wordDropdown">
+      </el-col>
+    </el-col>
+    <el-col class="wd">
+      <el-col  :xs="24" :sm="24" :md="24" :lg="12" :xl="12" class="wordDropdown">
         <div class="word">
           <p class="third">DryCooler</p>
         </div>
@@ -59,8 +59,8 @@
             </el-dropdown-menu>
           </el-dropdown>
         </div>
-      </div>
-      <div class="wordDropdown">
+      </el-col>
+      <el-col  :xs="24" :sm="24" :md="24" :lg="12" :xl="12"  class="wordDropdown">
         <div class="word">
           <p class="fourth">Condenser</p>
         </div>
@@ -78,9 +78,9 @@
             </el-dropdown-menu>
           </el-dropdown>
         </div>
-      </div>
-    </div>
-    <div class="wordDropdown1">
+      </el-col>
+    </el-col>
+    <el-col  :xs="24" :sm="24" :md="24" :lg="12" :xl="12" class="wordDropdown1">
       <div class="word1">
         <p class="fifth">AHU</p>
       </div>
@@ -98,16 +98,16 @@
           </el-dropdown-menu>
         </el-dropdown>
       </div>
-    </div>
-    <el-row justify="center">
+    </el-col>
+    <el-col  :xs="24" :sm="24" :md="24" :lg="12" :xl="12" justify="center">
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
         <el-button class="button">Calculate</el-button>
       </el-col>
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
         <el-button class="button">Request</el-button>
       </el-col>
-    </el-row>
-  </div>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
@@ -121,7 +121,7 @@ export default {
 </script>
 
 <style scoped>
-
+  @import '../../assets/styles/leafs.scss';
   .choose {
     height: 400px;
     margin-left: -5px;
