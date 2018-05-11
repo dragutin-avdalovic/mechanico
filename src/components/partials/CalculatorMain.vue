@@ -15,11 +15,14 @@
         <li v-for="(filter, index) of filters" :key="index" :class="{ active: filter.id === selectedFilter }" @click="selectFilter(filter.id)">{{filter.name}}</li>
       </ul>
     </div>
+    <el-row class="file-name-item">
+      <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" class="fileName">File.xml</el-col>
+      <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12"><icon class="el-icon-document"></icon></el-col>
+    </el-row>
+    <el-row  class="img">
+      <img class="mechanico-man" src="/static/images/calculator.png">
+    </el-row>
   </div>
-  <!--<div class="img">-->
-  <!--<img src="/static/images/calculator.png">-->
-<!--</div>-->
-<!--</div>-->
 </template>
 
 <script>
@@ -75,7 +78,7 @@ export default {
       font-size: 1em;
       .main-list {
         width:100%;
-        overflow: hidden;
+        overflow: auto;
         li {
           margin-top:1em;
           padding: 25px 60px;
@@ -96,6 +99,38 @@ export default {
           -moz-box-shadow: 1px -1px 2px 0px rgba(0,0,0,0.75);
           box-shadow: 1px -1px 2px 0px rgba(0,0,0,0.75);
         }
+      }
+    }
+    .file-name-item
+    {
+      .fileName
+      {
+        padding: 1em 3em;
+        font-size: 1em;
+        font-weight: 800;
+        color: white;
+      }
+      icon {
+        padding: 0.5em 3em;
+        font-size: 1.5em;
+        font-weight: 500;
+        color: white;
+        float: right;
+        padding-right: 40%;
+      }
+    }
+    .img
+    {
+      background-color: white;
+      width: 100%;
+      height: calc(100vh - 135px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .mechanico-man
+      {
+        width: 25em;
+        height: 20em;
       }
     }
   }
