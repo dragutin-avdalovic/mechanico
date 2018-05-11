@@ -9,7 +9,7 @@
         </el-col>
         <el-col :span="8">
           <div class="grid-content">
-            <Status></Status>
+            <StatusAdmin></StatusAdmin>
           </div>
         </el-col>
       </el-row>
@@ -43,7 +43,7 @@ import Inbox from './partials/Inbox.vue'
 import Activity from './partials/Activity.vue'
 import Status from './partials/Status.vue'
 import MessageTitle from './partials/MessageTitle.vue'
-
+import StatusAdmin from './partials/StatusAdmin.vue'
 export default {
   components: {
     ElFooter,
@@ -53,7 +53,8 @@ export default {
     Activity,
     Status,
     MessageTitle,
-    AdminRequestPage
+    AdminRequestPage,
+    StatusAdmin
   },
   name: 'HelloWorld',
   methods: {
