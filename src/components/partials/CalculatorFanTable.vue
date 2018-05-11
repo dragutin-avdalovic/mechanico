@@ -4,7 +4,7 @@
   <thead>
   <tr>
     <th class="no" rowspan="2">No</th>
-    <th rowspan="2" width="10%">Level</th>
+    <th rowspan="2">Level</th>
     <th rowspan="2" width="10%">Room</th>
     <th rowspan="2" width="10%">Chiller</th>
     <th rowspan="2" width="10%">Unit</th>
@@ -278,7 +278,7 @@ export default {
       }
     },
     editTable () {
-      if(this.editableFanCoils) {
+      if (this.editableFanCoils) {
         this.editableFanCoils = false
       } else {
         this.editableFanCoils = true
@@ -347,6 +347,10 @@ export default {
       border-radius: 0px;
       color: white;
       margin: 1em 1em;
+      width: 13em;
+      height: 3em;
+      font-size: 1em;
+      font-weight: bold;
       font-family: 'Avenir', Helvetica, Arial, sans-serif;
       display: flex;
       align-items: center;
