@@ -1,7 +1,7 @@
 <template>
   <div class="choose">
     <el-row class="wd" >
-      <div class="wordDropdown" :xl="12" :lg="12">
+      <div class="wordDropdown":xs="24" :sm="24" :md="24" :xl="12" :lg="12">
         <div class="word">
           <p class="first">FanCoil</p>
         </div>
@@ -18,7 +18,7 @@
           </el-dropdown>
         </div>
       </div>
-      <div class="wordDropdown" :xl="12" :lg="12">
+      <div class="wordDropdown" :xs="24" :sm="24" :md="24" :xl="12" :lg="12">
         <div class="word">
           <p class="first">Chiller</p>
         </div>
@@ -37,7 +37,7 @@
       </div>
     </el-row>
     <el-row class="wd" >
-      <div class="wordDropdown" :xl="12" :lg="12">
+      <div class="wordDropdown" :xs="24" :sm="24" :md="24" :xl="12" :lg="12">
         <div class="word">
           <p class="first">DryCooler</p>
         </div>
@@ -54,7 +54,7 @@
           </el-dropdown>
         </div>
       </div>
-      <div class="wordDropdown" :xl="12" :lg="12">
+      <div class="wordDropdown" :xs="24" :sm="24" :md="24" :xl="12" :lg="12">
         <div class="word">
           <p class="first">DryCooler</p>
         </div>
@@ -73,7 +73,7 @@
       </div>
     </el-row>
     <el-row class="wd" >
-      <div class="wordDropdown" :xl="12" :lg="12">
+      <div class="wordDropdown" :xs="24" :sm="24" :md="24" :xl="12" :lg="12">
         <div class="word">
           <p class="first">AHU</p>
         </div>
@@ -91,14 +91,14 @@
         </div>
       </div>
     </el-row>
-    <!--<el-row>-->
-      <!--<el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">-->
-        <!--<el-button class="button">Calculate</el-button>-->
-      <!--</el-col>-->
-      <!--<el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">-->
-        <!--<el-button class="button">Request</el-button>-->
-      <!--</el-col>-->
-    <!--</el-row>-->
+    <el-row>
+      <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
+        <el-button class="button">Calculate</el-button>
+      </el-col>
+      <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
+        <el-button class="button">Request</el-button>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -155,5 +155,27 @@ export default {
     border-color: #595959;
     color: white;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  }
+    .button{
+    background-color: #29aae2;
+    border-color: #29aae2;
+    border-radius: 0px;
+    color: white;
+    margin: 2em 2%;
+    width: 96%;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+    .el-dropdown-menu{
+    background-color:#424242;
+    color:white;
+  }
+  .el-dropdown-menu__item{
+  	color:white;
+  }
+  .el-dropdown-menu__item:hover{
+  	background-color:#606060;
   }
 </style>

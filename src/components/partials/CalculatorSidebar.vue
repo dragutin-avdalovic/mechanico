@@ -3,10 +3,10 @@
   <div class="button">
     <el-row :gutter="5">
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-        <button class="upperButton1"><div class="circle">1</div>UPLOAD</button>
+        <button class="upperButton1"><div class="circle">1</div><p>UPLOAD</p></button>
       </el-col>
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-        <button class="upperButton2"><div class="circle-grey">2</div>CALCULATE</button>
+        <button class="upperButton2"><div class="circle-grey">2</div><p>CALCULATE</p></button>
       </el-col>
     </el-row>
     </div>
@@ -50,6 +50,9 @@ export default {
   height:2em;
   font-size: 1em;
   background-color: #125889;
+  margin-top: 7px;
+  margin-left: 5px;
+  margin-right: 10%;	
 }
 .circle-grey{
   display: flex;
@@ -60,11 +63,16 @@ export default {
   height:2em;
   font-size: 1em;
   background-color: #4c4c4c;
+  margin-top: 7px;
+  margin-left: 5px;
+  margin-right: 10%;
+
 }
 .button{
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
+
 }
 .upperButton1{
   background-color: #0d71b8;
@@ -73,8 +81,10 @@ export default {
   height: 60px;
   border-color: transparent;
   cursor: pointer;
-  padding-right: 60px;
   margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  font-weight: 600;
 }
 .upperButton1:hover {
   background-color: #0052cc;
@@ -88,6 +98,9 @@ export default {
   cursor: pointer;
   padding-right: 40px;
   margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  font-weight: 600;
 }
 .upperButton2:hover {
   background-color: #595959;
