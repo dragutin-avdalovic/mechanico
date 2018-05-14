@@ -1,5 +1,9 @@
 <template>
-<div>
+<div class="table-complex">
+<el-row class="file-name-item">
+  <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" class="fileName">{{ fileName }}</el-col>
+  <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12"><i class="el-icon-document"></i></el-col>
+</el-row>
 <table class="table-fan"  cellspacing="0" cellpadding="0" >
   <thead>
   <tr>
@@ -258,6 +262,7 @@ export default {
       ]
     }
   },
+  props: ['fileName'],
   methods: {
     handleClick (tab, event) {
       console.log(tab, event)
@@ -284,69 +289,85 @@ export default {
 
 <style lang="scss" scoped>
   @import '../../assets/styles/leafs.scss';
-  .btn {
-    background: #29aae2 !important;
-    border-color: transparent;
-    color: white;
-    padding: 10px 40px 10px 40px;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  }
-  .no {
-    background-color: #424242;
-    border-right: none;
-    color: white;
-  }
-  .table-fan {
-    border: solid 1px #29aae2;
-    overflow-x: auto;
-    width: 200%;
-    thead {
-      padding-bottom: 0.5em;
-      background: #29aae2;
+    .btn {
+      background: #29aae2 !important;
+      border-color: transparent;
       color: white;
-      overflow: auto;
-      th {
-        padding: 0.2em;
-      }
-      .sub-head {
-        color: #cccccc;
-      }
+      padding: 10px 40px 10px 40px;
+      font-family: 'Avenir', Helvetica, Arial, sans-serif;
     }
-    tbody {
-      background-color: white;
-      color: black;
-      text-align: center;
-      tr {
-        td {
-          padding: 0.4em;
+    .no {
+      background-color: #424242;
+      border-right: none;
+      color: white;
+    }
+    .table-fan {
+      border: solid 1px #29aae2;
+      overflow-x: auto;
+      width: 200%;
+      thead {
+        padding-bottom: 0.5em;
+        background: #29aae2;
+        color: white;
+        overflow: auto;
+        th {
+          padding: 0.2em;
+        }
+        .sub-head {
+          color: #cccccc;
+        }
+      }
+      tbody {
+        background-color: white;
+        color: black;
+        text-align: center;
+        tr {
+          td {
+            padding: 0.4em;
+          }
         }
       }
     }
-  }
-  table, td {
-    border: solid 1px #29aae2;
-    border-top: none;
-    border-bottom: none;
-    border-left: none;
-  }
-  .btn-edit
-  {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    .button {
-      background-color: #29aae2;
-      border-radius: 0px;
-      color: white;
-      margin: 1em 1em;
-      width: 13em;
-      height: 3em;
-      font-size: 1em;
-      font-weight: bold;
-      font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    table, td {
+      border: solid 1px #29aae2;
+      border-top: none;
+      border-bottom: none;
+      border-left: none;
+    }
+    .btn-edit {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+      .button {
+        background-color: #29aae2;
+        border-radius: 0px;
+        color: white;
+        margin: 1em 1em;
+        width: 13em;
+        height: 3em;
+        font-size: 1em;
+        font-weight: bold;
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
-  }
+    .file-name-item {
+      background-color: #424242;
+      .fileName {
+        padding: 1em 3em;
+        font-size: 1em;
+        font-weight: 800;
+        color: white;
+      }
+      i {
+        padding: 0.5em 3em;
+        font-size: 1.5em;
+        font-weight: 500;
+        color: white;
+        float: right;
+        padding-right: 40%;
+      }
+    }
 </style>

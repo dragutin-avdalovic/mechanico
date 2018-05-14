@@ -1,7 +1,7 @@
 <template>
   <div class="choose">
     <el-row class="wd" >
-      <div class="wordDropdown":xs="24" :sm="24" :md="24" :xl="12" :lg="12">
+      <div class="wordDropdown" :xs="24" :sm="24" :md="24" :xl="12" :lg="12">
         <div class="word">
           <p class="first">FanCoil</p>
         </div>
@@ -173,9 +173,9 @@ export default {
     color:white;
   }
   .el-dropdown-menu__item{
-  	color:white;
+    color:white;
   }
   .el-dropdown-menu__item:hover{
-  	background-color:#606060;
+    background-color:#606060;
   }
 </style>

@@ -5,16 +5,12 @@
         <li v-for="(filter, index) of filters" :key="index" :class="{ active: filter.id === selectedFilter }" @click="selectFilter(filter.id)">{{filter.name}}</li>
       </ul>
     </div>
-    <el-row class="file-name-item">
-      <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" class="fileName">File.xml</el-col>
-      <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12"><i class="el-icon-document"></i></el-col>
-    </el-row>
     <el-row  class="content">
       <div v-if="selectedFilter === 0">
         <img class="mechanico-man" src="/static/images/calculator.png">
       </div>
       <div v-else-if="selectedFilter === 1">
-        <CalculatorFanTable></CalculatorFanTable>
+        <CalculatorFanTable :fileName="'file.xml'"></CalculatorFanTable>
       </div> <div v-else-if="selectedFilter === 2">
         Chiller
       </div>
@@ -106,24 +102,6 @@ export default {
           -moz-box-shadow: 1px -1px 2px 0px rgba(0,0,0,0.75);
           box-shadow: 1px -1px 2px 0px rgba(0,0,0,0.75);
         }
-      }
-    }
-    .file-name-item
-    {
-      .fileName
-      {
-        padding: 1em 3em;
-        font-size: 1em;
-        font-weight: 800;
-        color: white;
-      }
-      i {
-        padding: 0.5em 3em;
-        font-size: 1.5em;
-        font-weight: 500;
-        color: white;
-        float: right;
-        padding-right: 40%;
       }
     }
     .content

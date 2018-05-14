@@ -13,7 +13,7 @@
     <div class="content">
       <el-row :gutter="5">
         <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-          <!--<CalculatorChoose></CalculatorChoose>-->
+          <CalculatorChoose></CalculatorChoose>
           <!--<CalculatorUpload></CalculatorUpload>-->
           <!--<CalculatorCompleted></CalculatorCompleted>-->
         </el-col>
@@ -47,12 +47,13 @@ export default {
   justify-content: center;
   border-radius: 50%;
   width:2em;
+  min-width:2em;
   height:2em;
   font-size: 1em;
   background-color: #125889;
   margin-top: 7px;
   margin-left: 5px;
-  margin-right: 10%;	
+  margin-right: 10%;
 }
 .circle-grey{
   display: flex;
@@ -60,6 +61,7 @@ export default {
   justify-content: center;
   border-radius: 50%;
   width:2em;
+  min-width:2em;
   height:2em;
   font-size: 1em;
   background-color: #4c4c4c;
