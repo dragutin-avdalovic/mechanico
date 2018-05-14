@@ -6,7 +6,7 @@
         <button class="upperButton1"><div class="circle">1</div>UPLOAD</button>
       </el-col>
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-        <button class="upperButton2"><div class="circle1">2</div>CALCULATE</button>
+        <button class="upperButton2"><div class="circle-grey">2</div>CALCULATE</button>
       </el-col>
     </el-row>
     </div>
@@ -14,8 +14,8 @@
       <el-row :gutter="5">
         <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
           <CalculatorChoose></CalculatorChoose>
-          <!--<CalculatorUpload></CalculatorUpload>-->
-          <!--<CalculatorCompleted></CalculatorCompleted>-->
+          <CalculatorUpload></CalculatorUpload>
+          <CalculatorCompleted></CalculatorCompleted>
         </el-col>
       </el-row>
     </div>
@@ -39,25 +39,26 @@ export default {
 
 .sidebar{
   background-color:#424242;
-  padding-bottom: 10px;
   height: 100vh;
   }
 .circle{
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
-  padding: 5px;
-  margin-right: 10px;
-  width:23px;
-  height:20px;
+  width:2em;
+  height:2em;
+  font-size: 1em;
   background-color: #125889;
 }
-.circle1{
-  display: inline-block;
+.circle-grey{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
-  padding: 5px;
-  margin-right: 10px;
-  width:23px;
-  height:20px;
+  width:2em;
+  height:2em;
+  font-size: 1em;
   background-color: #4c4c4c;
 }
 .button{
