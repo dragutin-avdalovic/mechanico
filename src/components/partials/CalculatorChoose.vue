@@ -117,7 +117,6 @@ export default {
 
 <style lang="scss" scoped>
   .choose {
-    height: 90vh;
     display: flex;
     flex-direction: column;
     .word {
