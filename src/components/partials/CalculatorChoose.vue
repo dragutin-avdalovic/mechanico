@@ -8,7 +8,7 @@
         <div class="dropdown">
           <el-dropdown @command="handleCommand">
             <el-button type="primary">
-              Choose<i class="el-icon-arrow-down el-icon--right"></i>
+              {{command}}<i class="el-icon-arrow-down el-icon--right"></i>
             </el-button>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item command="1">Artesi</el-dropdown-item>
@@ -104,12 +104,18 @@
 
 <script>
 export default {
+  data () {
+    return {
+      command: 'Choose'
+    }
+  },
   methods: {
     handleClick () {
       alert('button click')
     },
-    handleCommand (command) {
-      console.log('click on item ' + command)
+    handleCommand (comm) {
+      console.log('click on item ' + comm)
+      this.command = comm
     }
   }
 }
