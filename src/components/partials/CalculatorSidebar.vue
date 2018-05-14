@@ -14,7 +14,7 @@
       <el-row :gutter="5">
         <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
           <!--<CalculatorChoose></CalculatorChoose>-->
-          <CalculatorUpload></CalculatorUpload>
+          <!--<CalculatorUpload></CalculatorUpload>-->
           <!--<CalculatorCompleted></CalculatorCompleted>-->
         </el-col>
       </el-row>
