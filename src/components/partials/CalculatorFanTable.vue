@@ -39,26 +39,20 @@
     <td class="input"><el-input :value="FanCoil.tainField" type="number" ></el-input></td>
     <td class="input"><el-input :value="FanCoil.urinField" type="number" ></el-input></td>
     <td>
-      <el-select v-model="FanCoil.typeField" placeholder="Choose...">
-        <el-option
-          v-for="type in typeFieldOptions"
-          :key="type.value"
-          :label="type.text"
-          :value="type.value">
-        </el-option>
-      </el-select>
+      <select v-model="FanCoil.typeField" placeholder="Choose...">
+        <option v-for="type in typeFieldOptions" v-bind:value="type.value" v-bind:key="type.value">
+          {{ type.text }}
+        </option>
+      </select>
     </td>
     <td><el-input  :value="FanCoil.statPresField" type="number"></el-input></td>
     <td><el-input  :value="FanCoil.noiseLevel" type="number"></el-input></td>
     <td>
-      <el-select v-model="FanCoil.fansField" placeholder="Choose...">
-        <el-option
-          v-for="fan in fansFieldOptions"
-          :key="fan.value"
-          :label="fan.text"
-          :value="fan.value">
-        </el-option>
-      </el-select>
+      <select v-model="FanCoil.fansField" placeholder="Choose...">
+        <option  v-for="fan in fansFieldOptions" v-bind:value="fan.value"  v-bind:key="fan.value">
+          {{ fan.text }}
+        </option>
+      </select>
     </td>
     <td><el-button data-bind="click: $root.removeFanCoil" class="btn btn-link">Remove</el-button></td>
   </tr>
@@ -253,14 +247,14 @@ export default {
         }
       ],
       fansFieldOptions: [
-        { value: 'ac', text: 'AC' },
-        { value: 'ec', text: 'EC' }
+        { value: 'AC', text: 'AC' },
+        { value: 'EC', text: 'EC' }
       ],
       typeFieldOptions: [
-        { value: 'Floor', text: 'Floor' },
-        { value: 'Ducted', text: 'Ducted' },
-        { value: 'Cassette', text: 'Cassette' },
-        { value: 'Wall', text: 'Wall' }
+        { value: '0', text: 'Floor' },
+        { value: '1', text: 'Ducted' },
+        { value: '2', text: 'Cassette' },
+        { value: '3', text: 'Wall' }
       ]
     }
   },

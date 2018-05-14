@@ -6,16 +6,14 @@
           <p class="first">FanCoil</p>
         </div>
         <div class="dropdown">
-          <el-dropdown>
+          <el-dropdown @command="handleCommand">
             <el-button type="primary">
               Choose<i class="el-icon-arrow-down el-icon--right"></i>
             </el-button>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>Action 1</el-dropdown-item>
-              <el-dropdown-item>Action 2</el-dropdown-item>
-              <el-dropdown-item>Action 3</el-dropdown-item>
-              <el-dropdown-item>Action 4</el-dropdown-item>
-              <el-dropdown-item>Action 5</el-dropdown-item>
+              <el-dropdown-item command="1">Artesi</el-dropdown-item>
+              <el-dropdown-item command="2">Fun fan</el-dropdown-item>
+              <el-dropdown-item command="3">Die</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </div>
@@ -121,6 +119,9 @@ export default {
   methods: {
     handleClick () {
       alert('button click')
+    },
+    handleCommand(command) {
+      console.log('click on item ' + command);
     }
   }
 }
