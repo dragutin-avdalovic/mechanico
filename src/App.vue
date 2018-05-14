@@ -23,20 +23,24 @@ body {
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
+  cursor: pointer;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: $grey-my-projects-lighter;
+  cursor: pointer;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: $blue-my-projects;
+  cursor: pointer;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: $blue-my-projects;
+  cursor: pointer;
 }
 </style>
