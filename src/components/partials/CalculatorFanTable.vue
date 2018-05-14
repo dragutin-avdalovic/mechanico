@@ -323,7 +323,7 @@ export default {
         text-align: center;
         tr {
           td {
-            padding: 1em 0.4em;
+            padding: 0.4em;
           }
         }
       }
