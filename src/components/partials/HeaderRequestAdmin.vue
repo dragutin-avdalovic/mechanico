@@ -18,17 +18,17 @@
             <el-button size="mini" slot="append" icon="el-icon-search"></el-button>
           </el-input>
         </div>
-        <TableRequest :fields="fields" :selectable="false" :editable="false"></TableRequest>
+        <TableRequestAdmin :fields="fields" :selectable="false" :editable="false"></TableRequestAdmin>
       </el-tab-pane>
     </el-tabs>
   </div>
 </template>
 <script>
-import TableRequest from './TableRequest.vue'
+import TableRequestAdmin from './TableRequestAdmin.vue'
 import ProductsAndManufacturers from './ProductsAndManufacturers.vue'
 export default {
   components: {
-    TableRequest,
+    TableRequestAdmin,
     ProductsAndManufacturers
   },
   props: ['fields'],

@@ -7,31 +7,32 @@
     element-loading-spinner="el-icon-loading"
     element-loading-background="rgba(0, 0, 0, 0.8)"
     :data="fields"
-    style="width: 100%"
-    height="228"
+    style="width: 100%; overflow: auto;"
+    height="278"
     @selection-change="handleSelectionChange">
     <el-table-column v-if="selectable" type="selection" width="55"></el-table-column>
-    <el-table-column
-      prop="productName"
-      label="Product Name"
-      width="140" sortable>
-    </el-table-column>
     <el-table-column
       prop="manufacturer"
       label="Manufacturer"
       width="140" sortable>
     </el-table-column>
     <el-table-column
-      prop="productType"
-      label="Product Type"
+      prop="product"
+      label="Product"
       width="140" sortable>
     </el-table-column>
-    <el-table-column v-if="editable"  width="140">
+    <el-table-column
+      prop="status"
+      label="Status"
+      width=""
+      :filters="[{ text: 'Approved', value: 'Approved' }, { text: 'Denied', value: 'Denied' },{ text: 'Requested', value: 'Requested' }]"
+      :filter-method="filterTag"
+      filter-placement="bottom-start">
       <template slot-scope="scope">
-        <el-button
-          type="info" icon="el-icon-edit"
-          @click="handleEdit(scope.$index, scope.row)"> Edit
-        </el-button>
+        <el-tag
+          :type="scope.row.type"
+          close-transition>{{scope.row.status}}
+        </el-tag>
       </template>
     </el-table-column>
   </el-table>
@@ -79,5 +80,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
+  .el-table {
+    overflow: auto;
+  }
 </style>
