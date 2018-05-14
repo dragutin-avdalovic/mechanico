@@ -51,11 +51,11 @@
   .el-tabs__item.is-top.is-active {
     padding-top: 1em;
     height: 4em;
-    background-color: #0D72B9;
+    background-color: #0D72B9 !important;
     color: white;
   }
   .el-tabs__item:hover {
-    background-color: #0D72B9;
+    background-color: #0D72B9 !important;
   }
   .el-tabs
   {
