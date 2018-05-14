@@ -47,11 +47,16 @@ export default {
     border-color: #29aae2;
     border-radius: 0px;
     color: white;
-    margin: 1em 2%;
-    width: 96%;
+    margin: 1em 1%;
+    width: 98%;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .upload {
+    background-color: #606060;
+    width: 98%;
+    margin: 0 1%;
   }
 </style>

@@ -25,7 +25,7 @@
         <div class="dropdown">
           <el-dropdown @command="handleCommand">
             <el-button type="primary">
-              Choose<i class="el-icon-arrow-down el-icon--right"></i>
+            {{command}}<i class="el-icon-arrow-down el-icon--right"></i>
             </el-button>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item command="1">Artesi</el-dropdown-item>
@@ -44,7 +44,7 @@
         <div class="dropdown">
           <el-dropdown @command="handleCommand">
             <el-button type="primary">
-              Choose<i class="el-icon-arrow-down el-icon--right"></i>
+            {{command}}<i class="el-icon-arrow-down el-icon--right"></i>
             </el-button>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item command="1">Artesi</el-dropdown-item>
@@ -61,7 +61,7 @@
         <div class="dropdown">
           <el-dropdown @command="handleCommand">
             <el-button type="primary">
-              Choose<i class="el-icon-arrow-down el-icon--right"></i>
+            {{command}}<i class="el-icon-arrow-down el-icon--right"></i>
             </el-button>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item command="1">Artesi</el-dropdown-item>
@@ -80,7 +80,7 @@
         <div class="dropdown">
           <el-dropdown @command="handleCommand">
             <el-button type="primary">
-              Choose<i class="el-icon-arrow-down el-icon--right"></i>
+              {{command}}<i class="el-icon-arrow-down el-icon--right"></i>
             </el-button>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item command="1">Artesi</el-dropdown-item>
@@ -123,6 +123,10 @@ export default {
 
 <style lang="scss" scoped>
   .choose {
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color: #606060;
     display: flex;
     flex-direction: column;
     .word {
