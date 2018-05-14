@@ -1,7 +1,7 @@
 <template>
   <div class="choose">
-    <div class="wd">
-      <div class="wordDropdown">
+    <el-row class="wd" >
+      <div class="wordDropdown" :xl="12" :lg="12">
         <div class="word">
           <p class="first">FanCoil</p>
         </div>
@@ -18,99 +18,87 @@
           </el-dropdown>
         </div>
       </div>
-    </div>
-    <div class="wd">
-      <div class="wordDropdown">
+      <div class="wordDropdown" :xl="12" :lg="12">
         <div class="word">
-          <p class="second">Chiller</p>
+          <p class="first">Chiller</p>
         </div>
         <div class="dropdown">
-          <el-dropdown>
+          <el-dropdown @command="handleCommand">
             <el-button type="primary">
-              Choose <i class="el-icon-arrow-down el-icon--right"></i>
+              Choose<i class="el-icon-arrow-down el-icon--right"></i>
             </el-button>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>Action 1</el-dropdown-item>
-              <el-dropdown-item>Action 2</el-dropdown-item>
-              <el-dropdown-item>Action 3</el-dropdown-item>
-              <el-dropdown-item>Action 4</el-dropdown-item>
-              <el-dropdown-item>Action 5</el-dropdown-item>
+              <el-dropdown-item command="1">Artesi</el-dropdown-item>
+              <el-dropdown-item command="2">Fun fan</el-dropdown-item>
+              <el-dropdown-item command="3">Die</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </div>
       </div>
-    </div>
-    <div class="wd">
-      <div class="wordDropdown">
-        <div class="word">
-          <p class="third">DryCooler</p>
-        </div>
-        <div class="dropdown">
-          <el-dropdown>
-            <el-button type="primary">
-              Choose <i class="el-icon-arrow-down el-icon--right"></i>
-            </el-button>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>Action 1</el-dropdown-item>
-              <el-dropdown-item>Action 2</el-dropdown-item>
-              <el-dropdown-item>Action 3</el-dropdown-item>
-              <el-dropdown-item>Action 4</el-dropdown-item>
-              <el-dropdown-item>Action 5</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
-        </div>
-      </div>
-     </div>
-    <div class="wd">
-      <div class="wordDropdown">
-        <div class="word">
-          <p class="fourth">Condenser</p>
-        </div>
-        <div class="dropdown">
-          <el-dropdown>
-            <el-button type="primary">
-              Choose <i class="el-icon-arrow-down el-icon--right"></i>
-            </el-button>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>Action 1</el-dropdown-item>
-              <el-dropdown-item>Action 2</el-dropdown-item>
-              <el-dropdown-item>Action 3</el-dropdown-item>
-              <el-dropdown-item>Action 4</el-dropdown-item>
-              <el-dropdown-item>Action 5</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
-        </div>
-      </div>
-    </div>
-  <div class="wd">
-    <div class="wordDropdown">
-      <div class="word">
-        <p class="fifth">AHU</p>
-      </div>
-      <div class="dropdown">
-        <el-dropdown>
-          <el-button type="primary">
-            Choose <i class="el-icon-arrow-down el-icon--right"></i>
-          </el-button>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>Action 1</el-dropdown-item>
-            <el-dropdown-item>Action 2</el-dropdown-item>
-            <el-dropdown-item>Action 3</el-dropdown-item>
-            <el-dropdown-item>Action 4</el-dropdown-item>
-            <el-dropdown-item>Action 5</el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
-      </div>
-    </div>
-  </div>
-    <el-row justify="center">
-      <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
-        <el-button class="button">Calculate</el-button>
-      </el-col>
-      <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
-        <el-button class="button">Request</el-button>
-      </el-col>
     </el-row>
+    <el-row class="wd" >
+      <div class="wordDropdown" :xl="12" :lg="12">
+        <div class="word">
+          <p class="first">DryCooler</p>
+        </div>
+        <div class="dropdown">
+          <el-dropdown @command="handleCommand">
+            <el-button type="primary">
+              Choose<i class="el-icon-arrow-down el-icon--right"></i>
+            </el-button>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item command="1">Artesi</el-dropdown-item>
+              <el-dropdown-item command="2">Fun fan</el-dropdown-item>
+              <el-dropdown-item command="3">Die</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+        </div>
+      </div>
+      <div class="wordDropdown" :xl="12" :lg="12">
+        <div class="word">
+          <p class="first">DryCooler</p>
+        </div>
+        <div class="dropdown">
+          <el-dropdown @command="handleCommand">
+            <el-button type="primary">
+              Choose<i class="el-icon-arrow-down el-icon--right"></i>
+            </el-button>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item command="1">Artesi</el-dropdown-item>
+              <el-dropdown-item command="2">Fun fan</el-dropdown-item>
+              <el-dropdown-item command="3">Die</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+        </div>
+      </div>
+    </el-row>
+    <el-row class="wd" >
+      <div class="wordDropdown" :xl="12" :lg="12">
+        <div class="word">
+          <p class="first">AHU</p>
+        </div>
+        <div class="dropdown">
+          <el-dropdown @command="handleCommand">
+            <el-button type="primary">
+              Choose<i class="el-icon-arrow-down el-icon--right"></i>
+            </el-button>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item command="1">Artesi</el-dropdown-item>
+              <el-dropdown-item command="2">Fun fan</el-dropdown-item>
+              <el-dropdown-item command="3">Die</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+        </div>
+      </div>
+    </el-row>
+    <!--<el-row>-->
+      <!--<el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">-->
+        <!--<el-button class="button">Calculate</el-button>-->
+      <!--</el-col>-->
+      <!--<el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">-->
+        <!--<el-button class="button">Request</el-button>-->
+      <!--</el-col>-->
+    <!--</el-row>-->
   </div>
 </template>
 
@@ -120,100 +108,52 @@ export default {
     handleClick () {
       alert('button click')
     },
-    handleCommand(command) {
-      console.log('click on item ' + command);
+    handleCommand (command) {
+      console.log('click on item ' + command)
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .choose {
-    height: 600px;
-    margin-left: -5px;
+    height: 90vh;
     display: flex;
     flex-direction: column;
-  }
-  .word {
-    font-size: 14px;
-    border-bottom: 2px solid #2ca5d9;
-    display: inline-block;
-    padding-top: 10px;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .first {
-    margin-bottom: 5px;
-    color: #bcbcbc;
-    padding-right: 80px;
-  }
-  .second {
-    margin-bottom: 5px;
-    color: #bcbcbc;
-    padding-right: 85px;
-  }
-  .third {
-    margin-bottom: 5px;
-    color: #bcbcbc;
-    padding-right: 66px;
-  }
-  .fourth {
-    margin-bottom: 5px;
-    color: #bcbcbc;
-    padding-right: 55px;
-  }
-  .fifth {
-    margin-bottom: 5px;
-    color: #bcbcbc;
-    padding-right: 100px;
-  }
-  .dropdown {
-    margin-top: 10px;
+    .word {
+      font-size: 14px;
+      border-bottom: 2px solid #2ca5d9;
+      width: 100%;
+      text-align: left;
+      .first {
+        margin-bottom: 5px;
+        padding-left: 10%;
+        color: #bcbcbc;
+      }
+    }
+    .wordDropdown {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .dropdown {
+      margin-top: 1em;
+    }
+    .el-icon-arrow-down {
+      font-size: 14px;
+    }
+    .wd {
+      margin-top: 2em;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
   .el-button--primary {
-    color: #bcbcbc;
-    background-color: #666;
-    border: 1px solid #666;
-    border-radius: 0px;
-    font-size: 16px;
-  }
-  .el-dropdown {
-    vertical-align: top;
-    width:100%;
- }
-  .el-dropdown + .el-dropdown {
-    margin-left: 15px;
-  }
-
-  .el-icon-arrow-down {
-    font-size: 14px;
-  }
-  .el-icon-arrow-down {
-    margin-left: 60px;
+    background-color: #595959;
+    border-color: #595959;
     color: white;
-    font-weight: bold;
-  }
-  .wordDropdown {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-left: 5px;
-    text-align: center;
-  }
-  .wd {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-  }
-  .button {
-    background-color: #29aae2;
-    border-color: #29aae2;
-    border-radius: 0px;
-    color: white;
-    width: 92%;
-    margin-top: 20px;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    margin-left: 10px;
   }
 </style>
