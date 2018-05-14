@@ -1,14 +1,4 @@
 <template>
-<!--<div class="tab">-->
-  <!--<el-tabs v-model="activeName" @tab-click="handleClick">-->
-    <!--<el-tab-pane label="FanCoil" name="first">-->
-      <!--<CalculatorFanTable></CalculatorFanTable>-->
-    <!--</el-tab-pane>-->
-    <!--<el-tab-pane label="Chiller" name="second">Chiller</el-tab-pane>-->
-    <!--<el-tab-pane label="DryColler" name="third">DryColler</el-tab-pane>-->
-    <!--<el-tab-pane label="Condenser" name="fourth">Condenser</el-tab-pane>-->
-    <!--<el-tab-pane label="AHU" name="fifth">AHU</el-tab-pane>-->
-  <!--</el-tabs>-->
   <div class="filter">
     <div class="main-filters">
       <ul class="main-list">
@@ -20,10 +10,23 @@
       <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12"><i class="el-icon-document"></i></el-col>
     </el-row>
     <el-row  class="content">
-      <!--<div>-->
-        <!--<img class="mechanico-man" src="/static/images/calculator.png">-->
-      <!--</div>-->
-      <CalculatorFanTable></CalculatorFanTable>
+      <div v-if="selectedFilter === 0">
+        <img class="mechanico-man" src="/static/images/calculator.png">
+      </div>
+      <div v-else-if="selectedFilter === 1">
+        <CalculatorFanTable></CalculatorFanTable>
+      </div> <div v-else-if="selectedFilter === 2">
+        Chiller
+      </div>
+      <div v-else-if="selectedFilter === 3">
+        Condenser
+      </div>
+      <div v-else-if="selectedFilter === 4">
+        Dry cooler
+      </div>
+      <div v-else-if="selectedFilter === 5">
+        AHU
+      </div>
     </el-row>
   </div>
 </template>
@@ -43,7 +46,7 @@ export default {
         { id: 4, name: 'Condenser' },
         { id: 5, name: 'AHU' }
       ],
-      selectedFilter: 1
+      selectedFilter: 0
     }
   },
   methods: {
