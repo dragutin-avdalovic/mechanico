@@ -130,7 +130,7 @@ export default {
     {
       overflow: auto;
       background-color: white;
-      height: calc(100vh - 135px);
+      height: calc(100vh - 145px);
       display: flex;
       justify-content: center;
       .mechanico-man
