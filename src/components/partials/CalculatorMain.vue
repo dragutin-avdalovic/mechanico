@@ -113,6 +113,7 @@ export default {
       justify-content: center;
       .mechanico-man
       {
+        margin-top: 50%;
         width: 25em;
         height: 20em;
       }

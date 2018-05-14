@@ -177,4 +177,7 @@ export default {
   .el-dropdown-menu__item:hover{
     background-color:#606060;
   }
+  .popper__arrow {
+   filter: none;
+  }
 </style>
