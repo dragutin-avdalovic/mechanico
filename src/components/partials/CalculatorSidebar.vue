@@ -2,6 +2,7 @@
 <div class="sidebar">
 	<div class="sideArrow">
   		<i class="el-icon-arrow-left"></i>
+  		<i class="el-icon-arrow-right"></i>
   	</div>
   <div class="main-filters">
     <ul class="main-list">
@@ -63,6 +64,10 @@ export default {
 }
 .el-icon-arrow-left{
 	margin-top:50vh;
+	font-weight:600;
+	color:#424242;
+}
+.el-icon-arrow-right{
 	font-weight:600;
 	color:#424242;
 }
