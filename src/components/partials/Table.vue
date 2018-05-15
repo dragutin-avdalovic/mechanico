@@ -60,5 +60,6 @@ export default {
 <style lang="scss" scoped>
   .multipleTable {
     overflow-y: auto;
+    text-align: center;
   }
 </style>
