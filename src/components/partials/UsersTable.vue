@@ -89,6 +89,10 @@ export default {
   @import '../../assets/font/fontello/css/fontello.css';
   .multipleTable {
     overflow-y: auto;
+    text-align: center;
+    thead {
+      text-align: center;
+    }
   }
   .el-icon-close{
     color:red;

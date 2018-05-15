@@ -21,8 +21,8 @@ body {
 }
 /* width */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
   cursor: pointer;
 }
 
