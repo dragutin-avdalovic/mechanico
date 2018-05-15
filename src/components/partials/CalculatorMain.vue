@@ -1,4 +1,4 @@
-<template>
+	<template>
   <div class="filter">
     <div class="main-filters">
       <ul class="main-list">
@@ -15,10 +15,10 @@
         Chiller
       </div>
       <div v-else-if="selectedFilter === 3">
-        Condenser
+        Dry cooler
       </div>
       <div v-else-if="selectedFilter === 4">
-        Dry cooler
+        Condenser
       </div>
       <div v-else-if="selectedFilter === 5">
         AHU

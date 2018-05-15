@@ -56,7 +56,8 @@ export default {
   }
   .upload {
     background-color: #606060;
-    width: 98%;
+    width: 94%;
     margin: 0 1%;
+
   }
 </style>
