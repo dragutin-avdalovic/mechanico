@@ -12,7 +12,7 @@
     </el-upload>
     <el-row>
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
-        <el-button class="button">Upload Excel File</el-button>
+        <el-button class="button">Upload File</el-button>
       </el-col>
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
         <el-button class="button">Create table</el-button>
