@@ -56,7 +56,7 @@
       </div>
       <div class="wordDropdown" :xs="24" :sm="24" :md="24" :xl="12" :lg="12">
         <div class="word">
-          <p class="first">DryCooler</p>
+          <p class="first">Condenser</p>
         </div>
         <div class="dropdown">
           <el-dropdown @command="handleCommand">
@@ -123,7 +123,7 @@ export default {
 
 <style lang="scss" scoped>
   .choose {
-    width: 98%;
+    width: 94%;
     margin-left: 1%;
     margin-right: 1%;
     background-color: #606060;

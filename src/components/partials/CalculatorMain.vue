@@ -1,24 +1,29 @@
-<template>
+	<template>
   <div class="filter">
+
     <div class="main-filters">
       <ul class="main-list">
         <li v-for="(filter, index) of filters" :key="index" :class="{ active: filter.id === selectedFilter }" @click="selectFilter(filter.id)">{{filter.name}}</li>
       </ul>
     </div>
+    <div class="filename">
+		<div class="name">File name</div>
+		<div class="icon"><i class="el-icon-document"></i></div>
+   </div>
     <el-row  class="content">
       <div v-if="selectedFilter === 0">
         <img class="mechanico-man" src="/static/images/calculator.png">
       </div>
       <div v-else-if="selectedFilter === 1">
-        <CalculatorFanTable :fileName="'file.xml'"></CalculatorFanTable>
+        <CalculatorFanTable :fileName="'File Name'"></CalculatorFanTable>
       </div> <div v-else-if="selectedFilter === 2">
         Chiller
       </div>
       <div v-else-if="selectedFilter === 3">
-        Condenser
+        Dry cooler
       </div>
       <div v-else-if="selectedFilter === 4">
-        Dry cooler
+        Condenser
       </div>
       <div v-else-if="selectedFilter === 5">
         AHU
@@ -103,7 +108,26 @@ export default {
           box-shadow: 1px -1px 2px 0px rgba(0,0,0,0.75);
         }
       }
+  }
+
+   .filename {
+   	display:flex;
+   	flex-direction:row;
+   	font-weight: 400;
+   	font-size:1.2em;
+   	padding:0.5em 0;
+   	padding-left:1em;
+   	 .name{
+      background-color: #424242;
+      color:white;
+      width:66%;
+  		}
+   	 .icon {
+       	font-size: 1em;
+        color: white;
+  		}
     }
+
     .content
     {
       overflow: auto;
@@ -119,4 +143,5 @@ export default {
       }
     }
   }
+
 </style>

@@ -1,9 +1,6 @@
 <template>
 <div class="table-complex">
-<el-row class="file-name-item">
-  <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" class="fileName">{{ fileName }}</el-col>
-  <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12"><i class="el-icon-document"></i></el-col>
-</el-row>
+
 <table class="table-fan"  cellspacing="0" cellpadding="0" >
   <thead>
   <tr>
@@ -81,6 +78,7 @@
 </table>
 <div class="btn-edit">
   <el-button v-if="!editableFanCoils" class="button" v-on:click="editTable">Edit table</el-button>
+  <el-button v-if="!editableFanCoils" class="button" v-on:click="editTable">Show more / less</el-button>
   <el-button v-if="editableFanCoils" class="button">Add entry</el-button>
   <el-button v-if="editableFanCoils" class="button" v-on:click="editTable">Done</el-button>
 </div>
@@ -353,21 +351,5 @@ export default {
         justify-content: center;
       }
     }
-    .file-name-item {
-      background-color: #424242;
-      .fileName {
-        padding: 1em 3em;
-        font-size: 1em;
-        font-weight: 800;
-        color: white;
-      }
-      i {
-        padding: 0.5em 3em;
-        font-size: 1.5em;
-        font-weight: 500;
-        color: white;
-        float: right;
-        padding-right: 40%;
-      }
-    }
+
 </style>
