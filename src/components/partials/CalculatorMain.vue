@@ -1,4 +1,4 @@
-	<template>
+<template>
   <div class="filter">
 
     <div class="main-filters">
@@ -7,8 +7,9 @@
       </ul>
     </div>
     <div class="filename">
-		<div class="name">File name</div>
-		<div class="icon"><i class="el-icon-document"></i></div>
+    <div class="name">File name</div>
+      <div class="icon"><i class="el-icon-document"></i>
+    </div>
    </div>
     <el-row  class="content">
       <div v-if="selectedFilter === 0">
@@ -111,21 +112,21 @@ export default {
   }
 
    .filename {
-   	display:flex;
-   	flex-direction:row;
-   	font-weight: 400;
-   	font-size:1.2em;
-   	padding:0.5em 0;
-   	padding-left:1em;
-   	 .name{
+    display:flex;
+    flex-direction:row;
+    font-weight: 400;
+    font-size:1.2em;
+    padding:0.5em 0;
+    padding-left:1em;
+     .name{
       background-color: #424242;
       color:white;
       width:66%;
-  		}
-   	 .icon {
-       	font-size: 1em;
+      }
+     .icon {
+        font-size: 1em;
         color: white;
-  		}
+      }
     }
 
     .content

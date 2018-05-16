@@ -1,9 +1,9 @@
 <template>
 <div class="sidebar">
-	<div class="sideArrow">
-  		<i class="el-icon-arrow-left"></i>
-  		<i class="el-icon-arrow-right"></i>
-  	</div>
+  <div class="sideArrow">
+    <i class="el-icon-arrow-left"></i>
+    <i class="el-icon-arrow-right"></i>
+  </div>
   <div class="main-filters">
     <ul class="main-list">
       <button class="upperButton" v-for="(filter, index) of filters" :key="index" :class="{ active: filter.id === selectedFilter }" @click="selectFilter(filter.id)"><div class="circle">{{filter.id}}</div><p>{{filter.name}}</p></button>
@@ -56,20 +56,20 @@ export default {
 @import '../../assets/styles/varibles.scss';
 
 .sideArrow{
-	float:right;
-	height:100vh;
-	width:4%;
-	position:relative;
-	background-color:#606060;
+  float:right;
+  height:100vh;
+  width:4%;
+  position:relative;
+  background-color:#606060;
 }
 .el-icon-arrow-left{
-	margin-top:50vh;
-	font-weight:600;
-	color:#424242;
+  margin-top:50vh;
+  font-weight:600;
+  color:#424242;
 }
 .el-icon-arrow-right{
-	font-weight:600;
-	color:#424242;
+  font-weight:600;
+  color:#424242;
 }
 .sidebar {
   background-color: #424242;
