@@ -1,4 +1,4 @@
-	<template>
+<template>
   <div class="filter">
 
     <div class="main-filters">
@@ -16,8 +16,9 @@
       </div>
       <div v-else-if="selectedFilter === 1">
         <CalculatorFanTable :fileName="'File Name'"></CalculatorFanTable>
-      </div> <div v-else-if="selectedFilter === 2">
-        Chiller
+      </div> 
+      <div v-else-if="selectedFilter === 2">
+        <CalculatorChillerTable></CalculatorChillerTable>
       </div>
       <div v-else-if="selectedFilter === 3">
         Dry cooler
@@ -34,9 +35,11 @@
 
 <script>
 import CalculatorFanTable from './CalculatorFanTable.vue'
+import CalculatorChillerTable from './CalculatorChillerTable.vue'
 export default {
   components: {
-    CalculatorFanTable
+    CalculatorFanTable,
+    CalculatorChillerTable
   },
   data () {
     return {
