@@ -1,6 +1,5 @@
 <template>
 <div class="table-complex">
-
 <table class="table-fan"  cellspacing="0" cellpadding="0" >
   <thead>
   <tr>

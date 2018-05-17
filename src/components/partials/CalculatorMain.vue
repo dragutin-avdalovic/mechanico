@@ -17,7 +17,7 @@
       </div>
       <div v-else-if="selectedFilter === 1">
         <CalculatorFanTable :fileName="'File Name'"></CalculatorFanTable>
-      </div> 
+      </div>
       <div v-else-if="selectedFilter === 2">
         <CalculatorChillerTable></CalculatorChillerTable>
       </div>
