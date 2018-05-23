@@ -1,6 +1,6 @@
 <template>
 <div class="table-complex">
-<table class="table-fan"  cellspacing="0" cellpadding="0" >
+<table class="table-fan" ref="table-fan"  cellspacing="0" cellpadding="0" >
   <thead>
   <tr>
     <th class="no" width="3%" rowspan="2">No</th>
@@ -8,21 +8,21 @@
     <th rowspan="2" width="8%">Room</th>
     <th rowspan="2" width="8%">Chiller</th>
     <th rowspan="2" width="8%">Unit</th>
-    <th colspan="3" v-bind:style="{ visibility: showMoreFanCoilsInput }" width="15%">Heating</th>
-    <th colspan="3" v-bind:style="{ visibility: showMoreFanCoilsInput }" width="15%">Cooling</th>
-    <th rowspan="2" v-bind:style="{ visibility: showMoreFanCoilsInput }" width="8%">FanCoil Type</th>
-    <th rowspan="2" v-bind:style="{ visibility: showMoreFanCoilsInput }" width="8%">External Static Pressure (Pa)</th>
+    <th colspan="3" v-bind:style="{ display: showMoreFanCoilsInput }" width="15%">Heating</th>
+    <th colspan="3" v-bind:style="{ display: showMoreFanCoilsInput }" width="15%">Cooling</th>
+    <th rowspan="2" v-bind:style="{ display: showMoreFanCoilsInput }" width="8%">FanCoil Type</th>
+    <th rowspan="2" v-bind:style="{ display: showMoreFanCoilsInput }" width="8%">External Static Pressure (Pa)</th>
     <th rowspan="2" width="8%">Noise Level (dB)</th>
     <th rowspan="2" width="8%">Fans</th>
     <th v-if="editableFanCoils" rowspan="2"></th>
   </tr>
   <tr>
-    <th class="sub-head"  v-bind:style="{ visibility: showMoreFanCoilsInput }">Required Capacity (kW)</th>
-    <th class="sub-head"  v-bind:style="{ visibility: showMoreFanCoilsInput }">Internal Air (℃)</th>
-    <th class="sub-head"  v-bind:style="{ visibility: showMoreFanCoilsInput }">Relative Humidity (%)</th>
-    <th class="sub-head"  v-bind:style="{ visibility: showMoreFanCoilsInput }">Required Capacity (kW)</th>
-    <th class="sub-head"  v-bind:style="{ visibility: showMoreFanCoilsInput }">Internal Air (℃)</th>
-    <th class="sub-head"  v-bind:style="{ visibility: showMoreFanCoilsInput }">Relative Humidity (%)</th>
+    <th class="sub-head"  v-bind:style="{ display: showMoreFanCoilsInput }">Required Capacity (kW)</th>
+    <th class="sub-head"  v-bind:style="{ display: showMoreFanCoilsInput }">Internal Air (℃)</th>
+    <th class="sub-head"  v-bind:style="{ display: showMoreFanCoilsInput }">Relative Humidity (%)</th>
+    <th class="sub-head"  v-bind:style="{ display: showMoreFanCoilsInput }">Required Capacity (kW)</th>
+    <th class="sub-head"  v-bind:style="{ display: showMoreFanCoilsInput }">Internal Air (℃)</th>
+    <th class="sub-head"  v-bind:style="{ display: showMoreFanCoilsInput }">Relative Humidity (%)</th>
   </tr>
   </thead>
   <tbody  v-for="(FanCoil, index) in FanCoilsData" v-bind:key="index">
@@ -32,11 +32,11 @@
     <td class="input"><el-input :value="FanCoil.roomField" type="text" ></el-input></td>
     <td class="input"><el-input :value="FanCoil.chIdField" type="text" ></el-input></td>
     <td class="input"><el-input :value="FanCoil.fcIdField" type="text" ></el-input></td>
-    <td v-bind:style="{ visibility: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.qtRicHField" type="number" ></el-input></td>
-    <td v-bind:style="{ visibility: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.tainHField" type="number" ></el-input></td>
-    <td v-bind:style="{ visibility: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.urinHField" type="number" ></el-input></td>
-    <td v-bind:style="{ visibility: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.qtRicField" type="number" ></el-input></td>
-    <td v-bind:style="{ visibility: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.tainField" type="number" ></el-input></td>
+    <td v-bind:style="{ display: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.qtRicHField" type="number" ></el-input></td>
+    <td v-bind:style="{ display: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.tainHField" type="number" ></el-input></td>
+    <td v-bind:style="{ display: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.urinHField" type="number" ></el-input></td>
+    <td v-bind:style="{ display: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.qtRicField" type="number" ></el-input></td>
+    <td v-bind:style="{ display: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.tainField" type="number" ></el-input></td>
     <td class="input"><el-input :value="FanCoil.urinField" type="number" ></el-input></td>
     <td>
       <select v-model="FanCoil.typeField" placeholder="Choose...">
@@ -62,14 +62,14 @@
       <td rowspan="2">Room 0{{FanCoil.roomField}}</td>
       <td rowspan="2">{{FanCoil.chIdField}}</td>
       <td rowspan="2">{{FanCoil.fcIdField}}</td>
-      <td v-bind:style="{ visibility: showMoreFanCoilsInput}">{{FanCoil.qtRicHField}}</td>
-      <td v-bind:style="{ visibility: showMoreFanCoilsInput}">{{FanCoil.tainHField}}</td>
-      <td v-bind:style="{ visibility: showMoreFanCoilsInput}">{{FanCoil.urinHField}}</td>
-      <td v-bind:style="{ visibility: showMoreFanCoilsInput}">{{FanCoil.qtRicField}}</td>
-      <td v-bind:style="{ visibility: showMoreFanCoilsInput}">{{FanCoil.tainField}}</td>
-      <td v-bind:style="{ visibility: showMoreFanCoilsInput}">{{FanCoil.urinField}}</td>
-      <td rowspan="2" v-bind:style="{ visibility: showMoreFanCoilsInput}">{{makeTypeFieldText(FanCoil.typeField)}}</td>
-      <td rowspan="2" v-bind:style="{ visibility: showMoreFanCoilsInput}">{{FanCoil.statPresField}}</td>
+      <td v-bind:style="{ display: showMoreFanCoilsInput}">{{FanCoil.qtRicHField}}</td>
+      <td v-bind:style="{ display: showMoreFanCoilsInput}">{{FanCoil.tainHField}}</td>
+      <td v-bind:style="{ display: showMoreFanCoilsInput}">{{FanCoil.urinHField}}</td>
+      <td v-bind:style="{ display: showMoreFanCoilsInput}">{{FanCoil.qtRicField}}</td>
+      <td v-bind:style="{ display: showMoreFanCoilsInput}">{{FanCoil.tainField}}</td>
+      <td v-bind:style="{ display: showMoreFanCoilsInput}">{{FanCoil.urinField}}</td>
+      <td rowspan="2" v-bind:style="{ display: showMoreFanCoilsInput}">{{makeTypeFieldText(FanCoil.typeField)}}</td>
+      <td rowspan="2" v-bind:style="{ display: showMoreFanCoilsInput}">{{FanCoil.statPresField}}</td>
       <td rowspan="2">{{FanCoil.noiseLevel}}</td>
       <td rowspan="2">{{FanCoil.fansField}}</td>
   </tr>
@@ -89,7 +89,7 @@ export default {
     return {
       typeFieldText: '',
       editableFanCoils: false,
-      showMoreFanCoilsInput: 'hidden',
+      showMoreFanCoilsInput: 'none',
       showMoreFanCoilsButtonText: 'Show more',
       FanCoilsData: [
         {
@@ -283,11 +283,15 @@ export default {
       }
     },
     showMore () {
-      if (this.showMoreFanCoilsInput === 'hidden') {
-        this.showMoreFanCoilsInput = 'visible'
+      var elem = this.$refs['table-fan']
+      console.log(elem)
+      if (this.showMoreFanCoilsInput === 'none') {
+        this.showMoreFanCoilsInput = 'table-cell'
+        elem.style.width = 200 + '%'
         this.showMoreFanCoilsButtonText = 'Show less'
-      } else if (this.showMoreFanCoilsInput === 'visible') {
-        this.showMoreFanCoilsInput = 'hidden'
+      } else if (this.showMoreFanCoilsInput === 'table-cell') {
+        this.showMoreFanCoilsInput = 'none'
+        elem.style.width = 100 + '%'
         this.showMoreFanCoilsButtonText = 'Show more'
       }
     }
