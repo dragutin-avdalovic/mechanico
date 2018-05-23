@@ -1,6 +1,5 @@
 <template>
   <div class="filter">
-
     <div class="main-filters">
       <ul class="main-list">
         <li v-for="(filter, index) of filters" :key="index" :class="{ active: filter.id === selectedFilter }" @click="selectFilter(filter.id)">{{filter.name}}</li>
@@ -136,7 +135,7 @@ export default {
     {
       overflow: auto;
       background-color: white;
-      height: calc(100vh - 87px);
+      height: calc(100vh - 128px);
       display: flex;
       justify-content: center;
       .mechanico-man
