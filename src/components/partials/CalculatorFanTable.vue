@@ -14,7 +14,7 @@
     <th rowspan="2" v-bind:style="{ display: showMoreFanCoilsInput }" width="8%">External Static Pressure (Pa)</th>
     <th rowspan="2" width="8%">Noise Level (dB)</th>
     <th rowspan="2" width="8%">Fans</th>
-    <th v-if="editableFanCoils" rowspan="2"></th>
+    <th width="8%" v-if="editableFanCoils" rowspan="2"></th>
   </tr>
   <tr>
     <th class="sub-head"  v-bind:style="{ display: showMoreFanCoilsInput }">Required Capacity (kW)</th>
@@ -37,8 +37,8 @@
     <td v-bind:style="{ display: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.urinHField" type="number" ></el-input></td>
     <td v-bind:style="{ display: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.qtRicField" type="number" ></el-input></td>
     <td v-bind:style="{ display: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.tainField" type="number" ></el-input></td>
-    <td class="input"><el-input :value="FanCoil.urinField" type="number" ></el-input></td>
-    <td>
+    <td v-bind:style="{ display: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.urinField" type="number" ></el-input></td>
+    <td v-bind:style="{ display: showMoreFanCoilsInput}">
       <select v-model="FanCoil.typeField" placeholder="Choose...">
         <option v-for="type in typeFieldOptions" v-bind:value="type.value" v-bind:key="type.value">
           {{ type.text }}
@@ -46,7 +46,7 @@
       </select>
     </td>
     <td><el-input  :value="FanCoil.statPresField" type="number"></el-input></td>
-    <td><el-input  :value="FanCoil.noiseLevel" type="number"></el-input></td>
+    <td v-bind:style="{ display: showMoreFanCoilsInput}"><el-input  :value="FanCoil.noiseLevel" type="number"></el-input></td>
     <td>
       <select v-model="FanCoil.fansField" placeholder="Choose...">
         <option  v-for="fan in fansFieldOptions" v-bind:value="fan.value"  v-bind:key="fan.value">
@@ -76,8 +76,8 @@
   </tbody>
 </table>
 <div class="btn-edit">
+  <el-button class="button" v-on:click="showMore">{{this.showMoreFanCoilsButtonText}}</el-button>
   <el-button v-if="!editableFanCoils" class="button" v-on:click="editTable">Edit table</el-button>
-  <el-button v-if="!editableFanCoils" class="button" v-on:click="showMore">{{this.showMoreFanCoilsButtonText}}</el-button>
   <el-button v-if="editableFanCoils" class="button">Add entry</el-button>
   <el-button v-if="editableFanCoils" class="button" v-on:click="editTable">Done</el-button>
 </div>
