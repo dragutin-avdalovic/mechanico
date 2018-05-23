@@ -55,7 +55,6 @@ export default {
         this.$refs['mainFilters'].style.display = 'inline'
         this.$refs['content'].style.display = 'inline'
         this.$refs['left-arrow'].style.display = 'inline'
-        this.$refs['sideArrow'].style.background = '#606060'
         this.$refs['sideArrow'].style.width = 4 + '%'
       } else if (this.firstClick === true) {
         this.firstClick = false
@@ -63,7 +62,6 @@ export default {
         this.$refs['mainFilters'].style.display = 'none'
         this.$refs['content'].style.display = 'none'
         this.$refs['right-arrow'].style.display = 'inline'
-        this.$refs['sideArrow'].style.background = '#606060'
         this.$refs['sideArrow'].style.width = 100 + '%'
       }
       this.$emit('hide', this.firstClick)
@@ -85,6 +83,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
+  transition-timing-function: ease;
 }
 .el-icon-arrow-left{
   font-weight:600;

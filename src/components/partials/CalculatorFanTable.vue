@@ -317,7 +317,7 @@ export default {
     .table-fan {
       border: solid 1px #29aae2;
       overflow-x: auto;
-      width: 200%;
+      width: 100%;
       thead {
         padding-bottom: 0.5em;
         background: #29aae2;
