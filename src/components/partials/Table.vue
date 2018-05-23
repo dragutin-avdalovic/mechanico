@@ -13,7 +13,7 @@
     @selection-change="handleSelectionChange">
     <el-table-column v-if="selectable" type="selection" width="55"></el-table-column>
     <el-table-column sortable v-for="(column, key) in columns"
-                     v-bind:label="column.label" v-bind:prop="column.prop" v-bind:key='key' width="140">
+                     v-bind:label="column.label" v-bind:prop="column.prop" v-bind:key='key' width="160">
     </el-table-column>
     <el-table-column v-if="editable" width="140">
       <template slot-scope="scope">

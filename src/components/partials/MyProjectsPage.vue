@@ -29,7 +29,7 @@ export default {
       columns: [
         {prop: 'projectName', label: 'Project Name'}, {prop: 'designer', label: 'Designer'},
         {prop: 'consultant', label: 'Consultant'}, {prop: 'projectSize', label: 'Project Size'},
-        {prop: 'equipment', label: 'Equipment'}, {prop: 'year', label: 'Year'}
+        {prop: 'equipment', label: 'Equipment'}, {prop: 'year', label: 'Year'}, {prop: 'documentation', label: 'Documentation'}
       ],
       fields: [
         {
@@ -38,35 +38,40 @@ export default {
           consultant: 'Karl Marx',
           projectSize: '12330',
           equipment: '12330',
-          year: 2018
+          year: 2018,
+          documentation: 'Document 1'
         }, {
           projectName: 'Project 2',
           designer: 'Hail Tomas',
           consultant: 'DEEN',
           projectSize: '30',
           equipment: '212330',
-          year: 2016
+          year: 2016,
+          documentation: 'Document 1'
         }, {
           projectName: 'Project 1',
           designer: 'Tom Tomas',
           consultant: 'Karl Marx',
           projectSize: '12330',
           equipment: '12330',
-          year: 2018
+          year: 2018,
+          documentation: 'Document 1'
         }, {
           projectName: 'Project 1',
           designer: 'Tom Tomas',
           consultant: 'Karl Marx',
           projectSize: '12330',
           equipment: '12330',
-          year: 2018
+          year: 2018,
+          documentation: 'Document 1'
         }, {
           projectName: 'Project 1',
           designer: 'Tom Tomas',
           consultant: 'Karl Marx',
           projectSize: '12330',
           equipment: '12330',
-          year: 2018
+          year: 2018,
+          documentation: 'Document 1'
         }
       ]
     }
