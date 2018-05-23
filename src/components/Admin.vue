@@ -112,4 +112,5 @@ export default {
     background-color: $grey-my-projects-darker;
     padding: 0;
   }
+
 </style>

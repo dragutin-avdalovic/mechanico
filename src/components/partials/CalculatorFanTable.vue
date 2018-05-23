@@ -301,6 +301,7 @@ export default {
 
 <style lang="scss" scoped>
   @import '../../assets/styles/leafs.scss';
+  @import '../../assets/styles/varibles.scss';
     .btn {
       background: #29aae2 !important;
       border-color: transparent;
@@ -365,5 +366,12 @@ export default {
         justify-content: center;
       }
     }
-
+    select
+    {
+      color: $dark-my-projects;
+      height: 2.5em;
+      width: 80%;
+      background-color: white;
+      border: 1px solid $grey-my-projects-darker;
+    }
 </style>
