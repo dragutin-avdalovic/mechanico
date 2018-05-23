@@ -83,7 +83,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.5s ease;
+  transition: width 0.3s ease;
 }
 .el-icon-arrow-left{
   font-weight:600;
