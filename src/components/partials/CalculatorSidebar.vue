@@ -1,15 +1,15 @@
 <template>
 <div class="sidebar">
-  <div class="sideArrow">
-    <i class="el-icon-arrow-left"></i>
-    <i class="el-icon-arrow-right"></i>
+  <div ref='sideArrow' class="sideArrow" v-on:click="hideSidebar">
+    <i ref='left-arrow' class="el-icon-arrow-left"></i>
+    <i ref='right-arrow' class="el-icon-arrow-right"></i>
   </div>
-  <div class="main-filters">
+  <div ref='mainFilters' class="main-filters">
     <ul class="main-list">
       <button class="upperButton" v-for="(filter, index) of filters" :key="index" :class="{ active: filter.id === selectedFilter }" @click="selectFilter(filter.id)"><div class="circle">{{filter.id}}</div><p>{{filter.name}}</p></button>
     </ul>
   </div>
-  <el-row class="content">
+  <div  ref='content'  class="content">
           <div v-if="selectedFilter === 1">
             <CalculatorUpload></CalculatorUpload>
             <!--<CalculatorCompleted></CalculatorCompleted>-->
@@ -17,9 +17,8 @@
           <div v-if="selectedFilter === 2">
             <CalculatorChoose></CalculatorChoose>
           </div>
-  </el-row>
-
- </div>
+  </div>
+</div>
 
 </template>
 
@@ -35,7 +34,8 @@ export default {
         { id: 1, name: 'UPLOAD' },
         { id: 2, name: 'CALCULATE ' }
       ],
-      selectedFilter: 1
+      selectedFilter: 1,
+      firstClick: true
     }
   },
   components: {
@@ -47,6 +47,26 @@ export default {
     selectFilter (id) {
       this.$emit('onFilterSelected', id)
       this.selectedFilter = id
+    },
+    hideSidebar () {
+      if (this.firstClick === false) {
+        this.firstClick = true
+        this.$refs['right-arrow'].style.display = 'none'
+        this.$refs['mainFilters'].style.display = 'inline'
+        this.$refs['content'].style.display = 'inline'
+        this.$refs['left-arrow'].style.display = 'inline'
+        this.$refs['sideArrow'].style.background = '#606060'
+        this.$refs['sideArrow'].style.width = 4 + '%'
+      } else if (this.firstClick === true) {
+        this.firstClick = false
+        this.$refs['left-arrow'].style.display = 'none'
+        this.$refs['mainFilters'].style.display = 'none'
+        this.$refs['content'].style.display = 'none'
+        this.$refs['right-arrow'].style.display = 'inline'
+        this.$refs['sideArrow'].style.background = '#606060'
+        this.$refs['sideArrow'].style.width = 100 + '%'
+      }
+      this.$emit('hide', this.firstClick)
     }
   }}
 </script>
@@ -61,15 +81,19 @@ export default {
   width:4%;
   position:relative;
   background-color:#606060;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .el-icon-arrow-left{
-  margin-top:50vh;
   font-weight:600;
   color:#424242;
 }
 .el-icon-arrow-right{
   font-weight:600;
   color:#424242;
+  display: none;
 }
 .sidebar {
   background-color: #424242;
