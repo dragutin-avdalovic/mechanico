@@ -12,6 +12,11 @@
     @selection-change="handleSelectionChange">
     <el-table-column v-if="selectable" type="selection" width="55"></el-table-column>
     <el-table-column
+      prop="user"
+      label="User"
+      width="140" sortable>
+    </el-table-column>
+    <el-table-column
       prop="manufacturer"
       label="Manufacturer"
       width="140" sortable>
@@ -24,7 +29,7 @@
     <el-table-column
       prop="status"
       label="Status"
-      width=""
+      width="100"
       :filters="[{ text: 'Approved', value: 'Approved' }, { text: 'Denied', value: 'Denied' },{ text: 'Requested', value: 'Requested' }]"
       :filter-method="filterTag"
       filter-placement="bottom-start">
