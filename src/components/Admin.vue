@@ -9,7 +9,7 @@
         </el-col>
         <el-col :span="8">
           <div class="grid-content">
-            <StatusAdmin></StatusAdmin>
+            <StatusAdmin :city="'Sarajevo'" :mail="'mick@gmail.com'" :phone="'+342223333'" :user="'Mick Jagger'" :company="'Ramones'"></StatusAdmin>
           </div>
         </el-col>
       </el-row>
@@ -112,4 +112,5 @@ export default {
     background-color: $grey-my-projects-darker;
     padding: 0;
   }
+
 </style>

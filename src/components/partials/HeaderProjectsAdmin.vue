@@ -54,7 +54,7 @@ export default {
       .projects-label {
         font-weight: 500;
         font-size: 1em;
+        color:white !important;
       }
     }
-
 </style>

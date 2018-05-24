@@ -1,10 +1,13 @@
 .el-upload {
-  width:100% !important;
+  width:98%;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 .el-upload-dragger {
   background-color: #606060 !important;
   margin-top: 40px !important;
-  width: 100% !important;
+  width: 98% !important;
+  margin: auto;
 }
 .el-icon-check{
   font-size: 44px;
@@ -16,7 +19,6 @@
   height:70px;
   background-color:#606060;
   color:#bcbcbc;
-
   padding-top:15px;
 }
 .el-tabs__item:hover{
@@ -37,6 +39,7 @@
   .el-tabs__header.is-top
   {
     background-color: #CCCCCC;
+    min-height: 5em;
   }
   .el-tabs__item.is-top {
     background-color: #bcbcbc;
@@ -46,14 +49,13 @@
     border: 0;
     }
   .el-tabs__item.is-top.is-active {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-top: 1em;
     height: 4em;
-    background-color: #0D72B9;
+    background-color: #0D72B9 !important;
     color: white;
   }
   .el-tabs__item:hover {
-    background-color: #0D72B9;
+    background-color: #0D72B9 !important;
   }
   .el-tabs
   {
@@ -63,6 +65,11 @@
   {
     padding: 0.5em 0px;
   }
+  .el-dropdown-menu el-popper{
+    width: 10px;
+  }
 }
+
+
 
 

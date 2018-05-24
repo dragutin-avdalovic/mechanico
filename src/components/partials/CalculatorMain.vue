@@ -1,36 +1,45 @@
 <template>
-<!--<div class="tab">-->
-  <!--<el-tabs v-model="activeName" @tab-click="handleClick">-->
-    <!--<el-tab-pane label="FanCoil" name="first">-->
-      <!--<CalculatorFanTable></CalculatorFanTable>-->
-    <!--</el-tab-pane>-->
-    <!--<el-tab-pane label="Chiller" name="second">Chiller</el-tab-pane>-->
-    <!--<el-tab-pane label="DryColler" name="third">DryColler</el-tab-pane>-->
-    <!--<el-tab-pane label="Condenser" name="fourth">Condenser</el-tab-pane>-->
-    <!--<el-tab-pane label="AHU" name="fifth">AHU</el-tab-pane>-->
-  <!--</el-tabs>-->
   <div class="filter">
     <div class="main-filters">
       <ul class="main-list">
         <li v-for="(filter, index) of filters" :key="index" :class="{ active: filter.id === selectedFilter }" @click="selectFilter(filter.id)">{{filter.name}}</li>
       </ul>
     </div>
-    <el-row class="file-name-item">
-      <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" class="fileName">File.xml</el-col>
-      <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12"><icon class="el-icon-document"></icon></el-col>
-    </el-row>
+    <div class="filename">
+    <div class="name">File name</div>
+      <div class="icon"><i class="el-icon-document"></i>
+    </div>
+   </div>
     <el-row  class="content">
-      <!--<img class="mechanico-man" src="/static/images/calculator.png">-->
-      <CalculatorFanTable></CalculatorFanTable>
+      <div v-if="selectedFilter === 0">
+        <img class="mechanico-man" src="/static/images/calculator.png">
+      </div>
+      <div v-else-if="selectedFilter === 1">
+        <CalculatorFanTable :fileName="'File Name'"></CalculatorFanTable>
+      </div>
+      <div v-else-if="selectedFilter === 2">
+        <CalculatorChillerTable></CalculatorChillerTable>
+      </div>
+      <div v-else-if="selectedFilter === 3">
+        Dry cooler
+      </div>
+      <div v-else-if="selectedFilter === 4">
+        Condenser
+      </div>
+      <div v-else-if="selectedFilter === 5">
+        AHU
+      </div>
     </el-row>
   </div>
 </template>
 
 <script>
 import CalculatorFanTable from './CalculatorFanTable.vue'
+import CalculatorChillerTable from './CalculatorChillerTable.vue'
 export default {
   components: {
-    CalculatorFanTable
+    CalculatorFanTable,
+    CalculatorChillerTable
   },
   data () {
     return {
@@ -41,7 +50,7 @@ export default {
         { id: 4, name: 'Condenser' },
         { id: 5, name: 'AHU' }
       ],
-      selectedFilter: 1
+      selectedFilter: 0
     }
   },
   methods: {
@@ -102,37 +111,40 @@ export default {
           box-shadow: 1px -1px 2px 0px rgba(0,0,0,0.75);
         }
       }
-    }
-    .file-name-item
-    {
-      .fileName
-      {
-        padding: 1em 3em;
+  }
+
+   .filename {
+    display:flex;
+    flex-direction:row;
+    font-weight: 400;
+    font-size:1.2em;
+    padding:0.5em 0;
+    padding-left:1em;
+     .name{
+      background-color: #424242;
+      color:white;
+      width:66%;
+      }
+     .icon {
         font-size: 1em;
-        font-weight: 800;
         color: white;
-      }
-      icon {
-        padding: 0.5em 3em;
-        font-size: 1.5em;
-        font-weight: 500;
-        color: white;
-        float: right;
-        padding-right: 40%;
       }
     }
+
     .content
     {
       overflow: auto;
       background-color: white;
-      height: calc(100vh - 135px);
+      height: calc(100vh - 128px);
       display: flex;
       justify-content: center;
       .mechanico-man
       {
+        margin-top: 50%;
         width: 25em;
         height: 20em;
       }
     }
   }
+
 </style>

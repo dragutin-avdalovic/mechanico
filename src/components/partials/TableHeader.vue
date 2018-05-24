@@ -8,7 +8,7 @@
     </el-col>
     <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
       <div class="grid-content">
-        <el-input class="search-input" placeholder="Search projects" v-model="input_search" clearable>
+          <el-input class="search-input" placeholder="Search projects" v-model="input_search" clearable>
           <el-button slot="append" icon="el-icon-search"></el-button>
         </el-input>
       </div>
@@ -38,12 +38,18 @@ export default {
     max-width: 20em;
     float: right;
     margin-right: 15px;
+    border: none;
+    outline: none;
     .el-button
     {
       background-color: #0D72B9;
       color: white;
       font-weight: 900;
       font-size: 1em;
+      -moz-border-radius-bottomleft: 0;
+      -moz-border-radius-bottomright: 0;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
     }
   }
 
@@ -72,5 +78,9 @@ export default {
   }
   .row-header {
     padding: 1em 0.5em;
+  }
+  .el-input__inner:focus {
+    outline:none;
+    border: none;
   }
 </style>

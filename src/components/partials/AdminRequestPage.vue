@@ -14,50 +14,59 @@ export default {
     return {
       fields: [
         {
+          user: 'John Doe',
           manufacturer: 'Project 1',
           product: 'Fan Coil',
           status: 'Approved',
           type: 'success'
         }, {
+          user: 'John Doe',
           manufacturer: 'Project 2',
           product: 'Fan Coil',
           status: 'Requested',
           type: ''
         },
         {
+          user: 'John Doe',
           manufacturer: 'Project 2',
           product: 'Fan Coil',
           status: 'Requested',
           type: ''
         }, {
+          user: 'John Doe',
           manufacturer: 'Project 3',
           product: 'Fan Coil',
           status: 'Denied',
           type: 'danger'
         }, {
+          user: 'John Doe',
           manufacturer: 'Project 3',
           product: 'Fan Coil',
           status: 'Denied',
           type: 'danger'
         }, {
+          user: 'John Doe',
           manufacturer: 'Project 3',
           product: 'Fan Coil',
           status: 'Denied',
           type: 'danger'
         },
         {
+          user: 'John Doe',
           manufacturer: 'Project 3',
           product: 'Fan Coil',
           status: 'Denied',
           type: 'danger'
         },
         {
+          user: 'John Doe',
           manufacturer: 'Project 3',
           product: 'Fan Coil',
           status: 'Denied',
           type: 'danger'
         },
         {
+          user: 'John Doe',
           manufacturer: 'Project 3',
           product: 'Fan Coil',
           status: 'Denied',

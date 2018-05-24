@@ -9,7 +9,7 @@
     :data="fields"
     :default-sort="{prop: 'userName', order: 'ascending'}"
     style="width: 100%"
-    height="245"
+    height="286"
     @selection-change="handleSelectionChange">
     <el-table-column v-if="selectable" type="selection" width="55"></el-table-column>
     <el-table-column sortable v-for="(column, key) in columns"
@@ -89,6 +89,10 @@ export default {
   @import '../../assets/font/fontello/css/fontello.css';
   .multipleTable {
     overflow-y: auto;
+    text-align: center;
+    thead {
+      text-align: center;
+    }
   }
   .el-icon-close{
     color:red;

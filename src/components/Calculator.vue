@@ -1,18 +1,16 @@
 <template>
   <el-container style="height: 100vh;">
     <el-main>
-      <el-row class="row-bg" justify="flex-start">
-        <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
+        <div class="sidebar-col">
           <div class="grid-content1">
-            <CalculatorSidebar></CalculatorSidebar>
+            <CalculatorSidebar @hide="hideSidebar"></CalculatorSidebar>
           </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+        </div>
+        <div class="main-col">
           <div class="grid-content">
             <CalculatorMain></CalculatorMain>
           </div>
-        </el-col>
-      </el-row>
+        </div>
     </el-main>
   </el-container>
 </template>
@@ -22,20 +20,54 @@ import CalculatorSidebar from '@/components/partials/CalculatorSidebar'
 import CalculatorMain from '@/components/partials/CalculatorMain'
 
 export default {
+  data () {
+    return {
+      sidebar: null,
+      main: null
+    }
+  },
   components: {
     CalculatorSidebar,
     CalculatorMain
+  },
+  methods: {
+    hideSidebar (value) {
+      console.log('ok')
+      console.log(value)
+      this.sidebar = document.getElementsByClassName('sidebar-col')
+      this.main = document.getElementsByClassName('main-col')
+      if (value === false) {
+        console.log(this.sidebar)
+        this.sidebar[0].style.width = 1.3 + '%'
+        this.main[0].style.width = 98.7 + '%'
+      } else if (value === true) {
+        console.log(this.sidebar)
+        this.sidebar[0].style.width = 30 + '%'
+        this.main[0].style.width = 70 + '%'
+      }
+    }
   }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style lang="scss" scoped>
+@import '../assets/styles/varibles';
 .grid-content{
   height:100px;
 }
 .el-main {
+  display: flex;
+  flex-direction: row;
   padding: 0;
   background-color: white;
+  .sidebar-col {
+    width: 30%;
+  }
+  .main-col
+  {
+    width: 70%;
+  }
 }
+
 </style>
