@@ -10,21 +10,21 @@
     style="width: 100%; overflow: auto;"
     height="330"
     @selection-change="handleSelectionChange">
-    <el-table-column v-if="selectable" type="selection" width="55"></el-table-column>
+    <el-table-column :width="width" v-if="selectable" type="selection"></el-table-column>
     <el-table-column
       prop="manufacturer"
       label="Manufacturer"
-      width="140" sortable>
+      :width="width" sortable>
     </el-table-column>
     <el-table-column
       prop="product"
       label="Product"
-      width="140" sortable>
+      :width="width" sortable>
     </el-table-column>
     <el-table-column
       prop="status"
       label="Status"
-      width=""
+      :width="width"
       :filters="[{ text: 'Approved', value: 'Approved' }, { text: 'Denied', value: 'Denied' },{ text: 'Requested', value: 'Requested' }]"
       :filter-method="filterTag"
       filter-placement="bottom-start">
@@ -45,8 +45,12 @@ export default {
   data () {
     return {
       multipleSelection: [],
-      loading2: false
+      loading2: false,
+      width: ''
     }
+  },
+  mounted () {
+    this.width = Math.round(this.$refs.table.$el.clientWidth / 3)
   },
   props: ['fields', 'selectable', 'editable'],
   methods: {
