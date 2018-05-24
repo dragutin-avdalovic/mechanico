@@ -87,7 +87,7 @@
     <table class="table-fan-post" ref="table-fan-post"  cellspacing="0" cellpadding="0" >
     <thead>
     <tr>
-      <th class="no" rowspan="3">No</th>
+      <th class="no" width="3%" rowspan="3">No</th>
       <th rowspan="3">Room</th>
       <th rowspan="3">Unit</th>
       <th rowspan="3">Manufacturer</th>
@@ -112,24 +112,40 @@
       <th v-bind:style="{ display: showMoreFanCoilsPost }" colspan="2">Cooling</th>
     </tr>
     <tr>
-      <th v-bind:style="{ display: showMoreFanCoilsPost }">In</th>
-      <th v-bind:style="{ display: showMoreFanCoilsPost }">Out</th>
-      <th v-bind:style="{ display: showMoreFanCoilsPost }">In</th>
-      <th v-bind:style="{ display: showMoreFanCoilsPost }">Out</th>
+      <th colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">In</th>
+      <th colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">Out</th>
+      <th colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">In</th>
+      <th colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">Out</th>
     </tr>
     </thead>
-    <tbody  v-for="(FanCoil, index) in FanCoilsData" v-bind:key="index">
-    <tr v-if="editableFanCoils" class="input-row">
-    </tr>
-    <tr v-else>
+    <tbody  v-for="(FanCoilCalculated, index) in FancCoilsCalculatedData" v-bind:key="index">
+    <tr>
+      <td class="no" rowspan="2">{{index+1}}</td>
+      <td>{{FanCoilCalculated.roomField}}</td>
+      <td>{{FanCoilCalculated.fcIdField}}</td>
+      <td><input class="form-control"/></td>
+      <td>{{FanCoilCalculated.modelField}}</td>
+      <td>{{FanCoilCalculated.qtHField}}</td>
+      <td v-bind:style="{ display: showMoreFanCoilsPost }">{{FanCoilCalculated.qwHField}}</td>
+      <td v-bind:style="{ display: showMoreFanCoilsPost }">{{FanCoilCalculated.dpwHField}}</td>
+      <td>{{FanCoilCalculated.qtField}}</td>
+      <td v-bind:style="{ display: showMoreFanCoilsPost }">{{FanCoilCalculated.qwField}}</td>
+      <td v-bind:style="{ display: showMoreFanCoilsPost }">{{FanCoilCalculated.dpwField}}</td>
+      <td>{{FanCoilCalculated.lengthField}}</td>
+      <td>{{FanCoilCalculated.heigthField}}</td>
+      <td>{{FanCoilCalculated.depthField}}</td>
+      <td v-bind:style="{ display: showMoreFanCoilsPost}">{{FanCoilCalculated.airFlowField}}</td>
+      <td v-bind:style="{ display: showMoreFanCoilsPost}">{{FanCoilCalculated.staticPressureField}}</td>
+      <td v-bind:style="{ display: showMoreFanCoilsPost}">{{FanCoilCalculated.connInField}}</td>
+      <td v-bind:style="{ display: showMoreFanCoilsPost}">{{FanCoilCalculated.conOutField}}</td>
+      <td><button class="btn btn-default btn-block" data-bind="click: $root.showAccessories">Select</button></td>
     </tr>
     </tbody>
   </table>
     <div class="btn-edit">
     <el-button class="button" v-on:click="showMorePost">{{this.showMoreFanCoilsButtonTextPost}}</el-button>
-    <el-button v-if="!editableFanCoils" class="button" v-on:click="editTable">Edit table</el-button>
-    <el-button v-if="editableFanCoils" class="button">Add entry</el-button>
-    <el-button v-if="editableFanCoils" class="button" v-on:click="editTable">Done</el-button>
+    <el-button class="button">Save</el-button>
+    <el-button class="button">Export</el-button>
   </div>
   </div>
 </div>
@@ -316,13 +332,13 @@ export default {
           'qwField': '1,1',
           'dpwField': '40,1',
           'airFlowField': '1060',
-          'staticPressureField': null,
+          'staticPressureField': '12000',
           'altitudeField': '0',
           'lengthField': '1380',
           'heigthField': '222',
           'depthField': '586',
-          'connInField': null,
-          'conOutField': null
+          'connInField': '100',
+          'conOutField': '200'
         },
         {
           'resultCodeField': '132450',
@@ -437,12 +453,12 @@ export default {
       if (this.showMoreFanCoilsPost === 'none') {
         this.showMoreFanCoilsPost = 'table-cell'
         this.showMoreFanCoilsPostBool = true
-        elem.style.width = 250 + '%'
+        elem.style.width = 200 + '%'
         this.showMoreFanCoilsButtonTextPost = 'Show less'
       } else if (this.showMoreFanCoilsPost === 'table-cell') {
         this.showMoreFanCoilsPost = 'none'
         this.showMoreFanCoilsPostBool = false
-        elem.style.width = 150 + '%'
+        elem.style.width = 160 + '%'
         this.showMoreFanCoilsButtonTextPost = 'Show more'
       }
     }
@@ -465,57 +481,62 @@ export default {
       border-right: none;
       color: white;
     }
-    .table-fan {
-      border: solid 1px #29aae2;
-      overflow-x: auto;
-      width: 100%;
-      thead {
-        padding-bottom: 0.5em;
-        background: #29aae2;
-        color: white;
-        overflow: auto;
-        th {
-          padding: 0.2em;
+    .root
+    {
+      margin-left: 1.5em;
+      .table-fan
+      {
+        border: solid 1px #29aae2;
+        overflow-x: auto;
+        width: 100%;
+        thead {
+          padding-bottom: 0.5em;
+          background: #29aae2;
+          color: white;
+          overflow: auto;
+          th {
+            padding: 0.2em;
+          }
+          .sub-head {
+            color: #cccccc;
+          }
         }
-        .sub-head {
-          color: #cccccc;
-        }
-      }
-      tbody {
-        background-color: white;
-        color: black;
-        text-align: center;
-        tr {
-          td {
-            padding: 0.4em;
+        tbody {
+          background-color: white;
+          color: black;
+          text-align: center;
+          tr {
+            td {
+              padding: 0.4em;
+            }
           }
         }
       }
-    }
-    .table-fan-post
-    {
-      border: solid 1px #29aae2;
-      overflow-x: auto;
-      width: 150%;
-      thead {
-        padding-bottom: 0.5em;
-        background: #29aae2;
-        color: white;
-        overflow: auto;
-        th {
-          padding: 0.2em;
+      .table-fan-post
+      {
+        border: solid 1px #29aae2;
+        overflow-x: auto;
+        width: 160%;
+        thead {
+          padding-bottom: 0.5em;
+          background: #29aae2;
+          color: white;
+          overflow: auto;
+          th {
+            padding: 0.2em;
+          }
+          .sub-head {
+            color: #cccccc;
+          }
         }
-        .sub-head {
-          color: #cccccc;
-        }
-      }
-      tbody {
-        background-color: white;
-        color: black;
-        text-align: center;
-        tr {
-          td {
-            padding: 0.4em;
+        tbody {
+          background-color: white;
+          color: black;
+          text-align: center;
+          tr {
+            td {
+              padding: 0.4em;
+            }
           }
         }
       }
