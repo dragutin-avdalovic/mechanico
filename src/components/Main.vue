@@ -9,7 +9,7 @@
         </el-col>
         <el-col :span="8">
           <div class="grid-content">
-            <Admin></Admin>
+            <Status></Status>
           </div>
         </el-col>
       </el-row>

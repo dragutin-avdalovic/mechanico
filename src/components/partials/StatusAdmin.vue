@@ -40,7 +40,7 @@
       <el-col :span="8">
         <div class="center">
           <div class="info">Licence Requests</div>
-          <el-progress :width=100 class="circle" type="circle" :percentage="80" color="#8e71c7"></el-progress>
+          <el-progress :width=100 class="circle" type="circle" :percentage="80"></el-progress>
           <RadioButton :items="itemsRadioThree"></RadioButton>
         </div>
       </el-col>
@@ -58,16 +58,16 @@ export default {
   data () {
     return {
       itemsRadioOne: [
-        { id: '1', text: 'Products Used', color: 'blue' },
-        { id: '2', text: 'Products Unused', color: 'blue' }
+        { id: '1', text: 'Products Used', color: '#0D72B9' },
+        { id: '2', text: 'Products Unused', color: '#0D72B9' }
       ],
       itemsRadioTwo: [
-        { id: '3', text: 'Manufacturers', color: 'green' },
-        { id: '4', text: 'Consultants', color: 'green' }
+        { id: '3', text: 'Manufacturers', color: '#66CD6C' },
+        { id: '4', text: 'Consultants', color: '#66CD6C' }
       ],
       itemsRadioThree: [
-        { id: '5', text: 'Cancelled Requests', color: 'red' },
-        { id: '6', text: 'Shared Requests', color: 'red' }
+        { id: '5', text: 'Cancelled Requests', color: '#8879BF' },
+        { id: '6', text: 'Shared Requests', color: '#8879BF' }
       ]
     }
   }
