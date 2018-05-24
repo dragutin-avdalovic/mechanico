@@ -1,6 +1,7 @@
 <template>
-<div class="table-complex">
-<table class="table-fan" ref="table-fan"  cellspacing="0" cellpadding="0" >
+<div class="root">
+  <div class="table-complex">
+    <table class="table-fan" ref="table-fan"  cellspacing="0" cellpadding="0" >
   <thead>
   <tr>
     <th class="no" width="3%" rowspan="2">No</th>
@@ -75,12 +76,62 @@
   </tr>
   </tbody>
 </table>
-<div class="btn-edit">
+    <div class="btn-edit">
   <el-button class="button" v-on:click="showMore">{{this.showMoreFanCoilsButtonText}}</el-button>
   <el-button v-if="!editableFanCoils" class="button" v-on:click="editTable">Edit table</el-button>
   <el-button v-if="editableFanCoils" class="button">Add entry</el-button>
   <el-button v-if="editableFanCoils" class="button" v-on:click="editTable">Done</el-button>
 </div>
+  </div>
+  <div class="table-post-calculation">
+    <table class="table-fan-post" ref="table-fan-post"  cellspacing="0" cellpadding="0" >
+    <thead>
+    <tr>
+      <th class="no" width="3%" rowspan="3">No</th>
+      <th rowspan="3">Room</th>
+      <th rowspan="3">Unit</th>
+      <th rowspan="3">Manufacturer</th>
+      <th rowspan="3">Model</th>
+      <th :colspan="showMoreFanCoilsPostBool ? '3' : '1'" rowspan="1">Heating</th>
+      <th :colspan="showMoreFanCoilsPostBool ? '3' : '1'" rowspan="1">Cooling</th>
+      <th rowspan="1" colspan="3">Dimensions</th>
+      <th rowspan="1" colspan="4" v-bind:style="{ display: showMoreFanCoilsPost }">Connectors</th>
+      <th rowspan="3">Accessories</th>
+    </tr>
+    <tr>
+      <th class="sub-head" rowspan="2">Calculated Capacity (kW)</th>
+      <th class="sub-head" rowspan="2" v-bind:style="{ display: showMoreFanCoilsPost }">Water Flow (m<sup>3</sup>/h)</th>
+      <th class="sub-head" rowspan="2" v-bind:style="{ display: showMoreFanCoilsPost }">Water Pressure Drop (kPa)</th>
+      <th class="sub-head" rowspan="2">Calculated Capacity (kW)</th>
+      <th class="sub-head" rowspan="2" v-bind:style="{ display: showMoreFanCoilsPost }">Water Flow (m<sup>3</sup>/h)</th>
+      <th class="sub-head" rowspan="2" v-bind:style="{ display: showMoreFanCoilsPost }">Water Pressure Drop (kPa)</th>
+      <th class="sub-head" rowspan="2">Length</th>
+      <th class="sub-head" rowspan="2">Height</th>
+      <th class="sub-head" rowspan="2">Depth</th>
+      <th v-bind:style="{ display: showMoreFanCoilsPost }" colspan="2">Heating</th>
+      <th v-bind:style="{ display: showMoreFanCoilsPost }" colspan="2">Cooling</th>
+    </tr>
+    <tr>
+      <th v-bind:style="{ display: showMoreFanCoilsPost }">In</th>
+      <th v-bind:style="{ display: showMoreFanCoilsPost }">Out</th>
+      <th v-bind:style="{ display: showMoreFanCoilsPost }">In</th>
+      <th v-bind:style="{ display: showMoreFanCoilsPost }">Out</th>
+    </tr>
+    </thead>
+    <tbody  v-for="(FanCoil, index) in FanCoilsData" v-bind:key="index">
+    <tr v-if="editableFanCoils" class="input-row">
+    </tr>
+    <tr v-else>
+    </tr>
+    </tbody>
+  </table>
+    <div class="btn-edit">
+    <el-button class="button" v-on:click="showMorePost">{{this.showMoreFanCoilsButtonTextPost}}</el-button>
+    <el-button v-if="!editableFanCoils" class="button" v-on:click="editTable">Edit table</el-button>
+    <el-button v-if="editableFanCoils" class="button">Add entry</el-button>
+    <el-button v-if="editableFanCoils" class="button" v-on:click="editTable">Done</el-button>
+  </div>
+  </div>
 </div>
 </template>
 <script>
@@ -90,7 +141,10 @@ export default {
       typeFieldText: '',
       editableFanCoils: false,
       showMoreFanCoilsInput: 'none',
+      showMoreFanCoilsPost: 'none',
+      showMoreFanCoilsPostBool: false,
       showMoreFanCoilsButtonText: 'Show more',
+      showMoreFanCoilsButtonTextPost: 'Show more',
       FanCoilsData: [
         {
           'floorField': '1',
@@ -294,6 +348,21 @@ export default {
         elem.style.width = 100 + '%'
         this.showMoreFanCoilsButtonText = 'Show more'
       }
+    },
+    showMorePost () {
+      var elem = this.$refs['table-fan-post']
+      console.log(elem)
+      if (this.showMoreFanCoilsPost === 'none') {
+        this.showMoreFanCoilsPost = 'table-cell'
+        this.showMoreFanCoilsPostBool = true
+        elem.style.width = 250 + '%'
+        this.showMoreFanCoilsButtonTextPost = 'Show less'
+      } else if (this.showMoreFanCoilsPost === 'table-cell') {
+        this.showMoreFanCoilsPost = 'none'
+        this.showMoreFanCoilsPostBool = false
+        elem.style.width = 150 + '%'
+        this.showMoreFanCoilsButtonTextPost = 'Show more'
+      }
     }
   }
 }
@@ -318,6 +387,34 @@ export default {
       border: solid 1px #29aae2;
       overflow-x: auto;
       width: 100%;
+      thead {
+        padding-bottom: 0.5em;
+        background: #29aae2;
+        color: white;
+        overflow: auto;
+        th {
+          padding: 0.2em;
+        }
+        .sub-head {
+          color: #cccccc;
+        }
+      }
+      tbody {
+        background-color: white;
+        color: black;
+        text-align: center;
+        tr {
+          td {
+            padding: 0.4em;
+          }
+        }
+      }
+    }
+    .table-fan-post
+    {
+      border: solid 1px #29aae2;
+      overflow-x: auto;
+      width: 150%;
       thead {
         padding-bottom: 0.5em;
         background: #29aae2;

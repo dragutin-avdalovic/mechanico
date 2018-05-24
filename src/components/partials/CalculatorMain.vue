@@ -69,10 +69,10 @@ export default {
   @import '../../assets/styles/leafs.scss';
   @import '../../assets/styles/varibles.scss';
   .filter {
-    width: 98%;
-    margin-left: 1%;
-    margin-right: 1%;
-    background-color: #424242;
+    width: 100%;
+    padding-right: 1%;
+    padding-left: 1%;
+    background-color: white;
     ul {
       list-style: none;
       width: 100%;
@@ -120,6 +120,7 @@ export default {
     font-size:1.2em;
     padding:0.5em 0;
     padding-left:1em;
+    background-color: #424242;
      .name{
       background-color: #424242;
       color:white;
