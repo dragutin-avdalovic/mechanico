@@ -87,7 +87,7 @@
     <table class="table-fan-post" ref="table-fan-post"  cellspacing="0" cellpadding="0" >
     <thead>
     <tr>
-      <th class="no" width="3%" rowspan="3">No</th>
+      <th class="no" rowspan="3">No</th>
       <th rowspan="3">Room</th>
       <th rowspan="3">Unit</th>
       <th rowspan="3">Manufacturer</th>
@@ -301,6 +301,88 @@ export default {
           'chillTwCinHField': '10',
           'chillTwCoutHField': '5',
           'PropertyChanged': null
+        }
+      ],
+      FancCoilsCalculatedData: [
+        {
+          'resultCodeField': '132450',
+          'roomField': '1',
+          'fcIdField': 'FC1',
+          'modelField': 'ZEFIRO 1260',
+          'qtHField': '12,7',
+          'qwHField': '1,1',
+          'dpwHField': '33,1',
+          'qtField': '6,2',
+          'qwField': '1,1',
+          'dpwField': '40,1',
+          'airFlowField': '1060',
+          'staticPressureField': null,
+          'altitudeField': '0',
+          'lengthField': '1380',
+          'heigthField': '222',
+          'depthField': '586',
+          'connInField': null,
+          'conOutField': null
+        },
+        {
+          'resultCodeField': '132450',
+          'roomField': '1',
+          'fcIdField': 'FC1',
+          'modelField': 'ZEFIRO 1260',
+          'qtHField': '12,7',
+          'qwHField': '1,1',
+          'dpwHField': '33,1',
+          'qtField': '6,2',
+          'qwField': '1,1',
+          'dpwField': '40,1',
+          'airFlowField': '1060',
+          'staticPressureField': null,
+          'altitudeField': '0',
+          'lengthField': '1380',
+          'heigthField': '222',
+          'depthField': '586',
+          'connInField': null,
+          'conOutField': null
+        },
+        {
+          'resultCodeField': '132450',
+          'roomField': '1',
+          'fcIdField': 'FC1',
+          'modelField': 'ZEFIRO 1260',
+          'qtHField': '12,7',
+          'qwHField': '1,1',
+          'dpwHField': '33,1',
+          'qtField': '6,2',
+          'qwField': '1,1',
+          'dpwField': '40,1',
+          'airFlowField': '1060',
+          'staticPressureField': null,
+          'altitudeField': '0',
+          'lengthField': '1380',
+          'heigthField': '222',
+          'depthField': '586',
+          'connInField': null,
+          'conOutField': null
+        },
+        {
+          'resultCodeField': '132450',
+          'roomField': '1',
+          'fcIdField': 'FC1',
+          'modelField': 'ZEFIRO 1260',
+          'qtHField': '12,7',
+          'qwHField': '1,1',
+          'dpwHField': '33,1',
+          'qtField': '6,2',
+          'qwField': '1,1',
+          'dpwField': '40,1',
+          'airFlowField': '1060',
+          'staticPressureField': null,
+          'altitudeField': '0',
+          'lengthField': '1380',
+          'heigthField': '222',
+          'depthField': '586',
+          'connInField': null,
+          'conOutField': null
         }
       ],
       fansFieldOptions: [

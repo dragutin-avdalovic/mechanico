@@ -69,7 +69,7 @@ export default {
   @import '../../assets/styles/leafs.scss';
   @import '../../assets/styles/varibles.scss';
   .filter {
-    width: 100%;
+    width: 98%;
     padding-right: 1%;
     padding-left: 1%;
     background-color: white;
