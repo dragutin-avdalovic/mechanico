@@ -29,8 +29,7 @@ export default {
   .radio{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: left;
+    align-items: flex-start;
     .el-radio+.el-radio {
       margin-left: 0;
     }
