@@ -10,26 +10,26 @@
       <div class="icon"><i class="el-icon-document"></i>
     </div>
    </div>
-    <el-row  class="content">
-      <div v-if="selectedFilter === 0">
-        <img class="mechanico-man" src="/static/images/calculator.png">
-      </div>
-      <div v-else-if="selectedFilter === 1">
-        <CalculatorFanTable :fileName="'File Name'"></CalculatorFanTable>
-      </div>
-      <div v-else-if="selectedFilter === 2">
-        <CalculatorChillerTable></CalculatorChillerTable>
-      </div>
-      <div v-else-if="selectedFilter === 3">
-        Dry cooler
-      </div>
-      <div v-else-if="selectedFilter === 4">
-        Condenser
-      </div>
-      <div v-else-if="selectedFilter === 5">
-        AHU
-      </div>
-    </el-row>
+  <el-row>
+    <div v-if="selectedFilter === 0">
+      <img class="mechanico-man" src="/static/images/calculator.png">
+    </div>
+    <div v-else-if="selectedFilter === 1">
+      <CalculatorFanTable :fileName="'File Name'"></CalculatorFanTable>
+    </div>
+    <div v-else-if="selectedFilter === 2">
+      <CalculatorChillerTable></CalculatorChillerTable>
+    </div>
+    <div v-else-if="selectedFilter === 3">
+      Dry cooler
+    </div>
+    <div v-else-if="selectedFilter === 4">
+      Condenser
+    </div>
+    <div v-else-if="selectedFilter === 5">
+      AHU
+    </div>
+  </el-row>
   </div>
 </template>
 
@@ -131,20 +131,12 @@ export default {
         color: white;
       }
     }
-
-    .content
+    .mechanico-man
     {
-      overflow: auto;
-      background-color: white;
-      height: calc(100vh - 128px);
-      display: flex;
-      justify-content: center;
-      .mechanico-man
-      {
-        margin-top: 50%;
-        width: 25em;
-        height: 20em;
-      }
+      margin-top: calc(30% - 10em);
+      margin-left: calc(50% - 12em);
+      width: 25em;
+      height: 20em;
     }
   }
 

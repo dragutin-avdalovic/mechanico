@@ -476,14 +476,11 @@ export default {
       padding: 10px 40px 10px 40px;
       font-family: 'Avenir', Helvetica, Arial, sans-serif;
     }
-    .no {
-      background-color: #424242;
-      border-right: none;
-      color: white;
-    }
     .root
     {
-      margin-left: 1.5em;
+      width: 100%;
+      overflow:auto;
+      height: calc(100vh - 128px);
       .table-fan
       {
         border: solid 1px #29aae2;
@@ -540,30 +537,35 @@ export default {
           }
         }
       }
-    }
-    table, td {
-      border: solid 1px #29aae2;
-      border-top: none;
-      border-bottom: none;
-      border-left: none;
-    }
-    .btn-edit {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      .button {
-        background-color: #29aae2;
-        border-radius: 0px;
-        color: white;
-        margin: 1em 1em;
-        width: 13em;
-        height: 3em;
-        font-size: 1em;
-        font-weight: bold;
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+      table, td {
+        border: solid 1px #29aae2;
+        border-top: none;
+        border-bottom: none;
+        border-left: none;
+      }
+      .btn-edit {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        .button {
+          background-color: #29aae2;
+          border-radius: 0px;
+          color: white;
+          margin: 1em 1em;
+          width: 13em;
+          height: 3em;
+          font-size: 1em;
+          font-weight: bold;
+          font-family: 'Avenir', Helvetica, Arial, sans-serif;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .no {
+        background-color: #424242;
+        border-right: none;
+        color: white;
       }
     }
     select
