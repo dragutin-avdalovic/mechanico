@@ -4,23 +4,50 @@
       <table class="table-chiller" ref="table-chiller"  cellspacing="0" cellpadding="0" >
         <thead>
         <tr>
-          <th class="no" width="3%" rowspan="3">No</th>
-          <th rowspan="3" width="10%">Unit</th>
-          <th rowspan="3" width="10%">System Type</th>
-          <th rowspan="3" width="10%">Chiller Type</th>
-          <th rowspan="3" width="10%">Type Exchanger</th>
-          <th colspan="3" width="10%">Inverter</th>
-          <th colspan="3" width="10%">Contemporanity Factor</th>
-          <th rowspan="1" :colspan="showMoreChillersInputBool ? '13' : '1'" width="10%">Cooling</th>
-          <th rowspan="1" colspan="8" v-bind:style="{ display: showMoreChillersInput }" width="10%">Heating</th>
-          <th rowspan="1" v-bind:style="{ display: showMoreChillersInput }" width="10%">Free Cooling</th>
-          <th width="7%" v-if="editableChillers" rowspan="2"></th>
+          <th rowspan="3" class="no" width="3%">No</th>
+          <th rowspan="3" width="5%">Unit</th>
+          <th rowspan="3" width="5%">System Type</th>
+          <th rowspan="3" width="5%">Chiller Type</th>
+          <th rowspan="3" width="5%">Type Exchanger</th>
+          <th rowspan="3" width="5%">Inverter</th>
+          <th rowspan="3" width="15%">Contemporanity Factor</th>
+          <th rowspan="1" :colspan="showMoreChillersInputBool ? '11' : '2'" width="20%">Cooling</th>
+          <th rowspan="1" colspan="8" v-bind:style="{ display: showMoreChillersInput }" width="15%">Heating</th>
+          <th rowspan="1" v-bind:style="{ display: showMoreChillersInput }" width="15%">Free Cooling</th>
+          <th width="7%" v-if="editableChillers" rowspan="3"></th>
         </tr>
         <tr>
+          <th class="sub-head" :colspan="showMoreChillersInputBool ? '5' : '1'" rowspan="1">User Side</th>
+          <th class="sub-head" :colspan="showMoreChillersInputBool ? '6' : '1'" rowspan="1">Source Side</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }" rowspan="1" colspan="3">User Side</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }" rowspan="1" colspan="5">Source Side</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }" rowspan="1" colspan="1">Source Side</th>
+        </tr>
+        <tr>
+          <th class="sub-head">Fouling Factor</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Fluid Type</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Inlet Water (&#8451;)</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Outlet Water (&#8451;)</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Evaporating T. (&#8451;)</th>
+          <th class="sub-head">Fouling Factor</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Fluid Type</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Inlet Water (&#8451;)</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Outlet Water (&#8451;)</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Inlet Air (&#8451;)</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Evaporating T. (&#8451;)</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Inlet Water (&#8451;)</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Outlet Water (&#8451;)</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Condensing T. (&#8451;)</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Inlet Water (&#8451;)</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Outlet Water (&#8451;)</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Inlet Air (&#8451;)</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Relative Humidity (%)</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Evaporating T. (&#8451;)</th>
+          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Inlet Air (&#8451;)</th>
         </tr>
         </thead>
-        <tbody  v-for="(FanCoil, index) in FanCoilsData" v-bind:key="index">
-        <tr v-if="editableFanCoils" class="input-row">
+        <tbody  v-for="(Chiller, index) in ChillersData" v-bind:key="index">
+        <tr v-if="editableChillers" class="input-row">
           <td class="no">{{index+1}}</td>
           <td class="input"><el-input :value="FanCoil.floorField" type="text" ></el-input></td>
           <td class="input"><el-input :value="FanCoil.roomField" type="text" ></el-input></td>
@@ -51,96 +78,110 @@
           <td><el-button data-bind="click: $root.removeFanCoil" class="btn btn-link">Remove</el-button></td>
         </tr>
         <tr v-else>
-          <td class="no" rowspan="2">{{index+1}}</td>
-          <td rowspan="2">Floor 0{{FanCoil.floorField}}</td>
-          <td rowspan="2">Room 0{{FanCoil.roomField}}</td>
-          <td rowspan="2">{{FanCoil.chIdField}}</td>
-          <td rowspan="2">{{FanCoil.fcIdField}}</td>
-          <td v-bind:style="{ display: showMoreFanCoilsInput}">{{FanCoil.qtRicHField}}</td>
-          <td v-bind:style="{ display: showMoreFanCoilsInput}">{{FanCoil.tainHField}}</td>
-          <td v-bind:style="{ display: showMoreFanCoilsInput}">{{FanCoil.urinHField}}</td>
-          <td v-bind:style="{ display: showMoreFanCoilsInput}">{{FanCoil.qtRicField}}</td>
-          <td v-bind:style="{ display: showMoreFanCoilsInput}">{{FanCoil.tainField}}</td>
-          <td v-bind:style="{ display: showMoreFanCoilsInput}">{{FanCoil.urinField}}</td>
-          <td rowspan="2" v-bind:style="{ display: showMoreFanCoilsInput}">{{makeTypeFieldText(FanCoil.typeField)}}</td>
-          <td rowspan="2" v-bind:style="{ display: showMoreFanCoilsInput}">{{FanCoil.statPresField}}</td>
-          <td rowspan="2">{{FanCoil.noiseLevel}}</td>
-          <td rowspan="2">{{FanCoil.fansField}}</td>
+          <td class="no" rowspan="3">{{index+1}}</td>
+          <td rowspan="3">{{Chiller.chIdField}}</td>
+          <td rowspan="3">{{Chiller.typeSystemField}}</td>
+          <td rowspan="3">{{makeTypeFieldText(Chiller.typeField)}}</td>
+          <td rowspan="3">{{Chiller.typeExchangerField}}</td>
+          <td rowspan="3">{{Chiller.inverterField}}</td>
+          <td rowspan="1">{{Chiller.factorContField}}</td>
+          <td>{{Chiller.ffeField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.fluidEvapField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.twInField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.twOutField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.tcField}}</td>
+
+          <td>{{Chiller.ffCndField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.fluidCndField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.twCinField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.twCoutField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.taField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.tcField}}</td>
+
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.twInPDCField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.twOutPDCField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.tcPDCField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.twCinPDCField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.twCoutPDCField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.taPDCField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.urPDCField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.tePDCField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.freeCoolingSourceSideInletAir}}</td>
         </tr>
         </tbody>
       </table>
       <div class="btn-edit">
-        <el-button class="button" v-on:click="showMore">{{this.showMoreFanCoilsButtonText}}</el-button>
+        <el-button class="button" v-on:click="showMore">{{this.showMoreChillersButtonText}}</el-button>
         <el-button v-if="!editableFanCoils" class="button" v-on:click="editTable">Edit table</el-button>
         <el-button v-if="editableFanCoils" class="button">Add entry</el-button>
         <el-button v-if="editableFanCoils" class="button" v-on:click="editTable">Done</el-button>
       </div>
     </div>
-    <div class="table-post-calculation">
-      <table class="table-fan-post" ref="table-fan-post"  cellspacing="0" cellpadding="0" >
-        <thead>
-        <tr>
-          <th class="no" width="3%" rowspan="3">No</th>
-          <th rowspan="3">Room</th>
-          <th rowspan="3">Unit</th>
-          <th rowspan="3">Manufacturer</th>
-          <th rowspan="3">Model</th>
-          <th :colspan="showMoreFanCoilsPostBool ? '3' : '1'" rowspan="1">Heating</th>
-          <th :colspan="showMoreFanCoilsPostBool ? '3' : '1'" rowspan="1">Cooling</th>
-          <th rowspan="1" colspan="3">Dimensions</th>
-          <th rowspan="1" colspan="4" v-bind:style="{ display: showMoreFanCoilsPost }">Connectors</th>
-          <th rowspan="3">Accessories</th>
-        </tr>
-        <tr>
-          <th class="sub-head" rowspan="2">Calculated Capacity (kW)</th>
-          <th class="sub-head" rowspan="2" v-bind:style="{ display: showMoreFanCoilsPost }">Water Flow (m<sup>3</sup>/h)</th>
-          <th class="sub-head" rowspan="2" v-bind:style="{ display: showMoreFanCoilsPost }">Water Pressure Drop (kPa)</th>
-          <th class="sub-head" rowspan="2">Calculated Capacity (kW)</th>
-          <th class="sub-head" rowspan="2" v-bind:style="{ display: showMoreFanCoilsPost }">Water Flow (m<sup>3</sup>/h)</th>
-          <th class="sub-head" rowspan="2" v-bind:style="{ display: showMoreFanCoilsPost }">Water Pressure Drop (kPa)</th>
-          <th class="sub-head" rowspan="2">Length</th>
-          <th class="sub-head" rowspan="2">Height</th>
-          <th class="sub-head" rowspan="2">Depth</th>
-          <th v-bind:style="{ display: showMoreFanCoilsPost }" colspan="2">Heating</th>
-          <th v-bind:style="{ display: showMoreFanCoilsPost }" colspan="2">Cooling</th>
-        </tr>
-        <tr>
-          <th colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">In</th>
-          <th colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">Out</th>
-          <th colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">In</th>
-          <th colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">Out</th>
-        </tr>
-        </thead>
-        <tbody  v-for="(FanCoilCalculated, index) in FancCoilsCalculatedData" v-bind:key="index">
-        <tr>
-          <td class="no" rowspan="2">{{index+1}}</td>
-          <td>{{FanCoilCalculated.roomField}}</td>
-          <td>{{FanCoilCalculated.fcIdField}}</td>
-          <td><input class="form-control"/></td>
-          <td>{{FanCoilCalculated.modelField}}</td>
-          <td>{{FanCoilCalculated.qtHField}}</td>
-          <td v-bind:style="{ display: showMoreFanCoilsPost }">{{FanCoilCalculated.qwHField}}</td>
-          <td v-bind:style="{ display: showMoreFanCoilsPost }">{{FanCoilCalculated.dpwHField}}</td>
-          <td>{{FanCoilCalculated.qtField}}</td>
-          <td v-bind:style="{ display: showMoreFanCoilsPost }">{{FanCoilCalculated.qwField}}</td>
-          <td v-bind:style="{ display: showMoreFanCoilsPost }">{{FanCoilCalculated.dpwField}}</td>
-          <td>{{FanCoilCalculated.lengthField}}</td>
-          <td>{{FanCoilCalculated.heigthField}}</td>
-          <td>{{FanCoilCalculated.depthField}}</td>
-          <td v-bind:style="{ display: showMoreFanCoilsPost}">{{FanCoilCalculated.airFlowField}}</td>
-          <td v-bind:style="{ display: showMoreFanCoilsPost}">{{FanCoilCalculated.staticPressureField}}</td>
-          <td v-bind:style="{ display: showMoreFanCoilsPost}">{{FanCoilCalculated.connInField}}</td>
-          <td v-bind:style="{ display: showMoreFanCoilsPost}">{{FanCoilCalculated.conOutField}}</td>
-          <td><button class="btn btn-default btn-block" data-bind="click: $root.showAccessories">Select</button></td>
-        </tr>
-        </tbody>
-      </table>
-      <div class="btn-edit">
-        <el-button class="button" v-on:click="showMorePost">{{this.showMoreFanCoilsButtonTextPost}}</el-button>
-        <el-button class="button">Save</el-button>
-        <el-button class="button">Export</el-button>
-      </div>
-    </div>
+    <!--<div class="table-post-calculation">-->
+      <!--<table class="table-fan-post" ref="table-fan-post"  cellspacing="0" cellpadding="0" >-->
+        <!--<thead>-->
+        <!--<tr>-->
+          <!--<th class="no" width="3%" rowspan="3">No</th>-->
+          <!--<th rowspan="3">Room</th>-->
+          <!--<th rowspan="3">Unit</th>-->
+          <!--<th rowspan="3">Manufacturer</th>-->
+          <!--<th rowspan="3">Model</th>-->
+          <!--<th :colspan="showMoreFanCoilsPostBool ? '3' : '1'" rowspan="1">Heating</th>-->
+          <!--<th :colspan="showMoreFanCoilsPostBool ? '3' : '1'" rowspan="1">Cooling</th>-->
+          <!--<th rowspan="1" colspan="3">Dimensions</th>-->
+          <!--<th rowspan="1" colspan="4" v-bind:style="{ display: showMoreFanCoilsPost }">Connectors</th>-->
+          <!--<th rowspan="3">Accessories</th>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<th class="sub-head" rowspan="2">Calculated Capacity (kW)</th>-->
+          <!--<th class="sub-head" rowspan="2" v-bind:style="{ display: showMoreFanCoilsPost }">Water Flow (m<sup>3</sup>/h)</th>-->
+          <!--<th class="sub-head" rowspan="2" v-bind:style="{ display: showMoreFanCoilsPost }">Water Pressure Drop (kPa)</th>-->
+          <!--<th class="sub-head" rowspan="2">Calculated Capacity (kW)</th>-->
+          <!--<th class="sub-head" rowspan="2" v-bind:style="{ display: showMoreFanCoilsPost }">Water Flow (m<sup>3</sup>/h)</th>-->
+          <!--<th class="sub-head" rowspan="2" v-bind:style="{ display: showMoreFanCoilsPost }">Water Pressure Drop (kPa)</th>-->
+          <!--<th class="sub-head" rowspan="2">Length</th>-->
+          <!--<th class="sub-head" rowspan="2">Height</th>-->
+          <!--<th class="sub-head" rowspan="2">Depth</th>-->
+          <!--<th v-bind:style="{ display: showMoreFanCoilsPost }" colspan="2">Heating</th>-->
+          <!--<th v-bind:style="{ display: showMoreFanCoilsPost }" colspan="2">Cooling</th>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<th colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">In</th>-->
+          <!--<th colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">Out</th>-->
+          <!--<th colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">In</th>-->
+          <!--<th colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">Out</th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody  v-for="(FanCoilCalculated, index) in FancCoilsCalculatedData" v-bind:key="index">-->
+        <!--<tr>-->
+          <!--<td class="no" rowspan="2">{{index+1}}</td>-->
+          <!--<td>{{FanCoilCalculated.roomField}}</td>-->
+          <!--<td>{{FanCoilCalculated.fcIdField}}</td>-->
+          <!--<td><input class="form-control"/></td>-->
+          <!--<td>{{FanCoilCalculated.modelField}}</td>-->
+          <!--<td>{{FanCoilCalculated.qtHField}}</td>-->
+          <!--<td v-bind:style="{ display: showMoreFanCoilsPost }">{{FanCoilCalculated.qwHField}}</td>-->
+          <!--<td v-bind:style="{ display: showMoreFanCoilsPost }">{{FanCoilCalculated.dpwHField}}</td>-->
+          <!--<td>{{FanCoilCalculated.qtField}}</td>-->
+          <!--<td v-bind:style="{ display: showMoreFanCoilsPost }">{{FanCoilCalculated.qwField}}</td>-->
+          <!--<td v-bind:style="{ display: showMoreFanCoilsPost }">{{FanCoilCalculated.dpwField}}</td>-->
+          <!--<td>{{FanCoilCalculated.lengthField}}</td>-->
+          <!--<td>{{FanCoilCalculated.heigthField}}</td>-->
+          <!--<td>{{FanCoilCalculated.depthField}}</td>-->
+          <!--<td v-bind:style="{ display: showMoreFanCoilsPost}">{{FanCoilCalculated.airFlowField}}</td>-->
+          <!--<td v-bind:style="{ display: showMoreFanCoilsPost}">{{FanCoilCalculated.staticPressureField}}</td>-->
+          <!--<td v-bind:style="{ display: showMoreFanCoilsPost}">{{FanCoilCalculated.connInField}}</td>-->
+          <!--<td v-bind:style="{ display: showMoreFanCoilsPost}">{{FanCoilCalculated.conOutField}}</td>-->
+          <!--<td><button class="btn btn-default btn-block" data-bind="click: $root.showAccessories">Select</button></td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+      <!--</table>-->
+      <!--<div class="btn-edit">-->
+        <!--<el-button class="button" v-on:click="showMorePost">{{this.showMoreChillersButtonTextPost}}</el-button>-->
+        <!--<el-button class="button">Save</el-button>-->
+        <!--<el-button class="button">Export</el-button>-->
+      <!--</div>-->
+    <!--</div>-->
   </div>
 </template>
 <script>
@@ -153,9 +194,9 @@ export default {
       showMoreChillersInputBool: false,
       showMoreChillersInputPost: 'none',
       showMoreChillersInputPostBool: false,
-      showMoreFanCoilsButtonText: 'Show more',
-      showMoreFanCoilsButtonTextPost: 'Show more',
-      ChillerData: [
+      showMoreChillersButtonText: 'Show more',
+      showMoreChillersButtonTextPost: 'Show more',
+      ChillersData: [
         {
           'floorField': '1',
           'roomField': '1',
@@ -396,12 +437,12 @@ export default {
         this.showMoreChillersInput = 'table-cell'
         this.showMoreChillersInputBool = true
         elem.style.width = 200 + '%'
-        this.showMoreFanCoilsButtonText = 'Show less'
+        this.showMoreChillersButtonText = 'Show less'
       } else if (this.showMoreChillersInput === 'table-cell') {
         this.showMoreChillersInput = 'none'
         this.showMoreChillersInputBool = false
         elem.style.width = 100 + '%'
-        this.showMoreFanCoilsButtonText = 'Show more'
+        this.showMoreChillersButtonText = 'Show more'
       }
     },
     showMorePost () {
@@ -411,12 +452,12 @@ export default {
         this.showMoreChillersInputPost = 'table-cell'
         this.showMoreChillersInputPostBool = true
         elem.style.width = 200 + '%'
-        this.showMoreFanCoilsButtonTextPost = 'Show less'
+        this.showMoreChillersButtonTextPost = 'Show less'
       } else if (this.showMoreChillersInputPost === 'table-cell') {
         this.showMoreChillersInputPost = 'none'
         this.showMoreChillersInputPostBool = false
         elem.style.width = 160 + '%'
-        this.showMoreFanCoilsButtonTextPost = 'Show more'
+        this.showMoreChillersButtonTextPost = 'Show more'
       }
     }
   }
@@ -450,6 +491,10 @@ export default {
         overflow: auto;
         th {
           padding: 0.2em;
+          border-right: solid 1px white;
+          border-top: none;
+          border-bottom: solid 1px #cccccc;
+          border-left: none;
         }
         .sub-head {
           color: #cccccc;
@@ -478,6 +523,10 @@ export default {
         overflow: auto;
         th {
           padding: 0.2em;
+          border-right: solid 1px #29aae2;
+          border-top: solid 1px white;
+          border-bottom: solid 1px white;
+          border-left: none;
         }
         .sub-head {
           color: #cccccc;

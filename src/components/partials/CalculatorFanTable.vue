@@ -108,14 +108,14 @@
       <th class="sub-head" rowspan="2">Length</th>
       <th class="sub-head" rowspan="2">Height</th>
       <th class="sub-head" rowspan="2">Depth</th>
-      <th v-bind:style="{ display: showMoreFanCoilsPost }" colspan="2">Heating</th>
-      <th v-bind:style="{ display: showMoreFanCoilsPost }" colspan="2">Cooling</th>
+      <th class="sub-head" v-bind:style="{ display: showMoreFanCoilsPost }" colspan="2">Heating</th>
+      <th class="sub-head" v-bind:style="{ display: showMoreFanCoilsPost }" colspan="2">Cooling</th>
     </tr>
     <tr>
-      <th colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">In</th>
-      <th colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">Out</th>
-      <th colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">In</th>
-      <th colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">Out</th>
+      <th class="sub-head" colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">In</th>
+      <th class="sub-head" colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">Out</th>
+      <th class="sub-head" colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">In</th>
+      <th class="sub-head" colspan="1" v-bind:style="{ display: showMoreFanCoilsPost }">Out</th>
     </tr>
     </thead>
     <tbody  v-for="(FanCoilCalculated, index) in FancCoilsCalculatedData" v-bind:key="index">
@@ -521,6 +521,11 @@ export default {
           overflow: auto;
           th {
             padding: 0.2em;
+            padding: 0.2em;
+            border-right: solid 1px white;
+            border-top: none;
+            border-bottom: solid 1px #cccccc;
+            border-left: none;
           }
           .sub-head {
             color: #cccccc;
