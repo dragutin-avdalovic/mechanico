@@ -144,6 +144,13 @@ export default {
       margin-left: calc(50% - 12em);
       width: 25em;
       height: 20em;
+      @include screen-size('s')
+      {
+        margin-top: calc(40% - 7em);
+        margin-left: calc(40% - 5em);
+        width: 15em;
+        height: 10em;
+      }
     }
   }
 
