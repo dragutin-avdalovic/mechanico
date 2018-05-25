@@ -1,29 +1,22 @@
 <template>
   <div class="root">
     <div class="table-complex">
-      <table class="table-fan" ref="table-fan"  cellspacing="0" cellpadding="0" >
+      <table class="table-chiller" ref="table-chiller"  cellspacing="0" cellpadding="0" >
         <thead>
         <tr>
-          <th class="no" width="3%" rowspan="2">No</th>
-          <th rowspan="2" width="8%">Level</th>
-          <th rowspan="2" width="8%">Room</th>
-          <th rowspan="2" width="8%">Chiller</th>
-          <th rowspan="2" width="8%">Unit</th>
-          <th colspan="3" v-bind:style="{ display: showMoreFanCoilsInput }" width="15%">Heating</th>
-          <th colspan="3" v-bind:style="{ display: showMoreFanCoilsInput }" width="15%">Cooling</th>
-          <th rowspan="2" v-bind:style="{ display: showMoreFanCoilsInput }" width="8%">FanCoil Type</th>
-          <th rowspan="2" v-bind:style="{ display: showMoreFanCoilsInput }" width="8%">External Static Pressure (Pa)</th>
-          <th rowspan="2" width="8%">Noise Level (dB)</th>
-          <th rowspan="2" width="8%">Fans</th>
-          <th width="8%" v-if="editableFanCoils" rowspan="2"></th>
+          <th class="no" width="3%" rowspan="3">No</th>
+          <th rowspan="3" width="10%">Unit</th>
+          <th rowspan="3" width="10%">System Type</th>
+          <th rowspan="3" width="10%">Chiller Type</th>
+          <th rowspan="3" width="10%">Type Exchanger</th>
+          <th colspan="3" width="10%">Inverter</th>
+          <th colspan="3" width="10%">Contemporanity Factor</th>
+          <th rowspan="1" :colspan="showMoreChillersInputBool ? '13' : '1'" width="10%">Cooling</th>
+          <th rowspan="1" colspan="8" v-bind:style="{ display: showMoreChillersInput }" width="10%">Heating</th>
+          <th rowspan="1" v-bind:style="{ display: showMoreChillersInput }" width="10%">Free Cooling</th>
+          <th width="7%" v-if="editableChillers" rowspan="2"></th>
         </tr>
         <tr>
-          <th class="sub-head"  v-bind:style="{ display: showMoreFanCoilsInput }">Required Capacity (kW)</th>
-          <th class="sub-head"  v-bind:style="{ display: showMoreFanCoilsInput }">Internal Air (℃)</th>
-          <th class="sub-head"  v-bind:style="{ display: showMoreFanCoilsInput }">Relative Humidity (%)</th>
-          <th class="sub-head"  v-bind:style="{ display: showMoreFanCoilsInput }">Required Capacity (kW)</th>
-          <th class="sub-head"  v-bind:style="{ display: showMoreFanCoilsInput }">Internal Air (℃)</th>
-          <th class="sub-head"  v-bind:style="{ display: showMoreFanCoilsInput }">Relative Humidity (%)</th>
         </tr>
         </thead>
         <tbody  v-for="(FanCoil, index) in FanCoilsData" v-bind:key="index">
@@ -151,319 +144,283 @@
   </div>
 </template>
 <script>
-  export default {
-    data () {
-      return {
-        typeFieldText: '',
-        editableFanCoils: false,
-        showMoreFanCoilsInput: 'none',
-        showMoreFanCoilsPost: 'none',
-        showMoreFanCoilsPostBool: false,
-        showMoreFanCoilsButtonText: 'Show more',
-        showMoreFanCoilsButtonTextPost: 'Show more',
-        FanCoilsData: [
-          {
-            'floorField': '1',
-            'roomField': '1',
-            'chIdField': 'CH1',
-            'fcIdField': 'FC1',
-            'typeField': '0',
-            'velField': 'MAX',
-            'fansField': 'AC',
-            'statPresField': null,
-            'qtRicField': '18',
-            'tainField': '27',
-            'urinField': '50',
-            'fluidField': '1',
-            'concField': '25',
-            'twInField': '7',
-            'twOutField': '12',
-            'qwRicField': null,
-            'qtRicHField': '35',
-            'tainHField': '21',
-            'urinHField': '50',
-            'fluidHField': '0',
-            'concHField': '0',
-            'twInHField': '70',
-            'twOutHField': '60',
-            'qwRicHField': null,
-            'typeChillerField': '0',
-            'typeSystemField': '0',
-            'factorContField': '0,75',
-            'chillTaExternalField': '35',
-            'chillTaExternalHField': '7',
-            'chillUrExternalHField': '87',
-            'chillFluidField': '0',
-            'chillConcField': '0',
-            'chillTwCinField': '30',
-            'chillTwCoutField': '35',
-            'chillTwCinHField': '10',
-            'chillTwCoutHField': '5',
-            'PropertyChanged': null
-          },
-          {
-            'floorField': '1',
-            'roomField': '1',
-            'chIdField': 'CH1',
-            'fcIdField': 'FC2',
-            'typeField': '0',
-            'velField': 'MAX',
-            'fansField': 'AC',
-            'statPresField': null,
-            'qtRicField': null,
-            'tainField': null,
-            'urinField': null,
-            'fluidField': '1',
-            'concField': '25',
-            'twInField': '7',
-            'twOutField': '12',
-            'qwRicField': null,
-            'qtRicHField': null,
-            'tainHField': null,
-            'urinHField': null,
-            'fluidHField': '0',
-            'concHField': '0',
-            'twInHField': '70',
-            'twOutHField': '60',
-            'qwRicHField': null,
-            'typeChillerField': '0',
-            'typeSystemField': '0',
-            'factorContField': '0,75',
-            'chillTaExternalField': '35',
-            'chillTaExternalHField': '7',
-            'chillUrExternalHField': '87',
-            'chillFluidField': '0',
-            'chillConcField': '0',
-            'chillTwCinField': '30',
-            'chillTwCoutField': '35',
-            'chillTwCinHField': '10',
-            'chillTwCoutHField': '5',
-            'PropertyChanged': null
-          },
-          {
-            'floorField': '1',
-            'roomField': '1',
-            'chIdField': 'CH1',
-            'fcIdField': 'FC3',
-            'typeField': '0',
-            'velField': 'MAX',
-            'fansField': 'AC',
-            'statPresField': null,
-            'qtRicField': null,
-            'tainField': null,
-            'urinField': null,
-            'fluidField': '1',
-            'concField': '25',
-            'twInField': '7',
-            'twOutField': '12',
-            'qwRicField': null,
-            'qtRicHField': null,
-            'tainHField': null,
-            'urinHField': null,
-            'fluidHField': '0',
-            'concHField': '0',
-            'twInHField': '70',
-            'twOutHField': '60',
-            'qwRicHField': null,
-            'typeChillerField': '0',
-            'typeSystemField': '0',
-            'factorContField': '0,75',
-            'chillTaExternalField': '35',
-            'chillTaExternalHField': '7',
-            'chillUrExternalHField': '87',
-            'chillFluidField': '0',
-            'chillConcField': '0',
-            'chillTwCinField': '30',
-            'chillTwCoutField': '35',
-            'chillTwCinHField': '10',
-            'chillTwCoutHField': '5',
-            'PropertyChanged': null
-          },
-          {
-            'floorField': '1',
-            'roomField': '2',
-            'chIdField': 'CH1',
-            'fcIdField': 'FC7',
-            'typeField': '2',
-            'velField': 'MAX',
-            'fansField': 'AC',
-            'statPresField': null,
-            'qtRicField': '14',
-            'tainField': '23',
-            'urinField': '50',
-            'fluidField': '1',
-            'concField': '25',
-            'twInField': '7',
-            'twOutField': '12',
-            'qwRicField': null,
-            'qtRicHField': '5',
-            'tainHField': '21',
-            'urinHField': '50',
-            'fluidHField': '0',
-            'concHField': '0',
-            'twInHField': '70',
-            'twOutHField': '60',
-            'qwRicHField': null,
-            'typeChillerField': '0',
-            'typeSystemField': '0',
-            'factorContField': '0,75',
-            'chillTaExternalField': '35',
-            'chillTaExternalHField': '7',
-            'chillUrExternalHField': '87',
-            'chillFluidField': '0',
-            'chillConcField': '0',
-            'chillTwCinField': '30',
-            'chillTwCoutField': '35',
-            'chillTwCinHField': '10',
-            'chillTwCoutHField': '5',
-            'PropertyChanged': null
-          }
-        ],
-        FancCoilsCalculatedData: [
-          {
-            'resultCodeField': '132450',
-            'roomField': '1',
-            'fcIdField': 'FC1',
-            'modelField': 'ZEFIRO 1260',
-            'qtHField': '12,7',
-            'qwHField': '1,1',
-            'dpwHField': '33,1',
-            'qtField': '6,2',
-            'qwField': '1,1',
-            'dpwField': '40,1',
-            'airFlowField': '1060',
-            'staticPressureField': '12000',
-            'altitudeField': '0',
-            'lengthField': '1380',
-            'heigthField': '222',
-            'depthField': '586',
-            'connInField': '100',
-            'conOutField': '200'
-          },
-          {
-            'resultCodeField': '132450',
-            'roomField': '1',
-            'fcIdField': 'FC1',
-            'modelField': 'ZEFIRO 1260',
-            'qtHField': '12,7',
-            'qwHField': '1,1',
-            'dpwHField': '33,1',
-            'qtField': '6,2',
-            'qwField': '1,1',
-            'dpwField': '40,1',
-            'airFlowField': '1060',
-            'staticPressureField': null,
-            'altitudeField': '0',
-            'lengthField': '1380',
-            'heigthField': '222',
-            'depthField': '586',
-            'connInField': null,
-            'conOutField': null
-          },
-          {
-            'resultCodeField': '132450',
-            'roomField': '1',
-            'fcIdField': 'FC1',
-            'modelField': 'ZEFIRO 1260',
-            'qtHField': '12,7',
-            'qwHField': '1,1',
-            'dpwHField': '33,1',
-            'qtField': '6,2',
-            'qwField': '1,1',
-            'dpwField': '40,1',
-            'airFlowField': '1060',
-            'staticPressureField': null,
-            'altitudeField': '0',
-            'lengthField': '1380',
-            'heigthField': '222',
-            'depthField': '586',
-            'connInField': null,
-            'conOutField': null
-          },
-          {
-            'resultCodeField': '132450',
-            'roomField': '1',
-            'fcIdField': 'FC1',
-            'modelField': 'ZEFIRO 1260',
-            'qtHField': '12,7',
-            'qwHField': '1,1',
-            'dpwHField': '33,1',
-            'qtField': '6,2',
-            'qwField': '1,1',
-            'dpwField': '40,1',
-            'airFlowField': '1060',
-            'staticPressureField': null,
-            'altitudeField': '0',
-            'lengthField': '1380',
-            'heigthField': '222',
-            'depthField': '586',
-            'connInField': null,
-            'conOutField': null
-          }
-        ],
-        fansFieldOptions: [
-          { value: 'AC', text: 'AC' },
-          { value: 'EC', text: 'EC' }
-        ],
-        typeFieldOptions: [
-          { value: '0', text: 'Floor' },
-          { value: '1', text: 'Ducted' },
-          { value: '2', text: 'Cassette' },
-          { value: '3', text: 'Wall' }
-        ]
+export default {
+  data () {
+    return {
+      typeFieldText: '',
+      editableChillers: false,
+      showMoreChillersInput: 'none',
+      showMoreChillersInputBool: false,
+      showMoreChillersInputPost: 'none',
+      showMoreChillersInputPostBool: false,
+      showMoreFanCoilsButtonText: 'Show more',
+      showMoreFanCoilsButtonTextPost: 'Show more',
+      ChillerData: [
+        {
+          'floorField': '1',
+          'roomField': '1',
+          'chIdField': 'CH1',
+          'fcIdField': 'FC1',
+          'typeField': '0',
+          'velField': 'MAX',
+          'fansField': 'AC',
+          'statPresField': null,
+          'qtRicField': '18',
+          'tainField': '27',
+          'urinField': '50',
+          'fluidField': '1',
+          'concField': '25',
+          'twInField': '7',
+          'twOutField': '12',
+          'qwRicField': null,
+          'qtRicHField': '35',
+          'tainHField': '21',
+          'urinHField': '50',
+          'fluidHField': '0',
+          'concHField': '0',
+          'twInHField': '70',
+          'twOutHField': '60',
+          'qwRicHField': null,
+          'typeChillerField': '0',
+          'typeSystemField': '0',
+          'factorContField': '0,75',
+          'chillTaExternalField': '35',
+          'chillTaExternalHField': '7',
+          'chillUrExternalHField': '87',
+          'chillFluidField': '0',
+          'chillConcField': '0',
+          'chillTwCinField': '30',
+          'chillTwCoutField': '35',
+          'chillTwCinHField': '10',
+          'chillTwCoutHField': '5',
+          'PropertyChanged': null
+        },
+        {
+          'floorField': '1',
+          'roomField': '1',
+          'chIdField': 'CH1',
+          'fcIdField': 'FC2',
+          'typeField': '0',
+          'velField': 'MAX',
+          'fansField': 'AC',
+          'statPresField': null,
+          'qtRicField': null,
+          'tainField': null,
+          'urinField': null,
+          'fluidField': '1',
+          'concField': '25',
+          'twInField': '7',
+          'twOutField': '12',
+          'qwRicField': null,
+          'qtRicHField': null,
+          'tainHField': null,
+          'urinHField': null,
+          'fluidHField': '0',
+          'concHField': '0',
+          'twInHField': '70',
+          'twOutHField': '60',
+          'qwRicHField': null,
+          'typeChillerField': '0',
+          'typeSystemField': '0',
+          'factorContField': '0,75',
+          'chillTaExternalField': '35',
+          'chillTaExternalHField': '7',
+          'chillUrExternalHField': '87',
+          'chillFluidField': '0',
+          'chillConcField': '0',
+          'chillTwCinField': '30',
+          'chillTwCoutField': '35',
+          'chillTwCinHField': '10',
+          'chillTwCoutHField': '5',
+          'PropertyChanged': null
+        },
+        {
+          'floorField': '1',
+          'roomField': '1',
+          'chIdField': 'CH1',
+          'fcIdField': 'FC3',
+          'typeField': '0',
+          'velField': 'MAX',
+          'fansField': 'AC',
+          'statPresField': null,
+          'qtRicField': null,
+          'tainField': null,
+          'urinField': null,
+          'fluidField': '1',
+          'concField': '25',
+          'twInField': '7',
+          'twOutField': '12',
+          'qwRicField': null,
+          'qtRicHField': null,
+          'tainHField': null,
+          'urinHField': null,
+          'fluidHField': '0',
+          'concHField': '0',
+          'twInHField': '70',
+          'twOutHField': '60',
+          'qwRicHField': null,
+          'typeChillerField': '0',
+          'typeSystemField': '0',
+          'factorContField': '0,75',
+          'chillTaExternalField': '35',
+          'chillTaExternalHField': '7',
+          'chillUrExternalHField': '87',
+          'chillFluidField': '0',
+          'chillConcField': '0',
+          'chillTwCinField': '30',
+          'chillTwCoutField': '35',
+          'chillTwCinHField': '10',
+          'chillTwCoutHField': '5',
+          'PropertyChanged': null
+        }
+      ],
+      FancCoilsCalculatedData: [
+        {
+          'resultCodeField': '132450',
+          'roomField': '1',
+          'fcIdField': 'FC1',
+          'modelField': 'ZEFIRO 1260',
+          'qtHField': '12,7',
+          'qwHField': '1,1',
+          'dpwHField': '33,1',
+          'qtField': '6,2',
+          'qwField': '1,1',
+          'dpwField': '40,1',
+          'airFlowField': '1060',
+          'staticPressureField': '12000',
+          'altitudeField': '0',
+          'lengthField': '1380',
+          'heigthField': '222',
+          'depthField': '586',
+          'connInField': '100',
+          'conOutField': '200'
+        },
+        {
+          'resultCodeField': '132450',
+          'roomField': '1',
+          'fcIdField': 'FC1',
+          'modelField': 'ZEFIRO 1260',
+          'qtHField': '12,7',
+          'qwHField': '1,1',
+          'dpwHField': '33,1',
+          'qtField': '6,2',
+          'qwField': '1,1',
+          'dpwField': '40,1',
+          'airFlowField': '1060',
+          'staticPressureField': null,
+          'altitudeField': '0',
+          'lengthField': '1380',
+          'heigthField': '222',
+          'depthField': '586',
+          'connInField': null,
+          'conOutField': null
+        },
+        {
+          'resultCodeField': '132450',
+          'roomField': '1',
+          'fcIdField': 'FC1',
+          'modelField': 'ZEFIRO 1260',
+          'qtHField': '12,7',
+          'qwHField': '1,1',
+          'dpwHField': '33,1',
+          'qtField': '6,2',
+          'qwField': '1,1',
+          'dpwField': '40,1',
+          'airFlowField': '1060',
+          'staticPressureField': null,
+          'altitudeField': '0',
+          'lengthField': '1380',
+          'heigthField': '222',
+          'depthField': '586',
+          'connInField': null,
+          'conOutField': null
+        },
+        {
+          'resultCodeField': '132450',
+          'roomField': '1',
+          'fcIdField': 'FC1',
+          'modelField': 'ZEFIRO 1260',
+          'qtHField': '12,7',
+          'qwHField': '1,1',
+          'dpwHField': '33,1',
+          'qtField': '6,2',
+          'qwField': '1,1',
+          'dpwField': '40,1',
+          'airFlowField': '1060',
+          'staticPressureField': null,
+          'altitudeField': '0',
+          'lengthField': '1380',
+          'heigthField': '222',
+          'depthField': '586',
+          'connInField': null,
+          'conOutField': null
+        }
+      ],
+      fansFieldOptions: [
+        { value: 'AC', text: 'AC' },
+        { value: 'EC', text: 'EC' }
+      ],
+      typeFieldOptions: [
+        { value: '0', text: 'Floor' },
+        { value: '1', text: 'Ducted' },
+        { value: '2', text: 'Cassette' },
+        { value: '3', text: 'Wall' }
+      ]
+    }
+  },
+  props: ['fileName'],
+  methods: {
+    handleClick (tab, event) {
+      console.log(tab, event)
+    },
+    makeTypeFieldText (typeField) {
+      for (var fieldType in this.typeFieldOptions) {
+        if (fieldType.value === typeField) {
+          typeField = fieldType.text
+          console.log(typeField)
+          return typeField
+        }
       }
     },
-    props: ['fileName'],
-    methods: {
-      handleClick (tab, event) {
-        console.log(tab, event)
-      },
-      makeTypeFieldText (typeField) {
-        for (var fieldType in this.typeFieldOptions) {
-          if (fieldType.value === typeField) {
-            typeField = fieldType.text
-            console.log(typeField)
-            return typeField
-          }
-        }
-      },
-      editTable () {
-        if (this.editableFanCoils) {
-          this.editableFanCoils = false
-        } else {
-          this.editableFanCoils = true
-        }
-      },
-      showMore () {
-        var elem = this.$refs['table-fan']
-        console.log(elem)
-        if (this.showMoreFanCoilsInput === 'none') {
-          this.showMoreFanCoilsInput = 'table-cell'
-          elem.style.width = 200 + '%'
-          this.showMoreFanCoilsButtonText = 'Show less'
-        } else if (this.showMoreFanCoilsInput === 'table-cell') {
-          this.showMoreFanCoilsInput = 'none'
-          elem.style.width = 100 + '%'
-          this.showMoreFanCoilsButtonText = 'Show more'
-        }
-      },
-      showMorePost () {
-        var elem = this.$refs['table-fan-post']
-        console.log(elem)
-        if (this.showMoreFanCoilsPost === 'none') {
-          this.showMoreFanCoilsPost = 'table-cell'
-          this.showMoreFanCoilsPostBool = true
-          elem.style.width = 200 + '%'
-          this.showMoreFanCoilsButtonTextPost = 'Show less'
-        } else if (this.showMoreFanCoilsPost === 'table-cell') {
-          this.showMoreFanCoilsPost = 'none'
-          this.showMoreFanCoilsPostBool = false
-          elem.style.width = 160 + '%'
-          this.showMoreFanCoilsButtonTextPost = 'Show more'
-        }
+    editTable () {
+      if (this.editableChillers) {
+        this.editableChillers = false
+      } else {
+        this.editableChillers = true
+      }
+    },
+    showMore () {
+      var elem = this.$refs['table-chiller']
+      console.log(elem)
+      if (this.showMoreChillersInput === 'none') {
+        this.showMoreChillersInput = 'table-cell'
+        this.showMoreChillersInputBool = true
+        elem.style.width = 200 + '%'
+        this.showMoreFanCoilsButtonText = 'Show less'
+      } else if (this.showMoreChillersInput === 'table-cell') {
+        this.showMoreChillersInput = 'none'
+        this.showMoreChillersInputBool = false
+        elem.style.width = 100 + '%'
+        this.showMoreFanCoilsButtonText = 'Show more'
+      }
+    },
+    showMorePost () {
+      var elem = this.$refs['table-fan-post']
+      console.log(elem)
+      if (this.showMoreChillersInputPost === 'none') {
+        this.showMoreChillersInputPost = 'table-cell'
+        this.showMoreChillersInputPostBool = true
+        elem.style.width = 200 + '%'
+        this.showMoreFanCoilsButtonTextPost = 'Show less'
+      } else if (this.showMoreChillersInputPost === 'table-cell') {
+        this.showMoreChillersInputPost = 'none'
+        this.showMoreChillersInputPostBool = false
+        elem.style.width = 160 + '%'
+        this.showMoreFanCoilsButtonTextPost = 'Show more'
       }
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -481,7 +438,7 @@
     width: 100%;
     overflow:auto;
     height: calc(100vh - 128px);
-    .table-fan
+    .table-chiller
     {
       border: solid 1px #29aae2;
       overflow-x: auto;

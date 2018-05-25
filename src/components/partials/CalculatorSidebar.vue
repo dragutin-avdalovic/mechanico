@@ -84,7 +84,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: width 0.3s ease;
+  transition: width 0.2s ease;
   @include screen-size('s')
   {
     width:0%;
