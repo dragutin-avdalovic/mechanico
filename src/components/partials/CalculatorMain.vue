@@ -68,10 +68,17 @@ export default {
 <style lang="scss" scoped>
   @import '../../assets/styles/leafs.scss';
   @import '../../assets/styles/varibles.scss';
+  @import '../../assets/styles/mixins.scss';
   .filter {
     width: 98%;
     padding-right: 1%;
     padding-left: 1%;
+    @include screen-size('s')
+    {
+      width: 100%;
+      padding-right: 0;
+      padding-left: 0;
+    }
     background-color: white;
     ul {
       list-style: none;

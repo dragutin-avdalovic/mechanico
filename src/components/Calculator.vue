@@ -53,20 +53,33 @@ export default {
 
 <style lang="scss" scoped>
 @import '../assets/styles/varibles';
+@import '../assets/styles/mixins';
 .grid-content{
   height:100px;
 }
 .el-main {
   display: flex;
   flex-direction: row;
+  @include screen-size('s')
+  {
+    flex-direction: column;
+  }
   padding: 0;
   background-color: white;
   .sidebar-col {
     width: 30%;
+    @include screen-size('s')
+    {
+      width: 100%;
+    }
   }
   .main-col
   {
     width: 70%;
+    @include screen-size('s')
+    {
+      width: 100%;
+    }
   }
 }
 

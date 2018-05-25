@@ -72,6 +72,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../assets/styles/leafs.scss';
 @import '../../assets/styles/varibles.scss';
+@import '../../assets/styles/mixins.scss';
 
 .sideArrow{
   float:right;
@@ -84,19 +85,36 @@ export default {
   justify-content: center;
   align-items: center;
   transition: width 0.3s ease;
+  @include screen-size('s')
+  {
+    width:0%;
+    height: 0%;
+  }
 }
 .el-icon-arrow-left{
   font-weight:600;
   color:#424242;
+  @include screen-size('s')
+  {
+    display: none;
+  }
 }
 .el-icon-arrow-right{
   font-weight:600;
   color:#424242;
   display: none;
+  @include screen-size('s')
+  {
+    display: none;
+  }
 }
 .sidebar {
   background-color: #424242;
   height: 100vh;
+  @include screen-size('s')
+  {
+    height: 100vh;
+  }
   .main-filters {
     .main-list {
       display: flex;
