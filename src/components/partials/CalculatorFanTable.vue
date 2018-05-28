@@ -4,7 +4,7 @@
     <table class="table-fan" ref="table-fan"  cellspacing="0" cellpadding="0" >
   <thead>
   <tr>
-    <th class="no" width="3%" rowspan="2">No</th>
+    <th class="no  bottom-none" width="3%" rowspan="2">No</th>
     <th rowspan="2" width="8%">Level</th>
     <th rowspan="2" width="8%">Room</th>
     <th rowspan="2" width="8%">Chiller</th>
@@ -14,7 +14,7 @@
     <th rowspan="2" v-bind:style="{ display: showMoreFanCoilsInput }" width="8%">FanCoil Type</th>
     <th rowspan="2" v-bind:style="{ display: showMoreFanCoilsInput }" width="8%">External Static Pressure (Pa)</th>
     <th rowspan="2" width="8%">Noise Level (dB)</th>
-    <th rowspan="2" width="8%">Fans</th>
+    <th class="right-blue" rowspan="2" width="8%">Fans</th>
     <th width="8%" v-if="editableFanCoils" rowspan="2"></th>
   </tr>
   <tr>
@@ -28,7 +28,7 @@
   </thead>
   <tbody  v-for="(FanCoil, index) in FanCoilsData" v-bind:key="index">
   <tr v-if="editableFanCoils" class="input-row">
-    <td class="no">{{index+1}}</td>
+    <td class="no  bottom-none">{{index+1}}</td>
     <td class="input"><el-input :value="FanCoil.floorField" type="text" ></el-input></td>
     <td class="input"><el-input :value="FanCoil.roomField" type="text" ></el-input></td>
     <td class="input"><el-input :value="FanCoil.chIdField" type="text" ></el-input></td>
@@ -58,7 +58,7 @@
     <td><el-button data-bind="click: $root.removeFanCoil" class="btn btn-link">Remove</el-button></td>
   </tr>
   <tr v-else>
-      <td class="no" rowspan="2">{{index+1}}</td>
+      <td class="no  bottom-none" rowspan="2">{{index+1}}</td>
       <td rowspan="2">Floor 0{{FanCoil.floorField}}</td>
       <td rowspan="2">Room 0{{FanCoil.roomField}}</td>
       <td rowspan="2">{{FanCoil.chIdField}}</td>
@@ -87,7 +87,7 @@
     <table class="table-fan-post" ref="table-fan-post"  cellspacing="0" cellpadding="0" >
     <thead>
     <tr>
-      <th class="no" width="3%" rowspan="3">No</th>
+      <th class="no  bottom-none" width="3%" rowspan="3">No</th>
       <th rowspan="3">Room</th>
       <th rowspan="3">Unit</th>
       <th rowspan="3">Manufacturer</th>
@@ -96,7 +96,7 @@
       <th :colspan="showMoreFanCoilsPostBool ? '3' : '1'" rowspan="1">Cooling</th>
       <th rowspan="1" colspan="3">Dimensions</th>
       <th rowspan="1" colspan="4" v-bind:style="{ display: showMoreFanCoilsPost }">Connectors</th>
-      <th rowspan="3">Accessories</th>
+      <th class="right-blue" rowspan="3">Accessories</th>
     </tr>
     <tr>
       <th class="sub-head" rowspan="2">Calculated Capacity (kW)</th>
@@ -498,6 +498,15 @@ export default {
             border-bottom: solid 1px #cccccc;
             border-left: none;
           }
+          .right-blue
+          {
+            border-right: 1px solid #29aae2;
+          }
+          .bottom-none
+          {
+            border-bottom: none;
+            border-right:none;
+          }
           .sub-head {
             color: #cccccc;
           }
@@ -529,6 +538,15 @@ export default {
             border-top: none;
             border-bottom: solid 1px #cccccc;
             border-left: none;
+          }
+          .right-blue
+          {
+            border-right: 1px solid #29aae2;
+          }
+          .bottom-none
+          {
+            border-bottom: none;
+            border-right:none;
           }
           .sub-head {
             color: #cccccc;

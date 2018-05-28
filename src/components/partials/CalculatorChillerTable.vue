@@ -456,10 +456,9 @@ export default {
         {
           border-right: 1px solid #29aae2;
         }
-        .bottom-none
-        {
+        .bottom-none {
           border-bottom: none;
-          border-right:1px solid #29aae2;
+          border-right:none;
         }
         .sub-head {
           color: #cccccc;
