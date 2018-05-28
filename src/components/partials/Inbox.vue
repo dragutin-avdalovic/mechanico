@@ -88,7 +88,7 @@ export default {
       font-weight: 500;
     }
     .search-input {
-      padding-top: 0.5em;
+      /*padding-top: 0.5em;*/
       min-width: 5em;
       max-width: 20em;
       float: right;

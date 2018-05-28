@@ -51,9 +51,9 @@ export default {
     .el-col-left {
       min-height: 1em;
       min-width: 5em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      /*display: flex;*/
+      /*justify-content: center;*/
+      /*align-items: center;*/
       .new-user
       {
         background-color: #0D72B9;
