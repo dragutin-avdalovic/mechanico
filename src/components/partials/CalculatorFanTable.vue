@@ -493,6 +493,10 @@ export default {
           overflow: auto;
           th {
             padding: 0.2em;
+            border-right: solid 1px white;
+            border-top: none;
+            border-bottom: solid 1px #cccccc;
+            border-left: none;
           }
           .sub-head {
             color: #cccccc;
@@ -520,7 +524,6 @@ export default {
           color: white;
           overflow: auto;
           th {
-            padding: 0.2em;
             padding: 0.2em;
             border-right: solid 1px white;
             border-top: none;
