@@ -4,24 +4,24 @@
       <table class="table-chiller" ref="table-chiller"  cellspacing="0" cellpadding="0" >
         <thead>
         <tr>
-          <th rowspan="3" class="no" width="3%">No</th>
+          <th rowspan="3" class="no  bottom-none" width="3%">No</th>
           <th rowspan="3" width="5%">Unit</th>
           <th rowspan="3" width="5%">System Type</th>
           <th rowspan="3" width="10%">Chiller Type</th>
           <th rowspan="3" width="5%">Type Exchanger</th>
           <th rowspan="3" width="5%">Inverter</th>
           <th rowspan="3" width="10%">Contemporanity Factor</th>
-          <th rowspan="1" :colspan="showMoreChillersInputBool ? '11' : '2'" width="20%">Cooling</th>
+          <th v-bind:class="{ 'right-blue': !showMoreChillersInputBool }" rowspan="1" :colspan="showMoreChillersInputBool ? '11' : '2'" width="20%">Cooling</th>
           <th rowspan="1" colspan="8" v-bind:style="{ display: showMoreChillersInput }" width="20%">Heating</th>
-          <th rowspan="1" v-bind:style="{ display: showMoreChillersInput }" width="10%">Free Cooling</th>
+          <th v-bind:class="{ 'right-blue': showMoreChillersInputBool }" rowspan="1" v-bind:style="{ display: showMoreChillersInput }" width="10%">Free Cooling</th>
           <th width="7%" v-if="editableChillers" rowspan="3"></th>
         </tr>
         <tr>
           <th class="sub-head" :colspan="showMoreChillersInputBool ? '5' : '1'" rowspan="1">User Side</th>
-          <th class="sub-head" :colspan="showMoreChillersInputBool ? '6' : '1'" rowspan="1">Source Side</th>
+          <th  v-bind:class="{ 'right-blue': !showMoreChillersInputBool }" class="sub-head" :colspan="showMoreChillersInputBool ? '6' : '1'" rowspan="1">Source Side</th>
           <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }" rowspan="1" colspan="3">User Side</th>
           <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }" rowspan="1" colspan="5">Source Side</th>
-          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }" rowspan="1" colspan="1">Source Side</th>
+          <th v-bind:class="{ 'right-blue': showMoreChillersInputBool } " class="sub-head" v-bind:style="{ display: showMoreChillersInput }" rowspan="1" colspan="1">Source Side</th>
         </tr>
         <tr>
           <th class="sub-head">Fouling Factor</th>
@@ -29,7 +29,7 @@
           <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Inlet Water (&#8451;)</th>
           <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Outlet Water (&#8451;)</th>
           <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Evaporating T. (&#8451;)</th>
-          <th class="sub-head">Fouling Factor</th>
+          <th v-bind:class="{ 'right-blue': !showMoreChillersInputBool }" class="sub-head">Fouling Factor</th>
           <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Fluid Type</th>
           <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Inlet Water (&#8451;)</th>
           <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Outlet Water (&#8451;)</th>
@@ -43,12 +43,12 @@
           <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Inlet Air (&#8451;)</th>
           <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Relative Humidity (%)</th>
           <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Evaporating T. (&#8451;)</th>
-          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Inlet Air (&#8451;)</th>
+          <th v-bind:class="{ 'right-blue': showMoreChillersInputBool }" class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Inlet Air (&#8451;)</th>
         </tr>
         </thead>
         <tbody  v-for="(Chiller, index) in ChillersData" v-bind:key="index">
         <tr v-if="editableChillers" class="input-row">
-          <td class="no">{{index+1}}</td>
+          <td class="no  bottom-none">{{index+1}}</td>
           <td class="input"><el-input :value="FanCoil.floorField" type="text" ></el-input></td>
           <td class="input"><el-input :value="FanCoil.roomField" type="text" ></el-input></td>
           <td class="input"><el-input :value="FanCoil.chIdField" type="text" ></el-input></td>
@@ -78,7 +78,7 @@
           <td><el-button data-bind="click: $root.removeFanCoil" class="btn btn-link">Remove</el-button></td>
         </tr>
         <tr v-else>
-          <td class="no" rowspan="3">{{index+1}}</td>
+          <td class="no bottom-none" rowspan="3">{{index+1}}</td>
           <td rowspan="3">{{Chiller.chIdField}}</td>
           <td rowspan="3">{{Chiller.typeSystemField}}</td>
           <td rowspan="3">{{makeTypeFieldText(Chiller.typeField)}}</td>
@@ -121,7 +121,7 @@
       <table class="table-chiller-post" ref="table-chiller-post"  cellspacing="0" cellpadding="0" >
         <thead>
         <tr>
-          <th class="no" width="3%" rowspan="3">No</th>
+          <th class="no bottom-none" width="3%" rowspan="3">No</th>
           <th rowspan="3" width="5%">Room</th>
           <th rowspan="3" width="5%">Unit</th>
           <th rowspan="3" width="5%">Manufacturer</th>
@@ -130,7 +130,7 @@
           <th width="10%" :colspan="showMoreChillersInputPostBool ? '3' : '1'" rowspan="1">Cooling</th>
           <th width="20%" rowspan="1" colspan="3">Dimensions</th>
           <th width="20%" v-bind:style="{ display: showMoreChillersInputPost}" rowspan="1" colspan="4">Connectors</th>
-          <th width="7%" rowspan="3">Accessories</th>
+          <th class="right-blue" width="7%" rowspan="3">Accessories</th>
         </tr>
         <tr>
           <th rowspan="2" class="subhead">Calculated Capacity (kW)</th>
@@ -412,7 +412,7 @@ export default {
       } else if (this.showMoreChillersInputPost === 'table-cell') {
         this.showMoreChillersInputPost = 'none'
         this.showMoreChillersInputPostBool = false
-        elem.style.width = 160 + '%'
+        elem.style.width = 100 + '%'
         this.showMoreChillersButtonTextPost = 'Show more'
       }
     }
@@ -452,6 +452,15 @@ export default {
           border-bottom: solid 1px #cccccc;
           border-left: none;
         }
+        .right-blue
+        {
+          border-right: 1px solid #29aae2;
+        }
+        .bottom-none
+        {
+          border-bottom: none;
+          border-right:1px solid #29aae2;
+        }
         .sub-head {
           color: #cccccc;
         }
@@ -471,7 +480,7 @@ export default {
     {
       border: solid 1px #29aae2;
       overflow-x: auto;
-      width: 160%;
+      width: 100%;
       thead {
         padding-bottom: 0.5em;
         background: #29aae2;
@@ -483,6 +492,15 @@ export default {
           border-top: none;
           border-bottom: solid 1px #cccccc;
           border-left: none;
+        }
+        .right-blue
+        {
+          border-right: 1px solid #29aae2;
+        }
+        .bottom-none
+        {
+          border-bottom: none;
+          border-right:none;
         }
         .subhead {
           color: #cccccc;
@@ -527,6 +545,7 @@ export default {
     .no {
       background-color: #424242;
       border-right: none;
+      border-bottom: none;
       color: white;
     }
   }
