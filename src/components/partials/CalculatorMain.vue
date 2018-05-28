@@ -10,26 +10,26 @@
       <div class="icon"><i class="el-icon-document"></i>
     </div>
    </div>
-    <el-row  class="content">
-      <div v-if="selectedFilter === 0">
-        <img class="mechanico-man" src="/static/images/calculator.png">
-      </div>
-      <div v-else-if="selectedFilter === 1">
-        <CalculatorFanTable :fileName="'File Name'"></CalculatorFanTable>
-      </div>
-      <div v-else-if="selectedFilter === 2">
-        <CalculatorChillerTable></CalculatorChillerTable>
-      </div>
-      <div v-else-if="selectedFilter === 3">
-        Dry cooler
-      </div>
-      <div v-else-if="selectedFilter === 4">
-        Condenser
-      </div>
-      <div v-else-if="selectedFilter === 5">
-        AHU
-      </div>
-    </el-row>
+  <el-row>
+    <div v-if="selectedFilter === 0">
+      <img class="mechanico-man" src="/static/images/calculator.png">
+    </div>
+    <div v-else-if="selectedFilter === 1">
+      <CalculatorFanTable :fileName="'File Name'"></CalculatorFanTable>
+    </div>
+    <div v-else-if="selectedFilter === 2">
+      <CalculatorChillerTable></CalculatorChillerTable>
+    </div>
+    <div v-else-if="selectedFilter === 3">
+      Dry cooler
+    </div>
+    <div v-else-if="selectedFilter === 4">
+      Condenser
+    </div>
+    <div v-else-if="selectedFilter === 5">
+      AHU
+    </div>
+  </el-row>
   </div>
 </template>
 
@@ -68,11 +68,18 @@ export default {
 <style lang="scss" scoped>
   @import '../../assets/styles/leafs.scss';
   @import '../../assets/styles/varibles.scss';
+  @import '../../assets/styles/mixins.scss';
   .filter {
     width: 98%;
-    margin-left: 1%;
-    margin-right: 1%;
-    background-color: #424242;
+    padding-right: 1%;
+    padding-left: 1%;
+    @include screen-size('s')
+    {
+      width: 100%;
+      padding-right: 0;
+      padding-left: 0;
+    }
+    background-color: white;
     ul {
       list-style: none;
       width: 100%;
@@ -120,6 +127,7 @@ export default {
     font-size:1.2em;
     padding:0.5em 0;
     padding-left:1em;
+    background-color: #424242;
      .name{
       background-color: #424242;
       color:white;
@@ -130,19 +138,18 @@ export default {
         color: white;
       }
     }
-
-    .content
+    .mechanico-man
     {
-      overflow: auto;
-      background-color: white;
-      height: calc(100vh - 128px);
-      display: flex;
-      justify-content: center;
-      .mechanico-man
+      margin-top: calc(30% - 10em);
+      margin-left: calc(50% - 12em);
+      width: 25em;
+      height: 20em;
+      @include screen-size('s')
       {
-        margin-top: 50%;
-        width: 25em;
-        height: 20em;
+        margin-top: calc(40% - 7em);
+        margin-left: calc(40% - 5em);
+        width: 15em;
+        height: 10em;
       }
     }
   }

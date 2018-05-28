@@ -122,6 +122,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '../../assets/styles/mixins.scss';
   .choose {
     width: 94%;
     margin-left: 1%;
@@ -129,6 +130,10 @@ export default {
     background-color: #606060;
     display: flex;
     flex-direction: column;
+    @include screen-size('s')
+    {
+      height: 85vh;
+    }
     .word {
       font-size: 14px;
       border-bottom: 2px solid #2ca5d9;

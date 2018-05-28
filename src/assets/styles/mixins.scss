@@ -1,0 +1,82 @@
+@mixin spacing-l($type, $size, $varible) {
+  @if $type == m {
+    margin-left: $size + $varible;
+  } @else {
+    padding-left: $size + $varible;
+  }
+}
+@mixin spacing-r($type, $size, $varible) {
+  @if $type == m {
+    margin-right: $size + $varible;
+  } @else {
+    padding-right: $size + $varible;
+  }
+}
+
+@mixin screen-size($size) {
+  @if ($size == xl) {
+    @media (max-width: 1600px) {
+      @content;
+    }
+  }  @else if ($size == l) {
+    @media (max-width: 1440px) {
+      @content;
+    }
+  } @else if ($size == m) {
+    @media (max-width: 1025px) {
+      @content;
+    }
+  } @else if ($size == s) {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if ($size == xs) {
+    @media (max-width: 425px) {
+      @content;
+    }
+  }
+}
+
+@mixin default-spacing($size){
+
+  padding: 0 20%;
+
+  @media (max-width: 1024px) {
+    padding: 0 13%;
+  }
+  @media (max-width: 768px) {
+    padding: 0 13%;
+  }
+  @media (max-width: 425px) {
+    padding: 0 35px;
+  }
+}
+
+@mixin create-main-grid($size){
+  display: grid;
+  grid-template-columns: 15% auto 15%;
+  grid-template-rows: 60px auto 100px;
+  grid-template-areas: "header header header header header header"
+  "space main main main main space"
+  "footer footer footer footer footer footer";
+
+  @media (max-width: 768px) {
+    grid-template-columns: 5% auto 5%;
+  }
+}
+
+@mixin grid-items($gap-col, $gap-row, $column-size, $column-size-md, $column-size-sm: 2){
+  display: grid;
+  grid-template-columns: repeat($column-size, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: $gap-col;
+  grid-row-gap: $gap-row;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat($column-size-md, 1fr);
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: repeat($column-size-sm, 1fr);
+  }
+}
+
