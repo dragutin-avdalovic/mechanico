@@ -458,7 +458,7 @@ export default {
       } else if (this.showMoreFanCoilsPost === 'table-cell') {
         this.showMoreFanCoilsPost = 'none'
         this.showMoreFanCoilsPostBool = false
-        elem.style.width = 160 + '%'
+        elem.style.width = 100 + '%'
         this.showMoreFanCoilsButtonTextPost = 'Show more'
       }
     }
@@ -526,7 +526,7 @@ export default {
       {
         border: solid 1px #29aae2;
         overflow-x: auto;
-        width: 160%;
+        width: 100%;
         thead {
           padding-bottom: 0.5em;
           background: #29aae2;
