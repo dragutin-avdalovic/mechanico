@@ -1,13 +1,13 @@
 <template>
   <el-row class="manufacturers-header">
-    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+    <el-col :xs="14" :sm="14" :md="14" :lg="14" :xl="14">
       <div class="el-col-left">
         <el-button size="mini" class="trash"><i class="icon-trash-empty"></i></el-button>
         <el-button size="mini" class="new-user"><i class="icon-plus-1"></i><span>New Product</span></el-button>
         <el-button size="mini" class="new-user"><i class="icon-plus-1"></i><span>New Manufacturer</span></el-button>
       </div>
     </el-col>
-    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+    <el-col :xs="10" :sm="10" :md="10" :lg="10" :xl="10">
       <div class="grid-content">
         <el-input size="mini" class="search-input" placeholder="Search manufacturers" v-model="input_search" clearable>
           <el-button size="mini" slot="append" icon="el-icon-search"></el-button>
@@ -34,18 +34,20 @@ export default {
   @import '../../assets/styles/varibles';
 .manufacturers-header
   {
-    padding: 0.5em;
+    width: 100%;
+    padding: 0 0.5em 0.5em 0.5em;
     .search-input {
       min-width: 5em;
       max-width: 20em;
       float: right;
-      margin-top: 1em;
+      /*margin-top: 1em;*/
       .el-button
       {
         background-color: #0D72B9;
         color: white;
         font-weight: 900;
-        font-size: 1em;
+        font-size: 0.9em;
+        margin: 0;
       }
     }
     .el-col-left {
@@ -58,10 +60,10 @@ export default {
       {
         background-color: #0D72B9;
         color: white;
-        margin-right: 0.1em;
+        /*margin-right: 0.1em;*/
         i{
-          font-size: 1em;
-          font-weight: 700;
+          font-size: 0.9em;
+          font-weight: 400;
         }
       }
       .groups
@@ -70,7 +72,7 @@ export default {
         color: white;
         margin-right: 0.5em;
         i{
-          font-size: 1em;
+          font-size: 0.9em;
           font-weight: 700;
         }
       }
@@ -78,15 +80,15 @@ export default {
       {
         background-color: #909399;
         color: white;
-        margin-right: 0.5em;
+        /*margin-right: 0.5em;*/
         i{
-          font-size: 1em;
+          font-size: 0.9em;
           font-weight: 700;
         }
       }
       span
       {
-        font-size: 1em;
+        font-size: 0.9em;
         font-weight: 700;
       }
     }
