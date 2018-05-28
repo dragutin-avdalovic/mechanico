@@ -152,7 +152,28 @@
           <th class="subhead" v-bind:style="{ display: showMoreChillersInputPost}">Out</th>
         </tr>
         </thead>
-        <tbody  v-for="(FanCoilCalculated, index) in FancCoilsCalculatedData" v-bind:key="index">
+        <tbody  v-for="(ChillerCalculated, index) in ChillersCalculatedData" v-bind:key="index">
+        <tr>
+          <td class="no" rowspan="2">{{index+1}}</td>
+          <td>{{ChillerCalculated.roomField}}</td>
+          <td>{{ChillerCalculated.fcIdField}}</td>
+          <td><input class="form-control"/></td>
+          <td>{{ChillerCalculated.modelField}}</td>
+          <td>{{ChillerCalculated.qtHField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInputPost}">{{ChillerCalculated.qwHField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInputPost}">{{ChillerCalculated.dpwHField}}</td>
+          <td>{{ChillerCalculated.qtField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInputPost}">{{ChillerCalculated.qwField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInputPost}">{{ChillerCalculated.dpwField}}</td>
+          <td>{{ChillerCalculated.lengthField}}</td>
+          <td>{{ChillerCalculated.heigthField}}</td>
+          <td>{{ChillerCalculated.depthField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInputPost}">{{ChillerCalculated.connInField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInputPost}">{{ChillerCalculated.conOutField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInputPost}">{{ChillerCalculated.conOutField}}</td>
+          <td v-bind:style="{ display: showMoreChillersInputPost}">{{ChillerCalculated.conOutField}}</td>
+          <td><button class="btn btn-default btn-block" data-bind="click: $root.showAccessories">Select</button></td>
+        </tr>
         </tbody>
       </table>
       <div class="btn-edit">
