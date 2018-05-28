@@ -7,13 +7,13 @@
           <th rowspan="3" class="no" width="3%">No</th>
           <th rowspan="3" width="5%">Unit</th>
           <th rowspan="3" width="5%">System Type</th>
-          <th rowspan="3" width="5%">Chiller Type</th>
+          <th rowspan="3" width="10%">Chiller Type</th>
           <th rowspan="3" width="5%">Type Exchanger</th>
           <th rowspan="3" width="5%">Inverter</th>
-          <th rowspan="3" width="15%">Contemporanity Factor</th>
+          <th rowspan="3" width="10%">Contemporanity Factor</th>
           <th rowspan="1" :colspan="showMoreChillersInputBool ? '11' : '2'" width="20%">Cooling</th>
-          <th rowspan="1" colspan="8" v-bind:style="{ display: showMoreChillersInput }" width="15%">Heating</th>
-          <th rowspan="1" v-bind:style="{ display: showMoreChillersInput }" width="15%">Free Cooling</th>
+          <th rowspan="1" colspan="8" v-bind:style="{ display: showMoreChillersInput }" width="20%">Heating</th>
+          <th rowspan="1" v-bind:style="{ display: showMoreChillersInput }" width="10%">Free Cooling</th>
           <th width="7%" v-if="editableChillers" rowspan="3"></th>
         </tr>
         <tr>
