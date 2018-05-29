@@ -389,6 +389,47 @@ export default {
             { value: 6, text: 'Less Evaporator Air Source Centrifugal Fans' }
           ]
         }
+      ],
+      fluidTypeOptions: [
+        { value: 0, text: 'Water' },
+        { value: 1, text: 'Ethilene Glycol 5%' },
+        { value: 2, text: 'Ethilene Glycol 10%' },
+        { value: 3, text: 'Ethilene Glycol 15%' },
+        { value: 4, text: 'Ethilene Glycol 20%' },
+        { value: 5, text: 'Ethilene Glycol 25%' },
+        { value: 6, text: 'Ethilene Glycol 30%' },
+        { value: 7, text: 'Ethilene Glycol 35%' },
+        { value: 8, text: 'Ethilene Glycol 40%' },
+        { value: 9, text: 'Ethilene Glycol 45%' },
+        { value: 10, text: 'Ethilene Glycol 50%' },
+        { value: 11, text: 'Propylene Glycol 5%' },
+        { value: 12, text: 'Propylene Glycol 10%' },
+        { value: 13, text: 'Propylene Glycol 15%' },
+        { value: 14, text: 'Propylene Glycol 20%' },
+        { value: 15, text: 'Propylene Glycol 25%' },
+        { value: 16, text: 'Propylene Glycol 30%' },
+        { value: 17, text: 'Propylene Glycol 35%' },
+        { value: 18, text: 'Propylene Glycol 40%' },
+        { value: 19, text: 'Propylene Glycol 45%' },
+        { value: 20, text: 'Propylene Glycol 50%' }
+      ],
+      foulingFactorOptions: [
+        { value: 0.0000176, text: '0.0000176' },
+        { value: 0.000044, text: '0.000044' },
+        { value: 0.000088, text: '0.000088' },
+        { value: 0.000132, text: '0.000132' }
+      ],
+      contemporanityFactorOptions: [
+        { value: 1, text: '------------------' },
+        { value: 0, text: '------------------' }
+      ],
+      typeExchangerOptions: [
+        { value: 1, text: 'Tower water' },
+        { value: 0, text: 'Well water' }
+    ],
+      inverterOptions: [
+        { value: 1, text: 'Yes' },
+        { value: 0, text: 'No' }
       ]
     }
   },
