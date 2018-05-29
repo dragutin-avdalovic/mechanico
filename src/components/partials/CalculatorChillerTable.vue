@@ -49,39 +49,31 @@
         <tbody  v-for="(Chiller, index) in ChillersData" v-bind:key="index">
         <tr v-if="editableChillers" class="input-row">
           <td class="no  bottom-none">{{index+1}}</td>
-          <td class="input"><el-input :value="FanCoil.floorField" type="text" ></el-input></td>
-          <td class="input"><el-input :value="FanCoil.roomField" type="text" ></el-input></td>
-          <td class="input"><el-input :value="FanCoil.chIdField" type="text" ></el-input></td>
-          <td class="input"><el-input :value="FanCoil.fcIdField" type="text" ></el-input></td>
-          <td v-bind:style="{ display: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.qtRicHField" type="number" ></el-input></td>
-          <td v-bind:style="{ display: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.tainHField" type="number" ></el-input></td>
-          <td v-bind:style="{ display: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.urinHField" type="number" ></el-input></td>
-          <td v-bind:style="{ display: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.qtRicField" type="number" ></el-input></td>
-          <td v-bind:style="{ display: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.tainField" type="number" ></el-input></td>
-          <td v-bind:style="{ display: showMoreFanCoilsInput}" class="input"><el-input :value="FanCoil.urinField" type="number" ></el-input></td>
-          <td v-bind:style="{ display: showMoreFanCoilsInput}">
-            <select v-model="FanCoil.typeField" placeholder="Choose...">
-              <option v-for="type in typeFieldOptions" v-bind:value="type.value" v-bind:key="type.value">
-                {{ type.text }}
+          <td class="input"><el-input :value="Chiller.chIdField" type="text" ></el-input></td>
+          <td class="input">
+            <select v-model="Chiller.typeSystemField" placeholder="Choose...">
+              <option  v-for="systemType in systemTypeOptions" v-bind:value="systemType.value"  v-bind:key="systemType.value">
+                {{ systemType.text }}
               </option>
             </select>
           </td>
-          <td><el-input  :value="FanCoil.statPresField" type="number"></el-input></td>
-          <td v-bind:style="{ display: showMoreFanCoilsInput}"><el-input  :value="FanCoil.noiseLevel" type="number"></el-input></td>
-          <td>
-            <select v-model="FanCoil.fansField" placeholder="Choose...">
-              <option  v-for="fan in fansFieldOptions" v-bind:value="fan.value"  v-bind:key="fan.value">
-                {{ fan.text }}
-              </option>
-            </select>
-          </td>
+          <td class="input"><el-input :value="Chiller.typeField" type="text" ></el-input></td>
+          <td class="input"><el-input :value="Chiller.fcIdField" type="text" ></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.qtRicHField" type="number" ></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.tainHField" type="number" ></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.urinHField" type="number" ></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.urinHField" type="number" ></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.urinHField" type="number" ></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.urinHField" type="number" ></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.qtRicField" type="number" ></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.tainField" type="number" ></el-input></td>
           <td><el-button data-bind="click: $root.removeFanCoil" class="btn btn-link">Remove</el-button></td>
         </tr>
         <tr v-else>
           <td class="no bottom-none" rowspan="3">{{index+1}}</td>
           <td rowspan="3">{{Chiller.chIdField}}</td>
           <td rowspan="3">{{Chiller.typeSystemField}}</td>
-          <td rowspan="3">{{makeTypeFieldText(Chiller.typeField)}}</td>
+          <td rowspan="3">{{Chiller.typeField}}</td>
           <td rowspan="3">{{Chiller.typeExchangerField}}</td>
           <td rowspan="3">{{Chiller.inverterField}}</td>
           <td rowspan="1">{{Chiller.factorContField}}</td>
@@ -374,15 +366,29 @@ export default {
           'conOutField': null
         }
       ],
-      fansFieldOptions: [
-        { value: 'AC', text: 'AC' },
-        { value: 'EC', text: 'EC' }
+      systemTypeOptions: [
+        { value: '0', text: 'Only Cooling' },
+        { value: '3', text: 'Reversible Refrigerant' },
+        { value: '6', text: 'Free Cooling' }
       ],
-      typeFieldOptions: [
-        { value: '0', text: 'Floor' },
-        { value: '1', text: 'Ducted' },
-        { value: '2', text: 'Cassette' },
-        { value: '3', text: 'Wall' }
+      chillerTypeOptions: [
+        {
+          text: 'Water Cooled',
+          options: [
+            { value: 0, text: 'Water Source' },
+            { value: 4, text: 'Less Evaporator Water source' }
+          ]
+        },
+        {
+          text: 'Air Cooled',
+          options: [
+            { value: 1, text: 'Air Source Axial Fans' },
+            { value: 2, text: 'Air Source Centrifugal Fans' },
+            { value: 3, text: 'Less Condenser' },
+            { value: 5, text: 'Less Evaporator Air Source Axial Fans' },
+            { value: 6, text: 'Less Evaporator Air Source Centrifugal Fans' }
+          ]
+        }
       ]
     }
   },
@@ -391,11 +397,10 @@ export default {
     handleClick (tab, event) {
       console.log(tab, event)
     },
-    makeTypeFieldText (typeField) {
-      for (var fieldType in this.typeFieldOptions) {
-        if (fieldType.value === typeField) {
-          typeField = fieldType.text
-          console.log(typeField)
+    makeSystemTypeFieldText: function (typeField) {
+      for (var fieldSystemType in this.systemTypeOptions) {
+        if (fieldSystemType.value === typeField) {
+          typeField = fieldSystemType.text
           return typeField
         }
       }
