@@ -57,7 +57,15 @@
               </option>
             </select>
           </td>
-          <td class="input"><el-input :value="Chiller.typeField" type="text" ></el-input></td>
+          <td class="input">
+            <select v-model="Chiller.typeField" placeholder="Choose...">
+              <optgroup  v-for="chillerType in chillerTypeOptions" v-bind:key="chillerType.text" v-bind:label="chillerType.text">
+                <option v-for="option in chillerType.options" v-bind:key="option.value" v-bind:label="option.text">
+                    {{option.text}}
+                </option>
+              </optgroup>
+            </select>
+          </td>
           <td class="input"><el-input :value="Chiller.fcIdField" type="text" ></el-input></td>
           <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.qtRicHField" type="number" ></el-input></td>
           <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.tainHField" type="number" ></el-input></td>
@@ -72,7 +80,7 @@
         <tr v-else>
           <td class="no bottom-none" rowspan="3">{{index+1}}</td>
           <td rowspan="3">{{Chiller.chIdField}}</td>
-          <td rowspan="3">{{Chiller.typeSystemField}}</td>
+          <td rowspan="3">{{makeSystemTypeFieldText(Chiller.typeSystemField)}}</td>
           <td rowspan="3">{{Chiller.typeField}}</td>
           <td rowspan="3">{{Chiller.typeExchangerField}}</td>
           <td rowspan="3">{{Chiller.inverterField}}</td>
@@ -426,7 +434,7 @@ export default {
       typeExchangerOptions: [
         { value: 1, text: 'Tower water' },
         { value: 0, text: 'Well water' }
-    ],
+      ],
       inverterOptions: [
         { value: 1, text: 'Yes' },
         { value: 0, text: 'No' }
@@ -438,7 +446,7 @@ export default {
     handleClick (tab, event) {
       console.log(tab, event)
     },
-    makeSystemTypeFieldText: function (typeField) {
+    makeSystemTypeFieldText (typeField) {
       for (var fieldSystemType in this.systemTypeOptions) {
         if (fieldSystemType.value === typeField) {
           typeField = fieldSystemType.text
