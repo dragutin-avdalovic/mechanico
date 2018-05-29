@@ -503,11 +503,12 @@ export default {
     handleClick (tab, event) {
       console.log(tab, event)
     },
-    makeSystemTypeFieldText (typeField) {
-      for (var fieldSystemType in this.systemTypeOptions) {
-        if (fieldSystemType.value === typeField) {
-          typeField = fieldSystemType.text
-          return typeField
+    makeSystemTypeFieldText (systemTypeField) {
+      for (var fieldType in this.systemTypeOptions) {
+        if (fieldType.value === systemTypeField) {
+          systemTypeField = fieldType.text
+          console.log(systemTypeField)
+          return systemTypeField
         }
       }
     },

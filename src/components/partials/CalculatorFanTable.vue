@@ -123,7 +123,7 @@
       <td class="no" rowspan="2">{{index+1}}</td>
       <td>{{FanCoilCalculated.roomField}}</td>
       <td>{{FanCoilCalculated.fcIdField}}</td>
-      <td><input class="form-control"/></td>
+      <td><el-input class="form-control"/></td>
       <td>{{FanCoilCalculated.modelField}}</td>
       <td>{{FanCoilCalculated.qtHField}}</td>
       <td v-bind:style="{ display: showMoreFanCoilsPost }">{{FanCoilCalculated.qwHField}}</td>
