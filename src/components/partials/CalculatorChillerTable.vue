@@ -132,7 +132,7 @@
         <tr v-else>
           <td class="no bottom-none" rowspan="3">{{index+1}}</td>
           <td rowspan="3">{{Chiller.chIdField}}</td>
-          <td rowspan="3">{{Chiller.typeSystemField}}</td>
+          <td rowspan="3">{{makeSystemTypeFieldText(Chiller.typeSystemField)}}</td>
           <td rowspan="3">{{Chiller.typeField}}</td>
           <td rowspan="3">{{Chiller.typeExchangerField}}</td>
           <td rowspan="3">{{Chiller.inverterField}}</td>
@@ -504,11 +504,11 @@ export default {
       console.log(tab, event)
     },
     makeSystemTypeFieldText (systemTypeField) {
-      for (var fieldType in this.systemTypeOptions) {
-        if (fieldType.value === systemTypeField) {
-          systemTypeField = fieldType.text
+      for (var systemType in this.systemTypeOptions) {
+        if (systemType.value === systemTypeField) {
+          systemTypeField = systemType.text
           console.log(systemTypeField)
-          return systemTypeField
+          return parseInt(systemTypeField)
         }
       }
     },
