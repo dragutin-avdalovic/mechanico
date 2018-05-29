@@ -6,7 +6,7 @@
         <tr>
           <th rowspan="3" class="no  bottom-none" width="3%">No</th>
           <th rowspan="3" width="5%">Unit</th>
-          <th rowspan="3" width="8%">System Type</th>
+          <th rowspan="3" width="6%">System Type</th>
           <th rowspan="3" width="8%">Chiller Type</th>
           <th rowspan="3" width="5%">Type Exchanger</th>
           <th rowspan="3" width="5%">Inverter</th>
@@ -14,7 +14,7 @@
           <th v-bind:class="{ 'right-blue': !showMoreChillersInputBool }" rowspan="1" :colspan="showMoreChillersInputBool ? '11' : '2'" width="25%">Cooling</th>
           <th rowspan="1" colspan="8" v-bind:style="{ display: showMoreChillersInput }" width="25%">Heating</th>
           <th v-bind:class="{ 'right-blue': showMoreChillersInputBool}" rowspan="1" v-bind:style="{ display: showMoreChillersInput }" width="5%">Free Cooling</th>
-          <th v-bind:class="{ 'left-white': editableChillers, 'right-blue': editableChillers }" width="5%" v-if="editableChillers" rowspan="3"></th>
+          <th v-bind:class="{ 'left-white': editableChillers, 'right-blue': editableChillers }" width="7%" v-if="editableChillers" rowspan="3"></th>
         </tr>
         <tr>
           <th class="sub-head" :colspan="showMoreChillersInputBool ? '5' : '1'" rowspan="1">User Side</th>
@@ -24,16 +24,16 @@
           <th v-bind:class="{ 'right-blue': showMoreChillersInputBool } " class="sub-head" v-bind:style="{ display: showMoreChillersInput }" rowspan="1" colspan="1">Source Side</th>
         </tr>
         <tr>
-          <th class="sub-head">Fouling Factor</th>
-          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Fluid Type</th>
-          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Inlet Water (&#8451;)</th>
-          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Outlet Water (&#8451;)</th>
-          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Evaporating T. (&#8451;)</th>
-          <th v-bind:class="{ 'right-blue': !showMoreChillersInputBool }" class="sub-head">Fouling Factor</th>
-          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Fluid Type</th>
-          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Inlet Water (&#8451;)</th>
-          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Outlet Water (&#8451;)</th>
-          <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Inlet Air (&#8451;)</th>
+          <th class="sub-head" width="4%">Fouling Factor</th>
+          <th class="sub-head" width="4%" v-bind:style="{ display: showMoreChillersInput }">Fluid Type</th>
+          <th class="sub-head" width="3%" v-bind:style="{ display: showMoreChillersInput }">Inlet Water (&#8451;)</th>
+          <th class="sub-head" width="3%" v-bind:style="{ display: showMoreChillersInput }">Outlet Water (&#8451;)</th>
+          <th class="sub-head" width="3%" v-bind:style="{ display: showMoreChillersInput }">Evaporating T. (&#8451;)</th>
+          <th  width="4%" v-bind:class="{ 'right-blue': !showMoreChillersInputBool }" class="sub-head">Fouling Factor</th>
+          <th class="sub-head" width="4%" v-bind:style="{ display: showMoreChillersInput }">Fluid Type</th>
+          <th class="sub-head" width="3%" v-bind:style="{ display: showMoreChillersInput }">Inlet Water (&#8451;)</th>
+          <th class="sub-head" width="3%" v-bind:style="{ display: showMoreChillersInput }">Outlet Water (&#8451;)</th>
+          <th class="sub-head" width="3%" v-bind:style="{ display: showMoreChillersInput }">Inlet Air (&#8451;)</th>
           <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Evaporating T. (&#8451;)</th>
           <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Inlet Water (&#8451;)</th>
           <th class="sub-head" v-bind:style="{ display: showMoreChillersInput }">Outlet Water (&#8451;)</th>
