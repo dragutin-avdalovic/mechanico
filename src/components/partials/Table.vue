@@ -1,7 +1,7 @@
 <template>
   <el-table
     ref="multipleTable"
-    class="multipleTable"
+    class="multipleTable align"
     v-loading="loading2"
     element-loading-text="Loading..."
     element-loading-spinner="el-icon-loading"
@@ -11,12 +11,12 @@
     style="width: 100%"
     height="286"
     @selection-change="handleSelectionChange">
-    <el-table-column v-if="selectable" type="selection" width="55"></el-table-column>
-    <el-table-column sortable v-for="(column, key) in columns"
-                     v-bind:label="column.label" v-bind:prop="column.prop" v-bind:key='key' width="160">
+    <el-table-column :width="width" v-if="selectable" type="selection"></el-table-column>
+    <el-table-column :width="width" sortable v-for="(column, key) in columns"
+                     v-bind:label="column.label" v-bind:prop="column.prop" v-bind:key='key'>
     </el-table-column>
-    <el-table-column v-if="editable" width="140">
-      <template slot-scope="scope">
+    <el-table-column :width="width" v-if="editable">
+      <template class="align" slot-scope="scope">
         <el-button
           type="info" icon="el-icon-edit"
           @click="handleEdit(scope.$index, scope.row)"> Edit
@@ -32,8 +32,12 @@ export default {
   data () {
     return {
       multipleSelection: [],
-      loading2: false
+      loading2: false,
+      width: ''
     }
+  },
+  mounted () {
+    this.width = Math.round(this.$refs.table.$el.clientWidth / 9)
   },
   props: ['fields', 'columns', 'selectable', 'editable'],
   methods: {
@@ -61,5 +65,11 @@ export default {
   .multipleTable {
     overflow-y: auto;
     text-align: center;
+  }
+  .align{
+    text-align: left;
+  }
+  .el-table__header{
+    width: 100%;
   }
 </style>
