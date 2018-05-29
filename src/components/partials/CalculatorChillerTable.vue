@@ -13,8 +13,8 @@
           <th rowspan="3" width="5%">Contemporanity Factor</th>
           <th v-bind:class="{ 'right-blue': !showMoreChillersInputBool }" rowspan="1" :colspan="showMoreChillersInputBool ? '11' : '2'" width="25%">Cooling</th>
           <th rowspan="1" colspan="8" v-bind:style="{ display: showMoreChillersInput }" width="25%">Heating</th>
-          <th v-bind:class="{ 'right-blue': showMoreChillersInputBool }" rowspan="1" v-bind:style="{ display: showMoreChillersInput }" width="5%">Free Cooling</th>
-          <th v-bind:class="{ 'left-white': !showMoreChillersInputBool }" width="5%" v-if="editableChillers" rowspan="3"></th>
+          <th v-bind:class="{ 'right-blue': showMoreChillersInputBool}" rowspan="1" v-bind:style="{ display: showMoreChillersInput }" width="5%">Free Cooling</th>
+          <th v-bind:class="{ 'left-white': editableChillers, 'right-blue': editableChillers }" width="5%" v-if="editableChillers" rowspan="3"></th>
         </tr>
         <tr>
           <th class="sub-head" :colspan="showMoreChillersInputBool ? '5' : '1'" rowspan="1">User Side</th>
