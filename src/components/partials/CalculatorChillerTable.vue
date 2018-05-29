@@ -6,15 +6,15 @@
         <tr>
           <th rowspan="3" class="no  bottom-none" width="3%">No</th>
           <th rowspan="3" width="5%">Unit</th>
-          <th rowspan="3" width="5%">System Type</th>
+          <th rowspan="3" width="10%">System Type</th>
           <th rowspan="3" width="10%">Chiller Type</th>
-          <th rowspan="3" width="5%">Type Exchanger</th>
+          <th rowspan="3" width="10%">Type Exchanger</th>
           <th rowspan="3" width="5%">Inverter</th>
           <th rowspan="3" width="10%">Contemporanity Factor</th>
-          <th v-bind:class="{ 'right-blue': !showMoreChillersInputBool }" rowspan="1" :colspan="showMoreChillersInputBool ? '11' : '2'" width="20%">Cooling</th>
-          <th rowspan="1" colspan="8" v-bind:style="{ display: showMoreChillersInput }" width="20%">Heating</th>
+          <th v-bind:class="{ 'right-blue': !showMoreChillersInputBool }" rowspan="1" :colspan="showMoreChillersInputBool ? '11' : '2'" width="15%">Cooling</th>
+          <th rowspan="1" colspan="8" v-bind:style="{ display: showMoreChillersInput }" width="15%">Heating</th>
           <th v-bind:class="{ 'right-blue': showMoreChillersInputBool }" rowspan="1" v-bind:style="{ display: showMoreChillersInput }" width="10%">Free Cooling</th>
-          <th width="7%" v-if="editableChillers" rowspan="3"></th>
+          <th v-bind:class="{ 'left-white': !showMoreChillersInputBool }" width="7%" v-if="editableChillers" rowspan="3"></th>
         </tr>
         <tr>
           <th class="sub-head" :colspan="showMoreChillersInputBool ? '5' : '1'" rowspan="1">User Side</th>
@@ -51,22 +51,38 @@
           <td class="no  bottom-none">{{index+1}}</td>
           <td class="input"><el-input :value="Chiller.chIdField" type="text" ></el-input></td>
           <td class="input">
-            <select v-model="Chiller.typeSystemField" placeholder="Choose...">
+            <select :value="Chiller.typeSystemField">
               <option  v-for="systemType in systemTypeOptions" v-bind:value="systemType.value"  v-bind:key="systemType.value">
                 {{ systemType.text }}
               </option>
             </select>
           </td>
           <td class="input">
-            <select v-model="Chiller.typeField" placeholder="Choose...">
+            <select :value="Chiller.typeField" placeholder="Choose...">
               <optgroup  v-for="chillerType in chillerTypeOptions" v-bind:key="chillerType.text" v-bind:label="chillerType.text">
-                <option v-for="option in chillerType.options" v-bind:key="option.value" v-bind:label="option.text">
+                <option v-for="option in chillerType.options" v-bind:key="option.value" v-bind:label="option.text" v-bind:value="option.value">
                     {{option.text}}
                 </option>
               </optgroup>
             </select>
           </td>
-          <td class="input"><el-input :value="Chiller.fcIdField" type="text" ></el-input></td>
+          <td class="input">
+            <select :value="Chiller.typeExchangerField">
+              <option  v-for="typeExchanger in typeExchangerOptions" v-bind:value="typeExchanger.value"  v-bind:key="typeExchanger.value">
+                {{ typeExchanger.text }}
+              </option>
+            </select>
+          </td>
+          <td class="input">
+            <select :value="Chiller.inverterField">
+              <option  v-for="inverterType in inverterOptions" v-bind:value="inverterType.value"  v-bind:key="inverterType.value">
+                {{ inverterType.text }}
+              </option>
+            </select>
+          </td>
+          <td class="input"><el-input :value="Chiller.factorContField" type="text" ></el-input></td>
+          <td class="input"><el-input :value="Chiller.ffeField" type="text" ></el-input></td>
+          <td class="input"><el-input :value="Chiller.ffCndField" type="text" ></el-input></td>
           <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.qtRicHField" type="number" ></el-input></td>
           <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.tainHField" type="number" ></el-input></td>
           <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.urinHField" type="number" ></el-input></td>
@@ -234,6 +250,8 @@ export default {
           'chillTwCoutField': '35',
           'chillTwCinHField': '10',
           'chillTwCoutHField': '5',
+          'typeExchangerField': '0',
+          'inverterField': 1,
           'PropertyChanged': null
         },
         {
@@ -530,6 +548,10 @@ export default {
         .right-blue
         {
           border-right: 1px solid #29aae2;
+        }
+        .left-white
+        {
+          border-left: 1px solid  white;
         }
         .bottom-none {
           border-bottom: none;
