@@ -6,15 +6,15 @@
         <tr>
           <th rowspan="3" class="no  bottom-none" width="3%">No</th>
           <th rowspan="3" width="5%">Unit</th>
-          <th rowspan="3" width="10%">System Type</th>
-          <th rowspan="3" width="10%">Chiller Type</th>
-          <th rowspan="3" width="10%">Type Exchanger</th>
+          <th rowspan="3" width="8%">System Type</th>
+          <th rowspan="3" width="8%">Chiller Type</th>
+          <th rowspan="3" width="5%">Type Exchanger</th>
           <th rowspan="3" width="5%">Inverter</th>
-          <th rowspan="3" width="10%">Contemporanity Factor</th>
-          <th v-bind:class="{ 'right-blue': !showMoreChillersInputBool }" rowspan="1" :colspan="showMoreChillersInputBool ? '11' : '2'" width="15%">Cooling</th>
-          <th rowspan="1" colspan="8" v-bind:style="{ display: showMoreChillersInput }" width="15%">Heating</th>
-          <th v-bind:class="{ 'right-blue': showMoreChillersInputBool }" rowspan="1" v-bind:style="{ display: showMoreChillersInput }" width="10%">Free Cooling</th>
-          <th v-bind:class="{ 'left-white': !showMoreChillersInputBool }" width="7%" v-if="editableChillers" rowspan="3"></th>
+          <th rowspan="3" width="5%">Contemporanity Factor</th>
+          <th v-bind:class="{ 'right-blue': !showMoreChillersInputBool }" rowspan="1" :colspan="showMoreChillersInputBool ? '11' : '2'" width="25%">Cooling</th>
+          <th rowspan="1" colspan="8" v-bind:style="{ display: showMoreChillersInput }" width="25%">Heating</th>
+          <th v-bind:class="{ 'right-blue': showMoreChillersInputBool }" rowspan="1" v-bind:style="{ display: showMoreChillersInput }" width="5%">Free Cooling</th>
+          <th v-bind:class="{ 'left-white': !showMoreChillersInputBool }" width="5%" v-if="editableChillers" rowspan="3"></th>
         </tr>
         <tr>
           <th class="sub-head" :colspan="showMoreChillersInputBool ? '5' : '1'" rowspan="1">User Side</th>
@@ -81,22 +81,58 @@
             </select>
           </td>
           <td class="input"><el-input :value="Chiller.factorContField" type="text" ></el-input></td>
-          <td class="input"><el-input :value="Chiller.ffeField" type="text" ></el-input></td>
-          <td class="input"><el-input :value="Chiller.ffCndField" type="text" ></el-input></td>
-          <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.qtRicHField" type="number" ></el-input></td>
-          <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.tainHField" type="number" ></el-input></td>
-          <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.urinHField" type="number" ></el-input></td>
-          <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.urinHField" type="number" ></el-input></td>
-          <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.urinHField" type="number" ></el-input></td>
-          <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.urinHField" type="number" ></el-input></td>
-          <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.qtRicField" type="number" ></el-input></td>
-          <td v-bind:style="{ display: showMoreChillersInput}" class="input"><el-input :value="Chiller.tainField" type="number" ></el-input></td>
+          <td>
+            <select :value="Chiller.ffeField">
+              <option  v-for="foulingFactor in foulingFactorOptions" v-bind:value="foulingFactor.value"  v-bind:key="foulingFactor.value">
+                {{ foulingFactor.text }}
+              </option>
+            </select>
+          </td>
+          <td v-bind:style="{ display: showMoreChillersInput}">
+            <select :value="Chiller.fluidEvapField">
+              <option  v-for="fluidType in fluidTypeOptions" v-bind:value="fluidType.value"  v-bind:key="fluidType.value">
+                {{ fluidType.text }}
+              </option>
+            </select>
+          </td>
+          <td v-bind:style="{ display: showMoreChillersInput}"><el-input :value="Chiller.twInField" type="number"></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}"><el-input :value="Chiller.twOutField" type="number"></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}"><el-input :value="Chiller.tcField" type="number"></el-input></td>
+          <td>
+            <select :value="Chiller.ffcndField">
+              <option  v-for="foulingFactor in foulingFactorOptions" v-bind:value="foulingFactor.value"  v-bind:key="foulingFactor.value">
+                {{ foulingFactor.text }}
+              </option>
+            </select>
+          </td>
+          <td v-bind:style="{ display: showMoreChillersInput}">
+            <select :value="Chiller.fluidEvapField">
+              <option  v-for="fluidType in fluidTypeOptions" v-bind:value="fluidType.value"  v-bind:key="fluidType.value">
+                {{ fluidType.text }}
+              </option>
+            </select>
+          </td>
+          <td v-bind:style="{ display: showMoreChillersInput}"><el-input :value="Chiller.twCinField" type="number"></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}"><el-input :value="Chiller.twCoutField" type="number"></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}"><el-input :value="Chiller.taField" type="number"></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}"><el-input :value="Chiller.tcField" type="number"></el-input></td>
+
+          <td v-bind:style="{ display: showMoreChillersInput}"><el-input :value="Chiller.twInPDCField" type="number"></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}"><el-input :value="Chiller.twOutPDCField" type="number"></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}"><el-input :value="Chiller.tcPDCField" type="number"></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}"><el-input :value="Chiller.twCinPDCField" type="number"></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}"><el-input :value="Chiller.twCoutPDCField" type="number"></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}"><el-input :value="Chiller.taPDCField" type="number"></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}"><el-input :value="Chiller.urPDCField" type="number"></el-input></td>
+          <td v-bind:style="{ display: showMoreChillersInput}"><el-input :value="Chiller.tePDCField" type="number"></el-input></td>
+
+          <td v-bind:style="{ display: showMoreChillersInput}"><el-input :value="Chiller.freeCoolingSourceSideInletAir" type="number"></el-input></td>
           <td><el-button data-bind="click: $root.removeFanCoil" class="btn btn-link">Remove</el-button></td>
         </tr>
         <tr v-else>
           <td class="no bottom-none" rowspan="3">{{index+1}}</td>
           <td rowspan="3">{{Chiller.chIdField}}</td>
-          <td rowspan="3">{{makeSystemTypeFieldText(Chiller.typeSystemField)}}</td>
+          <td rowspan="3">{{Chiller.typeSystemField}}</td>
           <td rowspan="3">{{Chiller.typeField}}</td>
           <td rowspan="3">{{Chiller.typeExchangerField}}</td>
           <td rowspan="3">{{Chiller.inverterField}}</td>
@@ -173,7 +209,7 @@
           <td class="no" rowspan="2">{{index+1}}</td>
           <td>{{ChillerCalculated.roomField}}</td>
           <td>{{ChillerCalculated.fcIdField}}</td>
-          <td><input class="form-control"/></td>
+          <td><el-input></el-input></td>
           <td>{{ChillerCalculated.modelField}}</td>
           <td>{{ChillerCalculated.qtHField}}</td>
           <td v-bind:style="{ display: showMoreChillersInputPost}">{{ChillerCalculated.qwHField}}</td>
@@ -252,6 +288,9 @@ export default {
           'chillTwCoutHField': '5',
           'typeExchangerField': '0',
           'inverterField': 1,
+          'ffeField': 0.0000176,
+          'ffcndField': 0.0000176,
+          'fluidEvapField': 2,
           'PropertyChanged': null
         },
         {
@@ -485,7 +524,7 @@ export default {
       if (this.showMoreChillersInput === 'none') {
         this.showMoreChillersInput = 'table-cell'
         this.showMoreChillersInputBool = true
-        elem.style.width = 200 + '%'
+        elem.style.width = 250 + '%'
         this.showMoreChillersButtonText = 'Show less'
       } else if (this.showMoreChillersInput === 'table-cell') {
         this.showMoreChillersInput = 'none'
@@ -500,7 +539,7 @@ export default {
       if (this.showMoreChillersInputPost === 'none') {
         this.showMoreChillersInputPost = 'table-cell'
         this.showMoreChillersInputPostBool = true
-        elem.style.width = 200 + '%'
+        elem.style.width = 250 + '%'
         this.showMoreChillersButtonTextPost = 'Show less'
       } else if (this.showMoreChillersInputPost === 'table-cell') {
         this.showMoreChillersInputPost = 'none'
