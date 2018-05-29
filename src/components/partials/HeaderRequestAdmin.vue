@@ -15,7 +15,7 @@
         </div>
         <div class="row-header">
           <el-input clearable class="search-input" size="mini" placeholder="Search manufacturers" v-model="input_search">
-            <el-button size="mini" slot="append" icon="el-icon-search"></el-button>
+            <el-button  slot="append" icon="el-icon-search"></el-button>
           </el-input>
         </div>
         <TableRequestAdmin :fields="fields" :selectable="false" :editable="false"></TableRequestAdmin>
