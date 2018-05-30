@@ -7,14 +7,14 @@
             <p class="first">FanCoil</p>
           </div>
           <div class="dropdown">
-            <el-dropdown @command="handleCommand">
+            <el-dropdown @command="handleCommandFancoil">
               <el-button type="primary">
-                {{command}}<i class="el-icon-arrow-down el-icon--right"></i>
+                {{commandFancoil}}<i class="el-icon-arrow-down el-icon--right"></i>
               </el-button>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item command="1">Artesi</el-dropdown-item>
-                <el-dropdown-item command="2">Whirpoll</el-dropdown-item>
-                <el-dropdown-item command="3">Sense</el-dropdown-item>
+                <el-dropdown-item command="2">HAYE</el-dropdown-item>
+                <el-dropdown-item command="3">Altaqua</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </div>
@@ -24,14 +24,14 @@
             <p class="first">Chiller</p>
           </div>
           <div class="dropdown">
-            <el-dropdown @command="handleCommand">
+            <el-dropdown @command="handleCommandChiller">
               <el-button type="primary">
-              {{command}}<i class="el-icon-arrow-down el-icon--right"></i>
+              {{commandChiller}}<i class="el-icon-arrow-down el-icon--right"></i>
               </el-button>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item command="1">Artesi</el-dropdown-item>
-                <el-dropdown-item command="2">Whirpoll</el-dropdown-item>
-                <el-dropdown-item command="3">Sense</el-dropdown-item>
+                <el-dropdown-item command="2">HAYE</el-dropdown-item>
+                <el-dropdown-item command="3">Altaqua</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </div>
@@ -43,9 +43,9 @@
             <p class="first">DryCooler</p>
           </div>
           <div class="dropdown">
-            <el-dropdown @command="handleCommand">
+            <el-dropdown @command="handleCommandDryCooler">
               <el-button type="primary">
-              {{command}}<i class="el-icon-arrow-down el-icon--right"></i>
+              {{commandDryCooler}}<i class="el-icon-arrow-down el-icon--right"></i>
               </el-button>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item command="1">Artesi</el-dropdown-item>
@@ -60,9 +60,9 @@
             <p class="first">Condenser</p>
           </div>
           <div class="dropdown">
-            <el-dropdown @command="handleCommand">
+            <el-dropdown @command="handleCommandCondenser">
               <el-button type="primary">
-              {{command}}<i class="el-icon-arrow-down el-icon--right"></i>
+              {{commandCondenser}}<i class="el-icon-arrow-down el-icon--right"></i>
               </el-button>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item command="1">Artesi</el-dropdown-item>
@@ -79,9 +79,9 @@
             <p class="first">AHU</p>
           </div>
           <div class="dropdown">
-            <el-dropdown @command="handleCommand">
+            <el-dropdown @command="handleCommandAHU">
               <el-button type="primary">
-                {{command}}<i class="el-icon-arrow-down el-icon--right"></i>
+                {{commandAHU}}<i class="el-icon-arrow-down el-icon--right"></i>
               </el-button>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item command="1">Artesi</el-dropdown-item>
@@ -108,15 +108,39 @@
 export default {
   data () {
     return {
-      command: 'Choose'
+      commandFancoil: 'Choose',
+      commandChiller: 'Choose',
+      commandDryCooler: 'Choose',
+      commandCondenser: 'Choose',
+      commandAHU: 'Choose'
     }
   },
   methods: {
     handleClick () {
       alert('button click')
     },
+    handleCommandFancoil (comm) {
+      this.commandFancoil = comm
+      console.log(comm)
+    },
+    handleCommandChiller (comm) {
+      this.commandChiller = comm
+      console.log(comm)
+    },
+    handleCommandDryCooler (comm) {
+      this.commandDryCooler = comm
+      console.log(comm)
+    },
+    handleCommandCondenser (comm) {
+      this.commandCondenser = comm
+      console.log(comm)
+    },
+    handleCommandAHU (comm) {
+      this.commandAHU = comm
+      console.log(comm)
+    },
     handleCommand (comm) {
-      // this.command = comm
+      this.commandFancoil = comm
     }
   }
 }

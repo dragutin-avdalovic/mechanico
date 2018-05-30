@@ -612,7 +612,7 @@ export default {
   {
     width: 100%;
     overflow:auto;
-    height: calc(100vh - 128px);
+    height: calc(100vh - 138px);
     .table-chiller
     {
       border: solid 1px #29aae2;
