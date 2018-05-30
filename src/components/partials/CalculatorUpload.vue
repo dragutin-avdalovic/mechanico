@@ -47,8 +47,8 @@ export default {
     border-color: #29aae2;
     border-radius: 0px;
     color: white;
-    margin: 1em 1%;
-    width: 98%;
+    margin: 1em 10%;
+    width: 80%;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     display: flex;
     align-items: center;
