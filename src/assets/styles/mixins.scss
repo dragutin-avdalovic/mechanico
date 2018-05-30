@@ -22,11 +22,17 @@
     @media (max-width: 1440px) {
       @content;
     }
-  } @else if ($size == m) {
+  }
+  @else if ($size == m-l) {
+    @media (max-width: 1340px) {
+      @content;
+    }
+  }@else if ($size == m) {
     @media (max-width: 1025px) {
       @content;
     }
-  } @else if ($size == s) {
+  }
+    @else if ($size == s) {
     @media (max-width: 768px) {
       @content;
     }

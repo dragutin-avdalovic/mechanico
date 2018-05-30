@@ -89,7 +89,7 @@ export default {
   @import '../../assets/font/fontello/css/fontello.css';
   .multipleTable {
     overflow-y: auto;
-    text-align: center;
+    text-align: left;
     thead {
       text-align: center;
     }

@@ -1,13 +1,13 @@
 <template>
   <el-row class="manufacturers-header">
-    <el-col :xs="14" :sm="14" :md="14" :lg="14" :xl="14">
+    <el-col :xs="24" :sm="24" :md="24" :m-l="24" :lg="16" :xl="18">
       <div class="el-col-left">
         <el-button size="mini" class="trash"><i class="icon-trash-empty"></i></el-button>
         <el-button size="mini" class="new-user"><i class="icon-plus-1"></i><span>New Product</span></el-button>
         <el-button size="mini" class="new-user"><i class="icon-plus-1"></i><span>New Manufacturer</span></el-button>
       </div>
     </el-col>
-    <el-col :xs="10" :sm="10" :md="10" :lg="10" :xl="10">
+    <el-col :xs="24" :sm="24" :md="24" :m-l="24" :lg="8" :xl="6">
       <div class="grid-content">
         <el-input size="mini" class="search-input" placeholder="Search manufacturers" v-model="input_search" clearable>
           <el-button size="mini" slot="append" icon="el-icon-search"></el-button>
@@ -34,33 +34,43 @@ export default {
   @import '../../assets/styles/varibles';
 .manufacturers-header
   {
+  /*display: flex;*/
+  /*flex-direction: column;*/
     width: 100%;
-    padding: 0 0.5em 0.5em 0.5em;
+    padding: 0.5em 0.5em 0 0.5em;
     .search-input {
-      min-width: 5em;
-      max-width: 20em;
+      width: 90%;
+      padding: 0px 5px;
+      /*min-width: 5em;*/
+      /*max-width: 20em;*/
       float: right;
-      /*margin-top: 1em;*/
+      @media ('sm') {
+        padding-top: 0.5em;
+      }
+      @media ('xs') {
+        padding-top: 0.5em;
+      }
+      @media ('md') {
+        padding-top: 0.5em;
+      }
       .el-button
       {
         background-color: #0D72B9;
         color: white;
         font-weight: 900;
-        font-size: 0.9em;
-        margin: 0;
+        font-size: 1em;
+        border-radius: 0;
+        /*padding: 7px 7px;*/
       }
     }
     .el-col-left {
       min-height: 1em;
       min-width: 5em;
-      /*display: flex;*/
-      /*justify-content: center;*/
-      /*align-items: center;*/
       .new-user
       {
         background-color: #0D72B9;
         color: white;
-        /*margin-right: 0.1em;*/
+        padding: 7px 7px;
         i{
           font-size: 0.9em;
           font-weight: 400;
@@ -80,7 +90,7 @@ export default {
       {
         background-color: #909399;
         color: white;
-        /*margin-right: 0.5em;*/
+        padding: 7px 7px;
         i{
           font-size: 0.9em;
           font-weight: 700;
@@ -92,5 +102,11 @@ export default {
         font-weight: 700;
       }
     }
+  }
+  .el-button+.el-button{
+    margin-left: 0;
+  }
+  .grid-content{
+
   }
 </style>
