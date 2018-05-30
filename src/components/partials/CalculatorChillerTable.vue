@@ -224,7 +224,19 @@
           <td v-bind:style="{ display: showMoreChillersInputPost}">{{ChillerCalculated.conOutField}}</td>
           <td v-bind:style="{ display: showMoreChillersInputPost}">{{ChillerCalculated.conOutField}}</td>
           <td v-bind:style="{ display: showMoreChillersInputPost}">{{ChillerCalculated.conOutField}}</td>
-          <td><button class="btn btn-default btn-block" data-bind="click: $root.showAccessories">Select</button></td>
+          <td>
+            <el-popover
+            placement="top"
+            width="160"
+            v-model="visible2">
+            <p>Are you sure to delete this?</p>
+            <div style="text-align: right; margin: 0">
+              <el-button size="mini" type="text" @click="visible2 = false">cancel</el-button>
+              <el-button type="primary" size="mini" @click="visible2 = false">confirm</el-button>
+            </div>
+            <el-button slot="reference" @click="openPopover">Select</el-button>
+          </el-popover>
+          </td>
         </tr>
         </tbody>
       </table>
@@ -248,6 +260,7 @@ export default {
       showMoreChillersInputPostBool: false,
       showMoreChillersButtonText: 'Show more',
       showMoreChillersButtonTextPost: 'Show more',
+      visible2: false,
       ChillersData: [
         {
           'floorField': '1',
@@ -593,6 +606,9 @@ export default {
         elem.style.width = 100 + '%'
         this.showMoreChillersButtonTextPost = 'Show more'
       }
+    },
+    openPopover () {
+      this.visible2 = true
     }
   }
 }

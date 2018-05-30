@@ -32,16 +32,12 @@ export default {
   },
   methods: {
     hideSidebar (value) {
-      console.log('ok')
-      console.log(value)
       this.sidebar = document.getElementsByClassName('sidebar-col')
       this.main = document.getElementsByClassName('main-col')
       if (value === false) {
-        console.log(this.sidebar)
         this.sidebar[0].style.width = 1.3 + '%'
         this.main[0].style.width = 98.7 + '%'
       } else if (value === true) {
-        console.log(this.sidebar)
         this.sidebar[0].style.width = 30 + '%'
         this.main[0].style.width = 70 + '%'
       }
