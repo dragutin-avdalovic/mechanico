@@ -420,9 +420,8 @@ export default {
     },
     makeTypeFieldText (typeField) {
       for (var fieldType in this.typeFieldOptions) {
-        if (fieldType.value === typeField) {
-          typeField = fieldType.text
-          console.log(typeField)
+        if (parseInt(this.typeFieldOptions[fieldType].value) === parseInt(typeField)) {
+          typeField = this.typeFieldOptions[fieldType].text
           return typeField
         }
       }
