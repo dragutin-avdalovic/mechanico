@@ -133,7 +133,7 @@
           <td class="no bottom-none" rowspan="3">{{index+1}}</td>
           <td rowspan="3">{{Chiller.chIdField}}</td>
           <td rowspan="3">{{makeSystemTypeFieldText(parseInt(Chiller.typeSystemField))}}</td>
-          <td rowspan="3">{{Chiller.typeField}}</td>
+          <td rowspan="3">{{makeTypeFieldText(parseInt(Chiller.typeField))}}</td>
           <td rowspan="3">{{Chiller.typeExchangerField}}</td>
           <td rowspan="3">{{Chiller.inverterField}}</td>
           <td rowspan="1">{{Chiller.factorContField}}</td>
@@ -509,6 +509,17 @@ export default {
         if (parseInt(this.systemTypeOptions[sysType].value) === parseInt(systemTypeField)) {
           systemTypeField = this.systemTypeOptions[sysType].text
           return systemTypeField
+        }
+      }
+    },
+    makeTypeFieldText: function (typeField) {
+      Object.assign({}, this.chillerTypeOptions)
+      for (var chillerType in this.chillerTypeOptions) {
+        for (var chiller in this.chillerTypeOptions[chillerType]['options']) {
+          if (parseInt(this.chillerTypeOptions[chillerType]['options'][chiller].value) === parseInt(typeField)) {
+            typeField = this.chillerTypeOptions[chillerType]['options'][chiller].text
+            return typeField
+          }
         }
       }
     },
