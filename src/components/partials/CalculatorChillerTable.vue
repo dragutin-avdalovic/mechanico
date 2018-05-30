@@ -135,16 +135,16 @@
           <td rowspan="3">{{makeSystemTypeFieldText(parseInt(Chiller.typeSystemField))}}</td>
           <td rowspan="3">{{makeTypeFieldText(parseInt(Chiller.typeField))}}</td>
           <td rowspan="3">{{makeTypeExchangerFieldText(parseInt(Chiller.typeExchangerField))}}</td>
-          <td rowspan="3">{{Chiller.inverterField}}</td>
+          <td rowspan="3">{{makeInverterFieldText(parseInt(Chiller.inverterField))}}</td>
           <td rowspan="1">{{Chiller.factorContField}}</td>
-          <td>{{Chiller.ffeField}}</td>
-          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.fluidEvapField}}</td>
+          <td>{{makeFoulingFieldText(parseInt(Chiller.ffeField))}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{makeFluidFieldText(parseInt(Chiller.fluidEvapField))}}</td>
           <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.twInField}}</td>
           <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.twOutField}}</td>
           <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.tcField}}</td>
 
-          <td>{{Chiller.ffCndField}}</td>
-          <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.fluidCndField}}</td>
+          <td>{{makeFoulingFieldText(parseInt(Chiller.ffCndField))}}</td>
+          <td v-bind:style="{ display: showMoreChillersInput}">{{makeFluidFieldText(parseInt(Chiller.fluidCndField))}}</td>
           <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.twCinField}}</td>
           <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.twCoutField}}</td>
           <td v-bind:style="{ display: showMoreChillersInput}">{{Chiller.taField}}</td>
@@ -289,8 +289,9 @@ export default {
           'typeExchangerField': '0',
           'inverterField': 1,
           'ffeField': 0.0000176,
-          'ffcndField': 0.0000176,
+          'ffCndField': 0.0000176,
           'fluidEvapField': 2,
+          'fluidCndField': 7,
           'PropertyChanged': null
         },
         {
@@ -517,6 +518,33 @@ export default {
         if (parseInt(this.typeExchangerOptions[sysType].value) === parseInt(typeExchanger)) {
           typeExchanger = this.typeExchangerOptions[sysType].text
           return typeExchanger
+        }
+      }
+    },
+    makeInverterFieldText: function (inverterType) {
+      Object.assign({}, this.inverterOptions)
+      for (var inverter in this.inverterOptions) {
+        if (parseInt(this.inverterOptions[inverter].value) === parseInt(inverterType)) {
+          inverterType = this.inverterOptions[inverter].text
+          return inverterType
+        }
+      }
+    },
+    makeFoulingFieldText: function (foulingFactor) {
+      Object.assign({}, this.foulingFactorOptions)
+      for (var fouling in this.foulingFactorOptions) {
+        if (parseInt(this.foulingFactorOptions[fouling].value) === parseInt(foulingFactor)) {
+          foulingFactor = this.foulingFactorOptions[fouling].text
+          return foulingFactor
+        }
+      }
+    },
+    makeFluidFieldText: function (fluidType) {
+      Object.assign({}, this.fluidTypeOptions)
+      for (var fluid in this.fluidTypeOptions) {
+        if (parseInt(this.fluidTypeOptions[fluid].value) === parseInt(fluidType)) {
+          fluidType = this.fluidTypeOptions[fluid].text
+          return fluidType
         }
       }
     },
