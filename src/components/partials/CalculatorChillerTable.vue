@@ -134,7 +134,7 @@
           <td rowspan="3">{{Chiller.chIdField}}</td>
           <td rowspan="3">{{makeSystemTypeFieldText(parseInt(Chiller.typeSystemField))}}</td>
           <td rowspan="3">{{makeTypeFieldText(parseInt(Chiller.typeField))}}</td>
-          <td rowspan="3">{{Chiller.typeExchangerField}}</td>
+          <td rowspan="3">{{makeTypeExchangerFieldText(parseInt(Chiller.typeExchangerField))}}</td>
           <td rowspan="3">{{Chiller.inverterField}}</td>
           <td rowspan="1">{{Chiller.factorContField}}</td>
           <td>{{Chiller.ffeField}}</td>
@@ -501,7 +501,6 @@ export default {
   props: ['fileName'],
   methods: {
     handleClick (tab, event) {
-      console.log(tab, event)
     },
     makeSystemTypeFieldText: function (systemTypeField) {
       Object.assign({}, this.systemTypeOptions)
@@ -509,6 +508,15 @@ export default {
         if (parseInt(this.systemTypeOptions[sysType].value) === parseInt(systemTypeField)) {
           systemTypeField = this.systemTypeOptions[sysType].text
           return systemTypeField
+        }
+      }
+    },
+    makeTypeExchangerFieldText: function (typeExchanger) {
+      Object.assign({}, this.typeExchangerOptions)
+      for (var sysType in this.typeExchangerOptions) {
+        if (parseInt(this.typeExchangerOptions[sysType].value) === parseInt(typeExchanger)) {
+          typeExchanger = this.typeExchangerOptions[sysType].text
+          return typeExchanger
         }
       }
     },
@@ -532,7 +540,6 @@ export default {
     },
     showMore () {
       var elem = this.$refs['table-chiller']
-      console.log(elem)
       if (this.showMoreChillersInput === 'none') {
         this.showMoreChillersInput = 'table-cell'
         this.showMoreChillersInputBool = true
@@ -547,7 +554,6 @@ export default {
     },
     showMorePost () {
       var elem = this.$refs['table-chiller-post']
-      console.log(elem)
       if (this.showMoreChillersInputPost === 'none') {
         this.showMoreChillersInputPost = 'table-cell'
         this.showMoreChillersInputPostBool = true

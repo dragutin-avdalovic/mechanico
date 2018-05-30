@@ -116,7 +116,6 @@ export default {
       alert('button click')
     },
     handleCommand (comm) {
-      console.log('click on item ' + comm)
       this.command = comm
     }
   }

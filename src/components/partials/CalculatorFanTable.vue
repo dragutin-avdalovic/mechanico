@@ -436,7 +436,6 @@ export default {
     },
     showMore () {
       var elem = this.$refs['table-fan']
-      console.log(elem)
       if (this.showMoreFanCoilsInput === 'none') {
         this.showMoreFanCoilsInput = 'table-cell'
         elem.style.width = 200 + '%'
@@ -449,7 +448,6 @@ export default {
     },
     showMorePost () {
       var elem = this.$refs['table-fan-post']
-      console.log(elem)
       if (this.showMoreFanCoilsPost === 'none') {
         this.showMoreFanCoilsPost = 'table-cell'
         this.showMoreFanCoilsPostBool = true
