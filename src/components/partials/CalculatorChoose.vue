@@ -157,11 +157,21 @@ export default {
         display: flex;
         flex-direction: column;
         margin-right: auto;
+        @include screen-size('xs')
+        {
+          margin-left: auto;
+          margin-right: auto
+        }
       }
       .wordDropdownRight{
         display: flex;
         flex-direction: column;
         margin-left: auto;
+        @include screen-size('xs')
+        {
+          margin-left: auto;
+          margin-right: auto
+        }
       }
       .dropdown {
         margin-top: 1em;
@@ -173,6 +183,12 @@ export default {
         width: 70%;
         margin-left: 15%;
         margin-right: 15%;
+        @include screen-size('xs')
+        {
+          flex-direction: column;
+          justify-content: space-around;
+          margin-top: 0.5em;
+        }
       }
       .wdLast {
         width: 70%;
@@ -187,7 +203,7 @@ export default {
   .btns
   {
     background-color: #606060;
-    height: 12vh;
+    height: 20vh;
     .button{
       background-color: #29aae2;
       border-color: #29aae2;

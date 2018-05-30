@@ -72,11 +72,19 @@ export default {
     {
       width: 100%;
     }
+    @include screen-size('xs')
+    {
+      width: 100%;
+    }
   }
   .main-col
   {
     width: 70%;
     @include screen-size('s')
+    {
+      width: 100%;
+    }
+    @include screen-size('xs')
     {
       width: 100%;
     }
