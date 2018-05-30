@@ -13,8 +13,8 @@
     <th colspan="3" v-bind:style="{ display: showMoreFanCoilsInput }" width="15%">Cooling</th>
     <th rowspan="2" v-bind:style="{ display: showMoreFanCoilsInput }" width="8%">FanCoil Type</th>
     <th rowspan="2" v-bind:style="{ display: showMoreFanCoilsInput }" width="8%">External Static Pressure (Pa)</th>
-    <th rowspan="2" width="8%">Noise Level (dB)</th>
-    <th class="right-blue" rowspan="2" width="8%">Fans</th>
+    <th rowspan="2" width="5%">Noise Level (dB)</th>
+    <th class="right-blue" rowspan="2" width="5%">Fans</th>
     <th width="8%" v-if="editableFanCoils" rowspan="2"></th>
   </tr>
   <tr>
