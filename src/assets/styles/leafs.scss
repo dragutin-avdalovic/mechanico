@@ -48,7 +48,6 @@
     background-color: #bcbcbc;
     height: 3em;
     color: white;
-    //margin-right: 0.3em;
     border: 0;
     }
   .el-tabs__item.is-top.is-active {
@@ -72,7 +71,7 @@
   .el-dropdown-menu el-popper{
     width: 10px;
   }
-  .el-tabs--border-card>.el-tabs__content
+  .el-tabs--border-card >.el-tabs__content
   {
     padding: 0px !important;
   }

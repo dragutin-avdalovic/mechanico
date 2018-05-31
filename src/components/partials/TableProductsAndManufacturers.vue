@@ -8,7 +8,7 @@
     element-loading-background="rgba(0, 0, 0, 0.8)"
     :data="fields"
     style="width: 100%"
-    :height="'calc(45vh - 100px - 2.5em)'"
+    :height="'calc(45vh - 116px - 1em)'"
     @selection-change="handleSelectionChange">
     <el-table-column v-if="selectable" type="selection" width="55"></el-table-column>
     <el-table-column
