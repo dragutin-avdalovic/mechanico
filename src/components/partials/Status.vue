@@ -66,9 +66,10 @@ export default {
   }
 
   .status-bg {
-    padding: 1em;
     background-color: $white;
-    height: 22.5em;
+    padding-top: 5vh;
+    padding-bottom: 9vh;
+    height: 41vh;
   }
 
   .divider {
@@ -82,6 +83,7 @@ export default {
     flex-direction: column;
     text-align: left;
     align-self: flex-start;
+    justify-items: center;
   }
   .info {
     padding-bottom: 1em;

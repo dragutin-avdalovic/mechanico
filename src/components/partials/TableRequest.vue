@@ -46,11 +46,13 @@ export default {
     return {
       multipleSelection: [],
       loading2: false,
-      width: ''
+      width: 0
     }
   },
   mounted () {
-    this.width = Math.round(this.$refs.table.$el.clientWidth / 3)
+    console.log(this.$refs['tableRequest'].$el.clientWidth)
+    this.width = parseInt(Math.round(this.$refs['tableRequest'].$el.clientWidth / 3))
+    console.log(this.width)
   },
   props: ['fields', 'selectable', 'editable'],
   methods: {

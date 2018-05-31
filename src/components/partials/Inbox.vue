@@ -100,7 +100,7 @@ export default {
     }
   }
   .inbox-composition {
-    height: calc(100vh - 372px);
     overflow: auto;
+    height: calc(45vh - 1.5em);
   }
 </style>

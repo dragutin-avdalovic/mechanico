@@ -69,7 +69,7 @@ export default {
     }
   }
   .activity-container {
-    height: calc(100vh - 372px);
+    height: calc(45vh - 1.5em);
     overflow: auto;
   }
 </style>

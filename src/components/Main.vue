@@ -1,6 +1,6 @@
 <template>
-  <el-container style="height: 100vh;">
-    <el-main>
+  <el-container>
+    <el-main  style="height: 100vh;">
       <el-row type="flex" class="row-bg" justify="flex-start">
         <el-col :span="16">
           <div class="grid-content">
@@ -57,6 +57,8 @@ export default {
     StatusAdmin
   },
   name: 'HelloWorld',
+  mounted () {
+  },
   methods: {
     handleChange (value) {
       console.log(value)
@@ -101,7 +103,7 @@ export default {
     margin-top: 0.5em;
     margin-left: 0.5em;
     margin-right: 0.5em;
-
+    height: 55vh;
   }
 
   .row-bg-bottom {
@@ -110,7 +112,7 @@ export default {
     margin-left: 0.5em;
     margin-right: 0.5em;
     margin-bottom: 0.5em;
-
+    height: calc(45vh - 1.5em);
   }
 
   .grid-content {
@@ -118,12 +120,14 @@ export default {
     background-color: $grey-my-projects-lighter;
     margin-left: 0.5em;
     margin-right: 0.5em;
+    min-height: 55vh;
   }
 
   .grid-content-bottom {
     background-color: $grey-my-projects-lighter;
     margin-left: 0.5em;
     margin-right: 0.5em;
+    min-height: calc(45vh - 1.5em);
   }
 
   .el-main {

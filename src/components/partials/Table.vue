@@ -9,7 +9,7 @@
     :data="fields"
     :default-sort="{prop: 'projectName', order: 'ascending'}"
     style="width: 100%"
-    height="286"
+    :height= "'calc(55vh - 106px)'"
     @selection-change="handleSelectionChange">
     <el-table-column :width="width" v-if="selectable" type="selection"></el-table-column>
     <el-table-column :width="width" sortable v-for="(column, key) in columns"
