@@ -1,9 +1,10 @@
 <template>
+  <div>
   <el-row type="flex" class="row-header" justify="center">
     <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
       <div class="el-col-left">
         <el-button type="info"><i class="icon-trash-empty"></i></el-button>
-        <el-button @click="$dialogVisible = false" class="new-project"><i class="icon-plus-1"></i><span>New project</span></el-button>
+        <el-button @click="dialogVisible = true" class="new-project"><i class="icon-plus-1"></i><span>New project</span></el-button>
       </div>
     </el-col>
     <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
@@ -14,9 +15,24 @@
       </div>
     </el-col>
   </el-row>
+  <el-dialog
+    class="new-project"
+    title="Create project"
+    :visible.sync="dialogVisible"
+    width="50%"
+    :before-close="handleClose">
+    <AppForm></AppForm>
+    <span slot="footer" class="dialog-footer">
+      <el-button @click="dialogVisible = false">Cancel</el-button>
+      <el-button type="primary" @click="dialogVisible = false">Save</el-button>
+    </span>
+  </el-dialog>
+  </div>
 </template>
 
 <script>
+import AppForm from './AppForm.vue'
+
 export default {
   data () {
     return {
@@ -26,6 +42,16 @@ export default {
   },
   props: ['fields', 'columns', 'selectable'],
   methods: {
+    handleClose (done) {
+      this.$confirm('Are you sure to close this dialog?')
+        .then(_ => {
+          done()
+        })
+        .catch(_ => {})
+    }
+  },
+  components: {
+    AppForm
   }
 }
 </script>
@@ -82,5 +108,12 @@ export default {
   .el-input__inner:focus {
     outline:none;
     border: none;
+  }
+  .new-project
+  {
+    background-color: rgba(#0D72B9, 0.7);
+    .dialog-footer
+    {
+    }
   }
 </style>

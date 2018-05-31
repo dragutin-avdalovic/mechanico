@@ -37,14 +37,6 @@
           </el-form-item>
         </el-col>
       </el-row>
-      <el-row type="flex" justify="center" :gutter="10">
-        <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
-          <el-button class="Cancel" type="primary">Cancel</el-button>
-        </el-col>
-        <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
-          <el-button type="primary">Save</el-button>
-        </el-col>
-      </el-row>
     </el-form>
   </div>
 </template>
@@ -66,7 +58,7 @@ export default {
     width: 100%;
   }
 
-  el-form-item {
+  .el-form-item {
     width: 100%;
   }
 
@@ -82,10 +74,6 @@ export default {
   .el-button {
     width: 100%;
     background-color: #0d80ca;
-  }
-
-  .Cancel {
-    background-color: grey;
   }
 
   .button {

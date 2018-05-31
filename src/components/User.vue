@@ -89,7 +89,8 @@ export default {
         projectSize: '30',
         equipment: '212330',
         year: 2016
-      }]
+      }],
+      dialogVisible: false
     }
   }
 }
