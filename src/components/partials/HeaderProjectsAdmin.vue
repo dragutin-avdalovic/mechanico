@@ -7,7 +7,7 @@
           <div class="projects-label">PROJECTS MANAGEMENT</div>
         </div>
         <TableHeader></TableHeader>
-        <Table :fields="fields" :columns="columns" :selectable="true" :editable="true"></Table>
+        <TableAdmin :fields="fields" :columns="columns" :selectable="true" :editable="true"></TableAdmin>
       </el-tab-pane>
       <el-tab-pane>
         <div slot="label" class="header">
@@ -21,13 +21,13 @@
   </div>
 </template>
 <script>
-import Table from './Table.vue'
+import TableAdmin from './TableAdmin.vue'
 import UsersTable from './UsersTable.vue'
 import UsersTableHeader from './UsersTableHeader.vue'
 import TableHeader from './TableHeader.vue'
 export default {
   components: {
-    Table,
+    TableAdmin,
     TableHeader,
     UsersTable,
     UsersTableHeader
