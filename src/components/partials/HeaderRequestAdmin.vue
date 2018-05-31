@@ -72,13 +72,8 @@ export default {
       }
     }
   }
-.el-tabs
-{
+.el-tabs {
   height: calc(45vh - 372px);
-  background-color:  $grey-my-projects-lighter;
-}
-.el-tabs--border-card>.el-tabs__content
-{
-  padding: 0px !important;
+  background-color: $grey-my-projects-lighter;
 }
 </style>
