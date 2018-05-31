@@ -51,37 +51,41 @@ export default {
 <style lang="scss" scoped>
   @import '../../assets/font/fontello/css/fontello.css';
   @import '../../assets/styles/varibles';
-  .header {
-    background-color: $blue-my-projects;
-    color: $white;
-    .my-projects-icon {
-      margin-top: auto;
-      margin-bottom: auto;
-      padding-left: 0.5em;
-      font-size: 1.5em;
+  .product-container {
+    height: calc(45vh - 64px - 1.5em);
+    .header {
+      background-color: $blue-my-projects;
+      color: $white;
+      .my-projects-icon {
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-left: 0.5em;
+        font-size: 1.5em;
+      }
+      .projects-label {
+        float: left;
+        font-weight: 500;
+        font-size: 1em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+      }
     }
-    .projects-label {
-      float: left;
-      font-weight: 500;
-      font-size: 1em;
-      padding-top: 0.5em;
+    .row-header
+    {
+      background-color: #E9E9E9;
       padding-bottom: 0.5em;
-    }
-  }
-  .row-header
-  {
-    background-color: #E9E9E9;
-    padding-bottom: 0.5em;
-    .search-input {
-      min-width: 5em;
-      max-width: 20em;
-      float: right;
-      margin-right: 15px;
-      .el-button
-      {
-        background-color: $blue-my-projects;
-        color: white;
+      .search-input {
+        min-width: 5em;
+        max-width: 20em;
+        float: right;
+        margin-right: 15px;
+        .el-button
+        {
+          background-color: $blue-my-projects;
+          color: white;
+        }
       }
     }
   }
+
 </style>

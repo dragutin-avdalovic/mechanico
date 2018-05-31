@@ -73,7 +73,7 @@ export default {
   }
 .el-tabs
 {
-  height: calc(100vh - 372px);
+  height: calc(45vh - 372px);
   background-color:  $grey-my-projects-lighter;
 }
 .el-tabs--border-card>.el-tabs__content
