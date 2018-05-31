@@ -10,26 +10,26 @@
     style="width: 100%; overflow: auto;"
     :height="'calc(45vh - 100px - 1.5em)'"
     @selection-change="handleSelectionChange">
-    <el-table-column v-if="selectable" type="selection" width="55"></el-table-column>
+    <el-table-column v-if="selectable" type="selection" :width="100"></el-table-column>
     <el-table-column
       prop="user"
       label="User"
-      width="140" sortable>
+      :width="150" sortable>
     </el-table-column>
     <el-table-column
       prop="manufacturer"
       label="Manufacturer"
-      width="140" sortable>
+      :width="150" sortable>
     </el-table-column>
     <el-table-column
       prop="product"
       label="Product"
-      width="140" sortable>
+      :width="150" sortable>
     </el-table-column>
     <el-table-column
       prop="status"
       label="Status"
-      width="100"
+      :width="150"
       :filters="[{ text: 'Approved', value: 'Approved' }, { text: 'Denied', value: 'Denied' },{ text: 'Requested', value: 'Requested' }]"
       :filter-method="filterTag"
       filter-placement="bottom-start">

@@ -50,9 +50,7 @@ export default {
     }
   },
   mounted () {
-    console.log(this.$refs['tableRequest'].$el.clientWidth)
     this.width = parseInt(Math.round(this.$refs['tableRequest'].$el.clientWidth / 3))
-    console.log(this.width)
   },
   props: ['fields', 'selectable', 'editable'],
   methods: {

@@ -11,11 +11,11 @@
     style="width: 100%"
     :height= "'calc(55vh - 132px)'"
     @selection-change="handleSelectionChange">
-    <el-table-column :width="width" v-if="selectable" type="selection"></el-table-column>
-    <el-table-column :width="width" sortable v-for="(column, key) in columns"
+    <el-table-column v-if="selectable" type="selection"></el-table-column>
+    <el-table-column sortable v-for="(column, key) in columns"
                      v-bind:label="column.label" v-bind:prop="column.prop" v-bind:key='key'>
     </el-table-column>
-    <el-table-column :width="width" v-if="editable">
+    <el-table-column v-if="editable">
       <template class="align" slot-scope="scope">
         <el-button
           type="info" icon="el-icon-edit"
@@ -37,7 +37,7 @@ export default {
     }
   },
   mounted () {
-    this.width = Math.round(this.$refs.table.$el.clientWidth / 9)
+    // this.width = Math.round(this.$refs.table.$el.clientWidth / 9)
   },
   props: ['fields', 'columns', 'selectable', 'editable'],
   methods: {

@@ -10,23 +10,23 @@
     style="width: 100%"
     :height="'calc(45vh - 116px - 1em)'"
     @selection-change="handleSelectionChange">
-    <el-table-column v-if="selectable" type="selection" width="55"></el-table-column>
+    <el-table-column v-if="selectable" type="selection" :width="50"></el-table-column>
     <el-table-column
       prop="productName"
       label="Product Name"
-      width="140" sortable>
+      :width="150" sortable>
     </el-table-column>
     <el-table-column
       prop="manufacturer"
       label="Manufacturer"
-      width="140" sortable>
+      :width="150" sortable>
     </el-table-column>
     <el-table-column
       prop="productType"
       label="Product Type"
-      width="140" sortable>
+      :width="150" sortable>
     </el-table-column>
-    <el-table-column v-if="editable"  width="140">
+    <el-table-column v-if="editable" :width="200">
       <template slot-scope="scope">
         <el-button
           type="info" icon="el-icon-edit"
@@ -44,7 +44,8 @@ export default {
   data () {
     return {
       multipleSelection: [],
-      loading2: false
+      loading2: false,
+      width: 0
     }
   },
   props: ['fields', 'selectable', 'editable'],
@@ -75,6 +76,9 @@ export default {
       const property = column['property']
       return row[property] === value
     }
+  },
+  mounted () {
+    // this.width = parseInt(Math.round(this.$refs['tableRequest'].$el.clientWidth / 3))
   }
 }
 </script>
