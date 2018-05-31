@@ -34,7 +34,10 @@ export default {
       margin-left: 0;
     }
     .el-radio{
-      line-height: 0;
+      line-height: 1.5em;
+    }
+    .el-radio__label {
+      font-size: 12px;
     }
   }
 </style>

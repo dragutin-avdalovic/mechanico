@@ -128,6 +128,7 @@ export default {
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 16px;
   }
   .circle{
     padding-top: 0.5em;

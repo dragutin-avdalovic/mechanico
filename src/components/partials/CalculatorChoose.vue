@@ -13,8 +13,7 @@
               </el-button>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item command="1">Artesi</el-dropdown-item>
-                <el-dropdown-item command="2">HAYE</el-dropdown-item>
-                <el-dropdown-item command="3">Altaqua</el-dropdown-item>
+                <el-dropdown-item command="2">Clint</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </div>
@@ -29,9 +28,13 @@
               {{commandChiller}}<i class="el-icon-arrow-down el-icon--right"></i>
               </el-button>
               <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item command="1">Artesi</el-dropdown-item>
-                <el-dropdown-item command="2">HAYE</el-dropdown-item>
-                <el-dropdown-item command="3">Altaqua</el-dropdown-item>
+                <el-dropdown-item command="1">Arctic</el-dropdown-item>
+                <el-dropdown-item command="2">Bicold</el-dropdown-item>
+                <el-dropdown-item command="3">Bini</el-dropdown-item>
+                <el-dropdown-item command="3">Blue Box</el-dropdown-item>
+                <el-dropdown-item command="3">Clint</el-dropdown-item>
+                <el-dropdown-item command="3">Euroklimat</el-dropdown-item>
+                <el-dropdown-item command="3">Frost</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </div>
@@ -48,9 +51,8 @@
               {{commandDryCooler}}<i class="el-icon-arrow-down el-icon--right"></i>
               </el-button>
               <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item command="1">Artesi</el-dropdown-item>
-                <el-dropdown-item command="2">Whirpoll</el-dropdown-item>
-                <el-dropdown-item command="3">Sense</el-dropdown-item>
+                <el-dropdown-item command="1">KFL</el-dropdown-item>
+                <el-dropdown-item command="2">Refrion</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </div>
@@ -65,9 +67,8 @@
               {{commandCondenser}}<i class="el-icon-arrow-down el-icon--right"></i>
               </el-button>
               <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item command="1">Artesi</el-dropdown-item>
-                <el-dropdown-item command="2">Whirpoll</el-dropdown-item>
-                <el-dropdown-item command="3">Sense</el-dropdown-item>
+                <el-dropdown-item command="1">KFL</el-dropdown-item>
+                <el-dropdown-item command="2">Refrion</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </div>
@@ -84,9 +85,10 @@
                 {{commandAHU}}<i class="el-icon-arrow-down el-icon--right"></i>
               </el-button>
               <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item command="1">Artesi</el-dropdown-item>
-                <el-dropdown-item command="2">Fun fan</el-dropdown-item>
-                <el-dropdown-item command="3">Die</el-dropdown-item>
+                <el-dropdown-item command="1">Novair</el-dropdown-item>
+                <el-dropdown-item command="2">ACM</el-dropdown-item>
+                <el-dropdown-item command="3">Itair</el-dropdown-item>
+                <el-dropdown-item command="3">Sidan</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </div>
