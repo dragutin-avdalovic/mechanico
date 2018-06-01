@@ -91,5 +91,13 @@
   color: white !important;
 }
 
-
+.el-table {
+  thead {
+    tr {
+      th {
+        background-color: rgba(#E9E9E9, 0.7);
+      }
+    }
+  }
+}
 

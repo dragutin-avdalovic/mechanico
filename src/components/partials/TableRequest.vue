@@ -86,5 +86,12 @@ export default {
 <style lang="scss" scoped>
   .el-table {
     overflow: auto;
+    thead {
+      tr {
+        th {
+          background-color: #8879BF !important;
+        }
+      }
+    }
   }
 </style>
