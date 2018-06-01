@@ -10,7 +10,7 @@
     style="width: 100%; overflow: auto;"
     :height="'calc(45vh - 100px)'"
     @selection-change="handleSelectionChange">
-    <el-table-column :width="width" v-if="selectable" type="selection"></el-table-column>
+    <el-table-column :width="50" v-if="selectable" type="selection"></el-table-column>
     <el-table-column
       prop="manufacturer"
       label="Manufacturer"
