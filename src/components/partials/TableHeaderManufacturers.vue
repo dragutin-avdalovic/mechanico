@@ -59,7 +59,6 @@ export default {
         color: white;
         font-weight: 900;
         font-size: 1em;
-        border-radius: 0;
         /*padding: 7px 7px;*/
       }
     }
