@@ -23,7 +23,7 @@
         <span style="margin-left: 5px">{{scope.row.status}}</span>
       </template>
     </el-table-column>
-    <el-table-column label="Primary">
+    <el-table-column label="Primary" class="primary">
       <template slot-scope="scope">
         <div v-if="scope.row.primary">
           <i class="el-icon-check"></i>
@@ -33,7 +33,7 @@
         </div>
       </template>
     </el-table-column>
-    <el-table-column label="Verified">
+    <el-table-column label="Verified" class="verified">
       <template slot-scope="scope">
         <div v-if="scope.row.verified">
           <i class="el-icon-check"></i>
@@ -98,10 +98,13 @@ export default {
     color:red;
     font-size: 1.5em;
     font-weight: 600;
+    margin: 0 1em;
   }
   .el-icon-check{
     color:green;
     font-size: 1.5em;
     font-weight: 600;
+    margin: 0 1em;
   }
+
 </style>
