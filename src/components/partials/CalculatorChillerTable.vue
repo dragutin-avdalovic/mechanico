@@ -4,7 +4,7 @@
       <table class="table-chiller" ref="table-chiller"  cellspacing="0" cellpadding="0" >
         <thead>
         <tr>
-          <th rowspan="3" class="no  bottom-none" width="3%">No</th>
+          <th rowspan="3" class="no  bottom-none" :width="showMoreChillersInputBool ? '2%' : '1%'">No</th>
           <th rowspan="3" width="5%">Unit</th>
           <th rowspan="3" width="6%">System Type</th>
           <th rowspan="3" width="8%">Chiller Type</th>
@@ -173,7 +173,7 @@
       <table class="table-chiller-post" ref="table-chiller-post"  cellspacing="0" cellpadding="0" >
         <thead>
         <tr>
-          <th class="no bottom-none" width="3%" rowspan="3">No</th>
+          <th class="no bottom-none" :width="showMoreChillersInputPostBool ? '1.5%' : '1.5%'" rowspan="3">No</th>
           <th rowspan="3" width="5%">Room</th>
           <th rowspan="3" width="5%">Unit</th>
           <th rowspan="3" width="5%">Manufacturer</th>

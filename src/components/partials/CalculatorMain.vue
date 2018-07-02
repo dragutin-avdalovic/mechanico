@@ -45,7 +45,7 @@ export default {
       filters: [
         { id: 1, name: 'FanCoil' },
         { id: 2, name: 'Chiller' },
-        { id: 3, name: 'DryColler' },
+        { id: 3, name: 'DryCooler' },
         { id: 4, name: 'Condenser' },
         { id: 5, name: 'AHU' }
       ],

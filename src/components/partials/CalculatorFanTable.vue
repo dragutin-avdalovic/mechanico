@@ -87,14 +87,14 @@
     <table class="table-fan-post" ref="table-fan-post"  cellspacing="0" cellpadding="0" >
     <thead>
     <tr>
-      <th class="no  bottom-none" :width="showMoreFanCoilsPostBool ? '3%' : '3%'" rowspan="3">No</th>
+      <th class="no  bottom-none" :width="showMoreFanCoilsPostBool ? '3%' : '4%'" rowspan="3">No</th>
       <th rowspan="3" width="8%">Room</th>
       <th rowspan="3" width="8%">Unit</th>
       <th rowspan="3" width="8%">Manufacturer</th>
       <th rowspan="3" width="8%">Model</th>
       <th :colspan="showMoreFanCoilsPostBool ? '3' : '1'" rowspan="1" width="15%">Heating</th>
       <th :colspan="showMoreFanCoilsPostBool ? '3' : '1'" rowspan="1" width="15%">Cooling</th>
-      <th rowspan="1" colspan="3" :width="showMoreFanCoilsPostBool ? '12%' : '14%'" >Dimensions</th>
+      <th rowspan="1" colspan="3" :width="showMoreFanCoilsPostBool ? '12%' : '13%'" >Dimensions</th>
       <th rowspan="1" colspan="4" width="15%" v-bind:style="{ display: showMoreFanCoilsPost }">Connectors</th>
       <th class="right-blue" rowspan="3" width="5%">Accessories</th>
     </tr>
