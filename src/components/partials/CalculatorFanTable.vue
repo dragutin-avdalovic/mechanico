@@ -4,7 +4,7 @@
     <table class="table-fan" ref="table-fan"  cellspacing="0" cellpadding="0" >
   <thead>
   <tr>
-    <th class="no  bottom-none" width="3%" rowspan="2">No</th>
+    <th class="no  bottom-none" :width="showMoreFanCoilsInputBool ? '3%' : '2%'" rowspan="2">No</th>
     <th rowspan="2" width="8%">Level</th>
     <th rowspan="2" width="8%">Room</th>
     <th rowspan="2" width="8%">Chiller</th>
@@ -13,8 +13,8 @@
     <th colspan="3" v-bind:style="{ display: showMoreFanCoilsInput }" width="15%">Cooling</th>
     <th rowspan="2" v-bind:style="{ display: showMoreFanCoilsInput }" width="8%">FanCoil Type</th>
     <th rowspan="2" v-bind:style="{ display: showMoreFanCoilsInput }" width="8%">External Static Pressure (Pa)</th>
-    <th rowspan="2" width="5%">Noise Level (dB)</th>
-    <th class="right-blue" rowspan="2" width="5%">Fans</th>
+    <th rowspan="2" width="6%">Noise Level (dB)</th>
+    <th class="right-blue" rowspan="2" :width="showMoreFanCoilsInputBool ? '4%' : '6%'">Fans</th>
     <th width="8%" v-if="editableFanCoils" rowspan="2"></th>
   </tr>
   <tr>
@@ -87,14 +87,14 @@
     <table class="table-fan-post" ref="table-fan-post"  cellspacing="0" cellpadding="0" >
     <thead>
     <tr>
-      <th class="no  bottom-none" :width="showMoreFanCoilsPostBool ? '3%' : '6%'" rowspan="3">No</th>
+      <th class="no  bottom-none" :width="showMoreFanCoilsPostBool ? '3%' : '3%'" rowspan="3">No</th>
       <th rowspan="3" width="8%">Room</th>
       <th rowspan="3" width="8%">Unit</th>
       <th rowspan="3" width="8%">Manufacturer</th>
       <th rowspan="3" width="8%">Model</th>
       <th :colspan="showMoreFanCoilsPostBool ? '3' : '1'" rowspan="1" width="15%">Heating</th>
       <th :colspan="showMoreFanCoilsPostBool ? '3' : '1'" rowspan="1" width="15%">Cooling</th>
-      <th rowspan="1" colspan="3" width="12%">Dimensions</th>
+      <th rowspan="1" colspan="3" :width="showMoreFanCoilsPostBool ? '12%' : '14%'" >Dimensions</th>
       <th rowspan="1" colspan="4" width="15%" v-bind:style="{ display: showMoreFanCoilsPost }">Connectors</th>
       <th class="right-blue" rowspan="3" width="5%">Accessories</th>
     </tr>
@@ -157,6 +157,7 @@ export default {
       typeFieldText: '',
       editableFanCoils: false,
       showMoreFanCoilsInput: 'none',
+      showMoreFanCoilsInputBool: false,
       showMoreFanCoilsPost: 'none',
       showMoreFanCoilsPostBool: false,
       showMoreFanCoilsButtonText: 'Show more',
@@ -437,10 +438,12 @@ export default {
       var elem = this.$refs['table-fan']
       if (this.showMoreFanCoilsInput === 'none') {
         this.showMoreFanCoilsInput = 'table-cell'
+        this.showMoreFanCoilsInputBool = true
         elem.style.width = 200 + '%'
         this.showMoreFanCoilsButtonText = 'Show less'
       } else if (this.showMoreFanCoilsInput === 'table-cell') {
         this.showMoreFanCoilsInput = 'none'
+        this.showMoreFanCoilsInputBool = false
         elem.style.width = 100 + '%'
         this.showMoreFanCoilsButtonText = 'Show more'
       }
