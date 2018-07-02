@@ -87,16 +87,16 @@
     <table class="table-fan-post" ref="table-fan-post"  cellspacing="0" cellpadding="0" >
     <thead>
     <tr>
-      <th class="no  bottom-none" width="3%" rowspan="3">No</th>
-      <th rowspan="3">Room</th>
-      <th rowspan="3">Unit</th>
-      <th rowspan="3">Manufacturer</th>
-      <th rowspan="3">Model</th>
-      <th :colspan="showMoreFanCoilsPostBool ? '3' : '1'" rowspan="1">Heating</th>
-      <th :colspan="showMoreFanCoilsPostBool ? '3' : '1'" rowspan="1">Cooling</th>
-      <th rowspan="1" colspan="3">Dimensions</th>
-      <th rowspan="1" colspan="4" v-bind:style="{ display: showMoreFanCoilsPost }">Connectors</th>
-      <th class="right-blue" rowspan="3">Accessories</th>
+      <th class="no  bottom-none" :width="showMoreFanCoilsPostBool ? '3%' : '6%'" rowspan="3">No</th>
+      <th rowspan="3" width="8%">Room</th>
+      <th rowspan="3" width="8%">Unit</th>
+      <th rowspan="3" width="8%">Manufacturer</th>
+      <th rowspan="3" width="8%">Model</th>
+      <th :colspan="showMoreFanCoilsPostBool ? '3' : '1'" rowspan="1" width="15%">Heating</th>
+      <th :colspan="showMoreFanCoilsPostBool ? '3' : '1'" rowspan="1" width="15%">Cooling</th>
+      <th rowspan="1" colspan="3" width="12%">Dimensions</th>
+      <th rowspan="1" colspan="4" width="15%" v-bind:style="{ display: showMoreFanCoilsPost }">Connectors</th>
+      <th class="right-blue" rowspan="3" width="5%">Accessories</th>
     </tr>
     <tr>
       <th class="sub-head" rowspan="2">Calculated Capacity (kW)</th>
