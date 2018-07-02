@@ -70,9 +70,7 @@ export default {
   @import '../../assets/styles/varibles.scss';
   @import '../../assets/styles/mixins.scss';
   .filter {
-    width: 98%;
-    padding-right: 1%;
-    padding-left: 1%;
+    width: 100%;
     @include screen-size('s')
     {
       width: 100%;
@@ -82,7 +80,7 @@ export default {
     background-color: white;
     ul {
       list-style: none;
-      width: 100%;
+      width: 98%;
       display: flex;
       margin: 0;
       padding: 0;
@@ -95,7 +93,8 @@ export default {
       display: flex;
       font-size: 1em;
       .main-list {
-        width:100%;
+        width:99.5%;
+        padding-left: 0.5%;
         overflow: auto;
         li {
           margin-top:1em;
@@ -103,8 +102,7 @@ export default {
           opacity: 0.8;
           background-color: #606060;
           color:white;
-          margin-right: 0.3em;
-
+          margin-right: 0.5%;
           &:hover {
             border-bottom: solid 3px #29aae2;
             background-color: #424242;
