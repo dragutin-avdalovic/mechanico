@@ -254,6 +254,7 @@ export default {
   .el-dropdown-menu__item
   {
     color:#424242;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
   }
   .el-dropdown-menu__item:hover
   {
