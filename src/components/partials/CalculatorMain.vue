@@ -6,10 +6,9 @@
       </ul>
     </div>
     <div class="filename">
-    <div class="name">File name</div>
-      <div class="icon"><i class="el-icon-document"></i>
+      <div class="name">File name</div>
+      <div class="icon"><i class="el-icon-document"></i></div>
     </div>
-   </div>
   <el-row>
     <div v-if="selectedFilter === 0">
       <img class="mechanico-man" src="/static/images/calculator.png">
@@ -129,9 +128,9 @@ export default {
      .name{
       background-color: #424242;
       color:white;
-      width:66%;
       }
      .icon {
+        padding-left: 2%;
         font-size: 1em;
         color: white;
       }
