@@ -14,12 +14,12 @@
         </el-col>
       </el-row>
       <el-row type="flex" class="row-bg-bottom" justify="flex-start">
-        <el-col :span="9">
+        <el-col :span="10">
           <div class="grid-content-bottom">
             <ProductRequest></ProductRequest>
           </div>
         </el-col>
-        <el-col :span="7">
+        <el-col :span="6">
           <div class="grid-content-bottom">
             <Inbox></Inbox>
           </div>

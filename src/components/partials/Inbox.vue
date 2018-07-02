@@ -86,6 +86,7 @@ export default {
       font-size: 0.8em;
       background-color: $blue-my-projects;
       font-weight: 500;
+      margin-left: 0;
     }
     .search-input {
       /*padding-top: 0.5em;*/
