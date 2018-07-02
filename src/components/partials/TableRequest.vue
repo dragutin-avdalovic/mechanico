@@ -49,7 +49,7 @@ export default {
     }
   },
   mounted () {
-    this.width = parseInt(Math.round((this.$refs['tableRequest'].$el.clientWidth - 1) / 3))
+    this.width = parseInt(Math.round(this.$refs['tableRequest'].$el.clientWidth / 3))
   },
   props: ['fields', 'selectable', 'editable'],
   methods: {
@@ -84,7 +84,7 @@ export default {
 </script>
 <style lang="scss" scoped>
   .el-table {
-    overflow: auto;
+    overflow-y: hidden;
     thead {
       tr {
         th {

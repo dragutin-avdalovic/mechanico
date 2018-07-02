@@ -14,19 +14,19 @@
     <el-table-column
       prop="productName"
       label="Product Name"
-      :width="150" sortable>
+      :width="width" sortable>
     </el-table-column>
     <el-table-column
       prop="manufacturer"
       label="Manufacturer"
-      :width="150" sortable>
+      :width="width" sortable>
     </el-table-column>
     <el-table-column
       prop="productType"
       label="Product Type"
-      :width="150" sortable>
+      :width="width" sortable>
     </el-table-column>
-    <el-table-column v-if="editable" :width="200">
+    <el-table-column v-if="editable" :width="width">
       <template slot-scope="scope">
         <el-button
           type="info" icon="el-icon-edit"
@@ -78,7 +78,7 @@ export default {
     }
   },
   mounted () {
-    // this.width = parseInt(Math.round(this.$refs['tableRequest'].$el.clientWidth / 3))
+    this.width = parseInt((Math.round(this.$refs['tableRequest'].$el.clientWidth) / 4))
   }
 }
 </script>

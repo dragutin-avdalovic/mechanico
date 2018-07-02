@@ -2,29 +2,29 @@
   <el-container>
     <el-main style="height: 100vh;">
       <el-row type="flex" class="row-bg" justify="flex-start">
-        <el-col :span="16">
+        <el-col :xs="24" :sm="24" :md="24" :lg="16" :xl="16">
           <div class="grid-content">
             <AdminProjectsPage></AdminProjectsPage>
           </div>
         </el-col>
-        <el-col :span="8">
+        <el-col  :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
           <div class="grid-content">
             <StatusAdmin :city="'Sarajevo'" :mail="'mick@gmail.com'" :phone="'+342223333'" :user="'Mick Jagger'" :company="'Ramones'"></StatusAdmin>
           </div>
         </el-col>
       </el-row>
       <el-row type="flex" class="row-bg-bottom" justify="flex-start">
-        <el-col :span="10">
+        <el-col :xs="24" :sm="24" :md="24" :lg="10" :xl="10">
           <div class="grid-content-bottom">
             <AdminRequestPage></AdminRequestPage>
           </div>
         </el-col>
-        <el-col :span="6">
+        <el-col :xs="24" :sm="24" :md="24" :lg="6" :xl="6">
           <div class="grid-content-bottom">
             <Inbox></Inbox>
           </div>
         </el-col>
-        <el-col :span="8">
+        <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
           <div class="grid-content-bottom">
             <Activity></Activity>
           </div>
