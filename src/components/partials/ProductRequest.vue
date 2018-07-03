@@ -115,12 +115,19 @@ export default {
     .search-input {
       min-width: 5em;
       max-width: 20em;
-      float: right;
       margin-right: 15px;
-      .el-button
-      {
-        background-color: $blue-my-projects;
-        color: white  ;
+      float: right;
+      border: none;
+      outline: none;
+      .el-button {
+        background-color: #0D72B9;
+        color: white;
+        font-weight: 900;
+        font-size: 1em;
+        -moz-border-radius-bottomleft: 0;
+        -moz-border-radius-bottomright: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
       }
     }
   }
