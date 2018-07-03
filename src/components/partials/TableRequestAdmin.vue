@@ -2,6 +2,7 @@
   <el-table
     ref="tableRequest"
     class="tableRequest"
+    id="tableRequest"
     v-loading="loading2"
     element-loading-text="Loading..."
     element-loading-spinner="el-icon-loading"
@@ -10,26 +11,26 @@
     style="width: 100%; overflow: auto;"
     :height="'calc(45vh - 100px - 1.5em)'"
     @selection-change="handleSelectionChange">
-    <el-table-column v-if="selectable" type="selection" :width="100"></el-table-column>
+    <el-table-column v-if="selectable" type="selection" :width="'200%'"></el-table-column>
     <el-table-column
       prop="user"
       label="User"
-      :width="150" sortable>
+      :width="'200%'" sortable>
     </el-table-column>
     <el-table-column
       prop="manufacturer"
       label="Manufacturer"
-      :width="150" sortable>
+      :width="'200%'" sortable>
     </el-table-column>
     <el-table-column
       prop="product"
       label="Product"
-      :width="150" sortable>
+      :width="'200%'" sortable>
     </el-table-column>
     <el-table-column
       prop="status"
       label="Status"
-      :width="150"
+      :width="'170%'"
       :filters="[{ text: 'Approved', value: 'Approved' }, { text: 'Denied', value: 'Denied' },{ text: 'Requested', value: 'Requested' }]"
       :filter-method="filterTag"
       filter-placement="bottom-start">
@@ -50,8 +51,12 @@ export default {
   data () {
     return {
       multipleSelection: [],
-      loading2: false
+      loading2: false,
+      width: 0
     }
+  },
+  mounted () {
+    this.width = parseInt((Math.round(this.$refs['tableRequest'].$el.getBoundingClientRect().width) / 4))
   },
   props: ['fields', 'selectable', 'editable'],
   methods: {

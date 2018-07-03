@@ -119,6 +119,10 @@ export default {
       float: right;
       border: none;
       outline: none;
+      &:focus {
+        border: none;
+        outline: none;
+      }
       .el-button {
         background-color: #0D72B9;
         color: white;

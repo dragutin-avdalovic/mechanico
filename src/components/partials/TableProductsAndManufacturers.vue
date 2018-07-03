@@ -1,7 +1,7 @@
 <template>
   <el-table
-    ref="tableRequest"
-    class="tableRequest"
+    ref="tableProdAndMan"
+    class="tableProdAndMan"
     v-loading="loading2"
     element-loading-text="Loading..."
     element-loading-spinner="el-icon-loading"
@@ -10,23 +10,23 @@
     style="width: 100%"
     :height="'calc(45vh - 116px - 1em)'"
     @selection-change="handleSelectionChange">
-    <el-table-column v-if="selectable" type="selection" :width="50"></el-table-column>
+    <el-table-column v-if="selectable" type="selection" :width="'100%'"></el-table-column>
     <el-table-column
       prop="productName"
       label="Product Name"
-      :width="width" sortable>
+      :width="'200%'" sortable>
     </el-table-column>
     <el-table-column
       prop="manufacturer"
       label="Manufacturer"
-      :width="width" sortable>
+      :width="'200%'" sortable>
     </el-table-column>
     <el-table-column
       prop="productType"
       label="Product Type"
-      :width="width" sortable>
+      :width="'200%'" sortable>
     </el-table-column>
-    <el-table-column v-if="editable" :width="width">
+    <el-table-column v-if="editable" :width="width"  class="edit">
       <template slot-scope="scope">
         <el-button
           type="info" icon="el-icon-edit"
@@ -78,9 +78,14 @@ export default {
     }
   },
   mounted () {
-    this.width = parseInt((Math.round(this.$refs['tableRequest'].$el.clientWidth) / 4))
+    this.width = parseInt((Math.round(this.$refs['tableProdAndMan'].$el.clientWidth) / 5))
   }
 }
 </script>
 <style lang="scss" scoped>
+  .edit {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
 </style>
