@@ -1,6 +1,6 @@
 <template>
   <div class="Modal">
-    <el-form ref="form" :model="form">
+    <el-form ref="form" :model="form" class="form">
       <el-row :gutter="70">
         <el-col :xs="24" :sm="24" :md="15" :lg="15" :xl="15">
           <el-form-item class="label" label="Project Name">
@@ -61,16 +61,6 @@ export default {
   .el-form-item {
     width: 100%;
   }
-
-  .Line1 {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .label {
-    color: red;
-  }
-
   .el-button {
     width: 100%;
     background-color: #0d80ca;

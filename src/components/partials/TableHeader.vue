@@ -23,8 +23,8 @@
     :before-close="handleClose">
     <AppForm></AppForm>
     <span slot="footer" class="dialog-footer">
-      <el-button @click="dialogVisible = false">Cancel</el-button>
-      <el-button type="primary" @click="dialogVisible = false">Save</el-button>
+      <el-button type="info" @click="dialogVisible = false" class="cancel">Cancel</el-button>
+      <el-button type="primary" @click="dialogVisible = false" class="save">Save</el-button>
     </span>
   </el-dialog>
   </div>
@@ -115,8 +115,18 @@ export default {
   .new-project
   {
     background-color: rgba(#0D72B9, 0.7);
-    .dialog-footer
-    {
+    .cancel {
+      min-width: 15em;
+      max-width: 20em;
+      border-radius: 0;
+      height: 3em;
+    }
+    .save {
+      min-width: 15em;
+      max-width: 20em;
+      border-radius: 0;
+      height: 3em;
     }
   }
+
 </style>
