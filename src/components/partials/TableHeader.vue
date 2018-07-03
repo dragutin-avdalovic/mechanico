@@ -76,6 +76,9 @@ export default {
       -moz-border-radius-bottomright: 0;
       border-bottom-left-radius: 0;
       border-top-left-radius: 0;
+      &:focus, &:active {
+        border: 1px solid #0D72B9;
+      }
     }
   }
 

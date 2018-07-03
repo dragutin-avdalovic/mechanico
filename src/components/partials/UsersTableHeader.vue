@@ -52,6 +52,13 @@ export default {
       color: white;
       font-weight: 900;
       font-size: 1em;
+      -moz-border-radius-bottomleft: 0;
+      -moz-border-radius-bottomright: 0;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      &:focus, &:active {
+        border: 1px solid #0D72B9;
+      }
     }
   }
 
