@@ -51,8 +51,17 @@ export default {
   mounted () {
     this.width = parseInt(Math.round(this.$refs['tableRequest'].$el.clientWidth / 3))
   },
+  ready: function () {
+    window.addEventListener('resize', this.handleResize)
+  },
+  beforeDestroy: function () {
+    window.removeEventListener('resize', this.handleResize)
+  },
   props: ['fields', 'selectable', 'editable'],
   methods: {
+    handleResize () {
+      this.width = parseInt(Math.round(this.$refs['tableRequest'].$el.clientWidth / 3))
+    },
     handleEdit (index, row) {
       console.log(index, row)
     },
