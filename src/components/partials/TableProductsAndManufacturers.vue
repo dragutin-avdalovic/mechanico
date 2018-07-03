@@ -84,8 +84,5 @@ export default {
 </script>
 <style lang="scss" scoped>
   .edit {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
   }
 </style>

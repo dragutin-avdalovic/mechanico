@@ -59,18 +59,30 @@ export default {
     }
     .row-header
     {
-      .search-input
-      {
-        float: right;
-        padding: 0.5em;
+      .search-input {
+        min-width: 5em;
         max-width: 20em;
-        .el-button
-        {
-          background-color: $blue-my-projects;
+        margin-right: 15px;
+        float: right;
+        border: none;
+        outline: none;
+        padding: 0.5em;
+        &:focus {
+          border: none;
+          outline: none;
+        }
+        .el-button {
+          background-color: #0D72B9;
           color: white;
+          font-weight: 900;
+          font-size: 1em;
+          -moz-border-radius-bottomleft: 0;
+          -moz-border-radius-bottomright: 0;
+          border-bottom-left-radius: 0;
+          border-top-left-radius: 0;
         }
       }
-    }
+      }
   }
 .el-tabs {
   height: calc(45vh - 372px);

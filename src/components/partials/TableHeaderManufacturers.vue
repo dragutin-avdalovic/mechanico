@@ -38,33 +38,43 @@ export default {
   /*flex-direction: column;*/
     width: 100%;
     padding: 0.5em 0.5em 0 0.5em;
-    .search-input {
-      width: 90%;
-      padding: 0px 5px;
-      /*min-width: 5em;*/
-      /*max-width: 20em;*/
-      float: right;
-      @media ('sm') {
-        padding-top: 0.5em;
-      }
-      @media ('xs') {
-        padding-top: 0.5em;
-      }
-      @media ('md') {
-        padding-top: 0.5em;
-      }
-      .el-button
-      {
-        background-color: #0D72B9;
-        color: white;
-        font-weight: 900;
-        font-size: 1em;
-        /*padding: 7px 7px;*/
-      }
+
+  .search-input {
+    width: 90%;
+    padding: 0px 5px;
+    float: right;
+    min-width: 5em;
+    max-width: 20em;
+    margin-right: 15px;
+    border: none;
+    outline: none;
+    @media ('sm') {
+      padding-top: 0.5em;
     }
-    .el-col-left {
-      min-height: 1em;
-      min-width: 5em;
+    @media ('xs') {
+      padding-top: 0.5em;
+    }
+    @media ('md') {
+      padding-top: 0.5em;
+    }
+    &:focus {
+      border: none;
+      outline: none;
+    }
+    .el-button {
+      background-color: #0D72B9;
+      color: white;
+      font-weight: 900;
+      font-size: 1em;
+      -moz-border-radius-bottomleft: 0;
+      -moz-border-radius-bottomright: 0;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+  }
+  .el-col-left {
+    min-height: 1em;
+    min-width: 5em;
       .new-user
       {
         background-color: #0D72B9;
