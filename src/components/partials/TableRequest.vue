@@ -49,17 +49,18 @@ export default {
     }
   },
   mounted () {
-    this.width = parseInt(Math.round(this.$refs['tableRequest'].$el.clientWidth / 3))
+    this.width = parseInt(Math.round((this.$refs['tableRequest'].$el.clientWidth - 1) / 3))
   },
   ready: function () {
-    window.addEventListener('resize', this.handleResize)
+    this.$refs['tableRequest'].addEventListener('resize', this.handleResize)
   },
   beforeDestroy: function () {
-    window.removeEventListener('resize', this.handleResize)
+    this.$refs['tableRequest'].removeEventListener('resize', this.handleResize)
   },
   props: ['fields', 'selectable', 'editable'],
   methods: {
     handleResize () {
+      console.log('resize called')
       this.width = parseInt(Math.round(this.$refs['tableRequest'].$el.clientWidth / 3))
     },
     handleEdit (index, row) {
